@@ -6,9 +6,15 @@ using UnityEngine.Assertions;
 
 public class RuneBehaviour : MonoBehaviour
 {
+
     [Header("UI References")]
     [SerializeField] private Image m_runeImage;
     [SerializeField] private Text m_nameTxt;
+    
+    [Header("References")]
+    [SerializeField] private AudioSource m_audioSource;
+
+    private RuneEntry m_myEntry;
 
     private void Awake()
     {
@@ -18,7 +24,16 @@ public class RuneBehaviour : MonoBehaviour
 
     public void Initialize(RuneEntry runeEntry)
     {
+        m_myEntry = runeEntry;
+
         m_runeImage.sprite = runeEntry.m_sprite;
         m_nameTxt.text = runeEntry.m_runeText;
+
+        m_audioSource.clip = runeEntry.m_audioClip;
+    }
+
+    public void selectedRune()
+    {
+        DecodeAudioManager.m_instance.checkEntry(m_myEntry);
     }
 }
