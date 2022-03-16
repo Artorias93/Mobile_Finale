@@ -23,11 +23,6 @@ public class Timer : MonoBehaviour
     public delegate void timerEnded();
     public static event timerEnded OnTimeEnd;
 
-    public void Start()
-    {
-        Initialize(10);
-    }
-
     public void Initialize(int timerDuration)
     {
         m_TimeInSeconds = timerDuration;
