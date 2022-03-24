@@ -4,36 +4,46 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Assertions;
 
-public class RuneBehaviour : MonoBehaviour
+namespace DecodeAudioMinigame
 {
-
-    [Header("UI References")]
-    [SerializeField] private Image m_runeImage;
-    [SerializeField] private Text m_nameTxt;
-    
-    [Header("References")]
-    [SerializeField] private AudioSource m_audioSource;
-
-    private RuneEntry m_myEntry;
-
-    private void Awake()
+    public class RuneBehaviour : MonoBehaviour
     {
-        Assert.IsNotNull(m_runeImage, "No Rune Img Reference Selected");
-        Assert.IsNotNull(m_nameTxt, "No Text Reference Selected");
-    }
 
-    public void Initialize(RuneEntry runeEntry)
-    {
-        m_myEntry = runeEntry;
+        [Header("UI References")]
+        [SerializeField] private Image m_runeImage;
+        [SerializeField] private Text m_nameTxt;
+        [SerializeField] private Button m_runeBtn;
 
-        m_runeImage.sprite = runeEntry.m_sprite;
-        m_nameTxt.text = runeEntry.m_runeText;
+        [Header("References")]
+        [SerializeField] private AudioSource m_audioSource;
 
-        m_audioSource.clip = runeEntry.m_audioClip;
-    }
+        private RuneEntry m_myEntry;
 
-    public void selectedRune()
-    {
-        DecodeAudioManager.m_instance.checkEntry(m_myEntry);
+        private void Awake()
+        {
+            Assert.IsNotNull(m_runeImage, "No Rune Img Reference Selected");
+            Assert.IsNotNull(m_nameTxt, "No Text Reference Selected");
+            Assert.IsNotNull(m_runeBtn, "No Button Reference");
+        }
+
+        public void Initialize(RuneEntry runeEntry)
+        {
+            m_myEntry = runeEntry;
+
+            m_runeImage.sprite = runeEntry.m_sprite;
+            m_nameTxt.text = runeEntry.m_runeText;
+
+            m_audioSource.clip = runeEntry.m_audioClip;
+        }
+
+        public void selectedRune()
+        {
+            DecodeAudioManager.m_instance.checkEntry(m_myEntry);
+        }
+
+        public void Disable()
+        {
+            m_runeBtn.interactable = false;
+        }
     }
 }

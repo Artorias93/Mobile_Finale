@@ -224,6 +224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_runeImage: {fileID: 6866851398357614269}
   m_nameTxt: {fileID: 2060313665672791305}
+  m_runeBtn: {fileID: 7491266696537786306}
   m_audioSource: {fileID: 1139316665038350381}
 --- !u!82 &1139316665038350381
 AudioSource:
