@@ -17,12 +17,7 @@ public class Spawner : MonoBehaviour
     public int i_torqueRotationItem;
     private int i_item;
     private int i_spawnIndex;
-    //private int i_minSpawnOffsetX;
-    //private int i_maxSpawnOffsetX;
-
-
     private IEnumerator countdown;
-    //public float f_timeLeft;
 
     // Start is called before the first frame update
     void Start()
@@ -107,8 +102,6 @@ public class Spawner : MonoBehaviour
         else obj_item.GetComponent<Rigidbody2D>().AddTorque(-i_torqueRotationItem);
 
         Destroy(obj_item, 3f);
-
-        //Debug.Log(i_item);
     }
 
 }
