@@ -2,11 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public struct ConvertedTimer
+{
+    public int minutes;
+    public int seconds;
+
+    public ConvertedTimer(float timeInSeconds)
+    {
+        minutes = Mathf.CeilToInt(timeInSeconds) / 60;
+        seconds = Mathf.CeilToInt(timeInSeconds) % 60;
+    }
+}
+
 public class Timer : MonoBehaviour
 {
     private float m_duration, m_remainingTime;
 
-    private int m_minutes, m_seconds;
+    private ConvertedTimer m_timer;
 
 
     public float Duration
@@ -19,8 +31,9 @@ public class Timer : MonoBehaviour
         get { return m_remainingTime; }
     }
 
-    public int Minutes { get { return m_minutes; } }
-    public int Seconds { get { return m_seconds; } }
+    public ConvertedTimer ConvertedTime { get { return m_timer; } }
+    public int Minutes { get { return m_timer.minutes; } }
+    public int Seconds { get { return m_timer.seconds; } }
 
 
     private bool m_destroyOnFinish = true, m_repeating = false, m_running;
@@ -104,6 +117,7 @@ public class Timer : MonoBehaviour
 
     public void Destroy()
     {
+        StopAllCoroutines();
         Destroy(gameObject);
     }
 
@@ -120,10 +134,12 @@ public class Timer : MonoBehaviour
         m_remainingTime = m_duration;
     }
 
-    private void convertTime(float timeInSeconds)
+    private ConvertedTimer convertTime(float timeInSeconds)
     {
-        m_minutes = Mathf.CeilToInt(timeInSeconds) / 60;
-        m_seconds = Mathf.CeilToInt(timeInSeconds) % 60;
+        m_timer.minutes = Mathf.CeilToInt(timeInSeconds) / 60;
+        m_timer.seconds = Mathf.CeilToInt(timeInSeconds) % 60;
+
+        return m_timer;
     }
 }
 

@@ -60,9 +60,13 @@ MonoBehaviour:
   - m_runeText: Pietra
     m_sprite: {fileID: 21300000, guid: fdb34fab7a3c5d648ada750588336cf4, type: 3}
     m_audioClip: {fileID: 8300000, guid: 2fcb14fa8c80d5546aca7c41b426d12b, type: 3}
+  m_turnNumber: 3
   m_runeCount: 4
-  m_bookManager: {fileID: 7367757252633143122, guid: 3d48da4b1bfcddf4394dfd4ac90f7656, type: 3}
+  m_playTime: 5
+  m_bookManager: {fileID: 0}
   m_audioSource: {fileID: 2582421927053461889}
+  m_endGameScreenController: {fileID: 0}
+  m_decodeUIManager: {fileID: 0}
 --- !u!1 &2582421927053461891
 GameObject:
   m_ObjectHideFlags: 0
