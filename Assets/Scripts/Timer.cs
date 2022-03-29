@@ -2,55 +2,58 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Timer : MonoBehaviour
+namespace FruitNinjaMinigame
 {
-    private float m_TimeInSeconds;
-
-    private int m_minutes, m_seconds;
-
-
-    public float TimeInSeconds
+    public class Timer : MonoBehaviour
     {
-        get { return m_TimeInSeconds; }
-    }
-    public int Minutes { get { return m_minutes; } }
-    public int Seconds { get { return m_seconds; } }
+        private float m_TimeInSeconds;
+
+        private int m_minutes, m_seconds;
 
 
-    private bool m_timeEndGuard = false;
+        public float TimeInSeconds
+        {
+            get { return m_TimeInSeconds; }
+        }
+        public int Minutes { get { return m_minutes; } }
+        public int Seconds { get { return m_seconds; } }
 
 
-    public delegate void timerEnded();
-    public static event timerEnded OnTimeEnd;
+        private bool m_timeEndGuard = false;
 
-    public void Initialize(int timerDuration)
-    {
-        m_TimeInSeconds = timerDuration;
-        m_timeEndGuard = false;
-    }
 
-    private void Update()
-    {
-        if (!m_timeEndGuard)
-            if (m_TimeInSeconds > 0)
-            {
-                m_TimeInSeconds -= Time.deltaTime;
-                convertTime(m_TimeInSeconds);
-            }
-            else
-            {
-                m_TimeInSeconds = 0;
-                m_timeEndGuard = true;
-                if (OnTimeEnd != null)
-                    OnTimeEnd();
-            }
-    }
+        public delegate void timerEnded();
+        public static event timerEnded OnTimeEnd;
 
-    private void convertTime(float timeInSeconds)
-    {
-        m_minutes = Mathf.CeilToInt(timeInSeconds) / 60;
-        m_seconds = Mathf.CeilToInt(timeInSeconds) % 60;
+        public void Initialize(int timerDuration)
+        {
+            m_TimeInSeconds = timerDuration;
+            m_timeEndGuard = false;
+        }
 
-        Debug.Log(m_minutes + ":" + m_seconds);
+        private void Update()
+        {
+            if (!m_timeEndGuard)
+                if (m_TimeInSeconds > 0)
+                {
+                    m_TimeInSeconds -= Time.deltaTime;
+                    convertTime(m_TimeInSeconds);
+                }
+                else
+                {
+                    m_TimeInSeconds = 0;
+                    m_timeEndGuard = true;
+                    if (OnTimeEnd != null)
+                        OnTimeEnd();
+                }
+        }
+
+        private void convertTime(float timeInSeconds)
+        {
+            m_minutes = Mathf.CeilToInt(timeInSeconds) / 60;
+            m_seconds = Mathf.CeilToInt(timeInSeconds) % 60;
+
+            Debug.Log(m_minutes + ":" + m_seconds);
+        }
     }
 }

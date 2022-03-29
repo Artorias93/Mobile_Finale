@@ -152,7 +152,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.75
+  m_Radius: 1
 --- !u!114 &3509934583704546908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,4 +165,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5083f3ccad281741bf1d3580651895b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj_fruitSlicedPrefab: {fileID: 6291591981006967952, guid: 0533164732f617a41b373e595c2e21ca, type: 3}
+  obj_fruitSlicedPrefab: {fileID: 2944031846970997316, guid: 93d6a2145fb2a9f4b882310c3cd8d72a, type: 3}
