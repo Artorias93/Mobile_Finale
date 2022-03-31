@@ -6,22 +6,8 @@ namespace FruitNinjaMinigame
 {
     public class Item : MonoBehaviour
     {
-        GameObject obj_gameManager;
         public GameObject obj_fruitSlicedPrefab;
         public int i_status = 0;
-
-        // Start is called before the first frame update
-        void Start()
-        {
-            obj_gameManager = GameObject.Find("GameManager");
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-            
-        }
-
 
         void OnTriggerEnter2D(Collider2D col)
         {
@@ -36,9 +22,10 @@ namespace FruitNinjaMinigame
                 Destroy(obj_slicedFruit, 3f);
                 Destroy(gameObject);
             }
-            
+
             //Add 1 to Not-Sliced Objects
-            if (i_status == 1 && col.CompareTag("OutDown")) obj_gameManager.GetComponent<GameManager>().i_outCount++;
+            if (i_status == 1 && col.CompareTag("OutDown")) 
+                GameManager.Instance.increaseErrorCount();
 
         }
 

@@ -213,7 +213,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a71a0eae1d7df940be92c374281487f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: {fileID: 163589292}
   scoreText: {fileID: 474067348}
   timeText: {fileID: 671846566}
   obj_blade: {fileID: 1291228534}
@@ -221,6 +220,7 @@ MonoBehaviour:
   obj_lose1: {fileID: 906828643}
   obj_lose2: {fileID: 860180488}
   obj_lose3: {fileID: 392648228}
+  gameTime: 5
 --- !u!114 &163589292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1028,7 +1028,15 @@ MonoBehaviour:
   - {fileID: 1540087257}
   f_minDelay: 0.2
   f_maxDelay: 1
+  f_minSpawnForceX: 0
+  f_maxSpawnForceX: 0
+  f_minSpawnForceY: 11
+  f_maxSpawnForceY: 15
+  f_randomForceX: 0
+  f_randomForceY: 0
   i_torqueRotationItem: 30
+  i_item: 0
+  i_spawnIndex: 0
 --- !u!4 &899716169
 Transform:
   m_ObjectHideFlags: 0
@@ -1591,7 +1599,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnPoint0
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

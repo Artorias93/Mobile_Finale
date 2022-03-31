@@ -6,26 +6,27 @@ namespace FruitNinjaMinigame
 {
     public class Spawner : MonoBehaviour
     {
-        public GameObject[] rg_items;
-        public Transform[] rg_spawnPoints;
-        public float f_minDelay = .1f;
-        public float f_maxDelay = 0.75f;
-        private float f_minSpawnForceX;
-        private float f_maxSpawnForceX;
-        private float f_minSpawnForceY = 11;
-        private float f_maxSpawnForceY = 15;
-        private float f_randomForceX;
-        private float f_randomForceY;
-        public int i_torqueRotationItem;
-        private int i_item;
-        private int i_spawnIndex;
-        private IEnumerator countdown;
+        [Header("Sprites References and Spawners")]
+        [SerializeField] private GameObject[] rg_items;
+        [SerializeField] private Transform[] rg_spawnPoints;
+        [Header("Spawner Parameters")]
+        [SerializeField] private float f_minDelay = .1f;
+        [SerializeField] private float f_maxDelay = 0.75f;
+        [SerializeField] private float f_minSpawnForceX;
+        [SerializeField] private float f_maxSpawnForceX;
+        [SerializeField] private float f_minSpawnForceY = 11;
+        [SerializeField] private float f_maxSpawnForceY = 15;
+        [SerializeField] private float f_randomForceX;
+        [SerializeField] private float f_randomForceY;
+        [SerializeField] private int i_torqueRotationItem;
+        [SerializeField] private int i_item;
+        [SerializeField] private int i_spawnIndex;
 
         // Start is called before the first frame update
         void Start()
         {
-            countdown = Countdown(Random.Range(f_minDelay, f_maxDelay));
-            StartCoroutine(countdown);
+            float firstDelay = Random.Range(f_minDelay, f_maxDelay);
+            StartCoroutine(Countdown(firstDelay));
         }
 
         // Update is called once per frame
@@ -38,7 +39,7 @@ namespace FruitNinjaMinigame
         //Set Spawn Time
         private IEnumerator Countdown(float f_timeLeft)                     
         {
-            while (true)
+            while (!GameManager.Instance.GameFinished)
             {
                 float delay = Random.Range(f_minDelay, f_maxDelay);
                 yield return new WaitForSeconds(delay);
@@ -54,6 +55,8 @@ namespace FruitNinjaMinigame
             i_item = Random.Range(0, rg_items.Length);
             GameObject obj_item = Instantiate(rg_items[i_item], spawnPoint.position, spawnPoint.rotation);
 
+
+            //TODO: Divide in subscripts to delegate behaviour
             switch (i_spawnIndex)
             {
                 case 0:

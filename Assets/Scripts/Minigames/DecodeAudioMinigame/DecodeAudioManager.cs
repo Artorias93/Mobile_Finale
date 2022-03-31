@@ -14,13 +14,20 @@ namespace DecodeAudioMinigame
         public AudioClip m_audioClip;
     }
 
-    public class DecodeAudioManager : MonoBehaviour
+    [System.Serializable]
+    public struct GameParameters
+    {
+        public int m_turnNumber;
+        public int m_runeCount;
+        public float m_playTime;
+    }
+
+    public class DecodeAudioManager : AMinigameManager
     {
         [Header("Game Parameters")]
         [SerializeField] private RuneEntry[] m_runeDictionary;
-        [SerializeField] private int m_turnNumber = 3;
-        [SerializeField] private int m_runeCount = 4;
-        [SerializeField, Range(0f, 20f)] private float m_playTime = 5f;
+        [SerializeField] private GameParameters gp_easy, gp_medium, gp_hard;
+        private GameParameters m_gameParameters;
 
         [Header("References")]
         [SerializeField] private BookManager m_bookManager;
@@ -38,7 +45,7 @@ namespace DecodeAudioMinigame
 #region PROPERTIES
         public int TurnNumber
         {
-            get { return m_turnNumber; }
+            get { return m_gameParameters.m_turnNumber; }
         }
         public int currentTurn
         {
@@ -46,7 +53,7 @@ namespace DecodeAudioMinigame
         }
         public float PlayTime
         {
-            get { return m_playTime; }
+            get { return m_gameParameters.m_playTime; }
         }
         public float RemainingTime
         {
@@ -65,18 +72,37 @@ namespace DecodeAudioMinigame
                 return;
             }
 
+            if (m_difficulty == Difficulty.EASY)
+                m_gameParameters = gp_easy;
+            else if (m_difficulty == Difficulty.MEDIUM)
+                m_gameParameters = gp_medium;
+            else if (m_difficulty == Difficulty.HARD)
+                m_gameParameters = gp_hard;
+
             Assert.IsNotNull(m_bookManager);
             Assert.IsNotNull(m_endGameScreenController);
             Assert.IsNotNull(m_decodeUIManager);
-            Assert.IsFalse(m_runeDictionary.Length < m_runeCount, "Impossible to populate screen, to little runes");
+            Assert.IsFalse(m_runeDictionary.Length < m_gameParameters.m_runeCount, "Impossible to populate screen, to little runes");
+
+            
+        }
+
+        public override void BeginMinigame(Difficulty difficulty)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override void EndMinigame()
+        {
+            throw new System.NotImplementedException();
         }
 
         private void generateRound()
         {
             m_selectedRunes = new List<RuneEntry>();
-            while (m_selectedRunes.Count < m_runeCount)
+            while (m_selectedRunes.Count < m_gameParameters.m_runeCount)
             {
-                int index = Random.Range(0, m_runeCount);
+                int index = Random.Range(0, m_gameParameters.m_runeCount);
                 RuneEntry entry = m_runeDictionary[index];
                 if (!m_selectedRunes.Contains(entry))
                 {
@@ -91,10 +117,10 @@ namespace DecodeAudioMinigame
 
         private void Start()
         {
-            m_bookManager.Initialize(m_runeCount);
+            m_bookManager.Initialize(m_gameParameters.m_runeCount);
             generateRound();
 
-            gameTimer = Timer.Create(m_playTime, timerHasEnded, name: "gameTimer");
+            gameTimer = Timer.Create(m_gameParameters.m_playTime, timerHasEnded, name: "gameTimer");
             gameTimer.StartTimer();
         }
 
@@ -126,7 +152,7 @@ namespace DecodeAudioMinigame
             {
                 Debug.Log("Giusto!!!!");
                 m_currentTurn++;
-                if (m_currentTurn > m_turnNumber)
+                if (m_currentTurn > m_gameParameters.m_turnNumber)
                 {
                     //End Minigame
                     gameTimer?.Destroy();

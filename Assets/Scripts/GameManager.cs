@@ -3,11 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public enum Difficulty
-{
-    EASY = 0, MEDIUM = 1, HARD = 2
-};
-
 public class GameManager : MonoBehaviour
 {
     public static GameManager m_instance;
@@ -34,6 +29,9 @@ public class GameManager : MonoBehaviour
     private IEnumerator _loadMinigame(string minigameName, Difficulty difficulty)
     {
         AsyncOperation loading = SceneManager.LoadSceneAsync(minigameName);
-        return new WaitUntil(() => { return loading.isDone; } );
+        yield return new WaitUntil(() => { return loading.isDone; } );
+        
+        AMinigameManager aMinigameManager = GameObject.FindGameObjectWithTag("MinigameManager").GetComponent<AMinigameManager>();
+        aMinigameManager.BeginMinigame(difficulty);
     }
 }
