@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1045 &1
@@ -18,3 +19,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Minigames/CaulderonMinigame.unity
     guid: 0ad3d145f94fa5e459b90bf63a116264
   m_configObjects: {}
+=======
+version https://git-lfs.github.com/spec/v1
+oid sha256:54b3046ba6aa06cbd116a713ceb915c06a477837b4ff82c280aff1fb0f44f325
+size 265
+>>>>>>> feature/FruitNinja
