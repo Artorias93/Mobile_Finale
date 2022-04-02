@@ -19,8 +19,12 @@ namespace DecodeAudioMinigame
 
             turnText.text = dam.currentTurn + "/" + dam.TurnNumber;
 
-            float normalizedTime = (float) dam.RemainingTime / dam.PlayTime;
-            timerSlider.value = normalizedTime;
+            if(dam.RemainingTime >= 0)
+            {
+                float normalizedTime = (float)dam.RemainingTime / dam.PlayTime;
+                timerSlider.value = normalizedTime;
+            }
+            
         }
 
         public void DisableAll()

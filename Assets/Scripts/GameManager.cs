@@ -28,10 +28,12 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator _loadMinigame(string minigameName, Difficulty difficulty)
     {
-        AsyncOperation loading = SceneManager.LoadSceneAsync(minigameName);
+
+        AsyncOperation loading = SceneManager.LoadSceneAsync(minigameName, LoadSceneMode.Single);
         yield return new WaitUntil(() => { return loading.isDone; } );
-        
+
         AMinigameManager aMinigameManager = GameObject.FindGameObjectWithTag("MinigameManager").GetComponent<AMinigameManager>();
         aMinigameManager.BeginMinigame(difficulty);
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(minigameName));
     }
 }

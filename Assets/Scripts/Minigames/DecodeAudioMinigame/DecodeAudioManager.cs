@@ -55,9 +55,10 @@ namespace DecodeAudioMinigame
         {
             get { return m_gameParameters.m_playTime; }
         }
+
         public float RemainingTime
         {
-            get { return gameTimer ? gameTimer.RemainingTime : 0; }
+            get { return gameTimer ? gameTimer.RemainingTime : -1; }
         }
 #endregion
         private void Awake()
@@ -72,6 +73,17 @@ namespace DecodeAudioMinigame
                 return;
             }
 
+            
+
+            Assert.IsNotNull(m_bookManager);
+            Assert.IsNotNull(m_endGameScreenController);
+            Assert.IsNotNull(m_decodeUIManager);
+        }
+
+        public override void BeginMinigame(Difficulty difficulty)
+        {
+            m_difficulty = difficulty;
+
             if (m_difficulty == Difficulty.EASY)
                 m_gameParameters = gp_easy;
             else if (m_difficulty == Difficulty.MEDIUM)
@@ -79,17 +91,11 @@ namespace DecodeAudioMinigame
             else if (m_difficulty == Difficulty.HARD)
                 m_gameParameters = gp_hard;
 
-            Assert.IsNotNull(m_bookManager);
-            Assert.IsNotNull(m_endGameScreenController);
-            Assert.IsNotNull(m_decodeUIManager);
-            Assert.IsFalse(m_runeDictionary.Length < m_gameParameters.m_runeCount, "Impossible to populate screen, to little runes");
+            m_bookManager.Initialize(m_gameParameters.m_runeCount);
+            generateRound();
 
-            
-        }
-
-        public override void BeginMinigame(Difficulty difficulty)
-        {
-            throw new System.NotImplementedException();
+            gameTimer = Timer.Create(m_gameParameters.m_playTime, timerHasEnded, name: "gameTimer");
+            gameTimer.StartTimer();
         }
 
         public override void EndMinigame()
@@ -115,17 +121,16 @@ namespace DecodeAudioMinigame
             playCorrectClip();
         }
 
-        private void Start()
+        
+        public void playAudioClip(AudioClip clip)
         {
-            m_bookManager.Initialize(m_gameParameters.m_runeCount);
-            generateRound();
-
-            gameTimer = Timer.Create(m_gameParameters.m_playTime, timerHasEnded, name: "gameTimer");
-            gameTimer.StartTimer();
+            m_audioSource.Stop();
+            m_audioSource.PlayOneShot(clip);
         }
 
-        public void playCorrectClip()
+        private void playCorrectClip()
         {
+            m_audioSource.Stop();
             m_audioSource.PlayOneShot(m_selectedRunes[m_correctIndex].m_audioClip);
         }
 
@@ -148,6 +153,7 @@ namespace DecodeAudioMinigame
 
         public void checkEntry(RuneEntry re)
         {
+            playAudioClip(re.m_audioClip);
             if (re.Equals(m_selectedRunes[m_correctIndex]))
             {
                 Debug.Log("Giusto!!!!");
@@ -155,6 +161,7 @@ namespace DecodeAudioMinigame
                 if (m_currentTurn > m_gameParameters.m_turnNumber)
                 {
                     //End Minigame
+                    m_currentTurn = m_gameParameters.m_turnNumber; //To avoid UI to show wrong number;
                     gameTimer?.Destroy();
                     victoryBehaviour();
                 }
