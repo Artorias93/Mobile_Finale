@@ -5,27 +5,56 @@ using TMPro;
 
 namespace FruitNinjaMinigame
 {
-    public class GameManager : MonoBehaviour
+    [System.Serializable]
+    public struct GameParameters
     {
-        
-        [SerializeField] private TMP_Text scoreText;
-        [SerializeField] private TMP_Text timeText;
+        public float f_gameTime;
+        public float f_minDelay;
+        public float f_maxDelay;
+    }
+
+    public class GameManager : AMinigameManager
+    {
         [SerializeField] private GameObject obj_blade;
-        [SerializeField] private int i_outCount = 0;
-        [SerializeField] private GameObject obj_lose1;
-        [SerializeField] private GameObject obj_lose2;
-        [SerializeField] private GameObject obj_lose3;
-        [SerializeField] private float gameTime = 5f;
+        [SerializeField] private GameParameters gp_easy, gp_medium, gp_hard;
+        [SerializeField] private EndGameScreenController endGameUI;
+
+        private GameParameters gp_selectedParameters;
+        private int i_outCount = 0;
+
 
         private Timer m_gameTimer;
-        private bool m_gameFinished;
+        private bool m_gameFinished, m_gameWon;
+
+#region PROPERTIES
         public bool GameFinished
         {
             get { return m_gameFinished; }
         }
 
-        public static GameManager Instance;
+        public bool GameWon
+        {
+            get { return m_gameWon; }
+        }
 
+        public int OutCount
+        {
+            get { return i_outCount; }
+        }
+
+        public float RemainingTime
+        {
+            get { return m_gameTimer ? m_gameTimer.RemainingTime : -1; }
+        }
+
+        public GameParameters GameParameters
+        {
+            get { return gp_selectedParameters; }
+        }
+
+#endregion
+
+        public static GameManager Instance;
 
         private void Awake()
         {
@@ -39,44 +68,48 @@ namespace FruitNinjaMinigame
                 return;
             }
 
+            m_gameWon = false;
             m_gameFinished = false;
-        }
-
-        // Start is called before the first frame update
-        void Start()
-        {
-            m_gameTimer = Timer.Create(gameTime, EndGame, destroyOnFinish: true, name: "Minigame Timer");
-            m_gameTimer.StartTimer();
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-            timeText.text = m_gameTimer.ConvertedTime.minutes.ToString("D2") + ":" + m_gameTimer.ConvertedTime.seconds.ToString("D2");
-            scoreText.text = obj_blade.GetComponent<Blade>().i_scoring.ToString();
-            
-            
         }
 
         public void increaseErrorCount()
         {
             i_outCount++;
-            if (i_outCount == 1) obj_lose1.GetComponent<SpriteRenderer>().color = new Color(255f, 0f, 0f, 1f);
-            if (i_outCount == 2) obj_lose2.GetComponent<SpriteRenderer>().color = new Color(255f, 0f, 0f, 1f);
-            if (i_outCount == 3)
+            if (i_outCount > 3)
             {
-                obj_lose3.GetComponent<SpriteRenderer>().color = new Color(255f, 0f, 0f, 1f);
-                if(m_gameTimer != null)
-                    m_gameTimer.Destroy();
-                EndGame();
+                i_outCount = 3;
+                EndMinigame();
             }
         }
 
-        void EndGame()
+        public override void BeginMinigame(Difficulty difficulty)
         {
-            m_gameFinished = true;
-            print("GAME OVER!!!");
+            switch (difficulty)
+            {
+                case (Difficulty.EASY):
+                    gp_selectedParameters = gp_easy;
+                    break;
+                case (Difficulty.MEDIUM):
+                    gp_selectedParameters = gp_medium;
+                    break;
+                case (Difficulty.HARD):
+                    gp_selectedParameters = gp_hard;
+                    break;
+            }
+
+            m_gameTimer = Timer.Create(gp_selectedParameters.f_gameTime, EndMinigame, destroyOnFinish: true, name: "Minigame Timer");
+            Spawner.Instance.MinDelay = gp_selectedParameters.f_minDelay;
+            Spawner.Instance.MaxDelay = gp_selectedParameters.f_maxDelay;
+            m_gameTimer.StartTimer();
         }
 
+
+        public override void EndMinigame()
+        {
+            if (m_gameTimer != null && m_gameTimer.RemainingTime > 0.0f && i_outCount < 3)
+                m_gameWon = true;
+            m_gameFinished = true;
+            Spawner.Instance.Stop();
+        }
     }
 }

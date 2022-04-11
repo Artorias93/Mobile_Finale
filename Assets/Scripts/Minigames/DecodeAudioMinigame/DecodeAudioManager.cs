@@ -32,7 +32,7 @@ namespace DecodeAudioMinigame
         [Header("References")]
         [SerializeField] private BookManager m_bookManager;
         [SerializeField] private AudioSource m_audioSource;
-        [SerializeField] private endGameScreenController m_endGameScreenController;
+        [SerializeField] private EndGameScreenController m_endGameScreenController;
         [SerializeField] private DecodeAudioUIManager m_decodeUIManager;
 
         public static DecodeAudioManager m_instance;

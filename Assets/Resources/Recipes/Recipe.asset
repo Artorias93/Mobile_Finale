@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_entry:
   - m_minigameScene: {fileID: 102900000, guid: fafb1ce3144c7974681db25764ad9ac1, type: 3}
-    m_difficulty: 2
+    m_difficulty: 1
+  - m_minigameScene: {fileID: 102900000, guid: 4f3da8ac35633aa4b89356d1e740890c, type: 3}
+    m_difficulty: 1
