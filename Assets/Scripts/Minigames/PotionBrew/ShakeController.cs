@@ -5,15 +5,18 @@ using UnityEngine;
 namespace PotionBrewMinigame
 {
     public class ShakeController : MonoBehaviour
-    {
-        public float F_ShakeTreshOld = 4f;
+    {   [SerializeField]
+        private float f_ShakeTreshOld = 3.5f;
 
         private Rigidbody2D m_rigidBody;
         private float f_magnitude = 0f;
         private Vector3 m_acceleration = Vector3.zero;
         //Public for debug
         public bool b_startShake = false;
-
+        private int i_shakesCount=0;
+        public int i_ShakeCount {
+            get { return i_shakesCount; }
+        }
 
         // Start is called before the first frame update
         void Start()
@@ -35,8 +38,9 @@ namespace PotionBrewMinigame
         }
         private void FixedUpdate()
         {
-            if (f_magnitude >= F_ShakeTreshOld)
+            if (f_magnitude >= f_ShakeTreshOld)
             {
+                i_shakesCount++;
                 shake(m_acceleration);
             }
 
