@@ -158,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 132.74, y: 70.79}
-  m_SizeDelta: {x: -945.07, y: -385.82}
+  m_AnchoredPosition: {x: 132.73999, y: 64.29001}
+  m_SizeDelta: {x: -945.07, y: -398.81}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &60360578
 MonoBehaviour:
@@ -343,6 +343,7 @@ MonoBehaviour:
   m_tiltingItemPrefab: {fileID: 4317052384797965692, guid: 4a5b48bb79f94284c9e9dacee0fbcbad, type: 3}
   m_selectableItemPrefab: {fileID: 8596984402717880846, guid: 2d5988633ca12324f8e1f95094f68d06, type: 3}
   m_shakingItemPrefab: {fileID: 4939609641292062902, guid: 686005cbe7e4c7643bcdff71fb8f7eec, type: 3}
+  m_shakePotion: {fileID: 0}
 --- !u!1 &116603709
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,6 +457,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_potionUIManager: {fileID: 95029517}
+  i_selectablePotions: 4
+  i_secondsToTilt: 2
+  i_totalShakes: 3
 --- !u!4 &508258256
 Transform:
   m_ObjectHideFlags: 0
@@ -602,8 +606,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -483.96872, y: -79.20001}
-  m_SizeDelta: {x: -967.9375, y: -158.4}
+  m_AnchoredPosition: {x: -483.96875, y: 0}
+  m_SizeDelta: {x: -967.94, y: 0.000061035}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1172438122
 MonoBehaviour:
@@ -622,7 +626,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 6
   m_StartCorner: 2
   m_StartAxis: 0
   m_CellSize: {x: 100, y: 100}

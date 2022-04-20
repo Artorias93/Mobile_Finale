@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +19,8 @@ public class PotionUiManager : MonoBehaviour
     [SerializeField]
     private GameObject m_shakingItemPrefab;
 
+    public GameObject m_shakePotion;
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +29,7 @@ public class PotionUiManager : MonoBehaviour
     }
     public List<GameObject> Initialize(int i_potionsCount)
     {
-        Instantiate(m_shakingItemPrefab, m_shakeContainer.transform);
+        m_shakePotion= Instantiate(m_shakingItemPrefab, m_shakeContainer.transform);
         //Instantiate(m_tiltingItemPrefab, m_tiltingContainer.transform);
         List<GameObject> selectableObjects = new List<GameObject>();
         for (int i = 0; i < i_potionsCount; i++)
@@ -45,9 +48,16 @@ public class PotionUiManager : MonoBehaviour
        return go;
     }
 
+    internal void RemoveTiltable()
+    {
+        Destroy(m_tiltingContainer.transform.GetChild(0).gameObject);
+    }
+
     // Update is called once per frame
     void Update()
     {
         
     }
+
+
 }
