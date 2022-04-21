@@ -358,8 +358,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   f_drawingSmoothness: 0.05
-  f_Tollerance: 3
+  f_Tollerance: 1.5
   f_closingDistance: 2.2
+  b_shouldInterpolate: 1
+  f_interpolationSubdivision: 4
   testShape:
   - {x: -3, y: 3, z: 0}
   - {x: -3, y: -3, z: 0}

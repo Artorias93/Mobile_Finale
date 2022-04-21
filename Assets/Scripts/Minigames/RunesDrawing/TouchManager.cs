@@ -8,11 +8,17 @@ namespace DrawingRunes
     public class TouchManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
     {
         [Header("Drawing Parameters")]
-        [SerializeField] private float f_drawingSmoothness = 5.0f;
-        [SerializeField, Tooltip("Regulates how different shapes can be, a value around 3 seems optimal")] 
+        [SerializeField, Tooltip("Removes points from drawn shape, higher value make calculation easier but less precise")]
+        private float f_drawingSmoothness = 5.0f;
+        [SerializeField, Tooltip("Regulates how different shapes can be, interpolation and smoothness setting will alter the optimal value")] 
         private float f_Tollerance = 3.1f;
         [SerializeField, Tooltip("Minimum distance before the drawing can close itself")]
         private float f_closingDistance = 0.5f;
+        [SerializeField, Tooltip("Activates interpolation of target vertices: adds more vertices but will make calculation heavier")]
+        private bool b_shouldInterpolate = true;
+        [SerializeField, Tooltip("Number of vertices to add between any couple of vertices. If shouldInterpolate = false it won't do anything")]
+        private int f_interpolationSubdivision = 3;
+
 
         [SerializeField]
         private Vector3[] testShape = {
@@ -22,12 +28,53 @@ namespace DrawingRunes
         new Vector3(3, 3, 0)
     };
 
+        private List<Vector3> targetShape;
+
         private LineRenderer m_lineRenderer;
         private List<Vector3> v3_positions;
 
         private void Awake()
         {
             m_lineRenderer = GetComponent<LineRenderer>();
+
+            if (b_shouldInterpolate)
+            {
+                InterpolateTarget(testShape);
+            } else
+            {
+                targetShape = new List<Vector3>(testShape);
+            }
+        }
+
+        private void InterpolateTarget(Vector3[] originalVector)
+        {
+            targetShape = new List<Vector3>();
+
+            for(int i = 0; i< originalVector.Length - 1; i++)
+            {
+                Vector3 v1 = originalVector[i];
+                Vector3 v2 = originalVector[i + 1];
+
+                targetShape.Add(v1);
+
+                for(int j = 1; j < f_interpolationSubdivision; j++)
+                {
+                    Vector3 newVertex = Vector3.Lerp(v1, v2, (float) j / f_interpolationSubdivision);
+                    targetShape.Add(newVertex);
+                }
+            }
+
+            //Interpolate last and first to close loop
+            Vector3 vFinal = originalVector[originalVector.Length - 1];
+            Vector3 vInitial = originalVector[0];
+
+            targetShape.Add(vFinal);
+
+            for (int j = 1; j < f_interpolationSubdivision; j++)
+            {
+                Vector3 newVertex = Vector3.Lerp(vFinal, vInitial,(float) j / f_interpolationSubdivision);
+                targetShape.Add(newVertex);
+            }
         }
 
         private void LateUpdate()
@@ -39,6 +86,14 @@ namespace DrawingRunes
             }
             Debug.DrawLine(testShape[testShape.Length - 1], testShape[0], Color.red);
 #endif
+        }
+
+        private void OnDrawGizmos()
+        {
+            //Used to visualize target vertices
+            if(targetShape != null)
+                foreach (Vector3 vertex in targetShape)
+                    Gizmos.DrawSphere(vertex, 0.2f);
         }
 
         public void OnBeginDrag(PointerEventData eventData)
@@ -80,7 +135,7 @@ namespace DrawingRunes
                 m_lineRenderer.Simplify(f_drawingSmoothness);
 
 
-                float distance = calculateSetsDistance(v3_positions.ToArray(), testShape);
+                float distance = calculateSetsDistance(v3_positions.ToArray(), targetShape.ToArray());
 
                 Debug.Log("Distance: " + distance + " " + (distance <= f_Tollerance ? "Hai vinto!" : "Hai Perso!"));
             }
@@ -100,6 +155,8 @@ namespace DrawingRunes
             *Reference: https://en.wikipedia.org/wiki/Hausdorff_distance
             *This gives acceptable results for a prototype, but needs more testing with more complex shapes
             *to assess robustness
+            *The algorithm roughly performs in O(2n^2) time, so it's important to keep the interpolation and smoothness
+            *setting optimal to avoid unnecessary precision
             */
 
             float excedenceAtoB = ExcedenceBetweenSets(setA, setB);
