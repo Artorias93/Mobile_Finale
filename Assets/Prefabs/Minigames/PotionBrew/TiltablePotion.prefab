@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4317052384797965692}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -18.7759, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 23.969433, y: 21.26229, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -71,8 +71,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6503a4c6845e63a4cbbafecaea66c701, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 94dd11d32e741a74b9b00146dbf265cd, type: 3}
   m_Color: {r: 0, g: 1, b: 0.29288936, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,7 +96,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   f_minAngle: 0
-  f_slowAngle: 20
-  f_mediumAngle: 45
-  f_fastAngle: 70
+  f_slowAngle: 57
+  f_mediumAngle: 62
+  f_fastAngle: 67
+  f_overFlowAngle: 72
   f_maxAngle: 90
+  s_potionNoFlow: {fileID: 21300000, guid: 94dd11d32e741a74b9b00146dbf265cd, type: 3}
+  s_potionSlowFlow: {fileID: 21300000, guid: 1160f3c75db76b74e84f53b1988d1060, type: 3}
+  s_potionMediumFlow: {fileID: 0}
+  s_potionFastFlow: {fileID: 0}
+  s_potionOverFlow: {fileID: 0}

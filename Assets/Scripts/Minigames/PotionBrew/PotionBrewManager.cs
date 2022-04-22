@@ -12,6 +12,7 @@ namespace PotionBrewMinigame
         public int i_secondsToTilt;
         public int i_totalShakes;
         public int i_maxStepsCount;
+        public int i_maxOverflowSeconds; 
     }
 
     public class PotionBrewManager : AMinigameManager
@@ -33,19 +34,21 @@ namespace PotionBrewMinigame
 
         
         private STEPS e_currentStep;
-        private GameObject m_currentTilting;
+        private GameObject m_currentTiltingPotion;
         private List<GameObject> selectablePotions;
         private GameObject m_potionToSelect;
         private GameObject m_shaKePotion;
         private ShakeController m_shaKePotionController;
         private float f_currentTiltSeconds=0;
+        private float f_currentTiltOverflowSeconds = 0;
         private int i_currentStepCount = 0;
         private Text m_stepText;
+        private Text m_flowText;
 
         private void Start()
         {
             //DEBUG
-            //BeginMinigame(Difficulty.HARD);
+            BeginMinigame(Difficulty.HARD);
 
         }
         public override void BeginMinigame(Difficulty difficulty)
@@ -67,6 +70,8 @@ namespace PotionBrewMinigame
             m_shaKePotion = m_potionUIManager.m_shakePotion;
             m_shaKePotionController = m_shaKePotion.transform.GetChild(0).gameObject.GetComponent<ShakeController>();
             m_stepText = m_potionUIManager.m_stepText;
+            m_flowText = m_potionUIManager.m_flowText;
+            m_flowText.text = "";
             for (int i = 0; i < selectablePotions.Count; i++)
             {
                 GameObject elem = selectablePotions[i];
@@ -77,13 +82,12 @@ namespace PotionBrewMinigame
         private void changeStep() {
             i_currentStepCount++;
             if (i_currentStepCount >= m_gameParameters.i_maxStepsCount) {
-                e_currentStep = STEPS.FINISH;
-                m_stepText.text = "YOU WIN";
-                //WIN
+                setFinishState(true);
             }
             if (e_currentStep.Equals(STEPS.SELECT)) {
                 e_currentStep = STEPS.TILT;
             }else if (e_currentStep.Equals(STEPS.TILT)) {
+                m_flowText.text = "";
                 if (m_gameParameters.i_maxStepsCount - i_currentStepCount == 1)
                 {
                     setShakeState();
@@ -118,6 +122,18 @@ namespace PotionBrewMinigame
             m_shaKePotionController.b_startShake = true;
         }
 
+        private void setFinishState(bool b_win) {
+            e_currentStep = STEPS.FINISH;
+            if (b_win)
+            {
+                m_stepText.text = "YOU WIN";
+            }
+            else {
+                m_stepText.text = "YOU LOST";
+            }
+            
+        }
+
         private void Update()
         {
 
@@ -142,30 +158,41 @@ namespace PotionBrewMinigame
         private void CheckTiltState() {
             if (f_currentTiltSeconds >= m_gameParameters.i_secondsToTilt)
             {
-                m_currentTilting = null;
+                m_currentTiltingPotion = null;
                 m_potionUIManager.RemoveTiltable();
                 f_currentTiltSeconds = 0;
+                f_currentTiltOverflowSeconds = 0;
                 changeStep();
+            } else if (f_currentTiltOverflowSeconds>= m_gameParameters.i_maxOverflowSeconds) {
+                setFinishState(false);
             }
-            else if (m_currentTilting.GetComponent<TiltController>().e_FlowState.Equals(TiltController.FLOW_SPEED.SLOW))
+            else if (m_currentTiltingPotion.GetComponent<TiltController>().e_FlowState.Equals(TiltController.FLOW_SPEED.SLOW))
             {
+                m_flowText.text = "SLOW";
                 f_currentTiltSeconds += (Time.deltaTime / 2);
-                //Cambiare Sprite
             }
-            else if (m_currentTilting.GetComponent<TiltController>().e_FlowState.Equals(TiltController.FLOW_SPEED.MEDIUM))
+            else if (m_currentTiltingPotion.GetComponent<TiltController>().e_FlowState.Equals(TiltController.FLOW_SPEED.MEDIUM))
             {
+                m_flowText.text = "MEDIUM";
                 f_currentTiltSeconds += Time.deltaTime;
-                //Cambiare Sprite
             }
-            else if (m_currentTilting.GetComponent<TiltController>().e_FlowState.Equals(TiltController.FLOW_SPEED.FAST))
+            else if (m_currentTiltingPotion.GetComponent<TiltController>().e_FlowState.Equals(TiltController.FLOW_SPEED.FAST))
             {
+                m_flowText.text = "FAST";
                 f_currentTiltSeconds += (Time.deltaTime * 2);
-                //Cambiare Sprite
+            }
+            else if (m_currentTiltingPotion.GetComponent<TiltController>().e_FlowState.Equals(TiltController.FLOW_SPEED.OVERFLOW))
+            {
+                m_flowText.text = "OVERFLOW";
+                f_currentTiltOverflowSeconds+= Time.deltaTime;
+            }
+            else {
+                m_flowText.text = "NO";
             }
         }
         private void CheckAndSelectPotion(GameObject tiltPotion) {
-            if (m_currentTilting == null && e_currentStep.Equals(STEPS.SELECT) && m_potionToSelect.Equals(tiltPotion)) {
-                m_currentTilting = m_potionUIManager.AddTiltable(tiltPotion);
+            if (m_currentTiltingPotion == null && e_currentStep.Equals(STEPS.SELECT) && m_potionToSelect.Equals(tiltPotion)) {
+                m_currentTiltingPotion = m_potionUIManager.AddTiltable(tiltPotion);
                 changeStep();
                 m_stepText.text = "TILT";
             }

@@ -21,6 +21,7 @@ public class PotionUiManager : MonoBehaviour
     
 
     public Text m_stepText;
+    public Text m_flowText;
     public GameObject m_shakePotion;
 
 

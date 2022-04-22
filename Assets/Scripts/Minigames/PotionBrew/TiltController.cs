@@ -12,13 +12,26 @@ namespace PotionBrewMinigame
         [SerializeField]
         private float f_minAngle = 0;
         [SerializeField]
-        private float f_slowAngle = 20;
+        private float f_slowAngle = 57;//45
         [SerializeField]
-        private float f_mediumAngle = 45;
+        private float f_mediumAngle = 62;//60
         [SerializeField]
-        private float f_fastAngle = 70;
+        private float f_fastAngle = 67;//65-70
+        [SerializeField]
+        private float f_overFlowAngle = 72;//70-75
         [SerializeField]
         private float f_maxAngle = 90;
+        [SerializeField]
+        private Sprite s_potionNoFlow;
+        [SerializeField]
+        private Sprite s_potionSlowFlow;
+        [SerializeField]
+        private Sprite s_potionMediumFlow;
+        [SerializeField]
+        private Sprite s_potionFastFlow;
+        [SerializeField]
+        private Sprite s_potionOverFlow;
+
 
         public FLOW_SPEED e_FlowState {
             get { return e_flowState; }
@@ -27,18 +40,20 @@ namespace PotionBrewMinigame
             NO,
             SLOW,
             MEDIUM,
-            FAST
+            FAST,
+            OVERFLOW
         }
 
         private Gyroscope m_Gyro;
         private FLOW_SPEED e_flowState = FLOW_SPEED.NO;
-
+        private SpriteRenderer m_spriteRender;
 
         void Start()
         {
             //Set up and enable the gyroscope (check your device has one)
             m_Gyro = Input.gyro;
             m_Gyro.enabled = true;
+            m_spriteRender = GetComponent<SpriteRenderer>();
         }
 
         public void StartTilt()
@@ -65,21 +80,27 @@ namespace PotionBrewMinigame
                 {
                     transform.eulerAngles = targetEulerAngles;
 
-                    if (zAngle > f_minAngle && zAngle < f_slowAngle)
+                    if (zAngle > f_minAngle && zAngle < f_slowAngle && !e_flowState.Equals(FLOW_SPEED.NO))
                     {
                         e_flowState = FLOW_SPEED.NO;
+                        m_spriteRender.sprite = s_potionNoFlow;
                     }
-                    else if (zAngle > f_slowAngle && zAngle < f_mediumAngle)
+                    else if (zAngle > f_slowAngle && zAngle < f_mediumAngle && !e_flowState.Equals(FLOW_SPEED.SLOW) )
                     {
                         e_flowState = FLOW_SPEED.SLOW;
+                        m_spriteRender.sprite = s_potionSlowFlow;
                     }
-                    else if (zAngle > f_mediumAngle && zAngle < f_fastAngle)
+                    else if (zAngle > f_mediumAngle && zAngle < f_fastAngle && !e_flowState.Equals(FLOW_SPEED.MEDIUM))
                     {
                         e_flowState = FLOW_SPEED.MEDIUM;
                     }
-                    else if (zAngle > f_fastAngle && zAngle < f_maxAngle)
+                    else if (zAngle > f_fastAngle && zAngle < f_overFlowAngle && !e_flowState.Equals(FLOW_SPEED.FAST))
                     {
                         e_flowState = FLOW_SPEED.FAST;
+                    }
+                    else if (zAngle > f_overFlowAngle && zAngle < f_maxAngle && !e_flowState.Equals(FLOW_SPEED.OVERFLOW))
+                    {
+                        e_flowState = FLOW_SPEED.OVERFLOW;
                     }
 
                 }
