@@ -7,8 +7,13 @@ namespace PotionBrewMinigame
     public class ShakeController : MonoBehaviour
     {   [SerializeField]
         private float f_ShakeTreshOld = 3.5f;
+        [SerializeField]
+        private Sprite s_baseSprite;
+        [SerializeField]
+        private Sprite s_overFlowSprite;
 
         private Rigidbody2D m_rigidBody;
+        private SpriteRenderer spriteRenderer;
         private float f_magnitude = 0f;
         private Vector3 m_acceleration = Vector3.zero;
         //Public for debug
@@ -21,6 +26,7 @@ namespace PotionBrewMinigame
         // Start is called before the first frame update
         void Start()
         {
+            spriteRenderer = GetComponent<SpriteRenderer>();
             m_rigidBody = gameObject.GetComponent<Rigidbody2D>();
         }
         public void InitShakeController()
@@ -50,6 +56,18 @@ namespace PotionBrewMinigame
         }
         public void ResetShakeCount() {
             i_shakesCount = 0;
+        }
+        public void setBaseSprite() {
+            if (!spriteRenderer.sprite.Equals(s_baseSprite)) {
+                spriteRenderer.sprite = s_baseSprite;
+            }
+        }
+        public void setOverFlowSprite()
+        {
+            if (!spriteRenderer.sprite.Equals(s_overFlowSprite))
+            {
+                spriteRenderer.sprite = s_overFlowSprite;
+            }
         }
     }
 }

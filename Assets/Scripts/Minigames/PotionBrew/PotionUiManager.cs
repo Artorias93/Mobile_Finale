@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,28 +17,29 @@ public class PotionUiManager : MonoBehaviour
     private GameObject m_selectableItemPrefab;
     [SerializeField]
     private GameObject m_shakingItemPrefab;
-    
+    [SerializeField]
+    private Image selectPotionImage;
+
 
     public Text m_stepText;
     public Text m_flowText;
     public GameObject m_shakePotion;
+    private List<string> s_colors = new List<string>{ "#00B3FF", "#00FF26", "#FAFF00", "#FF0022", "#B900FF" };
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
     public List<GameObject> Initialize(int i_potionsCount)
     {
         m_shakePotion= Instantiate(m_shakingItemPrefab, m_shakeContainer.transform);
-        //Instantiate(m_tiltingItemPrefab, m_tiltingContainer.transform);
         List<GameObject> selectableObjects = new List<GameObject>();
+        Color potionColor;
         for (int i = 0; i < i_potionsCount; i++)
         {
             GameObject go = Instantiate(m_selectableItemPrefab, m_selectablePotionsContainer.transform);
             go.name = "Selectable" + i;
-            go.GetComponent<Image>().color = UnityEngine.Random.ColorHSV();
+            int i_colorIndex = Random.Range(0,s_colors.Count);
+            ColorUtility.TryParseHtmlString(s_colors[i_colorIndex], out potionColor);
+            go.GetComponent<Image>().color =potionColor;
+            s_colors.RemoveAt(i_colorIndex);
             selectableObjects.Add(go);
         }
         return selectableObjects;
@@ -51,16 +51,18 @@ public class PotionUiManager : MonoBehaviour
        return go;
     }
 
-    internal void RemoveTiltable()
+    public void RemoveTiltable()
     {
         Destroy(m_tiltingContainer.transform.GetChild(0).gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void setSelectImage(Color newColor) {
+        selectPotionImage.color = newColor;
+        selectPotionImage.gameObject.SetActive(true);
     }
 
+    public void RemoveSelectImage() {
+        selectPotionImage.gameObject.SetActive(false);
+    }
 
 }

@@ -17,7 +17,7 @@ namespace PotionBrewMinigame
 
     public class PotionBrewManager : AMinigameManager
     {
-        //013835
+        
         [SerializeField]
         private PotionUiManager m_potionUIManager;
         [SerializeField] private GameParameters gp_easy, gp_medium, gp_hard;
@@ -34,7 +34,7 @@ namespace PotionBrewMinigame
 
         
         private STEPS e_currentStep;
-        private GameObject m_currentTiltingPotion;
+        private TiltController m_currentTiltingPotionController;
         private List<GameObject> selectablePotions;
         private GameObject m_potionToSelect;
         private GameObject m_shaKePotion;
@@ -67,8 +67,8 @@ namespace PotionBrewMinigame
         private void InitializeRound()
         {
             selectablePotions = m_potionUIManager.Initialize(m_gameParameters.i_selectablePotions);
-            m_shaKePotion = m_potionUIManager.m_shakePotion;
-            m_shaKePotionController = m_shaKePotion.transform.GetChild(0).gameObject.GetComponent<ShakeController>();
+            m_shaKePotion = m_potionUIManager.m_shakePotion.transform.GetChild(0).gameObject;
+            m_shaKePotionController = m_shaKePotion.GetComponent<ShakeController>();
             m_stepText = m_potionUIManager.m_stepText;
             m_flowText = m_potionUIManager.m_flowText;
             m_flowText.text = "";
@@ -114,16 +114,18 @@ namespace PotionBrewMinigame
             e_currentStep = STEPS.SELECT;
             m_stepText.text = "SELECT";
             m_potionToSelect = selectablePotions[Random.Range(0, selectablePotions.Count)];
-            m_shaKePotion.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = m_potionToSelect.GetComponent<Image>().color;
+            m_potionUIManager.setSelectImage(m_potionToSelect.GetComponent<Image>().color); 
         }
         private void setShakeState() {
             e_currentStep = STEPS.SHAKE;
             m_stepText.text = "SHAKE";
+            m_potionUIManager.RemoveSelectImage();
             m_shaKePotionController.b_startShake = true;
         }
 
         private void setFinishState(bool b_win) {
             e_currentStep = STEPS.FINISH;
+            m_potionUIManager.RemoveSelectImage();
             if (b_win)
             {
                 m_stepText.text = "YOU WIN";
@@ -158,41 +160,55 @@ namespace PotionBrewMinigame
         private void CheckTiltState() {
             if (f_currentTiltSeconds >= m_gameParameters.i_secondsToTilt)
             {
-                m_currentTiltingPotion = null;
+                m_currentTiltingPotionController = null;
                 m_potionUIManager.RemoveTiltable();
                 f_currentTiltSeconds = 0;
                 f_currentTiltOverflowSeconds = 0;
+                m_shaKePotionController.setBaseSprite();
                 changeStep();
-            } else if (f_currentTiltOverflowSeconds>= m_gameParameters.i_maxOverflowSeconds) {
+            }
+            else if (f_currentTiltOverflowSeconds >= m_gameParameters.i_maxOverflowSeconds)
+            {
                 setFinishState(false);
             }
-            else if (m_currentTiltingPotion.GetComponent<TiltController>().e_FlowState.Equals(TiltController.FLOW_SPEED.SLOW))
-            {
-                m_flowText.text = "SLOW";
-                f_currentTiltSeconds += (Time.deltaTime / 2);
-            }
-            else if (m_currentTiltingPotion.GetComponent<TiltController>().e_FlowState.Equals(TiltController.FLOW_SPEED.MEDIUM))
-            {
-                m_flowText.text = "MEDIUM";
-                f_currentTiltSeconds += Time.deltaTime;
-            }
-            else if (m_currentTiltingPotion.GetComponent<TiltController>().e_FlowState.Equals(TiltController.FLOW_SPEED.FAST))
-            {
-                m_flowText.text = "FAST";
-                f_currentTiltSeconds += (Time.deltaTime * 2);
-            }
-            else if (m_currentTiltingPotion.GetComponent<TiltController>().e_FlowState.Equals(TiltController.FLOW_SPEED.OVERFLOW))
-            {
-                m_flowText.text = "OVERFLOW";
-                f_currentTiltOverflowSeconds+= Time.deltaTime;
-            }
             else {
-                m_flowText.text = "NO";
+                if (!m_currentTiltingPotionController.e_FlowState.Equals(TiltController.FLOW_SPEED.OVERFLOW))
+                {
+                    m_shaKePotionController.setBaseSprite();
+                    if (m_currentTiltingPotionController.e_FlowState.Equals(TiltController.FLOW_SPEED.SLOW))
+                    {
+                        m_flowText.text = "SLOW";
+                        f_currentTiltSeconds += (Time.deltaTime / 2);
+                    }
+                    else if (m_currentTiltingPotionController.e_FlowState.Equals(TiltController.FLOW_SPEED.MEDIUM))
+                    {
+                        m_flowText.text = "MEDIUM";
+                        f_currentTiltSeconds += Time.deltaTime;
+                    }
+                    else if (m_currentTiltingPotionController.e_FlowState.Equals(TiltController.FLOW_SPEED.FAST))
+                    {
+                        m_flowText.text = "FAST";
+                        f_currentTiltSeconds += (Time.deltaTime * 2);
+                    }
+                    else
+                    {
+                        m_flowText.text = "NO";
+                    }
+
+                }
+                else {
+                    m_flowText.text = "OVERFLOW";
+                    f_currentTiltOverflowSeconds += Time.deltaTime;
+                    m_shaKePotionController.setOverFlowSprite();
+                }
+
             }
         }
         private void CheckAndSelectPotion(GameObject tiltPotion) {
-            if (m_currentTiltingPotion == null && e_currentStep.Equals(STEPS.SELECT) && m_potionToSelect.Equals(tiltPotion)) {
-                m_currentTiltingPotion = m_potionUIManager.AddTiltable(tiltPotion);
+            if (m_currentTiltingPotionController == null && e_currentStep.Equals(STEPS.SELECT) && m_potionToSelect.Equals(tiltPotion)) {
+                GameObject go = m_potionUIManager.AddTiltable(tiltPotion);
+                m_currentTiltingPotionController =go.transform.GetChild(0).gameObject.GetComponent<TiltController>();
+                m_potionUIManager.RemoveSelectImage();
                 changeStep();
                 m_stepText.text = "TILT";
             }
