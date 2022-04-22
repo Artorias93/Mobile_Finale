@@ -15,9 +15,11 @@ namespace PotionBrewMinigame
         [SerializeField]
         private int i_secondsToTilt = 5;
         [SerializeField]
-        private int i_totalShakes = 3;
+        private int i_totalShakes = 6;
+        [SerializeField]
+        private int i_maxStepsCount = 5;
 
-        public enum steps
+        public enum STEPS
         {
             SELECT,
             TILT,
@@ -25,17 +27,21 @@ namespace PotionBrewMinigame
         }
 
         
-        private steps currentStep;
+        private STEPS e_currentStep;
         private GameObject m_currentTilting;
         private List<GameObject> selectablePotions;
         private GameObject m_potionToSelect;
         private GameObject m_shaKePotion;
+        private ShakeController m_shaKePotionController;
         private float i_currentTiltSeconds=0;
-        private int i_currentShakes;
+        private Text m_stepText;
+
         private void Start()
         {
             selectablePotions = m_potionUIManager.Initialize(i_selectablePotions);
             m_shaKePotion = m_potionUIManager.m_shakePotion;
+            m_shaKePotionController = m_shaKePotion.transform.GetChild(0).gameObject.GetComponent<ShakeController>();
+            m_stepText = m_potionUIManager.m_stepText;
             for (int i = 0; i<selectablePotions.Count;i++) {
                 GameObject elem = selectablePotions[i];
                 elem.GetComponent<Button>().onClick.AddListener(() => { CheckAndSelectPotion(elem.gameObject); });
@@ -44,21 +50,57 @@ namespace PotionBrewMinigame
 
 
         }
+
+        private void changeStep() {
+            if (e_currentStep.Equals(STEPS.SELECT)) {
+                e_currentStep = STEPS.TILT;
+            }else if (e_currentStep.Equals(STEPS.TILT)) {
+                if (Random.Range(0, 2) == 0)
+                {
+                    setShakeState();
+                }
+                else
+                {
+                    setSelectStep();
+                }
+            }else if (e_currentStep.Equals(STEPS.SHAKE))
+            {
+                setSelectStep();
+            }
+
+        }
         private void setSelectStep() {
-            currentStep = steps.SELECT;
+            e_currentStep = STEPS.SELECT;
+            m_stepText.text = "SELECT";
             m_potionToSelect = selectablePotions[Random.Range(0, selectablePotions.Count)];
             m_shaKePotion.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = m_potionToSelect.GetComponent<Image>().color;
+        }
+        private void setShakeState() {
+            e_currentStep = STEPS.SHAKE;
+            m_stepText.text = "SHAKE";
+            m_shaKePotionController.b_startShake = true;
         }
 
         private void Update()
         {
 
-            if (currentStep.Equals(steps.TILT))
+            if (e_currentStep.Equals(STEPS.TILT))
             {
                 CheckTiltState();
             }
+            else if (e_currentStep.Equals(STEPS.SHAKE)) {             
+                CheckShakeState();
+            }
         }
 
+
+        private void CheckShakeState() {
+            if (m_shaKePotionController.i_ShakeCount >= i_totalShakes) {
+                m_shaKePotionController.ResetShakeCount();
+                m_shaKePotionController.b_startShake = false;
+                changeStep();
+            }
+        }
 
         private void CheckTiltState() {
             if (i_currentTiltSeconds >= i_secondsToTilt)
@@ -66,8 +108,7 @@ namespace PotionBrewMinigame
                 m_currentTilting = null;
                 m_potionUIManager.RemoveTiltable();
                 i_currentTiltSeconds = 0;
-                setSelectStep();
-                //Rimuovo il tilting item e cambio stato
+                changeStep();
             }
             else if (m_currentTilting.GetComponent<TiltController>().e_FlowState.Equals(TiltController.FLOW_SPEED.SLOW))
             {
@@ -86,9 +127,10 @@ namespace PotionBrewMinigame
             }
         }
         private void CheckAndSelectPotion(GameObject tiltPotion) {
-            if (m_currentTilting == null && currentStep.Equals(steps.SELECT) && m_potionToSelect.Equals(tiltPotion)) {
+            if (m_currentTilting == null && e_currentStep.Equals(STEPS.SELECT) && m_potionToSelect.Equals(tiltPotion)) {
                 m_currentTilting = m_potionUIManager.AddTiltable(tiltPotion);
-                currentStep = steps.TILT;
+                changeStep();
+                m_stepText.text = "TILT";
             }
         }
     }

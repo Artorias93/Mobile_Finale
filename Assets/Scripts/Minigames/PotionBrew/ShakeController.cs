@@ -30,15 +30,12 @@ namespace PotionBrewMinigame
         // Update is called once per frame
         void Update()
         {
-            if (b_startShake)
-            {
-                f_magnitude = Input.acceleration.magnitude;
-                m_acceleration = Input.acceleration;
-            }
+            f_magnitude = Input.acceleration.magnitude;
+            m_acceleration = Input.acceleration;
         }
         private void FixedUpdate()
         {
-            if (f_magnitude >= f_ShakeTreshOld)
+            if (b_startShake && f_magnitude >= f_ShakeTreshOld)
             {
                 i_shakesCount++;
                 shake(m_acceleration);
@@ -50,6 +47,9 @@ namespace PotionBrewMinigame
         {
             deviceAcceleration.y = Mathf.Pow(deviceAcceleration.z, 2);
             m_rigidBody.AddForce(deviceAcceleration, ForceMode2D.Impulse);
+        }
+        public void ResetShakeCount() {
+            i_shakesCount = 0;
         }
     }
 }

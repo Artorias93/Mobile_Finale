@@ -18,7 +18,9 @@ public class PotionUiManager : MonoBehaviour
     private GameObject m_selectableItemPrefab;
     [SerializeField]
     private GameObject m_shakingItemPrefab;
+    
 
+    public Text m_stepText;
     public GameObject m_shakePotion;
 
 
