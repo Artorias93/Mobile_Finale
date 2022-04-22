@@ -5,25 +5,30 @@ using UnityEngine.UI;
 
 namespace PotionBrewMinigame
 {
-    public class PotionBrewManager : MonoBehaviour
+    [System.Serializable]
+    public struct GameParameters
+    {
+        public int i_selectablePotions;
+        public int i_secondsToTilt;
+        public int i_totalShakes;
+        public int i_maxStepsCount;
+    }
+
+    public class PotionBrewManager : AMinigameManager
     {
         //013835
         [SerializeField]
         private PotionUiManager m_potionUIManager;
-        [SerializeField]
-        private int i_selectablePotions = 4;
-        [SerializeField]
-        private int i_secondsToTilt = 5;
-        [SerializeField]
-        private int i_totalShakes = 6;
-        [SerializeField]
-        private int i_maxStepsCount = 5;
+        [SerializeField] private GameParameters gp_easy, gp_medium, gp_hard;
+        private GameParameters m_gameParameters;
+
 
         public enum STEPS
         {
             SELECT,
             TILT,
-            SHAKE
+            SHAKE,
+            FINISH
         }
 
         
@@ -33,40 +38,72 @@ namespace PotionBrewMinigame
         private GameObject m_potionToSelect;
         private GameObject m_shaKePotion;
         private ShakeController m_shaKePotionController;
-        private float i_currentTiltSeconds=0;
+        private float f_currentTiltSeconds=0;
+        private int i_currentStepCount = 0;
         private Text m_stepText;
 
         private void Start()
         {
-            selectablePotions = m_potionUIManager.Initialize(i_selectablePotions);
+            //DEBUG
+            //BeginMinigame(Difficulty.HARD);
+
+        }
+        public override void BeginMinigame(Difficulty difficulty)
+        {
+            m_difficulty = difficulty;
+
+            if (m_difficulty == Difficulty.EASY)
+                m_gameParameters = gp_easy;
+            else if (m_difficulty == Difficulty.MEDIUM)
+                m_gameParameters = gp_medium;
+            else if (m_difficulty == Difficulty.HARD)
+                m_gameParameters = gp_hard;
+            InitializeRound();
+        }
+
+        private void InitializeRound()
+        {
+            selectablePotions = m_potionUIManager.Initialize(m_gameParameters.i_selectablePotions);
             m_shaKePotion = m_potionUIManager.m_shakePotion;
             m_shaKePotionController = m_shaKePotion.transform.GetChild(0).gameObject.GetComponent<ShakeController>();
             m_stepText = m_potionUIManager.m_stepText;
-            for (int i = 0; i<selectablePotions.Count;i++) {
+            for (int i = 0; i < selectablePotions.Count; i++)
+            {
                 GameObject elem = selectablePotions[i];
                 elem.GetComponent<Button>().onClick.AddListener(() => { CheckAndSelectPotion(elem.gameObject); });
             }
             setSelectStep();
-
-
         }
-
         private void changeStep() {
+            i_currentStepCount++;
+            if (i_currentStepCount >= m_gameParameters.i_maxStepsCount) {
+                e_currentStep = STEPS.FINISH;
+                m_stepText.text = "YOU WIN";
+                //WIN
+            }
             if (e_currentStep.Equals(STEPS.SELECT)) {
                 e_currentStep = STEPS.TILT;
             }else if (e_currentStep.Equals(STEPS.TILT)) {
-                if (Random.Range(0, 2) == 0)
+                if (m_gameParameters.i_maxStepsCount - i_currentStepCount == 1)
                 {
                     setShakeState();
                 }
-                else
-                {
-                    setSelectStep();
+                else {
+                    if (Random.Range(0, 2) == 0)
+                    {
+                        setShakeState();
+                    }
+                    else
+                    {
+                        setSelectStep();
+                    }
                 }
+                
             }else if (e_currentStep.Equals(STEPS.SHAKE))
             {
                 setSelectStep();
             }
+            
 
         }
         private void setSelectStep() {
@@ -95,7 +132,7 @@ namespace PotionBrewMinigame
 
 
         private void CheckShakeState() {
-            if (m_shaKePotionController.i_ShakeCount >= i_totalShakes) {
+            if (m_shaKePotionController.i_ShakeCount >= m_gameParameters.i_totalShakes) {
                 m_shaKePotionController.ResetShakeCount();
                 m_shaKePotionController.b_startShake = false;
                 changeStep();
@@ -103,26 +140,26 @@ namespace PotionBrewMinigame
         }
 
         private void CheckTiltState() {
-            if (i_currentTiltSeconds >= i_secondsToTilt)
+            if (f_currentTiltSeconds >= m_gameParameters.i_secondsToTilt)
             {
                 m_currentTilting = null;
                 m_potionUIManager.RemoveTiltable();
-                i_currentTiltSeconds = 0;
+                f_currentTiltSeconds = 0;
                 changeStep();
             }
             else if (m_currentTilting.GetComponent<TiltController>().e_FlowState.Equals(TiltController.FLOW_SPEED.SLOW))
             {
-                i_currentTiltSeconds += (Time.deltaTime / 2);
+                f_currentTiltSeconds += (Time.deltaTime / 2);
                 //Cambiare Sprite
             }
             else if (m_currentTilting.GetComponent<TiltController>().e_FlowState.Equals(TiltController.FLOW_SPEED.MEDIUM))
             {
-                i_currentTiltSeconds += Time.deltaTime;
+                f_currentTiltSeconds += Time.deltaTime;
                 //Cambiare Sprite
             }
             else if (m_currentTilting.GetComponent<TiltController>().e_FlowState.Equals(TiltController.FLOW_SPEED.FAST))
             {
-                i_currentTiltSeconds += (Time.deltaTime * 2);
+                f_currentTiltSeconds += (Time.deltaTime * 2);
                 //Cambiare Sprite
             }
         }
@@ -132,6 +169,10 @@ namespace PotionBrewMinigame
                 changeStep();
                 m_stepText.text = "TILT";
             }
+        }
+        public override void EndMinigame()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

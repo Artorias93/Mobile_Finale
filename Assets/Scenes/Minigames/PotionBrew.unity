@@ -459,9 +459,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_potionUIManager: {fileID: 95029517}
-  i_selectablePotions: 4
-  i_secondsToTilt: 5
-  i_totalShakes: 6
+  gp_easy:
+    i_selectablePotions: 3
+    i_secondsToTilt: 3
+    i_totalShakes: 3
+    i_maxStepsCount: 5
+  gp_medium:
+    i_selectablePotions: 4
+    i_secondsToTilt: 5
+    i_totalShakes: 7
+    i_maxStepsCount: 7
+  gp_hard:
+    i_selectablePotions: 5
+    i_secondsToTilt: 7
+    i_totalShakes: 11
+    i_maxStepsCount: 9
 --- !u!4 &508258256
 Transform:
   m_ObjectHideFlags: 0
