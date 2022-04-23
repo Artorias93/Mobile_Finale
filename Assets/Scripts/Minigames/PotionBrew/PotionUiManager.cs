@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using PotionBrewMinigame;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -64,5 +65,4 @@ public class PotionUiManager : MonoBehaviour
     public void RemoveSelectImage() {
         selectPotionImage.gameObject.SetActive(false);
     }
-
 }

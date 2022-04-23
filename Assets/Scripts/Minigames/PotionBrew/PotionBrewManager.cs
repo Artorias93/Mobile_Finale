@@ -8,6 +8,7 @@ namespace PotionBrewMinigame
     [System.Serializable]
     public struct GameParameters
     {
+        public float f_gameTime;
         public int i_selectablePotions;
         public int i_secondsToTilt;
         public int i_totalShakes;
@@ -22,18 +23,37 @@ namespace PotionBrewMinigame
         private PotionUiManager m_potionUIManager;
         [SerializeField] private GameParameters gp_easy, gp_medium, gp_hard;
         private GameParameters m_gameParameters;
-
+        public static PotionBrewManager Instance;
+        public float RemainingTime
+        {
+            get { return m_gameTimer ? m_gameTimer.RemainingTime : -1; }
+        }
+        public int CurrentStepCount {
+            get { return i_currentStepCount; }
+        }
 
         public enum STEPS
         {
+            NOT_STARTED,
             SELECT,
             TILT,
             SHAKE,
             FINISH
         }
+        public GameParameters GameParameters
+        {
+            get { return m_gameParameters; }
+        }
 
-        
-        private STEPS e_currentStep;
+        public STEPS CurrentStep {
+            get { return e_currentStep; }
+        }
+        public bool GameWon {
+            get { return b_gameWon; }
+        }
+
+
+        private STEPS e_currentStep = STEPS.NOT_STARTED;
         private TiltController m_currentTiltingPotionController;
         private List<GameObject> selectablePotions;
         private GameObject m_potionToSelect;
@@ -44,12 +64,18 @@ namespace PotionBrewMinigame
         private int i_currentStepCount = 0;
         private Text m_stepText;
         private Text m_flowText;
+        private Timer m_gameTimer;
+        private bool b_gameWon;
 
+        private void Awake()
+        {
+            Instance = this;
+            b_gameWon = false;
+        }
         private void Start()
         {
-            //DEBUG
-            //BeginMinigame(Difficulty.HARD);
-
+            //Remove comment for scene debug
+            //BeginMinigame(Difficulty.MEDIUM);
         }
         public override void BeginMinigame(Difficulty difficulty)
         {
@@ -77,6 +103,8 @@ namespace PotionBrewMinigame
                 GameObject elem = selectablePotions[i];
                 elem.GetComponent<Button>().onClick.AddListener(() => { CheckAndSelectPotion(elem.gameObject); });
             }
+            m_gameTimer = Timer.Create(m_gameParameters.f_gameTime, EndMinigame, destroyOnFinish: true, name: "Minigame Timer");
+            m_gameTimer.StartTimer();
             setSelectStep();
         }
         private void changeStep() {
@@ -126,14 +154,16 @@ namespace PotionBrewMinigame
         private void setFinishState(bool b_win) {
             e_currentStep = STEPS.FINISH;
             m_potionUIManager.RemoveSelectImage();
-            if (b_win)
+            m_shaKePotionController.b_startShake = false;
+            if (m_currentTiltingPotionController!= null)
             {
-                m_stepText.text = "YOU WIN";
+                m_currentTiltingPotionController = null;
+                m_potionUIManager.RemoveTiltable();
             }
-            else {
-                m_stepText.text = "YOU LOST";
-            }
-            
+            b_gameWon = b_win;
+            m_flowText.text = "";
+            m_stepText.text = "";
+            m_gameTimer.StopTimer();
         }
 
         private void Update()
@@ -215,7 +245,9 @@ namespace PotionBrewMinigame
         }
         public override void EndMinigame()
         {
-            throw new System.NotImplementedException();
+            if (m_gameTimer != null && m_gameTimer.RemainingTime <= 0.0f) {
+                setFinishState(false);
+            }
         }
     }
 }
