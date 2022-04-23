@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using PotionBrewMinigame;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -38,7 +39,7 @@ public class PotionUiManager : MonoBehaviour
             go.name = "Selectable" + i;
             int i_colorIndex = Random.Range(0,s_colors.Count);
             ColorUtility.TryParseHtmlString(s_colors[i_colorIndex], out potionColor);
-            go.GetComponent<Image>().color =potionColor;
+            go.transform.GetChild(0).GetComponent<Image>().color =potionColor;
             s_colors.RemoveAt(i_colorIndex);
             selectableObjects.Add(go);
         }
@@ -47,7 +48,7 @@ public class PotionUiManager : MonoBehaviour
 
     public GameObject AddTiltable(GameObject tiltPotion) {
        GameObject go= Instantiate(m_tiltingItemPrefab, m_tiltingContainer.transform);
-       go.GetComponent<SpriteRenderer>().color = tiltPotion.GetComponent<Image>().color;
+       go.GetComponent<SpriteRenderer>().color = tiltPotion.transform.GetChild(0).GetComponent<Image>().color;
        return go;
     }
 
@@ -57,12 +58,11 @@ public class PotionUiManager : MonoBehaviour
     }
 
     public void setSelectImage(Color newColor) {
-        selectPotionImage.color = newColor;
+        selectPotionImage.transform.GetChild(0).GetComponent<Image>().color = newColor;
         selectPotionImage.gameObject.SetActive(true);
     }
 
     public void RemoveSelectImage() {
         selectPotionImage.gameObject.SetActive(false);
     }
-
 }
