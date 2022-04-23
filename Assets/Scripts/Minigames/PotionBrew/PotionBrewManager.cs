@@ -75,7 +75,7 @@ namespace PotionBrewMinigame
         private void Start()
         {
             //Remove comment for scene debug
-            //BeginMinigame(Difficulty.MEDIUM);
+            BeginMinigame(Difficulty.MEDIUM);
         }
         public override void BeginMinigame(Difficulty difficulty)
         {
@@ -110,7 +110,7 @@ namespace PotionBrewMinigame
         private void changeStep() {
             i_currentStepCount++;
             if (i_currentStepCount >= m_gameParameters.i_maxStepsCount) {
-                setFinishState(true);
+                setFinishStep(true);
             }
             if (e_currentStep.Equals(STEPS.SELECT)) {
                 e_currentStep = STEPS.TILT;
@@ -118,12 +118,12 @@ namespace PotionBrewMinigame
                 m_flowText.text = "";
                 if (m_gameParameters.i_maxStepsCount - i_currentStepCount == 1)
                 {
-                    setShakeState();
+                    setShakeStep();
                 }
                 else {
                     if (Random.Range(0, 2) == 0)
                     {
-                        setShakeState();
+                        setShakeStep();
                     }
                     else
                     {
@@ -142,16 +142,16 @@ namespace PotionBrewMinigame
             e_currentStep = STEPS.SELECT;
             m_stepText.text = "SELECT";
             m_potionToSelect = selectablePotions[Random.Range(0, selectablePotions.Count)];
-            m_potionUIManager.setSelectImage(m_potionToSelect.GetComponent<Image>().color); 
+            m_potionUIManager.setSelectImage(m_potionToSelect.transform.GetChild(0).GetComponent<Image>().color); 
         }
-        private void setShakeState() {
+        private void setShakeStep() {
             e_currentStep = STEPS.SHAKE;
             m_stepText.text = "SHAKE";
             m_potionUIManager.RemoveSelectImage();
             m_shaKePotionController.b_startShake = true;
         }
 
-        private void setFinishState(bool b_win) {
+        private void setFinishStep(bool b_win) {
             e_currentStep = STEPS.FINISH;
             m_potionUIManager.RemoveSelectImage();
             m_shaKePotionController.b_startShake = false;
@@ -199,7 +199,7 @@ namespace PotionBrewMinigame
             }
             else if (f_currentTiltOverflowSeconds >= m_gameParameters.i_maxOverflowSeconds)
             {
-                setFinishState(false);
+                setFinishStep(false);
             }
             else {
                 if (!m_currentTiltingPotionController.e_FlowState.Equals(TiltController.FLOW_SPEED.OVERFLOW))
@@ -246,7 +246,7 @@ namespace PotionBrewMinigame
         public override void EndMinigame()
         {
             if (m_gameTimer != null && m_gameTimer.RemainingTime <= 0.0f) {
-                setFinishState(false);
+                setFinishStep(false);
             }
         }
     }
