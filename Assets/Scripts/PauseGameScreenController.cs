@@ -6,12 +6,15 @@ public class PauseGameScreenController : MonoBehaviour
 {
     [Header("UI References")]
     [SerializeField] private GameObject panel;
-    
+    [SerializeField] private GameObject blockPanel;
+
     public void showPausePanel() {
         panel.SetActive(true);
+        blockPanel.SetActive(true);
     }
 
     public void hidePausePanel() {
         panel.SetActive(false);
+        blockPanel.SetActive(false);
     }
 }

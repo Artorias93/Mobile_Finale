@@ -52,10 +52,6 @@ namespace PotionBrewMinigame
         public bool GameWon {
             get { return b_gameWon; }
         }
-        public bool GamePaused {
-            get { return b_gamePaused; }
-        }
-
 
         private STEPS e_currentStep = STEPS.NOT_STARTED;
         private TiltController m_currentTiltingPotionController;
@@ -70,7 +66,6 @@ namespace PotionBrewMinigame
         private Text m_flowText;
         private Timer m_gameTimer;
         private bool b_gameWon;
-        private bool b_gamePaused = false;
 
         private void Awake()
         {
@@ -261,22 +256,12 @@ namespace PotionBrewMinigame
         {
             Time.timeScale = 0f;
             AudioListener.pause = true;
-            b_gamePaused = true;
-            for (int i = 0; i < selectablePotions.Count; i++) {
-                selectablePotions[i].GetComponent<Button>().interactable = false;
-            }
         }
 
         public override void ResumeGame()
         {
             Time.timeScale = 1;
             AudioListener.pause = false;
-            b_gamePaused = false;
-            for (int i = 0; i < selectablePotions.Count; i++)
-            {
-                selectablePotions[i].GetComponent<Button>().interactable = true;
-            }
-
         }
     }
 }
