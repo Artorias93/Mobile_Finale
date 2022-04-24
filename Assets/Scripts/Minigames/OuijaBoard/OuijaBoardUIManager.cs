@@ -6,35 +6,26 @@ using UnityEngine.UI;
 
 namespace OuijaBoardMinigame
 {
-    public class OuijaBoardUIManager : MonoBehaviour
+    public class OuijaBoardUIManager : AUIManager
     {
         [Header("References")]
         public Text clearedWords;
-        [SerializeField] private Slider timerSlider;
-        [SerializeField] private Button pauseBtn;
         public GameObject target;
         public GameObject results;
 
-        private void LateUpdate()
+        protected override void LateUpdate()
         {
             OuijaBoardManager obm = OuijaBoardManager.m_instance;
 
-            if(obm.RemainingTime >= 0)
+            if(obm != null)
             {
                 float normalizedTime = (float)obm.RemainingTime / obm.PlayTime;
-                timerSlider.value = normalizedTime;
+                UpdateSlider(normalizedTime);
+                if (obm.b_gameFinished) {
+                    endGameScreenController.showEndGamePanel(obm.b_win);
+                }
             }
             
-        }
-
-        public void DisableAll()
-        {
-            pauseBtn.interactable = false;
-        }
-
-        public void EnableAll()
-        {
-            pauseBtn.interactable=true;
         }
     }
 }

@@ -164,6 +164,8 @@ MonoBehaviour:
     m_wordsNum: 7
   m_ouijaManager: {fileID: 1895374559}
   m_ouijaBoardUIManager: {fileID: 1367922344}
+  b_win: 0
+  b_gameFinished: 0
 --- !u!114 &163589292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -880,6 +882,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3212852150393083677, guid: b845b8c5da90b584eb0eaa320d874dea, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 260.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3212852150393083677, guid: b845b8c5da90b584eb0eaa320d874dea, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 128.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4628634219556293415, guid: b845b8c5da90b584eb0eaa320d874dea, type: 3}
       propertyPath: m_text
       value: 
@@ -888,6 +898,10 @@ PrefabInstance:
       propertyPath: clearedWords
       value: 
       objectReference: {fileID: 2032732756}
+    - target: {fileID: 7728646551166258340, guid: b845b8c5da90b584eb0eaa320d874dea, type: 3}
+      propertyPath: endGameScreenController
+      value: 
+      objectReference: {fileID: 7728646551980530189}
     - target: {fileID: 7728646551166258343, guid: b845b8c5da90b584eb0eaa320d874dea, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1062,3 +1076,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b845b8c5da90b584eb0eaa320d874dea, type: 3}
+--- !u!114 &7728646551980530189 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3212852149915966329, guid: b845b8c5da90b584eb0eaa320d874dea, type: 3}
+  m_PrefabInstance: {fileID: 7728646551980530188}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5193197359310c349ab66e0d6b87704d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -27,7 +27,10 @@ namespace OuijaBoardMinigame
         [SerializeField] private OuijaBoardUIManager m_ouijaBoardUIManager;
 
         public static OuijaBoardManager m_instance;
-        private Timer gameTimer;
+        private Timer m_gameTimer;
+
+        public bool b_win = false;
+        public bool b_gameFinished = false;
 
 #region PROPERTIES
 
@@ -42,7 +45,7 @@ namespace OuijaBoardMinigame
 
         public float RemainingTime
         {
-            get { return gameTimer ? gameTimer.RemainingTime : -1; }
+            get { return m_gameTimer ? m_gameTimer.RemainingTime : -1; }
         }
 #endregion
         private void Awake()
@@ -69,13 +72,19 @@ namespace OuijaBoardMinigame
             else if (m_difficulty == Difficulty.HARD)
                 m_gameParameters = gp_hard;
 
-            gameTimer = Timer.Create(m_gameParameters.m_playTime, timerHasEnded, name: "gameTimer");
-            gameTimer.StartTimer();
+            m_gameTimer = Timer.Create(m_gameParameters.m_playTime, EndMinigame, name: "gameTimer");
+            m_gameTimer.StartTimer();
+            m_ouijaManager.Initialize();
+            m_ouijaManager.ProposeWord();
         }
 
         public override void EndMinigame()
         {
-            throw new System.NotImplementedException();
+            if (m_gameTimer != null && m_gameTimer.RemainingTime <= 0.0f)
+            {
+                b_gameFinished = true;
+                b_win = false;
+            }
         }
 
         private void timerHasEnded()

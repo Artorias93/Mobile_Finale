@@ -35,10 +35,8 @@ namespace OuijaBoardMinigame
 
 
         private void Start()
-        {
-            m_ouijaBoardManager.BeginMinigame(Difficulty.EASY);             // <------- For Testing Only, To delete!
-            Initialize();
-            ProposeWord();
+        {   //Remove comment for debug
+            //m_ouijaBoardManager.BeginMinigame(Difficulty.EASY);
         }
 
         public void Initialize()
@@ -92,7 +90,10 @@ namespace OuijaBoardMinigame
             s_word = ouijaWords[Random.Range(0, ouijaWords.Length)];
             m_selector.letters.Clear();
 
-            if (usedWords.Count == m_ouijaBoardManager.WordsNum && b_finish) print("BRAVOOO!!!");          // <------- HERE YOU WIN, SET HER THE CALLBACK TO WIN EVENT METHOD!!!
+            if (usedWords.Count == m_ouijaBoardManager.WordsNum && b_finish) {
+                m_ouijaBoardManager.b_gameFinished = true;
+                m_ouijaBoardManager.b_win = true;
+            }
             else if (!usedWords.Contains(s_word) && usedWords.Count < m_ouijaBoardManager.WordsNum)
             {
                 usedWords.Add(s_word);
