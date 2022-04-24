@@ -75,7 +75,7 @@ namespace PotionBrewMinigame
         private void Start()
         {
             //Remove comment for scene debug
-            BeginMinigame(Difficulty.MEDIUM);
+            //BeginMinigame(Difficulty.MEDIUM);
         }
         public override void BeginMinigame(Difficulty difficulty)
         {
