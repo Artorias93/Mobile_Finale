@@ -97,5 +97,14 @@ namespace OuijaBoardMinigame
             Debug.Log("HAI VINTOOO!!!");
         }
 
+        public override void PauseGame()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override void ResumeGame()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

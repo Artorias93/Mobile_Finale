@@ -10,6 +10,7 @@ public abstract class AUIManager : MonoBehaviour
     [SerializeField] protected Slider timerSlider;
     [SerializeField] protected Button pauseBtn;
     [SerializeField] protected EndGameScreenController endGameScreenController;
+    [SerializeField] protected PauseGameScreenController pauseGameScreenController;
 
     protected abstract void LateUpdate();
 

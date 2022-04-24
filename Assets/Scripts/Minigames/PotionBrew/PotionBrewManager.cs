@@ -22,6 +22,7 @@ namespace PotionBrewMinigame
         [SerializeField]
         private PotionUiManager m_potionUIManager;
         [SerializeField] private GameParameters gp_easy, gp_medium, gp_hard;
+        [SerializeField] private GeneralUIManager generalUIManager;
         private GameParameters m_gameParameters;
         public static PotionBrewManager Instance;
         public float RemainingTime
@@ -51,6 +52,9 @@ namespace PotionBrewMinigame
         public bool GameWon {
             get { return b_gameWon; }
         }
+        public bool GamePaused {
+            get { return b_gamePaused; }
+        }
 
 
         private STEPS e_currentStep = STEPS.NOT_STARTED;
@@ -66,6 +70,7 @@ namespace PotionBrewMinigame
         private Text m_flowText;
         private Timer m_gameTimer;
         private bool b_gameWon;
+        private bool b_gamePaused = false;
 
         private void Awake()
         {
@@ -75,7 +80,7 @@ namespace PotionBrewMinigame
         private void Start()
         {
             //Remove comment for scene debug
-            //BeginMinigame(Difficulty.MEDIUM);
+            BeginMinigame(Difficulty.MEDIUM);
         }
         public override void BeginMinigame(Difficulty difficulty)
         {
@@ -87,6 +92,7 @@ namespace PotionBrewMinigame
                 m_gameParameters = gp_medium;
             else if (m_difficulty == Difficulty.HARD)
                 m_gameParameters = gp_hard;
+            generalUIManager.EnableAll();
             InitializeRound();
         }
 
@@ -247,7 +253,30 @@ namespace PotionBrewMinigame
         {
             if (m_gameTimer != null && m_gameTimer.RemainingTime <= 0.0f) {
                 setFinishStep(false);
+                generalUIManager.DisableAll();
             }
+        }
+
+        public override void PauseGame()
+        {
+            Time.timeScale = 0f;
+            AudioListener.pause = true;
+            b_gamePaused = true;
+            for (int i = 0; i < selectablePotions.Count; i++) {
+                selectablePotions[i].GetComponent<Button>().interactable = false;
+            }
+        }
+
+        public override void ResumeGame()
+        {
+            Time.timeScale = 1;
+            AudioListener.pause = false;
+            b_gamePaused = false;
+            for (int i = 0; i < selectablePotions.Count; i++)
+            {
+                selectablePotions[i].GetComponent<Button>().interactable = true;
+            }
+
         }
     }
 }

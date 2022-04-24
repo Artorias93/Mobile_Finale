@@ -25,4 +25,7 @@ public abstract class AMinigameManager : MonoBehaviour
 
     public abstract void BeginMinigame(Difficulty difficulty); //Shall contain the logic to begin the minigame;
     public abstract void EndMinigame(); //Shall contain the logic to give back control to the gameManager;
+
+    public abstract void PauseGame();
+    public abstract void ResumeGame();
 }
