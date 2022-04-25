@@ -179,12 +179,12 @@ namespace DecodeAudioMinigame
 
         public override void PauseGame()
         {
-            throw new System.NotImplementedException();
+            base.PauseGame();
         }
 
         public override void ResumeGame()
         {
-            throw new System.NotImplementedException();
+            base.ResumeGame();
         }
     }
 }

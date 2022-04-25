@@ -114,12 +114,15 @@ namespace FruitNinjaMinigame
 
         public override void PauseGame()
         {
-            throw new System.NotImplementedException();
+            base.PauseGame();
+            Spawner.Instance.Stop();
         }
 
         public override void ResumeGame()
         {
-            throw new System.NotImplementedException();
+            base.ResumeGame();
+            if (m_gameTimer != null && m_gameTimer.RemainingTime > 0.0f && i_outCount < 3)
+                Spawner.Instance.Start();
         }
     }
 }

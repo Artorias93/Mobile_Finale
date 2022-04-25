@@ -40,7 +40,7 @@ namespace FruitNinjaMinigame
         }
 
         // Start is called before the first frame update
-        void Start()
+        public void Start()
         {
             Spawn();
             float firstDelay = Random.Range(f_minDelay, f_maxDelay);
