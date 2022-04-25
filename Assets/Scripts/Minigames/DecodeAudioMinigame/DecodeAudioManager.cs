@@ -176,5 +176,15 @@ namespace DecodeAudioMinigame
                 //Bad Logic
             }
         }
+
+        public override void PauseGame()
+        {
+            base.PauseGame();
+        }
+
+        public override void ResumeGame()
+        {
+            base.ResumeGame();
+        }
     }
 }
