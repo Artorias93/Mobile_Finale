@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minigames/PotionBrew.unity
     guid: b45b6dc5586a59e41a34813899f4d3a5
+  - enabled: 1
+    path: Assets/Scenes/Minigames/OuijaBoardMinigame.unity
+    guid: e995907c246091347aa61ff8072f000a
   m_configObjects: {}
