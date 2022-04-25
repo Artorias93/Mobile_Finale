@@ -254,13 +254,13 @@ namespace PotionBrewMinigame
 
         public override void PauseGame()
         {
-            Time.timeScale = 0f;
+            base.PauseGame();
             AudioListener.pause = true;
         }
 
         public override void ResumeGame()
         {
-            Time.timeScale = 1;
+            base.ResumeGame();
             AudioListener.pause = false;
         }
     }
