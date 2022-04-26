@@ -5,13 +5,15 @@ using UnityEngine.EventSystems;
 
 namespace DrawingRunes
 {
+    public enum DrawingStatus
+    {
+        DRAWING, INVALID, FINISHED
+    }
     public class TouchManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
     {
         [Header("Drawing Parameters")]
         [SerializeField, Tooltip("Removes points from drawn shape, higher value make calculation easier but less precise")]
         private float f_drawingSmoothness = 5.0f;
-        [SerializeField, Tooltip("Regulates how different shapes can be, interpolation and smoothness setting will alter the optimal value")] 
-        private float f_Tollerance = 3.1f;
         [SerializeField, Tooltip("Minimum distance before the drawing can close itself")]
         private float f_closingDistance = 0.5f;
         [SerializeField, Tooltip("Activates interpolation of target vertices: adds more vertices but will make calculation heavier")]
@@ -20,37 +22,60 @@ namespace DrawingRunes
         private int f_interpolationSubdivision = 3;
 
 
-        [SerializeField]
-        private Vector3[] testShape = {
-        new Vector3(-3, 3, 0),
-        new Vector3(-3, -3, 0),
-        new Vector3(3, -3, 0),
-        new Vector3(3, 3, 0)
-    };
-
         private List<Vector3> targetShape;
 
         private LineRenderer m_lineRenderer;
         private List<Vector3> v3_positions;
 
-        private void Awake()
-        {
-            m_lineRenderer = GetComponent<LineRenderer>();
+        private DrawingStatus m_status = DrawingStatus.INVALID;
+        private float f_distance;
 
-            if (b_shouldInterpolate)
+        public DrawingStatus Status
+        {
+            get { return m_status; }
+        }
+
+        public float Distance
+        {
+            get
             {
-                InterpolateTarget(testShape);
-            } else
-            {
-                targetShape = new List<Vector3>(testShape);
+                if (m_status == DrawingStatus.FINISHED)
+                {
+                    m_status = DrawingStatus.INVALID;
+                    return f_distance;
+                }
+                return -1;
             }
         }
 
-        private void InterpolateTarget(Vector3[] originalVector)
+        private void Awake()
+        {
+            m_lineRenderer = GetComponent<LineRenderer>();
+        }
+
+        public void requestShape(List<Vector3> shape)
+        {
+            if (shape == null || shape.Count == 0)
+            {
+                Debug.LogWarning("Passed invalid shape");
+                return;
+            }
+
+            if (b_shouldInterpolate)
+            {
+                InterpolateTarget(shape);
+            }
+            else
+            {
+                targetShape = new List<Vector3>(shape);
+            }
+        }
+
+        private void InterpolateTarget(List<Vector3> originalVector)
         {
             targetShape = new List<Vector3>();
 
-            for(int i = 0; i< originalVector.Length - 1; i++)
+            for(int i = 0; i< originalVector.Count - 1; i++)
             {
                 Vector3 v1 = originalVector[i];
                 Vector3 v2 = originalVector[i + 1];
@@ -65,7 +90,7 @@ namespace DrawingRunes
             }
 
             //Interpolate last and first to close loop
-            Vector3 vFinal = originalVector[originalVector.Length - 1];
+            Vector3 vFinal = originalVector[originalVector.Count - 1];
             Vector3 vInitial = originalVector[0];
 
             targetShape.Add(vFinal);
@@ -77,27 +102,25 @@ namespace DrawingRunes
             }
         }
 
-        private void LateUpdate()
-        {
-#if UNITY_EDITOR
-            for (int i = 1; i < testShape.Length; i++)
-            {
-                Debug.DrawLine(testShape[i - 1], testShape[i], Color.red);
-            }
-            Debug.DrawLine(testShape[testShape.Length - 1], testShape[0], Color.red);
-#endif
-        }
-
         private void OnDrawGizmos()
         {
-            //Used to visualize target vertices
             if(targetShape != null)
-                foreach (Vector3 vertex in targetShape)
-                    Gizmos.DrawSphere(vertex, 0.2f);
+            {
+                for(int i = 0; i < targetShape.Count - 1; i++)
+                {
+                    Gizmos.DrawSphere(targetShape[i], 0.1f);
+                    Gizmos.DrawLine(targetShape[i], targetShape[i + 1]);
+                }
+                int lastIndex = targetShape.Count - 1;
+
+                Gizmos.DrawSphere(targetShape[lastIndex], 0.1f);
+                Gizmos.DrawLine(targetShape[lastIndex], targetShape[0]);
+            }
         }
 
         public void OnBeginDrag(PointerEventData eventData)
         {
+            m_status = DrawingStatus.DRAWING;
 
             v3_positions = new List<Vector3>();
 
@@ -128,6 +151,7 @@ namespace DrawingRunes
             {
                 //I lifted my finger while the shape without closing the shape
                 Debug.Log("Can't close shape, you lose");
+                m_status = DrawingStatus.INVALID;
             }
             else
             {
@@ -137,7 +161,8 @@ namespace DrawingRunes
 
                 float distance = calculateSetsDistance(v3_positions.ToArray(), targetShape.ToArray());
 
-                Debug.Log("Distance: " + distance + " " + (distance <= f_Tollerance ? "Hai vinto!" : "Hai Perso!"));
+                f_distance = distance;
+                m_status = DrawingStatus.FINISHED;
             }
         }
 
