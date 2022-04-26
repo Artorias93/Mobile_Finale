@@ -104,7 +104,7 @@ namespace DrawingRunes
 
         private void OnDrawGizmos()
         {
-            if(targetShape != null)
+            if(targetShape != null && targetShape.Count > 0)
             {
                 for(int i = 0; i < targetShape.Count - 1; i++)
                 {

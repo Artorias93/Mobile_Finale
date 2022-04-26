@@ -44,6 +44,51 @@ namespace DrawingRunes
         private Timer m_gameTimer;
         private bool b_gameFinished = false, b_gameWon = false;
 
+        public static DrawingGameManager Instance;
+
+#region PROPERTIES
+        public bool GameFinished
+        {
+            get { return b_gameFinished; }
+        }
+
+        public bool GameWon
+        {
+            get { return b_gameWon; }
+        }
+
+        public int CurrentTurn
+        {
+            get { return i_currentTurn; }
+        }
+
+        public float RemainingTime
+        {
+            get { return m_gameTimer ? m_gameTimer.RemainingTime : -1; }
+        }
+
+        public GameParameters GameParameters
+        {
+            get { return m_gameParameters; }
+        }
+#endregion
+
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+                return;
+            }
+
+            Assert.IsNotNull(m_touchManager, "no touch manager found");
+            Assert.IsFalse(m_shapes == null || m_shapes.Length == 0, "No shape in list");
+        }
+
         private void Start()
         {
             BeginMinigame(Difficulty.EASY);
@@ -61,6 +106,7 @@ namespace DrawingRunes
 
             generateRound();
             m_gameTimer = Timer.Create(m_gameParameters.i_playTime, onTimeEnd, name: "Game Timer");
+            m_gameTimer.StartTimer();
         }
 
         public override void EndMinigame()
@@ -79,12 +125,6 @@ namespace DrawingRunes
 
             Debug.Log("Picked " + m_shapes[randomShape].name);
             m_touchManager.requestShape(new List<Vector3>(m_shapes[randomShape].vertices));
-        }
-
-        void Awake()
-        {
-            Assert.IsNotNull(m_touchManager, "no touch manager found");
-            Assert.IsFalse(m_shapes == null || m_shapes.Length == 0, "No shape in list");
         }
 
         void LateUpdate()
