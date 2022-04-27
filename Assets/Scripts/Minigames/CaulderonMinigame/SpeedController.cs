@@ -149,6 +149,7 @@ namespace CouldronMinigame
             if(f_ladleCurrentSpeed == 0)
             {
                 //se stai fermo dopo tot tempo  gameover
+                Debug.Log("gameover fermo");
             }
             else if(m_speedIndicator.value > 0 && m_speedIndicator.value <= m_minimumRegularNormalizedSpeed)
             {
@@ -156,6 +157,7 @@ namespace CouldronMinigame
                 if (randomSpeedIndex != 0)
                 {
                     //gameover
+                    Debug.Log("gameover");
                 }
             }
             else if (m_speedIndicator.value > 0 && m_speedIndicator.value >= m_minimumRegularNormalizedSpeed && m_speedIndicator.value <= m_maximumRegularNormalizedSpeed)
@@ -164,6 +166,8 @@ namespace CouldronMinigame
                 if (randomSpeedIndex != 1)
                 {
                     //gameover
+                    Debug.Log("gameover");
+
                 }
             }
             else if (m_speedIndicator.value > 0 && m_speedIndicator.value >= m_maximumRegularNormalizedSpeed)
@@ -172,6 +176,8 @@ namespace CouldronMinigame
                 if (randomSpeedIndex != 2)
                 {
                     //gameover
+                    Debug.Log("gameover");
+
                 }
             }
 
