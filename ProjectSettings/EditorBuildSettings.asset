@@ -8,4 +8,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Minigames/CaulderonMinigame.unity
+    guid: 0ad3d145f94fa5e459b90bf63a116264
+  - enabled: 1
+    path: Assets/Scenes/Minigames/DecodeAudioMinigame.unity
+    guid: fafb1ce3144c7974681db25764ad9ac1
+  - enabled: 1
+    path: Assets/Scenes/Minigames/FruitNinjaMinigame.unity
+    guid: 4f3da8ac35633aa4b89356d1e740890c
+  - enabled: 1
+    path: Assets/Scenes/Minigames/PotionBrew.unity
+    guid: b45b6dc5586a59e41a34813899f4d3a5
+  - enabled: 1
+    path: Assets/Scenes/Minigames/OuijaBoardMinigame.unity
+    guid: e995907c246091347aa61ff8072f000a
   m_configObjects: {}
