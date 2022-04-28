@@ -540,6 +540,7 @@ MonoBehaviour:
   timerSlider: {fileID: 1815161989}
   pauseBtn: {fileID: 1815161988}
   endGameScreenController: {fileID: 1815161987}
+  pauseGameScreenController: {fileID: 0}
 --- !u!1 &1894651022
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,6 +662,18 @@ PrefabInstance:
       propertyPath: m_touchManager
       value: 
       objectReference: {fileID: 972786638}
+    - target: {fileID: 3816807274125603010, guid: 12bbe2498bb53454fa9a813bfc8e679f, type: 3}
+      propertyPath: gp_easy.i_playTime
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3816807274125603010, guid: 12bbe2498bb53454fa9a813bfc8e679f, type: 3}
+      propertyPath: gp_hard.i_playTime
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3816807274125603010, guid: 12bbe2498bb53454fa9a813bfc8e679f, type: 3}
+      propertyPath: gp_medium.i_playTime
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3816807274125603011, guid: 12bbe2498bb53454fa9a813bfc8e679f, type: 3}
       propertyPath: m_Name
       value: DrawingGameManager
