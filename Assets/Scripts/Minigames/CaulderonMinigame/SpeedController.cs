@@ -10,15 +10,16 @@ namespace CouldronMinigame
     public class SpeedController : MonoBehaviour
     {
 
+        [Header("Input Parameters")]
         
-        private float f_ladleCurrentSpeed;
-        [SerializeField] private float m_maxSpeed=40000;
-
+        [SerializeField] private float m_maxSpeed=1000;
+        [SerializeField, Tooltip("Regulates how fast the slider decreases"), Range(-1.0f, -0.1f)] private float f_mouseDeceleration = -0.8f;
+        [SerializeField, Tooltip("Regulates how fast the slider increases"), Range(0.1f, 1f)] private float f_mouseAcceleration = 1f;
 
         private float m_speed;
         private float mouseDelta;
-       
 
+        [Header("References")]
         [SerializeField]
         private Image m_imgSlow;
         [SerializeField]
@@ -48,7 +49,8 @@ namespace CouldronMinigame
         private float m_maximumRegularNormalizedSpeed = 0.66f;
         
         private int randomSpeedIndex;
-        
+        private float f_ladleCurrentSpeed;
+
 
         void Start()
         {
@@ -66,7 +68,7 @@ namespace CouldronMinigame
         {
             
             float speedDelta = 2*((mouseDelta - m_maxSpeed/2) / m_maxSpeed);
-            speedDelta = Mathf.Clamp(speedDelta, -1, 1);
+            speedDelta = Mathf.Clamp(speedDelta, f_mouseDeceleration, f_mouseAcceleration);
             m_speed += speedDelta*Time.deltaTime;
             m_speed = Mathf.Clamp(m_speed, 0, 1);
 

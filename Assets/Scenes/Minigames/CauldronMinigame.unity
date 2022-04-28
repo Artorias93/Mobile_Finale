@@ -417,6 +417,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_maxSpeed: 85
+  f_mouseDeceleration: -0.3
+  f_mouseAcceleration: 0.8
   m_imgSlow: {fileID: 874656073}
   m_imgFast: {fileID: 1920836462}
   m_imgRegular: {fileID: 273715972}
@@ -699,7 +701,8 @@ MonoBehaviour:
   img_cauldron: {fileID: 619144661}
   img_ladle: {fileID: 2631639}
   speedController: {fileID: 472681087}
-  paddingPercentage: 0.75
+  paddingPercentage: 0.8
+  b_shouldUpdateDynamically: 0
 --- !u!114 &619144664
 MonoBehaviour:
   m_ObjectHideFlags: 0
