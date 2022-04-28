@@ -27,8 +27,8 @@ namespace CouldronMinigame
         private Vector2 v2_cauldronCenter;
         private void Awake()
         {
-            f_xLimit = img_cauldron.rectTransform.rect.width/2;
-            f_yLimit = img_cauldron.rectTransform.rect.height/2;
+            f_xLimit = img_cauldron.rectTransform.sizeDelta.x/2;
+            f_yLimit = img_cauldron.rectTransform.sizeDelta.y / 2;
             f_xLimit *= paddingPercentage;
             f_yLimit *= paddingPercentage;
 
@@ -43,8 +43,15 @@ namespace CouldronMinigame
                 if(touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
                 {
                     Vector2 distanceFromCenter= (touch.position - v2_cauldronCenter).normalized;
-                    v2_ladleNewPosition = v2_cauldronCenter + new Vector2(distanceFromCenter.x*f_xLimit, distanceFromCenter.y*f_yLimit);
+                    Vector2 ellipseCoordinates = new Vector2(distanceFromCenter.x * f_xLimit, distanceFromCenter.y * f_yLimit);
+
+                    Vector2 offset = ellipseCoordinates.magnitude * distanceFromCenter;
+
+                    v2_ladleNewPosition = v2_cauldronCenter + offset;
                     img_ladle.rectTransform.position = v2_ladleNewPosition;
+
+                    Debug.DrawLine(v2_cauldronCenter, touch.position, Color.green);
+                    Debug.DrawLine(v2_cauldronCenter, v2_ladleNewPosition, Color.red);
 
                     speedController.setMouseDelta(touch.deltaPosition.magnitude);
                     return; //Only first touch will count
