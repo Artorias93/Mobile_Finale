@@ -23,6 +23,7 @@ namespace DrawingRunes
     {
         [Header("References")]
         [SerializeField] private TouchManager m_touchManager;
+        [SerializeField] private LineRenderer m_lineRenderer;
 
         [Header("Game params")]
         [SerializeField, Tooltip("Regulates how different shapes can be, interpolation and smoothness setting of touch manager will alter the optimal value")]
@@ -42,6 +43,7 @@ namespace DrawingRunes
         private GameParameters m_gameParameters;
         private int i_currentTurn = 1;
         private Timer m_gameTimer;
+        private bool[] b_pickedIndexes; //Used to prevent drawing the same shape over and over
         private bool b_gameFinished = false, b_gameWon = false;
 
         public static DrawingGameManager Instance;
@@ -86,22 +88,20 @@ namespace DrawingRunes
             }
 
             Assert.IsNotNull(m_touchManager, "no touch manager found");
+            Assert.IsNotNull(m_lineRenderer, "no line renderer found");
             Assert.IsFalse(m_shapes == null || m_shapes.Length == 0, "No shape in list");
-        }
 
-        private void Start()
-        {
-            BeginMinigame(Difficulty.EASY);
-            generateRound();
+            b_pickedIndexes = new bool[m_shapes.Length];
         }
 
         public override void BeginMinigame(Difficulty difficulty)
         {
-            if (m_difficulty == Difficulty.EASY)
+            m_difficulty = difficulty;
+            if (difficulty == Difficulty.EASY)
                 m_gameParameters = gp_easy;
-            else if (m_difficulty == Difficulty.MEDIUM)
+            else if (difficulty == Difficulty.MEDIUM)
                 m_gameParameters = gp_medium;
-            else if (m_difficulty == Difficulty.HARD)
+            else if (difficulty == Difficulty.HARD)
                 m_gameParameters = gp_hard;
 
             generateRound();
@@ -114,17 +114,49 @@ namespace DrawingRunes
             throw new System.NotImplementedException();
         }
 
-        public void onTimeEnd()
+        private void VictoryBehaviour()
+        {
+            m_gameTimer?.StopTimer();
+            i_currentTurn = m_gameParameters.i_maxTurns;
+            b_gameWon = true;
+            b_gameFinished = true;
+        }
+        private void onTimeEnd()
         {
             b_gameFinished = true;
         }
         
         void generateRound()
         {
+            
             int randomShape = Random.Range(0, m_shapes.Length);
+            while(b_pickedIndexes[randomShape]){
+                randomShape = Random.Range(0, m_shapes.Length);
+            }
+
+            b_pickedIndexes[randomShape] = true;
+            bool allPicked = true;
+            foreach(bool isIndexPicked in b_pickedIndexes)
+            {
+                if (!isIndexPicked)
+                {
+                    allPicked = false;
+                    break;
+                }
+            }
+            if (allPicked)
+            {
+                for (int i = 0; i < b_pickedIndexes.Length; i++)
+                    b_pickedIndexes[i] = false;
+            }
+
 
             Debug.Log("Picked " + m_shapes[randomShape].name);
             m_touchManager.requestShape(new List<Vector3>(m_shapes[randomShape].vertices));
+
+            //Draw reference
+            m_lineRenderer.positionCount = m_shapes[randomShape].vertices.Length;
+            m_lineRenderer.SetPositions(m_shapes[randomShape].vertices);
         }
 
         void LateUpdate()
@@ -144,9 +176,7 @@ namespace DrawingRunes
                         i_currentTurn++;
                         if (i_currentTurn > m_gameParameters.i_maxTurns)
                         {
-                            i_currentTurn = m_gameParameters.i_maxTurns;
-                            b_gameWon = true;
-                            b_gameFinished = true;
+                            VictoryBehaviour();
                         }
                         else
                         {
@@ -164,6 +194,7 @@ namespace DrawingRunes
 
         private void OnDrawGizmos()
         {
+            //This code helps on editing shapes
             if (b_enableDebug && m_shapes != null && i_debugShape >= 0 && i_debugShape < m_shapes.Length && m_shapes[i_debugShape].vertices != null)
             {
                 Vector3[] selectedVertices = (Vector3[]) m_shapes[i_debugShape].vertices.Clone();

@@ -163,6 +163,8 @@ namespace DrawingRunes
 
                 f_distance = distance;
                 m_status = DrawingStatus.FINISHED;
+
+                m_lineRenderer.positionCount = 0;
             }
         }
 
