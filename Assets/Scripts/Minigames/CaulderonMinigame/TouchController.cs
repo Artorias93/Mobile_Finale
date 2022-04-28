@@ -6,17 +6,17 @@ using UnityEngine;
 
 namespace CouldronMinigame
 {
-    public class TouchController : MonoBehaviour, IDragHandler, IPointerDownHandler
+    public class TouchController : MonoBehaviour, IDragHandler, IPointerDownHandler, IEndDragHandler
     {
         [SerializeField]
         private Image img_cauldron;
         [SerializeField]
         private Image img_ladle;
-        
+
         private Vector3 m_vr3_input;
 
-
-
+        [SerializeField]
+        SpeedController speedController;
         void Start()
         {
             
@@ -42,18 +42,25 @@ namespace CouldronMinigame
                                                                             m_vr3_input.z * (img_cauldron.rectTransform.sizeDelta.y / 3));
                 //pointerEventData.delta.magnitude per i valori del mouse
                 //img_ladle.transform.position = pointerEventData.delta.magnitude
+                speedController.setMouseDelta(pointerEventData.delta.magnitude);
+                
             }
 
         }
         
+       
 
-
+        
         public virtual void OnPointerDown(PointerEventData pointerEventData)
         {
+
             OnDrag(pointerEventData);
         }
-      
 
+        public void OnEndDrag(PointerEventData eventData)
+        {
+            speedController.setMouseDelta(0);
+        }
     }
 }
 

@@ -233,7 +233,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7195b2161531c8049b954b45e94446d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
 --- !u!1 &82875383
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,7 +429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d295118a2bec940a7576a7cf1f5630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxSpeed: 10000
+  m_maxSpeed: 1
   m_ladle: {fileID: 2631637}
   m_imgSlow: {fileID: 874656073}
   m_imgFast: {fileID: 1920836462}
@@ -713,6 +712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img_cauldron: {fileID: 619144661}
   img_ladle: {fileID: 2631639}
+  speedController: {fileID: 472681087}
 --- !u!114 &619144664
 MonoBehaviour:
   m_ObjectHideFlags: 0

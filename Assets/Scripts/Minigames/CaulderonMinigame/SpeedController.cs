@@ -18,6 +18,7 @@ namespace CouldronMinigame
         private Vector3 m_prevPos = Vector3.zero;
         private Vector3 m_ladlePos = Vector3.zero;
         private float m_speed;
+        private float mouseDelta;
 
         [SerializeField]
         private GameObject m_ladle;
@@ -68,11 +69,19 @@ namespace CouldronMinigame
 
         private void Update()
         {
+            
+            float speedDelta = 2*((mouseDelta - m_maxSpeed/2) / m_maxSpeed);
+            speedDelta = Mathf.Clamp(speedDelta, -1, 1);
+            m_speed += speedDelta*Time.deltaTime;
             m_ladlePos = m_ladle.transform.position;
-            m_speed = (m_ladlePos - m_prevPos).magnitude / Time.fixedDeltaTime;  //pixel/second
+            
             m_prevPos = m_ladlePos;
-        }
 
+        }
+        public void setMouseDelta(float magnitude)
+        {
+            mouseDelta = magnitude;
+        }
         void LateUpdate()
         {
             m_normalizedSpeed = Mathf.Clamp(m_speed / m_maxSpeed, 0, 1);
@@ -143,7 +152,7 @@ namespace CouldronMinigame
         private void CheckSpeed()
         {
             //controlla se sei in gameover
-
+           
             Debug.Log("in checkspeed");
             Debug.Log(f_ladleCurrentSpeed);
             if(f_ladleCurrentSpeed == 0)
@@ -185,7 +194,15 @@ namespace CouldronMinigame
 
 
         }
+        private IEnumerator Cha()
+        {
+            //chiamo la random, dopo n secondi faccio il check della ladle e la velocità---se non è andato in gameover ripeto
+            while (true)
+            {
+                
+            }
+        }
 
-      
+
     }
 }
