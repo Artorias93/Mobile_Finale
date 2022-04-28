@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 2631640}
   - component: {fileID: 2631639}
   - component: {fileID: 2631641}
-  - component: {fileID: 2631644}
   m_Layer: 5
   m_Name: Ladle
   m_TagString: Untagged
@@ -221,18 +220,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &2631644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2631637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7195b2161531c8049b954b45e94446d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &82875383
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,8 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d295118a2bec940a7576a7cf1f5630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxSpeed: 1
-  m_ladle: {fileID: 2631637}
+  m_maxSpeed: 85
   m_imgSlow: {fileID: 874656073}
   m_imgFast: {fileID: 1920836462}
   m_imgRegular: {fileID: 273715972}
@@ -657,8 +643,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.0000027818605}
-  m_SizeDelta: {x: 1920, y: 923.64}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 920}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &619144661
 MonoBehaviour:
@@ -713,6 +699,7 @@ MonoBehaviour:
   img_cauldron: {fileID: 619144661}
   img_ladle: {fileID: 2631639}
   speedController: {fileID: 472681087}
+  paddingPercentage: 0.75
 --- !u!114 &619144664
 MonoBehaviour:
   m_ObjectHideFlags: 0

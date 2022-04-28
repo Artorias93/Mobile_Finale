@@ -6,60 +6,52 @@ using UnityEngine;
 
 namespace CouldronMinigame
 {
-    public class TouchController : MonoBehaviour, IDragHandler, IPointerDownHandler, IEndDragHandler
+    public class TouchController : MonoBehaviour
     {
         [SerializeField]
         private Image img_cauldron;
         [SerializeField]
         private Image img_ladle;
-
-        private Vector3 m_vr3_input;
-
         [SerializeField]
         SpeedController speedController;
-        void Start()
+        [SerializeField, Range(0.1f, 1.0f)]
+        float paddingPercentage = 0.8f;
+
+        private Vector2 v2_ladleNewPosition;
+
+        
+        
+        Vector2 m_oldMousePosition = Vector2.zero;
+
+        private float f_xLimit, f_yLimit;
+        private Vector2 v2_cauldronCenter;
+        private void Awake()
         {
-            
-            
+            f_xLimit = img_cauldron.rectTransform.rect.width/2;
+            f_yLimit = img_cauldron.rectTransform.rect.height/2;
+            f_xLimit *= paddingPercentage;
+            f_yLimit *= paddingPercentage;
+
+            v2_cauldronCenter = Camera.main.WorldToScreenPoint(img_cauldron.rectTransform.rect.center);
+
         }
 
-        public virtual void OnDrag(PointerEventData pointerEventData)
+        private void Update()
         {
-            Vector2 m_vt2_position;
-
-           // pointerEventData.delta.magnitude;
-            Vector3 screenPosition = new Vector3(pointerEventData.position.x, pointerEventData.position.y);
-            Vector3 touchWorldCoordinates = Camera.main.ScreenToWorldPoint(screenPosition);
-                if (img_cauldron.rectTransform.rect.Contains(touchWorldCoordinates))
+            foreach(Touch touch in Input.touches)
+            {
+                if(touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
                 {
-                RectTransformUtility.ScreenPointToLocalPointInRectangle(img_cauldron.rectTransform, pointerEventData.position, pointerEventData.pressEventCamera, out m_vt2_position);
-                    //normalized input
-                    m_vr3_input = new Vector3(m_vt2_position.x * 2 + 1, 0, m_vt2_position.y * 2 - 1);
-                    m_vr3_input = m_vr3_input.normalized;
+                    Vector2 distanceFromCenter= (touch.position - v2_cauldronCenter).normalized;
+                    v2_ladleNewPosition = v2_cauldronCenter + new Vector2(distanceFromCenter.x*f_xLimit, distanceFromCenter.y*f_yLimit);
+                    img_ladle.rectTransform.position = v2_ladleNewPosition;
 
-                    //ladle movement
-                    img_ladle.rectTransform.anchoredPosition = new Vector3(m_vr3_input.x * (img_cauldron.rectTransform.sizeDelta.x / 3),
-                                                                            m_vr3_input.z * (img_cauldron.rectTransform.sizeDelta.y / 3));
-                //pointerEventData.delta.magnitude per i valori del mouse
-                //img_ladle.transform.position = pointerEventData.delta.magnitude
-                speedController.setMouseDelta(pointerEventData.delta.magnitude);
-                
+                    speedController.setMouseDelta(touch.deltaPosition.magnitude);
+                    return; //Only first touch will count
+                }
             }
-
-        }
-        
-       
-
-        
-        public virtual void OnPointerDown(PointerEventData pointerEventData)
-        {
-
-            OnDrag(pointerEventData);
-        }
-
-        public void OnEndDrag(PointerEventData eventData)
-        {
             speedController.setMouseDelta(0);
+            
         }
     }
 }
