@@ -97,5 +97,16 @@ namespace OuijaBoardMinigame
             Debug.Log("HAI VINTOOO!!!");
         }
 
+        public override void PauseGame()
+        {
+            base.PauseGame();
+            m_ouijaManager.freezeSelector(true);
+        }
+
+        public override void ResumeGame()
+        {
+            base.ResumeGame();
+            m_ouijaManager.freezeSelector(false);
+        }
     }
 }

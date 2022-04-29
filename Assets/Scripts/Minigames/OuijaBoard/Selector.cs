@@ -18,6 +18,7 @@ namespace OuijaBoardMinigame
 
 
 		Rigidbody2D rb;
+		private float f_baseMoveSpeed;
 		float f_dirX;
 		float f_dirY;
 		public List<string> letters = new List<string>();
@@ -28,6 +29,7 @@ namespace OuijaBoardMinigame
 		{
 			f_timeToStay = f_startingTimeToStay;
 			rb = GetComponent<Rigidbody2D>();
+			f_baseMoveSpeed = f_moveSpeed;
 		}
 
 		// Update is called once per frame
@@ -62,6 +64,16 @@ namespace OuijaBoardMinigame
 				collision.GetComponent<TextMeshPro>().color = new Color32(15, 3, 0, 255);
 				m_ouijaManager.CheckWord(letters.Count, string.Join("", letters.ToArray()));
 			}
+		}
+
+		public void freezeSelector(bool b_isFreeze) {
+			if (b_isFreeze) {
+				f_moveSpeed = 0;
+            }else
+			{
+				f_moveSpeed = f_baseMoveSpeed;
+			}
+
 		}
 	}
 }

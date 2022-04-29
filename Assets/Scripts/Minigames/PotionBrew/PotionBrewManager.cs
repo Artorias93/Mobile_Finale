@@ -22,6 +22,7 @@ namespace PotionBrewMinigame
         [SerializeField]
         private PotionUiManager m_potionUIManager;
         [SerializeField] private GameParameters gp_easy, gp_medium, gp_hard;
+        [SerializeField] private GeneralUIManager generalUIManager;
         private GameParameters m_gameParameters;
         public static PotionBrewManager Instance;
         public float RemainingTime
@@ -51,7 +52,6 @@ namespace PotionBrewMinigame
         public bool GameWon {
             get { return b_gameWon; }
         }
-
 
         private STEPS e_currentStep = STEPS.NOT_STARTED;
         private TiltController m_currentTiltingPotionController;
@@ -87,6 +87,7 @@ namespace PotionBrewMinigame
                 m_gameParameters = gp_medium;
             else if (m_difficulty == Difficulty.HARD)
                 m_gameParameters = gp_hard;
+            generalUIManager.EnableAll();
             InitializeRound();
         }
 
@@ -247,7 +248,20 @@ namespace PotionBrewMinigame
         {
             if (m_gameTimer != null && m_gameTimer.RemainingTime <= 0.0f) {
                 setFinishStep(false);
+                generalUIManager.DisableAll();
             }
+        }
+
+        public override void PauseGame()
+        {
+            base.PauseGame();
+            AudioListener.pause = true;
+        }
+
+        public override void ResumeGame()
+        {
+            base.ResumeGame();
+            AudioListener.pause = false;
         }
     }
 }

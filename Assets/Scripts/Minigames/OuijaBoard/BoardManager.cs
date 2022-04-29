@@ -102,5 +102,9 @@ namespace OuijaBoardMinigame
             }
             else ProposeWord();
         }
+
+        public void freezeSelector(bool b_isFreeze) {
+            m_selector.freezeSelector(b_isFreeze);
+        }
     }
 }

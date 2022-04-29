@@ -218,7 +218,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1080, y: 1920}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -238,9 +238,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d4c2be315ad0c34885650272084d173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnText: {fileID: 7728646551492144112}
+  scoreText: {fileID: 0}
   timerSlider: {fileID: 7728646551339220959}
   pauseBtn: {fileID: 7728646551982811587}
+  endGameScreenController: {fileID: 3212852149915966329}
+  clearedWords: {fileID: 0}
   target: {fileID: 4628634219556293413}
   results: {fileID: 4628634220875736732}
 --- !u!1 &7728646551339220957
@@ -876,6 +878,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4276109329567815416, guid: 7a7834a665dd8d5499648b27e9e5e206, type: 3}
   m_PrefabInstance: {fileID: 1711810710566653317}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3212852149915966329 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4276109329567815420, guid: 7a7834a665dd8d5499648b27e9e5e206, type: 3}
+  m_PrefabInstance: {fileID: 1711810710566653317}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5193197359310c349ab66e0d6b87704d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7728646551113556820
 PrefabInstance:
   m_ObjectHideFlags: 0
