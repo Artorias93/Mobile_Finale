@@ -8,11 +8,19 @@ namespace NecromancerShop
 {
     public class DraggableItem : MonoBehaviour
     {
+        [SerializeField]
+        private Image m_checkedImage;
+        [SerializeField]
+        private Sprite s_checked;
+        [SerializeField]
+        private Sprite s_unchecked;
         public bool b_IsIngredient
         {
             set { b_isIngredient = value; }
         }
+        public DraggableItem listElement;
 
+        private NecromancerShopGM m_gameManager;
         private Image image;
         private RectTransform rectTransform;
         private bool b_isDraggable=true;
@@ -24,6 +32,7 @@ namespace NecromancerShop
             m_baseCanvas = GameObject.FindGameObjectWithTag("MainUI").GetComponent<Canvas>();
             rectTransform = GetComponent<RectTransform>();
             image = GetComponent<Image>();
+            m_gameManager = GameObject.FindGameObjectWithTag("MinigameManager").GetComponent<NecromancerShopGM>();
 
 
         }
@@ -55,7 +64,7 @@ namespace NecromancerShop
 
             }
         }
-        private void OnTriggerStay2D(Collider2D collision)
+        private void OnTriggerEnter2D(Collider2D collision)
         {
             if (b_isIngredient && collision.gameObject.CompareTag("ShopCart"))
             {
@@ -63,8 +72,23 @@ namespace NecromancerShop
                 Color tmpColor = image.color;
                 tmpColor.a = 0;
                 image.color = tmpColor;
+                listElement.setChecked();
+                m_gameManager.updateCorrectCounter();
             }
 
+        }
+
+        public void setUnchecked() {
+            b_isDraggable = false;
+            m_checkedImage.sprite = s_unchecked;
+            Color tmpColor = m_checkedImage.color;
+            tmpColor.a = 1;
+            m_checkedImage.color = tmpColor;
+        }
+
+        public void setChecked()
+        {
+            m_checkedImage.sprite = s_checked;
         }
     }
 

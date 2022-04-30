@@ -14,6 +14,8 @@ namespace NecromancerShop
         [SerializeField]
         private GameObject m_IngredientsListPanel;
         [SerializeField]
+        private GameObject m_IngredientsList;
+        [SerializeField]
         private GameObject m_ingredientPrefab;
         [SerializeField]
         private Text t_remainingOpenListCount;
@@ -42,6 +44,17 @@ namespace NecromancerShop
                 necromancerShopGM.m_gameParameters.i_remainingOpenListCount--;
                 setRemainingOpenListCount(necromancerShopGM.m_gameParameters.i_remainingOpenListCount);
                 m_IngredientsListPanel.SetActive(true);
+
+            }
+        }
+
+        public void addCorrectIngredientsToList(List<GameObject> m_ingredients) {
+            for (int i = 0; i < m_ingredients.Count; i++) {
+                GameObject go=Instantiate(m_ingredients[i], m_IngredientsList.transform);
+                DraggableItem draggable = go.GetComponent<DraggableItem>();
+                draggable.setUnchecked();
+                go.name = m_ingredients[i].name + "L";
+                m_ingredients[i].GetComponent<DraggableItem>().listElement = draggable;
             }
         }
 

@@ -45,14 +45,16 @@ namespace NecromancerShop
         {
             while (m_correctIngredients.Count < m_gameParameters.i_correctIngredientsCount)
             {
-                GameObject correctIngredient = m_totalIngredients[Random.Range(0, m_totalIngredients.Count)];
+                int i_range = Random.Range(0, m_totalIngredients.Count);
+                GameObject correctIngredient = m_totalIngredients[i_range];
                 if (!m_correctIngredients.Contains(correctIngredient))
                 {
                     m_correctIngredients.Add(correctIngredient);
                     correctIngredient.GetComponent<DraggableItem>().b_IsIngredient = true;
-                    correctIngredient.name = "Ingredient";
+                    correctIngredient.name = "Ingredient"+i_range;
                 }
             }
+            m_uiManager.addCorrectIngredientsToList(m_correctIngredients);
         }
 
         public override void EndMinigame()
@@ -65,11 +67,13 @@ namespace NecromancerShop
         {
             BeginMinigame(Difficulty.EASY);
         }
-
-        // Update is called once per frame
-        void Update()
+        internal void updateCorrectCounter()
         {
-
+            i_currentCorrectsCount++;
+            if (i_currentCorrectsCount == m_gameParameters.i_correctIngredientsCount) {
+                //EndMinigame();
+                Debug.LogWarning("WIN!!");
+            }
         }
     }
 }
