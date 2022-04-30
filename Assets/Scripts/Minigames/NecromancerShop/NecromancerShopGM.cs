@@ -67,12 +67,22 @@ namespace NecromancerShop
         {
             BeginMinigame(Difficulty.EASY);
         }
-        internal void updateCorrectCounter()
+        public void updateCorrectCounter()
         {
             i_currentCorrectsCount++;
             if (i_currentCorrectsCount == m_gameParameters.i_correctIngredientsCount) {
                 //EndMinigame();
                 Debug.LogWarning("WIN!!");
+            }
+        }
+
+        public void updateErrorCounter()
+        {
+            m_gameParameters.i_remainingErrorsCount--;
+            if (m_gameParameters.i_remainingErrorsCount == 0)
+            {
+                //EndMinigame();
+                Debug.LogWarning("LOST!!");
             }
         }
     }

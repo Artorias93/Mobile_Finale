@@ -22,8 +22,10 @@ namespace NecromancerShop
         [SerializeField]
         private NecromancerShopGM necromancerShopGM;
 
+        private int i_totalErrorsCount;
         public List<GameObject> InitializeIngredients(int i_ingredientsCount)
         {
+            i_totalErrorsCount = necromancerShopGM.m_gameParameters.i_remainingErrorsCount;
             List<GameObject> m_totalIngredients=new List<GameObject>();
             for (int i = 0; i < i_ingredientsCount; i++)
             {
@@ -64,7 +66,7 @@ namespace NecromancerShop
 
         protected override void LateUpdate()
         {
-            //aggiungere
+            scoreText.text = i_totalErrorsCount-necromancerShopGM.m_gameParameters.i_remainingErrorsCount +"/"+i_totalErrorsCount;
         }
     }
 }

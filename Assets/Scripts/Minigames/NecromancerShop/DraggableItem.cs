@@ -66,14 +66,20 @@ namespace NecromancerShop
         }
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (b_isIngredient && collision.gameObject.CompareTag("ShopCart"))
+            if (collision.gameObject.CompareTag("ShopCart"))
             {
-                b_isDraggable = false;
-                Color tmpColor = image.color;
-                tmpColor.a = 0;
-                image.color = tmpColor;
-                listElement.setChecked();
-                m_gameManager.updateCorrectCounter();
+                if (b_isIngredient)
+                {
+                    b_isDraggable = false;
+                    Color tmpColor = image.color;
+                    tmpColor.a = 0;
+                    image.color = tmpColor;
+                    listElement.setChecked();
+                    m_gameManager.updateCorrectCounter();
+                }
+                else {
+                    m_gameManager.updateErrorCounter();
+                }
             }
 
         }
