@@ -9,6 +9,12 @@ public class EndGameScreenController : MonoBehaviour
     [SerializeField] private GameObject panel;
     [SerializeField] private GameObject winContent;
     [SerializeField] private GameObject loseContent;
+    [SerializeField] private AMinigameManager m_currentManager;
+    
+    private void Awake()
+    {
+        m_currentManager = GameObject.FindGameObjectWithTag(AMinigameManager.s_minigameTag).GetComponent<AMinigameManager>();
+    }
 
     public void showEndGamePanel(bool wonGame)
     {
@@ -37,6 +43,11 @@ public class EndGameScreenController : MonoBehaviour
         panel.SetActive(true);
         winContent.SetActive(false);
         loseContent.SetActive(true);
+    }
+
+    public void RequestClosing()
+    {
+        m_currentManager?.SetReadyToClose();
     }
 }
 

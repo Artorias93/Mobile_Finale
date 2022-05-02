@@ -91,7 +91,7 @@ namespace OuijaBoardMinigame
             m_selector.letters.Clear();
 
             if (usedWords.Count == m_ouijaBoardManager.WordsNum && b_finish) {
-                m_ouijaBoardManager.b_gameFinished = true;
+                m_ouijaBoardManager.setGameFinished(true);
                 m_ouijaBoardManager.b_win = true;
             }
             else if (!usedWords.Contains(s_word) && usedWords.Count < m_ouijaBoardManager.WordsNum)

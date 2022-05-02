@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    /// <summary>
+    /// This class is the overall game manager, tasked with managing scene changes, recipes loading, score storing, and general overall flow
+    /// </summary>
+
     public static GameManager m_instance;
     private AMinigameManager m_minigameManager;
 
@@ -41,6 +45,21 @@ public class GameManager : MonoBehaviour
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(minigameName));
     }
 
+    public void ReturnToMainMenu()
+    {
+        StartCoroutine(_asyncSceneLoad("Mainmenu"));
+    }
+
+    private IEnumerator _asyncSceneLoad(string sceneName)
+    {
+        AsyncOperation loading = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
+        yield return new WaitUntil(() => { return loading.isDone; });
+    }
+
+    public void StartRecipe(SORecipe recipe)
+    {
+        StartCoroutine(PlayRecipe(recipe));
+    }
     private IEnumerator PlayRecipe(SORecipe recipe)
     {
         if (recipe == null)
@@ -67,5 +86,9 @@ public class GameManager : MonoBehaviour
             i_scores.Add(m_minigameManager.Score);
             Debug.Log("Closing Game and proceding to next");
         }
+
+        Debug.Log("Played all scenes");
+        //Load end recipe scene
+        ReturnToMainMenu();
     }
 }

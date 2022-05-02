@@ -244,7 +244,7 @@ namespace PotionBrewMinigame
                 m_stepText.text = "TILT";
             }
         }
-        public override void EndMinigame()
+        protected override void EndMinigame()
         {
             if (m_gameTimer != null && m_gameTimer.RemainingTime <= 0.0f) {
                 setFinishStep(false);

@@ -49,10 +49,6 @@ namespace DrawingRunes
         public static DrawingGameManager Instance;
 
 #region PROPERTIES
-        public bool GameFinished
-        {
-            get { return b_gameFinished; }
-        }
 
         public bool GameWon
         {
@@ -111,7 +107,9 @@ namespace DrawingRunes
 
         protected override void EndMinigame()
         {
-            throw new System.NotImplementedException();
+            b_gameFinished = true;
+            int score = (int) ( 3 * (float) i_currentTurn / m_gameParameters.i_maxTurns);
+            i_score = score;
         }
 
         private void VictoryBehaviour()
@@ -119,11 +117,11 @@ namespace DrawingRunes
             m_gameTimer?.StopTimer();
             i_currentTurn = m_gameParameters.i_maxTurns;
             b_gameWon = true;
-            b_gameFinished = true;
+            EndMinigame();
         }
         private void onTimeEnd()
         {
-            b_gameFinished = true;
+            EndMinigame();
         }
         
         void generateRound()

@@ -98,9 +98,9 @@ namespace DecodeAudioMinigame
             gameTimer.StartTimer();
         }
 
-        public override void EndMinigame()
+        protected override void EndMinigame()
         {
-            throw new System.NotImplementedException();
+            b_gameFinished = true;
         }
 
         private void generateRound()

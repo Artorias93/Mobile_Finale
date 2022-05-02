@@ -30,7 +30,6 @@ namespace OuijaBoardMinigame
         private Timer m_gameTimer;
 
         public bool b_win = false;
-        public bool b_gameFinished = false;
 
 #region PROPERTIES
 
@@ -78,7 +77,7 @@ namespace OuijaBoardMinigame
             m_ouijaManager.ProposeWord();
         }
 
-        public override void EndMinigame()
+        protected override void EndMinigame()
         {
             if (m_gameTimer != null && m_gameTimer.RemainingTime <= 0.0f)
             {
@@ -86,6 +85,8 @@ namespace OuijaBoardMinigame
                 b_win = false;
             }
         }
+
+        public void setGameFinished(bool value) { b_gameFinished = value; }
 
         private void timerHasEnded()
         {

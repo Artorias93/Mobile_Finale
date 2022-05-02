@@ -31,4 +31,5 @@ public abstract class AUIManager : MonoBehaviour
     {
         pauseBtn.interactable = true;
     }
+
 }

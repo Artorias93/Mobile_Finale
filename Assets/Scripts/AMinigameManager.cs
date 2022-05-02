@@ -14,6 +14,8 @@ public abstract class AMinigameManager : MonoBehaviour
     ///For good interface with GameManager
     /// </summary>
 
+    public static string s_minigameTag = "MinigameManager";
+
     protected Difficulty m_difficulty;
     public Difficulty Difficulty
     {
