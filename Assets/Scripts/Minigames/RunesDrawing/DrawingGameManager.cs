@@ -44,7 +44,7 @@ namespace DrawingRunes
         private int i_currentTurn = 1;
         private Timer m_gameTimer;
         private bool[] b_pickedIndexes; //Used to prevent drawing the same shape over and over
-        private bool b_gameFinished = false, b_gameWon = false;
+        private bool b_gameWon = false;
 
         public static DrawingGameManager Instance;
 
@@ -109,7 +109,7 @@ namespace DrawingRunes
             m_gameTimer.StartTimer();
         }
 
-        public override void EndMinigame()
+        protected override void EndMinigame()
         {
             throw new System.NotImplementedException();
         }
