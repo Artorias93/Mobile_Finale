@@ -14,6 +14,7 @@ namespace NecromancerShop
         public int i_remainingOpenListCount;
         public int i_minSecondsStopObstacle;
         public int i_maxSecondsStopObstacle;
+        public int i_activeSpawnersCounter;
     }
     public class NecromancerShopGM : AMinigameManager
     {
@@ -23,6 +24,8 @@ namespace NecromancerShop
         private GameParameters gp_easy, gp_medium, gp_hard;
         [SerializeField]
         private List<ObstacleSpawner> m_obstacleSpawners;
+        [SerializeField]
+        private GeneralUiManager m_GeneralUI;
         public int i_CurrentErrorCount
         {
             get { return i_currentErrorCount; }
@@ -31,15 +34,24 @@ namespace NecromancerShop
         {
             get { return m_gameTimer ? m_gameTimer.RemainingTime : -1; }
         }
-
+        public bool b_WinCondition
+        {
+            get { return b_winCondition; }
+        }
+        public bool b_GameFinished
+        {
+            get { return b_gameFinished; }
+        }
         public static NecromancerShopGM Instance;
         public GameParameters m_gameParameters;
-
+        public int i_inizializedSpawners = 0;
 
         private List<GameObject> m_totalIngredients;
         private List<GameObject> m_correctIngredients=new List<GameObject>();
         private int i_currentCorrectsCount=0,i_currentErrorCount=0;
         private Timer m_gameTimer;
+        private bool b_winCondition=false,b_gameFinished=false;
+       
 
 
 
@@ -64,9 +76,11 @@ namespace NecromancerShop
         }
 
         private void InitializeObstacleSpawners() {
-            for (int i = 0; i < m_obstacleSpawners.Count; i++)
-            {
-                m_obstacleSpawners[i].InitializeSpawner(m_gameParameters.i_minSecondsStopObstacle, m_gameParameters.i_maxSecondsStopObstacle);
+            while (i_inizializedSpawners < m_gameParameters.i_activeSpawnersCounter) {
+                ObstacleSpawner spawner = m_obstacleSpawners[Random.Range(0, m_obstacleSpawners.Count)];
+                if (!spawner.b_isInitialized) { 
+                    spawner.InitializeSpawner(m_gameParameters.i_minSecondsStopObstacle, m_gameParameters.i_maxSecondsStopObstacle);
+                }
             }
         }
         private void AddCorrectIngredients()
@@ -84,10 +98,33 @@ namespace NecromancerShop
             }
             m_uiManager.addCorrectIngredientsToList(m_correctIngredients);
         }
-
+        private void Update()
+        {
+            if (!b_GameFinished) {
+                InitializeObstacleSpawners();
+            }
+        }
         public override void EndMinigame()
         {
-            throw new System.NotImplementedException();
+           
+            if (m_gameTimer != null && m_gameTimer.RemainingTime <= 0.0f)
+            {
+                b_winCondition = false;
+                
+            }
+            m_GeneralUI.DisableAll();
+
+            for (int i = 0; i < m_totalIngredients.Count; i++)
+            {
+                m_totalIngredients[i].GetComponent<DraggableItem>().stopDraggable();
+            }
+
+            for (int i = 0; i < m_obstacleSpawners.Count; i++) {
+                m_obstacleSpawners[i].StopSpawner();
+            }
+
+            b_gameFinished = true;
+            m_gameTimer.StopTimer();
         }
 
         // Start is called before the first frame update
@@ -99,8 +136,8 @@ namespace NecromancerShop
         {
             i_currentCorrectsCount++;
             if (i_currentCorrectsCount == m_gameParameters.i_correctIngredientsCount) {
-                //EndMinigame();
-                Debug.LogWarning("WIN!!");
+                EndMinigame();
+                b_winCondition = true;
             }
         }
 
@@ -109,8 +146,8 @@ namespace NecromancerShop
             i_currentErrorCount++;
             if (m_gameParameters.i_maxErrorsCount <= i_currentErrorCount)
             {
-                //EndMinigame();
-                Debug.LogWarning("LOST!!");
+                EndMinigame();
+                b_winCondition = false;
             }
         }
     }

@@ -15,7 +15,9 @@ namespace NecromancerShop
                 float normalizedTime = gamManager.RemainingTime / gamManager.m_gameParameters.f_gameTime;
                 UpdateSlider(normalizedTime);
                 scoreText.text = gamManager.i_CurrentErrorCount + "/" + gamManager.m_gameParameters.i_maxErrorsCount;
-
+                if (gamManager.b_GameFinished) {
+                    endGameScreenController.showEndGamePanel(gamManager.b_WinCondition);
+                }
             }
         }
     }

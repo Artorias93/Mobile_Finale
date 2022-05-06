@@ -413,8 +413,9 @@ MonoBehaviour:
     i_correctIngredientsCount: 2
     i_maxErrorsCount: 2
     i_remainingOpenListCount: 3
-    i_minSecondsStopObstacle: 3
-    i_maxSecondsStopObstacle: 5
+    i_minSecondsStopObstacle: 1
+    i_maxSecondsStopObstacle: 2
+    i_activeSpawnersCounter: 1
   gp_medium:
     f_gameTime: 0
     i_maxIngredientsCount: 10
@@ -423,6 +424,7 @@ MonoBehaviour:
     i_remainingOpenListCount: 0
     i_minSecondsStopObstacle: 0
     i_maxSecondsStopObstacle: 0
+    i_activeSpawnersCounter: 0
   gp_hard:
     f_gameTime: 0
     i_maxIngredientsCount: 16
@@ -431,10 +433,12 @@ MonoBehaviour:
     i_remainingOpenListCount: 0
     i_minSecondsStopObstacle: 0
     i_maxSecondsStopObstacle: 0
+    i_activeSpawnersCounter: 0
   m_obstacleSpawners:
   - {fileID: 1374574484}
   - {fileID: 2142914629}
   - {fileID: 1963856159}
+  m_GeneralUI: {fileID: 741638632}
   m_gameParameters:
     f_gameTime: 0
     i_maxIngredientsCount: 0
@@ -443,6 +447,8 @@ MonoBehaviour:
     i_remainingOpenListCount: 0
     i_minSecondsStopObstacle: 0
     i_maxSecondsStopObstacle: 0
+    i_activeSpawnersCounter: 0
+  i_inizializedSpawners: 0
 --- !u!114 &706662297 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4910900450350563847, guid: ffa7dc37a7295ea45af63b591ea7dbcb, type: 3}
@@ -1109,7 +1115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprites:
   - {fileID: 21300000, guid: 86a6fa6872ad9f945b68960efdad3ba3, type: 3}
-  - {fileID: 21300000, guid: 6fbbb6d078338b74c827779a4dacbd97, type: 3}
+  - {fileID: 21300000, guid: 43513e3c57239804a81f21e0e4913b81, type: 3}
   - {fileID: 21300000, guid: c4fed5da69db7584084f7e34007ab53f, type: 3}
   - {fileID: 21300000, guid: eaa59ae506248bc48a02796505becf06, type: 3}
   - {fileID: 21300000, guid: 8ae3790079b2c804ba4711a58f91fd39, type: 3}
@@ -1440,6 +1446,7 @@ MonoBehaviour:
   m_target: {fileID: 212540857}
   m_obstaclePrefab: {fileID: 2813814452801355929, guid: 32bb940e100a087459342ace4ab52f0b, type: 3}
   f_speed: 2.5
+  gameManager: {fileID: 233522195}
 --- !u!222 &1374574486
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1956,6 +1963,7 @@ MonoBehaviour:
   m_target: {fileID: 848428673}
   m_obstaclePrefab: {fileID: 2813814452801355929, guid: 32bb940e100a087459342ace4ab52f0b, type: 3}
   f_speed: 2.5
+  gameManager: {fileID: 233522195}
 --- !u!114 &2043615712 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4910900449311349598, guid: ffa7dc37a7295ea45af63b591ea7dbcb, type: 3}
@@ -2160,6 +2168,7 @@ MonoBehaviour:
   m_target: {fileID: 948101508}
   m_obstaclePrefab: {fileID: 2813814452801355929, guid: 32bb940e100a087459342ace4ab52f0b, type: 3}
   f_speed: 2.5
+  gameManager: {fileID: 233522195}
 --- !u!1001 &804024428874444663
 PrefabInstance:
   m_ObjectHideFlags: 0

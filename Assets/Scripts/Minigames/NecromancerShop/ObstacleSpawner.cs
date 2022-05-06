@@ -13,8 +13,14 @@ namespace NecromancerShop
         private GameObject m_obstaclePrefab;
         [SerializeField]
         private float f_speed = 2.5f;
+        [SerializeField]
+        private NecromancerShopGM gameManager;
 
-        private bool b_canMove = false;
+        public bool b_isInitialized {
+            get { return b_initialized; }
+        }
+
+        private bool b_canMove = false, b_initialized = false;
         private GameObject m_obstacle;
         private RectTransform m_obstacleRect;
         private RectTransform m_spawnerRect;
@@ -36,27 +42,31 @@ namespace NecromancerShop
         public void InitializeSpawner(int i_minSeconds, int i_maxSeconds) {
             i_minSecondsStop = i_minSeconds;
             i_maxSecondsStop = i_maxSeconds;
-            StartCoroutine(stopMovement(i_minSecondsStop, i_maxSecondsStop));
+            b_initialized = true;
+            b_canMove = true;
+            gameManager.i_inizializedSpawners++;
         }
         public void StopSpawner()
         {
+            b_initialized = false;
             b_canMove = false;
+            gameManager.i_inizializedSpawners--;
         }
         // Update is called once per frame
         void Update()
         {
-            if (b_canMove)
+            if (b_canMove && b_initialized)
             {
 
                 if (m_obstacleRect.transform.position == m_currentTarget.GetComponent<RectTransform>().position) {
                     if (m_obstacleRect.position == m_spawnerRect.position)
                     {
                         m_currentTarget = m_target;
-                        StartCoroutine(stopMovement(i_minSecondsStop, i_maxSecondsStop));
+                        StopSpawner();
                     }
                     else {
                         m_currentTarget = gameObject;
-                        StartCoroutine(stopMovement(i_minSecondsStop/2, i_maxSecondsStop/2));
+                        StartCoroutine(stopAndStartMovement(i_minSecondsStop, i_maxSecondsStop));
                     }
 
                 }
@@ -64,7 +74,7 @@ namespace NecromancerShop
             }
         }
 
-        private IEnumerator stopMovement(float i_minSeconds,float i_maxSeconds) {
+        private IEnumerator stopAndStartMovement(float i_minSeconds,float i_maxSeconds) {
             b_canMove = false;
             yield return new WaitForSeconds(Random.Range(i_minSeconds, i_maxSeconds));
             b_canMove = true;

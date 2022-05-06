@@ -56,6 +56,9 @@ namespace NecromancerShop
             }
         }
 
+        public void stopDraggable() {
+            b_isDraggable = false;
+        }
         public void DropHandler(BaseEventData eventData)
         {
             if (v_startPosition != Vector2.zero)
