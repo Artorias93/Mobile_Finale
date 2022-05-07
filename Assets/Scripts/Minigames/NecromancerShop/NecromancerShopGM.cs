@@ -61,7 +61,7 @@ namespace NecromancerShop
         public override void BeginMinigame(Difficulty difficulty)
         {
             m_difficulty = difficulty;
-
+            m_gameParameters.i_activeSpawnersCounter = m_gameParameters.i_activeSpawnersCounter <= m_obstacleSpawners.Count ? m_gameParameters.i_activeSpawnersCounter : m_obstacleSpawners.Count;
             if (m_difficulty == Difficulty.EASY)
                 m_gameParameters = gp_easy;
             else if (m_difficulty == Difficulty.MEDIUM)
