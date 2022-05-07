@@ -27,10 +27,13 @@ namespace NecromancerShop
         {
             i_totalErrorsCount = necromancerShopGM.m_gameParameters.i_maxErrorsCount;
             List<GameObject> m_totalIngredients=new List<GameObject>();
+            i_ingredientsCount = i_ingredientsCount > sprites.Count ? sprites.Count : i_ingredientsCount;
             for (int i = 0; i < i_ingredientsCount; i++)
             {
                 GameObject go = Instantiate(m_ingredientPrefab, m_IngredientsContainer.transform);
-                go.GetComponent<Image>().sprite= sprites[Random.Range(0, sprites.Count)];
+                int spriteIndex = Random.Range(0, sprites.Count);
+                go.GetComponent<Image>().sprite= sprites[spriteIndex];
+                sprites.RemoveAt(spriteIndex);
                 m_totalIngredients.Add(go);
             }
             setRemainingOpenListCount(necromancerShopGM.m_gameParameters.i_remainingOpenListCount);
@@ -54,7 +57,6 @@ namespace NecromancerShop
             for (int i = 0; i < m_ingredients.Count; i++) {
                 GameObject go=Instantiate(m_ingredients[i], m_IngredientsList.transform);
                 DraggableItem draggable = go.GetComponent<DraggableItem>();
-                draggable.setUnchecked();
                 go.name = m_ingredients[i].name + "L";
                 m_ingredients[i].GetComponent<DraggableItem>().listElement = draggable;
             }

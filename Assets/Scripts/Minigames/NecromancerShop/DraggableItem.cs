@@ -12,8 +12,7 @@ namespace NecromancerShop
         private Image m_checkedImage;
         [SerializeField]
         private Sprite s_checked;
-        [SerializeField]
-        private Sprite s_unchecked;
+
         public bool b_IsIngredient
         {
             set { b_isIngredient = value; }
@@ -87,16 +86,11 @@ namespace NecromancerShop
 
         }
 
-        public void setUnchecked() {
-            b_isDraggable = false;
-            m_checkedImage.sprite = s_unchecked;
+        public void setChecked()
+        {
             Color tmpColor = m_checkedImage.color;
             tmpColor.a = 1;
             m_checkedImage.color = tmpColor;
-        }
-
-        public void setChecked()
-        {
             m_checkedImage.sprite = s_checked;
         }
     }

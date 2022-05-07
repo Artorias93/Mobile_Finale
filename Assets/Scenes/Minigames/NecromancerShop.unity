@@ -332,32 +332,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_uiManager: {fileID: 1042951632}
   gp_easy:
-    f_gameTime: 60
-    i_maxIngredientsCount: 15
+    f_gameTime: 15
+    i_maxIngredientsCount: 5
     i_correctIngredientsCount: 2
-    i_maxErrorsCount: 2
+    i_maxErrorsCount: 3
     i_remainingOpenListCount: 3
     i_minSecondsStopObstacle: 1
     i_maxSecondsStopObstacle: 2
     i_activeSpawnersCounter: 1
   gp_medium:
-    f_gameTime: 0
+    f_gameTime: 25
     i_maxIngredientsCount: 10
     i_correctIngredientsCount: 5
-    i_maxErrorsCount: 0
-    i_remainingOpenListCount: 0
-    i_minSecondsStopObstacle: 0
-    i_maxSecondsStopObstacle: 0
-    i_activeSpawnersCounter: 0
+    i_maxErrorsCount: 2
+    i_remainingOpenListCount: 4
+    i_minSecondsStopObstacle: 2
+    i_maxSecondsStopObstacle: 3
+    i_activeSpawnersCounter: 2
   gp_hard:
-    f_gameTime: 0
-    i_maxIngredientsCount: 16
-    i_correctIngredientsCount: 7
-    i_maxErrorsCount: 0
-    i_remainingOpenListCount: 0
-    i_minSecondsStopObstacle: 0
-    i_maxSecondsStopObstacle: 0
-    i_activeSpawnersCounter: 0
+    f_gameTime: 30
+    i_maxIngredientsCount: 15
+    i_correctIngredientsCount: 10
+    i_maxErrorsCount: 2
+    i_remainingOpenListCount: 4
+    i_minSecondsStopObstacle: 4
+    i_maxSecondsStopObstacle: 5
+    i_activeSpawnersCounter: 2
   m_obstacleSpawners:
   - {fileID: 1374574484}
   - {fileID: 1963856159}
@@ -865,7 +865,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: fdb34fab7a3c5d648ada750588336cf4, type: 3}
   - {fileID: 21300000, guid: a969a6c469a2bcc439e6908b38a61841, type: 3}
   - {fileID: 21300000, guid: ebc7a79d8217c014890d63f5f2ec449a, type: 3}
+  - {fileID: 21300000, guid: e33593bbc7da1fc429e99c7500db3514, type: 3}
+  - {fileID: 21300000, guid: 67f7eaba4b7bef94e86097b6a470decd, type: 3}
+  - {fileID: 21300000, guid: 887c7c203d76eaf43bcdc215d6d6560b, type: 3}
   - {fileID: -6451659011051416826, guid: 223c63c1aca91c243a0f099748352a60, type: 3}
+  - {fileID: 21300000, guid: 4f6ed45c411bc2e498903009bcee2355, type: 3}
+  - {fileID: 21300000, guid: 0a7040447a398a948bb8ea9e431c38c8, type: 3}
   m_IngredientsContainer: {fileID: 226635296}
   m_IngredientsListPanel: {fileID: 926626803}
   m_IngredientsList: {fileID: 1299831844}
@@ -1302,6 +1307,7 @@ MonoBehaviour:
   m_obstaclePrefab: {fileID: 2813814452801355929, guid: 32bb940e100a087459342ace4ab52f0b, type: 3}
   f_speed: 2.5
   gameManager: {fileID: 233522195}
+  b_isRight: 0
 --- !u!222 &1374574486
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1690,6 +1696,7 @@ MonoBehaviour:
   m_obstaclePrefab: {fileID: 2813814452801355929, guid: 32bb940e100a087459342ace4ab52f0b, type: 3}
   f_speed: 2.5
   gameManager: {fileID: 233522195}
+  b_isRight: 1
 --- !u!114 &2043615712 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4910900449311349598, guid: ffa7dc37a7295ea45af63b591ea7dbcb, type: 3}
@@ -1899,7 +1906,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 804024429065352584, guid: e318856bd4b4e514ea4c9c7a6afa0864, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.7594665
+      value: 1.9793998
       objectReference: {fileID: 0}
     - target: {fileID: 804024429065352584, guid: e318856bd4b4e514ea4c9c7a6afa0864, type: 3}
       propertyPath: m_LocalScale.z
@@ -1935,11 +1942,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 804024429065352584, guid: e318856bd4b4e514ea4c9c7a6afa0864, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 986
+      value: 949
       objectReference: {fileID: 0}
     - target: {fileID: 804024429065352584, guid: e318856bd4b4e514ea4c9c7a6afa0864, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -508
+      value: -485
       objectReference: {fileID: 0}
     - target: {fileID: 804024429065352584, guid: e318856bd4b4e514ea4c9c7a6afa0864, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

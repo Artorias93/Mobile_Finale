@@ -58,6 +58,11 @@ namespace NecromancerShop
         void Awake() {
             Instance = this;
         }
+        void Start()
+        {
+            //Remove comment for debug single scene
+            BeginMinigame(Difficulty.HARD);
+        }
         public override void BeginMinigame(Difficulty difficulty)
         {
             m_difficulty = difficulty;
@@ -127,11 +132,6 @@ namespace NecromancerShop
             m_gameTimer.StopTimer();
         }
 
-        // Start is called before the first frame update
-        void Start()
-        {
-            BeginMinigame(Difficulty.EASY);
-        }
         public void updateCorrectCounter()
         {
             i_currentCorrectsCount++;

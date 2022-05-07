@@ -140,6 +140,7 @@ MonoBehaviour:
   m_checkedImage: {fileID: 3023593052820621329}
   s_checked: {fileID: 21300000, guid: dabd64cf9fc69714aba333a12d2ccc94, type: 3}
   s_unchecked: {fileID: 21300000, guid: 56a553f5e6b62f84f91717929c2f0444, type: 3}
+  listElement: {fileID: 0}
 --- !u!61 &1170445092313870065
 BoxCollider2D:
   m_ObjectHideFlags: 0
