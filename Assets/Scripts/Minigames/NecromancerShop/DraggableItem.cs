@@ -77,7 +77,7 @@ namespace NecromancerShop
                     tmpColor.a = 0;
                     image.color = tmpColor;
                     listElement.setChecked();
-                    m_gameManager.updateCorrectCounter();
+                    m_gameManager.updateCorrectCounter(image.sprite);
                 }
                 else {
                     m_gameManager.updateErrorCounter();

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace NecromancerShop
 {
@@ -26,6 +27,8 @@ namespace NecromancerShop
         private List<ObstacleSpawner> m_obstacleSpawners;
         [SerializeField]
         private GeneralUiManager m_GeneralUI;
+        [SerializeField]
+        private List<Image> cartPositionImages;
         public int i_CurrentErrorCount
         {
             get { return i_currentErrorCount; }
@@ -132,9 +135,16 @@ namespace NecromancerShop
             m_gameTimer.StopTimer();
         }
 
-        public void updateCorrectCounter()
+        public void updateCorrectCounter(Sprite sprite)
         {
             i_currentCorrectsCount++;
+            if (cartPositionImages.Count > 0 && (m_gameParameters.i_correctIngredientsCount - i_currentCorrectsCount < cartPositionImages.Count))  {
+                Color tmpColor = cartPositionImages[0].color;
+                tmpColor.a = 1;
+                cartPositionImages[0].color = tmpColor;
+                cartPositionImages[0].sprite = sprite;
+                cartPositionImages.RemoveAt(0);
+            }
             if (i_currentCorrectsCount == m_gameParameters.i_correctIngredientsCount) {
                 EndMinigame();
                 b_winCondition = true;
