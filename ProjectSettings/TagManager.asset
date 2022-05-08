@@ -8,6 +8,8 @@ TagManager:
   - Blade
   - Item
   - OutDown
+  - MainUI
+  - ShopCart
   layers:
   - Default
   - TransparentFX
