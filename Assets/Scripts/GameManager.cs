@@ -43,6 +43,9 @@ public class GameManager : MonoBehaviour
         m_minigameManager = GameObject.FindGameObjectWithTag("MinigameManager").GetComponent<AMinigameManager>();
         m_minigameManager.BeginMinigame(difficulty);
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(minigameName));
+
+        yield return new WaitUntil(() => { return m_minigameManager.CanCloseGame; } );
+        ReturnToMainMenu();
     }
 
     public void ReturnToMainMenu()

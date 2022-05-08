@@ -22,7 +22,7 @@ namespace OuijaBoardMinigame
                 float normalizedTime = (float)obm.RemainingTime / obm.PlayTime;
                 UpdateSlider(normalizedTime);
                 if (obm.GameFinished) {
-                    endGameScreenController.showEndGamePanel(obm.b_win);
+                    endGameScreenController.showEndGamePanel(obm.Score);
                 }
             }
             

@@ -20,7 +20,7 @@ namespace FruitNinjaMinigame
 
                 if (gm.GameFinished)
                 {
-                    endGameScreenController.showEndGamePanel(gm.GameWon);
+                    endGameScreenController.showEndGamePanel(gm.Score);
                 }
             }
         }

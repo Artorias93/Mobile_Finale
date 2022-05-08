@@ -32,7 +32,6 @@ namespace DecodeAudioMinigame
         [Header("References")]
         [SerializeField] private BookManager m_bookManager;
         [SerializeField] private AudioSource m_audioSource;
-        [SerializeField] private EndGameScreenController m_endGameScreenController;
         [SerializeField] private DecodeAudioUIManager m_decodeUIManager;
 
         public static DecodeAudioManager m_instance;
@@ -76,7 +75,6 @@ namespace DecodeAudioMinigame
             
 
             Assert.IsNotNull(m_bookManager);
-            Assert.IsNotNull(m_endGameScreenController);
             Assert.IsNotNull(m_decodeUIManager);
         }
 
@@ -92,6 +90,7 @@ namespace DecodeAudioMinigame
                 m_gameParameters = gp_hard;
 
             m_bookManager.Initialize(m_gameParameters.m_runeCount);
+            i_score = 0;
             generateRound();
 
             gameTimer = Timer.Create(m_gameParameters.m_playTime, timerHasEnded, name: "gameTimer");
@@ -101,6 +100,10 @@ namespace DecodeAudioMinigame
         protected override void EndMinigame()
         {
             b_gameFinished = true;
+            m_bookManager.DisableAll();
+            m_decodeUIManager.DisableAll();
+
+            i_score = (int)(3 * (float) i_score / m_gameParameters.m_turnNumber);
         }
 
         private void generateRound()
@@ -138,17 +141,16 @@ namespace DecodeAudioMinigame
         {
             //Logic to play when the timer finishes and the player still hasn't won the game;
             //This is the only designed losing condition right now
-            m_bookManager.DisableAll();
-            m_decodeUIManager.DisableAll();
-            m_endGameScreenController.showLosingScreen();
+            EndMinigame();
         }
 
         private void victoryBehaviour()
         {
             //Activate UI and Logic for winning Game
-            m_bookManager.DisableAll();
-            m_decodeUIManager.DisableAll();
-            m_endGameScreenController.showWinningScreen();
+            m_currentTurn = m_gameParameters.m_turnNumber; //To avoid UI to show wrong number;
+
+            gameTimer.StopTimer();
+            EndMinigame();
         }
 
         public void checkEntry(RuneEntry re)
@@ -158,22 +160,21 @@ namespace DecodeAudioMinigame
             {
                 Debug.Log("Giusto!!!!");
                 m_currentTurn++;
+                i_score++;
                 if (m_currentTurn > m_gameParameters.m_turnNumber)
                 {
                     //End Minigame
-                    m_currentTurn = m_gameParameters.m_turnNumber; //To avoid UI to show wrong number;
-                    gameTimer?.Destroy();
                     victoryBehaviour();
                 }
                 else
                 {
+
                     generateRound();
                 }
             }
             else
             {
                 Debug.Log("Sbagliato!!!!");
-                //Bad Logic
             }
         }
 
