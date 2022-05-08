@@ -64,7 +64,7 @@ namespace NecromancerShop
         void Start()
         {
             //Remove comment for debug single scene
-            BeginMinigame(Difficulty.HARD);
+            //BeginMinigame(Difficulty.HARD);
         }
         public override void BeginMinigame(Difficulty difficulty)
         {
