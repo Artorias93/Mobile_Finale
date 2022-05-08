@@ -105,6 +105,7 @@ namespace FruitNinjaMinigame
             if (m_gameTimer != null && m_gameTimer.RemainingTime > 0.0f && i_outCount < 3)
                 m_gameWon = true;
             b_gameFinished = true;
+            i_score = 3 - i_outCount;
             Spawner.Instance.Stop();
         }
 
