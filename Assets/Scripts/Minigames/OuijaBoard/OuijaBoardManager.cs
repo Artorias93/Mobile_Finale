@@ -71,31 +71,33 @@ namespace OuijaBoardMinigame
             else if (m_difficulty == Difficulty.HARD)
                 m_gameParameters = gp_hard;
 
-            m_gameTimer = Timer.Create(m_gameParameters.m_playTime, EndMinigame, name: "gameTimer");
+            m_gameTimer = Timer.Create(m_gameParameters.m_playTime, timerHasEnded, name: "gameTimer");
             m_gameTimer.StartTimer();
             m_ouijaManager.Initialize();
             m_ouijaManager.ProposeWord();
+            i_score = 0;
         }
 
         protected override void EndMinigame()
         {
-            if (m_gameTimer != null && m_gameTimer.RemainingTime <= 0.0f)
-            {
-                b_gameFinished = true;
-                b_win = false;
-            }
+            m_ouijaManager.freezeSelector(true);
+            b_gameFinished = true;
+            i_score = (int)(3 * (float)i_score / m_gameParameters.m_wordsNum);
         }
 
-        public void setGameFinished(bool value) { b_gameFinished = value; }
+        public void GameCompleted() { b_win = true; victoryBehaviour(); }
+
+        public void wordGuessed() { i_score++; }
 
         private void timerHasEnded()
         {
-            Debug.Log("TEMPO FINITOOO!!!");
+            EndMinigame();
         }
 
         private void victoryBehaviour()
         {
-            Debug.Log("HAI VINTOOO!!!");
+            m_gameTimer.StopTimer();
+            EndMinigame();
         }
 
         public override void PauseGame()

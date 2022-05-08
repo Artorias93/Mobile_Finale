@@ -74,6 +74,7 @@ namespace OuijaBoardMinigame
             if (s_word == s_lettersConcat)
             {
                 b_finish = true;
+                m_ouijaBoardManager.wordGuessed();
                 ProposeWord();
             }
             else
@@ -91,8 +92,7 @@ namespace OuijaBoardMinigame
             m_selector.letters.Clear();
 
             if (usedWords.Count == m_ouijaBoardManager.WordsNum && b_finish) {
-                m_ouijaBoardManager.setGameFinished(true);
-                m_ouijaBoardManager.b_win = true;
+                m_ouijaBoardManager.GameCompleted();
             }
             else if (!usedWords.Contains(s_word) && usedWords.Count < m_ouijaBoardManager.WordsNum)
             {
