@@ -131,7 +131,7 @@ namespace NecromancerShop
                 m_obstacleSpawners[i].StopSpawner();
             }
 
-            i_score = (int) (3* (float)i_currentCorrectsCount / m_gameParameters.i_maxIngredientsCount);
+            i_score = (int) (3* (float)i_currentCorrectsCount / m_gameParameters.i_correctIngredientsCount);
             b_gameFinished = true;
             m_gameTimer.StopTimer();
         }
