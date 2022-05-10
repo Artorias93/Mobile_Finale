@@ -88,6 +88,7 @@ namespace DrawingRunes
             Assert.IsFalse(m_shapes == null || m_shapes.Length == 0, "No shape in list");
 
             b_pickedIndexes = new bool[m_shapes.Length];
+            i_score = 0;
         }
 
         public override void BeginMinigame(Difficulty difficulty)
@@ -108,8 +109,7 @@ namespace DrawingRunes
         protected override void EndMinigame()
         {
             b_gameFinished = true;
-            int score = (int) ( 3 * (float) i_currentTurn / m_gameParameters.i_maxTurns);
-            i_score = score;
+            i_score = (int) ( 3 * (float) i_score / m_gameParameters.i_maxTurns);
         }
 
         private void VictoryBehaviour()
@@ -172,6 +172,7 @@ namespace DrawingRunes
                     {
                         Debug.Log("Round won");
                         i_currentTurn++;
+                        i_score++;
                         if (i_currentTurn > m_gameParameters.i_maxTurns)
                         {
                             VictoryBehaviour();
