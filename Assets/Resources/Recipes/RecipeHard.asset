@@ -10,12 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5854a08f85d73774c891d60edc02eb02, type: 3}
-  m_Name: Recipe1
+  m_Name: RecipeHard
   m_EditorClassIdentifier: 
   m_entry:
+  - m_minigameScene: {fileID: 102900000, guid: 77d5676ef78af2d4c9c4bc39280c92fe, type: 3}
+    m_difficulty: 2
+  - m_minigameScene: {fileID: 102900000, guid: 5769cce6468020947943d872dbcd2c81, type: 3}
+    m_difficulty: 2
   - m_minigameScene: {fileID: 102900000, guid: fafb1ce3144c7974681db25764ad9ac1, type: 3}
     m_difficulty: 0
+  - m_minigameScene: {fileID: 102900000, guid: e995907c246091347aa61ff8072f000a, type: 3}
+    m_difficulty: 2
   - m_minigameScene: {fileID: 102900000, guid: 4f3da8ac35633aa4b89356d1e740890c, type: 3}
-    m_difficulty: 0
+    m_difficulty: 2
   - m_minigameScene: {fileID: 102900000, guid: b45b6dc5586a59e41a34813899f4d3a5, type: 3}
-    m_difficulty: 0
+    m_difficulty: 2
