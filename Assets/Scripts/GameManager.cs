@@ -50,6 +50,9 @@ public class GameManager : MonoBehaviour
 
     public void ReturnToMainMenu()
     {
+        if (Time.timeScale == 0) {
+            Time.timeScale = 1;
+        }
         StartCoroutine(_asyncSceneLoad("Mainmenu"));
     }
 
