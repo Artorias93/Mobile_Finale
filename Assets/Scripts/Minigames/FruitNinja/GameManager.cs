@@ -24,13 +24,9 @@ namespace FruitNinjaMinigame
 
 
         private Timer m_gameTimer;
-        private bool m_gameFinished, m_gameWon;
+        private bool m_gameWon;
 
 #region PROPERTIES
-        public bool GameFinished
-        {
-            get { return m_gameFinished; }
-        }
 
         public bool GameWon
         {
@@ -69,7 +65,7 @@ namespace FruitNinjaMinigame
             }
 
             m_gameWon = false;
-            m_gameFinished = false;
+            b_gameFinished = false;
         }
 
         public void increaseErrorCount()
@@ -104,11 +100,12 @@ namespace FruitNinjaMinigame
         }
 
 
-        public override void EndMinigame()
+        protected override void EndMinigame()
         {
             if (m_gameTimer != null && m_gameTimer.RemainingTime > 0.0f && i_outCount < 3)
                 m_gameWon = true;
-            m_gameFinished = true;
+            b_gameFinished = true;
+            i_score = 3 - i_outCount;
             Spawner.Instance.Stop();
         }
 

@@ -17,4 +17,9 @@ public class PauseGameScreenController : MonoBehaviour
         panel.SetActive(false);
         blockPanel.SetActive(false);
     }
+
+    public void RequestMainMenu()
+    {
+        GameManager.m_instance.ReturnToMainMenu();
+    }
 }

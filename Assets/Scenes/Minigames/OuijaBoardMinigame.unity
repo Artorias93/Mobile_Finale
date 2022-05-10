@@ -165,7 +165,6 @@ MonoBehaviour:
   m_ouijaManager: {fileID: 1895374559}
   m_ouijaBoardUIManager: {fileID: 1025244260}
   b_win: 0
-  b_gameFinished: 0
 --- !u!114 &163589292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -963,7 +962,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.25}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.25
 --- !u!212 &1051621544
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1042,8 +1041,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   f_moveSpeed: 15
-  f_tollerance: 0.7
-  f_startingTimeToStay: 1
+  f_tollerance: 0.9
+  f_startingTimeToStay: 0.5
   b_resetTime: 0
   m_ouijaManager: {fileID: 1895374559}
   letters: []

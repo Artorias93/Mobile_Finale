@@ -2,41 +2,58 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Assertions;
 
 public class EndGameScreenController : MonoBehaviour
 {
     [Header("UI References")]
     [SerializeField] private GameObject panel;
-    [SerializeField] private GameObject winContent;
-    [SerializeField] private GameObject loseContent;
+    [SerializeField] private Image[] GO_stars;
+    [SerializeField] private AMinigameManager m_currentManager;
+    [SerializeField, Range(0.0f, 1.0f)] private float i_hiddenAlpha = 0.2f;
 
-    public void showEndGamePanel(bool wonGame)
-    {
-        if (wonGame)
-            showWinningScreen();
-        else
-            showLosingScreen();
+    private void Awake()
+    {      
+        m_currentManager = GameObject.FindGameObjectWithTag(AMinigameManager.s_minigameTag).GetComponent<AMinigameManager>();
+        Assert.AreEqual<int>(GO_stars.Length, 3, "Stars missing");
+
+        for (int i = 0; i < GO_stars.Length; i++)
+            hideStar(i);
     }
 
-    public void showWinningScreen()
+    public void showEndGamePanel(int score)
     {
-        loseContent.SetActive(false);
         panel.SetActive(true);
-        winContent.SetActive(true);
+        for(int i = 0; i<score; i++)
+        {
+            showStar(i);
+        }
+    }
+
+    private void showStar(int index)
+    {
+        if (index >= 0 && index < GO_stars.Length)
+            GO_stars[index].color = Color.white;
+        else
+            Debug.Log("Invalid Index");
+    }
+
+    private void hideStar(int index)
+    {
+        if (index >= 0 && index < GO_stars.Length)
+            GO_stars[index].color = new Color(1f, 1f, 1f, i_hiddenAlpha);
+        else
+            Debug.Log("Invalid Index");
     }
 
     public void hideEverything()
     {
         panel.SetActive(false);
-        loseContent.SetActive(false);
-        winContent.SetActive(false);
     }
 
-    public void showLosingScreen()
+    public void RequestClosing()
     {
-        panel.SetActive(true);
-        winContent.SetActive(false);
-        loseContent.SetActive(true);
+        m_currentManager?.SetReadyToClose();
     }
 }
 

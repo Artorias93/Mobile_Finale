@@ -14,6 +14,8 @@ public abstract class AMinigameManager : MonoBehaviour
     ///For good interface with GameManager
     /// </summary>
 
+    public static string s_minigameTag = "MinigameManager";
+
     protected Difficulty m_difficulty;
     public Difficulty Difficulty
     {
@@ -21,11 +23,31 @@ public abstract class AMinigameManager : MonoBehaviour
         set { m_difficulty = value; }
     }
 
-    //Score
+    protected bool b_gameFinished = false, b_canCloseGame = false;
+    protected int i_score;
 
+#region PROPERTIES
+    public bool GameFinished
+    {
+        get { return b_gameFinished;}
+    }
+    public bool CanCloseGame
+    {
+        get { return b_canCloseGame; }
+    }
+    public int Score
+    {
+        get { return i_score;}
+    }
+
+#endregion
+
+    //Score
     public abstract void BeginMinigame(Difficulty difficulty); //Shall contain the logic to begin the minigame;
-    public abstract void EndMinigame(); //Shall contain the logic to give back control to the gameManager;
+    protected abstract void EndMinigame(); //Ends minigame and calculates score
 
     public virtual void PauseGame() { Time.timeScale = 0; }
     public virtual void ResumeGame() { Time.timeScale = 1; }
+
+    public void SetReadyToClose() { b_canCloseGame = true; }
 }

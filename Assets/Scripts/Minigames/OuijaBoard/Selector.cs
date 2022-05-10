@@ -23,6 +23,7 @@ namespace OuijaBoardMinigame
 		float f_dirY;
 		public List<string> letters = new List<string>();
 		float f_timeToStay;
+		private bool b_isFrozen = false;
 
 		// Use this for initialization
 		void Start()
@@ -37,12 +38,19 @@ namespace OuijaBoardMinigame
 		{
 			f_dirX = Input.acceleration.x * f_moveSpeed;
 			f_dirY = Input.acceleration.y * f_moveSpeed;
-			transform.eulerAngles = new Vector3(0, 0, -f_dirX * 7);
 		}
 
 		void FixedUpdate()
 		{
-			rb.velocity = new Vector2(f_dirX, f_dirY);
+			if (!b_isFrozen)
+			{
+				rb.velocity = new Vector2(f_dirX, f_dirY);
+				transform.eulerAngles = new Vector3(0, 0, -f_dirX * 7);
+			}
+			else
+			{
+				rb.velocity = Vector2.zero;
+			}
 		}
 
         private void OnTriggerStay2D(Collider2D collision)
@@ -67,13 +75,7 @@ namespace OuijaBoardMinigame
 		}
 
 		public void freezeSelector(bool b_isFreeze) {
-			if (b_isFreeze) {
-				f_moveSpeed = 0;
-            }else
-			{
-				f_moveSpeed = f_baseMoveSpeed;
-			}
-
+			b_isFrozen = b_isFreeze;
 		}
 	}
 }

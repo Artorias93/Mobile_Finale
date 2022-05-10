@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01aa8ef167d088142913351a1009b5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  f_ShakeTreshOld: 3.5
+  f_ShakeTreshOld: 2.5
   s_baseSprite: {fileID: 21300000, guid: 86a6fa6872ad9f945b68960efdad3ba3, type: 3}
   s_overFlowSprite: {fileID: 21300000, guid: 419e498a32543624f95a27911ce01129, type: 3}
   b_startShake: 0

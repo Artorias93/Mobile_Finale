@@ -19,4 +19,9 @@ public class SORecipe : ScriptableObject
     public RecipeEntry getEntry(int i) {
         return m_entry[i];
     }
+
+    public int getLength()
+    {
+        return m_entry.Length;
+    }
 }
