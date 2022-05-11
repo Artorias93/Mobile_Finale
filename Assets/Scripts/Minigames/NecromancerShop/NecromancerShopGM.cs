@@ -53,7 +53,7 @@ namespace NecromancerShop
         private List<GameObject> m_correctIngredients=new List<GameObject>();
         private int i_currentCorrectsCount=0,i_currentErrorCount=0;
         private Timer m_gameTimer;
-        private bool b_winCondition=false,b_gameFinished=false;
+        private bool b_winCondition = false;
        
 
 
@@ -112,7 +112,7 @@ namespace NecromancerShop
                 InitializeObstacleSpawners();
             }
         }
-        public override void EndMinigame()
+        protected override void EndMinigame()
         {
            
             if (m_gameTimer != null && m_gameTimer.RemainingTime <= 0.0f)
@@ -131,6 +131,7 @@ namespace NecromancerShop
                 m_obstacleSpawners[i].StopSpawner();
             }
 
+            i_score = (int) (3* (float)i_currentCorrectsCount / m_gameParameters.i_correctIngredientsCount);
             b_gameFinished = true;
             m_gameTimer.StopTimer();
         }

@@ -104,7 +104,7 @@ namespace PotionBrewMinigame
                 GameObject elem = selectablePotions[i];
                 elem.GetComponent<Button>().onClick.AddListener(() => { CheckAndSelectPotion(elem.gameObject); });
             }
-            m_gameTimer = Timer.Create(m_gameParameters.f_gameTime, EndMinigame, destroyOnFinish: true, name: "Minigame Timer");
+            m_gameTimer = Timer.Create(m_gameParameters.f_gameTime, ()=> { setFinishStep(false); }, destroyOnFinish: true, name: "Minigame Timer");
             m_gameTimer.StartTimer();
             setSelectStep();
         }
@@ -165,6 +165,7 @@ namespace PotionBrewMinigame
             m_flowText.text = "";
             m_stepText.text = "";
             m_gameTimer.StopTimer();
+            EndMinigame();
         }
 
         private void Update()
@@ -244,10 +245,10 @@ namespace PotionBrewMinigame
                 m_stepText.text = "TILT";
             }
         }
-        public override void EndMinigame()
+        protected override void EndMinigame()
         {
+            i_score = (int) (3* (float)i_currentStepCount / m_gameParameters.i_maxStepsCount);
             if (m_gameTimer != null && m_gameTimer.RemainingTime <= 0.0f) {
-                setFinishStep(false);
                 generalUIManager.DisableAll();
             }
         }

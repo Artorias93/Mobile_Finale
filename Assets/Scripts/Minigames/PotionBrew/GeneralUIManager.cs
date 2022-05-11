@@ -20,7 +20,7 @@ namespace PotionBrewMinigame
 
                 if (gm.CurrentStep.Equals(PotionBrewManager.STEPS.FINISH))
                 {
-                    endGameScreenController.showEndGamePanel(gm.GameWon);
+                    endGameScreenController.showEndGamePanel(gm.Score);
                 }
             }
         }

@@ -44,15 +44,11 @@ namespace DrawingRunes
         private int i_currentTurn = 1;
         private Timer m_gameTimer;
         private bool[] b_pickedIndexes; //Used to prevent drawing the same shape over and over
-        private bool b_gameFinished = false, b_gameWon = false;
+        private bool b_gameWon = false;
 
         public static DrawingGameManager Instance;
 
 #region PROPERTIES
-        public bool GameFinished
-        {
-            get { return b_gameFinished; }
-        }
 
         public bool GameWon
         {
@@ -92,6 +88,7 @@ namespace DrawingRunes
             Assert.IsFalse(m_shapes == null || m_shapes.Length == 0, "No shape in list");
 
             b_pickedIndexes = new bool[m_shapes.Length];
+            i_score = 0;
         }
 
         public override void BeginMinigame(Difficulty difficulty)
@@ -109,9 +106,10 @@ namespace DrawingRunes
             m_gameTimer.StartTimer();
         }
 
-        public override void EndMinigame()
+        protected override void EndMinigame()
         {
-            throw new System.NotImplementedException();
+            b_gameFinished = true;
+            i_score = (int) ( 3 * (float) i_score / m_gameParameters.i_maxTurns);
         }
 
         private void VictoryBehaviour()
@@ -119,11 +117,11 @@ namespace DrawingRunes
             m_gameTimer?.StopTimer();
             i_currentTurn = m_gameParameters.i_maxTurns;
             b_gameWon = true;
-            b_gameFinished = true;
+            EndMinigame();
         }
         private void onTimeEnd()
         {
-            b_gameFinished = true;
+            EndMinigame();
         }
         
         void generateRound()
@@ -174,6 +172,7 @@ namespace DrawingRunes
                     {
                         Debug.Log("Round won");
                         i_currentTurn++;
+                        i_score++;
                         if (i_currentTurn > m_gameParameters.i_maxTurns)
                         {
                             VictoryBehaviour();
