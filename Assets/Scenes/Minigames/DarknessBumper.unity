@@ -600,9 +600,6 @@ MonoBehaviour:
     f_maxSpawDelay: 2
     f_timePersistence: 3
     i_maxError: 3
-  b_enableDebug: 0
-  i_debugShape: 0
-  f_debugGizmosSize: 0
 --- !u!4 &879889300
 Transform:
   m_ObjectHideFlags: 0

@@ -30,6 +30,7 @@ namespace DarknessBumper
         private Timer m_gameTimer;
 
         private bool b_gameFinished = false, b_gameWon = false;
+        private int i_score = 0;
 
         public static DarkBumpGameManager Instance;
 
@@ -42,6 +43,10 @@ namespace DarknessBumper
         public bool GameWon
         {
             get { return b_gameWon; }
+        }
+        public int Score
+        {
+            get { return i_score; }
         }
 
         public int ErrorCount
@@ -118,29 +123,26 @@ namespace DarknessBumper
             i_numError++;
             if (i_numError == m_gameParameters.i_maxError)
             {
-                print("LOSER!!!!!!!");                      //TRIGGER SCONFITTA CAUSA ERRORI
+                m_gameTimer?.StopTimer();
                 EndMinigame();
             }
         }
 
         public override void EndMinigame()
         {
-            m_gameTimer?.StopTimer();
-            Time.timeScale = 0;                             //Giusto o crea problemi?
             b_gameFinished = true;
+            i_score = Mathf.FloorToInt((Mathf.Abs(((float)i_numError / (float)m_gameParameters.i_maxError * 100) - 100)/100*4));
+            if (i_score > 3) i_score = 3;
         }
 
         private void VictoryBehaviour()
         {
-            m_gameTimer?.StopTimer();
-            Time.timeScale = 0;                             //Giusto o crea problemi?
             b_gameWon = true;
-            b_gameFinished = true;
-            print("WINNER!!!!!!!!!");
+            EndMinigame();
         }
         private void onTimeEnd()
         {
-            VictoryBehaviour();                             //TRIGGER VITTORIA
+            VictoryBehaviour();
         }
 
     }
