@@ -25,13 +25,6 @@ namespace DarknessBumper
         [Header("Game Parameters")]
         [SerializeField] private GameParameters gp_easy, gp_medium, gp_hard;
 
-#if UNITY_EDITOR
-        [Header("Debug functionalities")]
-        [SerializeField] private bool b_enableDebug = false;
-        [SerializeField, Min(0.0f)] private int i_debugShape;
-        [SerializeField, Range(0, 1)] private float f_debugGizmosSize;
-#endif
-
         private GameParameters m_gameParameters;
         int i_numError = 0;
         private Timer m_gameTimer;
@@ -69,7 +62,6 @@ namespace DarknessBumper
 
         private void Awake()
         {
-
             BeginMinigame(Difficulty.EASY);     //TEST
 
             if (Instance == null)
@@ -81,7 +73,6 @@ namespace DarknessBumper
                 Destroy(gameObject);
                 return;
             }
-
         }
 
         public override void BeginMinigame(Difficulty difficulty)
@@ -112,6 +103,7 @@ namespace DarknessBumper
                 Vector2 pos = new Vector3(f_px, f_py);
 
                 yield return new WaitForSeconds(f_delay);
+
                 GameObject obj_skull = Instantiate(rg_darkness[f_skullIndex], pos, transform.rotation);
                 obj_skull.GetComponent<Skull>().f_speedMultiplier = m_gameParameters.f_skullSpeedMultiplier;
                 obj_skull.GetComponent<Skull>().i_moveType = Random.Range(0, 7);
