@@ -8,8 +8,12 @@ TagManager:
   - Blade
   - Item
   - OutDown
+<<<<<<< HEAD
   - MainUI
   - ShopCart
+=======
+  - Skull
+>>>>>>> feature/DarknessBumper
   layers:
   - Default
   - TransparentFX
