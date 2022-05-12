@@ -8,6 +8,7 @@ TagManager:
   - Blade
   - Item
   - OutDown
+  - Skull
   layers:
   - Default
   - TransparentFX
