@@ -13,6 +13,7 @@ public class DisappearingText : MonoBehaviour
     [SerializeField] private float f_rotationSpeed = 0.1f;
 
     private Vector3 v2_randomDirection;
+    private int i_rotationDirection = 0; //Either 1 or -1, for clockwise or counterclockwise
 
     [Header("Appearance")]
     public Color[] m_colors;
@@ -24,6 +25,7 @@ public class DisappearingText : MonoBehaviour
     {
         //Assign Random Color and Direction
         v2_randomDirection = Random.insideUnitCircle.normalized;
+        i_rotationDirection = Random.value >= 0.5 ? 1 : -1;
 
         int randomIndex = Random.Range(0, m_colors.Length);
         m_txtComponent.color = m_colors[randomIndex];
@@ -48,6 +50,10 @@ public class DisappearingText : MonoBehaviour
 
         m_rectTransform.localScale -= f_scalingSpeed * delta * Vector3.one;
         m_rectTransform.localPosition += f_movementSpeed * delta * v2_randomDirection;
+
+        float currentAngle = m_rectTransform.localRotation.eulerAngles.z;
+        m_rectTransform.localRotation = Quaternion.Euler(0,0, currentAngle + f_rotationSpeed*i_rotationDirection * delta);
+
 
         Color newColor = m_txtComponent.color;
         newColor.a -= f_disappearingSpeed * delta;

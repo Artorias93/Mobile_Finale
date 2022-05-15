@@ -49,7 +49,7 @@ namespace SlimeMinigame
             i_hits++;
             Debug.Log("Hits: " + i_hits);
 
-            GameObject go = GameObject.Instantiate(textCounterPrefab, textBasePosition.transform.position, Quaternion.identity, textParent.transform);
+            GameObject go = GameObject.Instantiate(textCounterPrefab, textBasePosition.transform.position, textBasePosition.transform.rotation, textParent.transform);
             go.GetComponent<DisappearingText>()?.AssignText(i_hits.ToString());
         }
 

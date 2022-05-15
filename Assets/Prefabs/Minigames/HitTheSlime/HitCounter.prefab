@@ -93,10 +93,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5e3d05a38b2be94594350ec462f9cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  f_disappearingSpeed: 1
+  f_disappearingSpeed: 1.5
   f_scalingSpeed: 1
   f_movementSpeed: 150
-  f_rotationSpeed: 1
+  f_rotationSpeed: 8
   m_colors:
   - {r: 0.8490566, g: 0.50863296, b: 0.50863296, a: 1}
   - {r: 0.38255408, g: 0.6886792, b: 0.36058205, a: 1}
