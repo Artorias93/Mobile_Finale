@@ -29,8 +29,7 @@ namespace DarknessBumper
         int i_numError = 0;
         private Timer m_gameTimer;
 
-        private bool b_gameFinished = false, b_gameWon = false;
-        private int i_score = 0;
+        private bool b_gameWon = false;
 
         public static DarkBumpGameManager Instance;
 
@@ -67,7 +66,7 @@ namespace DarknessBumper
 
         private void Awake()
         {
-            BeginMinigame(Difficulty.EASY);     //TEST
+            //BeginMinigame(Difficulty.EASY);     //TEST
 
             if (Instance == null)
             {
@@ -128,7 +127,7 @@ namespace DarknessBumper
             }
         }
 
-        public override void EndMinigame()
+        protected override void EndMinigame()
         {
             b_gameFinished = true;
             i_score = Mathf.FloorToInt((Mathf.Abs(((float)i_numError / (float)m_gameParameters.i_maxError * 100) - 100)/100*4));

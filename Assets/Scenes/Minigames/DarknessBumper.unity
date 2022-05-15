@@ -555,7 +555,7 @@ GameObject:
   - component: {fileID: 879889299}
   m_Layer: 0
   m_Name: DarkBumpGameManager
-  m_TagString: Untagged
+  m_TagString: MinigameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -572,6 +572,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bff4956f40668ec4189098f339ed0cff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_difficulty: 0
+  b_gameFinished: 0
+  b_canCloseGame: 0
+  i_score: 0
   rg_darkness:
   - {fileID: 9060803179968949582, guid: 62aa53ab5e34e004ead812f436b87123, type: 3}
   - {fileID: 9060803179968949582, guid: 162b66119c636dd4a94af884e9d5b5ae, type: 3}
@@ -600,6 +604,16 @@ MonoBehaviour:
     f_maxSpawDelay: 2
     f_timePersistence: 3
     i_maxError: 3
+  m_gameParameters:
+    i_playTime: 0
+    f_skullSpeedMultiplier: 0
+    f_minSpawnDelay: 0
+    f_maxSpawDelay: 0
+    f_timePersistence: 0
+    i_maxError: 0
+  i_numError: 0
+  m_gameTimer: {fileID: 0}
+  b_gameWon: 0
 --- !u!4 &879889300
 Transform:
   m_ObjectHideFlags: 0
