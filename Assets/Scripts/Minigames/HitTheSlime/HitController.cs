@@ -10,11 +10,16 @@ namespace SlimeMinigame
     {
         [Header("Animation Parameters")]
         [SerializeField] private Animator m_animator;
-        [SerializeField, Tooltip("Name of parameters to control hit animation in animator")] 
+        [SerializeField, Tooltip("Name of parameters to control hit animation in animator")]
         private string s_HitParameterName = "Hit";
 
-        private bool b_touching = false;
-        private int i_hits = 0;
+        [Header("Appearing Text Parameters")]
+        [SerializeField] private GameObject textCounterPrefab;
+        [SerializeField] private GameObject textBasePosition;
+        [SerializeField] private GameObject textParent;
+
+        private bool b_touching;
+        private int i_hits;
 
         public bool Touching
         {
@@ -32,20 +37,26 @@ namespace SlimeMinigame
                 m_animator = GetComponent<Animator>();
             }
             Assert.IsNotNull(m_animator, "Can't find animator");
+
+            i_hits = 0;
+            b_touching = false;
         }
 
         public void OnPointerDown(PointerEventData eventData)
         {
             b_touching = true;
             m_animator?.SetBool(s_HitParameterName, true);
+            i_hits++;
+            Debug.Log("Hits: " + i_hits);
+
+            GameObject go = GameObject.Instantiate(textCounterPrefab, textBasePosition.transform.position, Quaternion.identity, textParent.transform);
+            go.GetComponent<DisappearingText>()?.AssignText(i_hits.ToString());
         }
 
         public void OnPointerUp(PointerEventData eventData)
         {
             b_touching = false;
             m_animator?.SetBool(s_HitParameterName, false);
-            i_hits++;
-            Debug.Log("Hits: " + i_hits);
         }
 
     }
