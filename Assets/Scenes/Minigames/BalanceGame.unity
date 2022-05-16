@@ -679,11 +679,11 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.28132164, y: 0.05497533}
-  - {x: -0.27459002, y: -0.73414683}
-  - {x: 0.2668271, y: -0.73013407}
-  - {x: 0.26416743, y: 0.05556208}
-  - {x: -0.2750461, y: 0.056445196}
+  - {x: -0.17225897, y: -0.32178652}
+  - {x: -0.17296362, y: -0.667222}
+  - {x: 0.18998742, y: -0.66320926}
+  - {x: 0.19228542, y: -0.3063276}
+  - {x: -0.17341948, y: -0.3079232}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -918,7 +918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1162,9 +1162,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae5893d6e08453f4289c7cb856c0df16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  i_StartPositiveScaleAngle: 225
-  i_StartNegativeScaleAngle: 45
-  i_DeltaFastScaleAngle: 90
+  i_ChangeScaleAngle: 180
+  i_DeltaZeroScaleAngle: 15
+  i_DeltaNormalScaleAngle: 45
 --- !u!50 &1119119836
 Rigidbody2D:
   serializedVersion: 4
@@ -2298,7 +2298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

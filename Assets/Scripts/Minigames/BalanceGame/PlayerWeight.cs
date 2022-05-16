@@ -14,11 +14,11 @@ namespace BalanceGame
         }
 
         [SerializeField]
-        private int i_StartPositiveScaleAngle;
+        private int i_ChangeScaleAngle;
         [SerializeField]
-        private int i_StartNegativeScaleAngle;
+        private int i_DeltaZeroScaleAngle;
         [SerializeField]
-        private int i_DeltaFastScaleAngle;
+        private int i_DeltaNormalScaleAngle;
 
 
         // Start is called before the first frame update
@@ -72,11 +72,8 @@ namespace BalanceGame
         {
             Quaternion referenceRotation = Quaternion.identity;
             Quaternion deviceRotation = new Quaternion(0.5f, 0.5f, -0.5f, 0.5f) * Input.gyro.attitude * new Quaternion(0, 0, 1, 0); ;
-            Quaternion eliminationOfXY = Quaternion.Inverse(
-                Quaternion.FromToRotation(referenceRotation * Vector3.forward,
-                                          deviceRotation * Vector3.forward)
-            );
-            Quaternion rotationZ = eliminationOfXY * deviceRotation;
+
+            Quaternion rotationZ =deviceRotation;
             return rotationZ.eulerAngles.z;
         }
         public void checkScale()
@@ -88,19 +85,19 @@ namespace BalanceGame
                 float roll = getZAngleFromGyroRotation();
                 if (parentTransform.localScale.x >= minScale && parentTransform.localScale.x <= maxScale)
                 {
-                    Debug.LogWarning(roll);
-                    if (i_StartPositiveScaleAngle <= roll && roll <= 360)
+
+                    if (i_ChangeScaleAngle < roll && roll <= 360-i_DeltaZeroScaleAngle)
                     {
                         currentScaleRate = Mathf.Abs(scaleRate);
-                        if (i_StartPositiveScaleAngle + i_DeltaFastScaleAngle <= roll && roll <= 360)
+                        if (i_ChangeScaleAngle < roll && roll <= 360 - i_DeltaZeroScaleAngle-i_DeltaNormalScaleAngle)
                         {
                             currentScaleRate = Mathf.Abs(fastScaleRate);
                         }
                     }
-                    else if (i_StartNegativeScaleAngle <= roll && roll <= 180)
+                    else if (0+ i_DeltaZeroScaleAngle <= roll && roll <= i_ChangeScaleAngle)
                     {
                         currentScaleRate = -Mathf.Abs(scaleRate);
-                        if (i_StartNegativeScaleAngle +i_DeltaFastScaleAngle <= roll && roll <= 180)
+                        if (0 + i_DeltaZeroScaleAngle+i_DeltaNormalScaleAngle <= roll && roll <= i_ChangeScaleAngle)
                         {
                             currentScaleRate = -Mathf.Abs(fastScaleRate); ;
                         }
@@ -108,6 +105,7 @@ namespace BalanceGame
                     else {
                         currentScaleRate = 0;
                     }
+                    Debug.LogWarning(roll+" - "+ currentScaleRate);
                     ApplyScaleRate();
                 }
             }
