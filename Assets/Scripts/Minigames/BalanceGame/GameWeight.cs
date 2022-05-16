@@ -6,26 +6,30 @@ namespace BalanceGame
 {
     public class GameWeight : MonoBehaviour
     {
-        public bool b_IsToScale
+        public float f_ContactTime
         {
-            set { b_isToScale = value; }
+            get { return f_contactTime; }
         }
-
         // Start is called before the first frame update
-        private float scaleRate = 0.2f;
+        private float scaleRate;
         private float minScale, maxScale;
 
         private Transform parentTransform;
         private bool b_isToScale;
         private float f_contactTime = 0;
-        private float minTimeStopRescale = 1;
-        private float maxTimeStopRescale = 2;
+        private float stopRescaleSeconds;
+        private Rigidbody2D rigidBody;
 
-        public void InitializeGameWeight(float deltaScale)
+        public void InitializeGameWeight(float deltaScale, float f_initialGravityScale, float f_stopRescaleSeconds, float f_rescaleRate)
         {
+
             parentTransform = transform.parent.transform;
+            scaleRate = f_rescaleRate;
+            rigidBody = gameObject.GetComponent<Rigidbody2D>();
+            rigidBody.gravityScale = f_initialGravityScale;
             minScale = parentTransform.localScale.x;
             maxScale = minScale + deltaScale;
+            stopRescaleSeconds = f_stopRescaleSeconds;
             b_isToScale = true;
         }
         public void ApplyScaleRate()
@@ -34,14 +38,14 @@ namespace BalanceGame
             tmpScale += scaleRate * Time.deltaTime * Vector3.one;
             tmpScale.z = 0;
             parentTransform.localScale = tmpScale;
-            gameObject.GetComponent<Rigidbody2D>().gravityScale += scaleRate * Time.deltaTime;
+            rigidBody.gravityScale += scaleRate * Time.deltaTime;
 
         }
 
         private IEnumerator stopAndStartScale()
         {
             b_isToScale = false;
-            yield return new WaitForSeconds(Random.Range(minTimeStopRescale, maxTimeStopRescale));
+            yield return new WaitForSeconds(stopRescaleSeconds);
             b_isToScale = true;
         }
 
@@ -53,10 +57,12 @@ namespace BalanceGame
                 if (parentTransform.localScale.x < minScale)
                 {
                     scaleRate = Mathf.Abs(scaleRate);
+                    StartCoroutine(stopAndStartScale());
                 }
                 else if (parentTransform.localScale.x > maxScale)
                 {
                     scaleRate = -Mathf.Abs(scaleRate);
+                    StartCoroutine(stopAndStartScale());
                 }
                 ApplyScaleRate();
             }
@@ -72,13 +78,7 @@ namespace BalanceGame
             if (collision.gameObject.CompareTag("LoseTrigger"))
             {
                 f_contactTime += Time.deltaTime;
-                Debug.LogWarning("Lose time: " + f_contactTime);
             }
-        }
-
-        private void OnTriggerExit2D(Collider2D collision)
-        {
-            Debug.LogWarning("Lose time: " + f_contactTime);
         }
     }
 }
