@@ -39,6 +39,11 @@ namespace SlimeMinigame
 
         private void Awake()
         {
+            if (Instance == null)
+                Instance = this;
+            else
+                Destroy(gameObject);
+
             Assert.IsNotNull(m_hitController, "Can't find Hit Controller");
         }
 
@@ -58,6 +63,7 @@ namespace SlimeMinigame
             }
 
             m_gameTimer = Timer.Create(gp_selectedParameters.i_PlayTime, EndMinigame, name: "GameTimer");
+            m_gameTimer.StartTimer();
         }
 
         protected override void EndMinigame()

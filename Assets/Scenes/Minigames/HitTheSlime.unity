@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &237155615 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1373684677227923462, guid: c4b72bbd50ca05145b0ebd169bfea514, type: 3}
+  m_PrefabInstance: {fileID: 420924439}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76cdc262c0151cd488359f7c9a6e770e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &420924439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -276,6 +287,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4b72bbd50ca05145b0ebd169bfea514, type: 3}
+--- !u!114 &428117240 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2854564490804908007, guid: c4b72bbd50ca05145b0ebd169bfea514, type: 3}
+  m_PrefabInstance: {fileID: 420924439}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &514884425
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,14 +417,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gp_easy:
-    i_requestedHits: 15
+    i_requestedHits: 25
     i_PlayTime: 10
   gp_medium:
-    i_requestedHits: 25
+    i_requestedHits: 50
     i_PlayTime: 15
   gp_hard:
-    i_requestedHits: 40
-    i_PlayTime: 20
+    i_requestedHits: 100
+    i_PlayTime: 25
   m_hitController: {fileID: 1534638099}
 --- !u!1 &699525904
 GameObject:
@@ -506,6 +528,40 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &714094166 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2854564491517581301, guid: c4b72bbd50ca05145b0ebd169bfea514, type: 3}
+  m_PrefabInstance: {fileID: 420924439}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &714094167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714094166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e658fd1c13b1b44897b40ec0ed03c65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 428117240}
+  timerSlider: {fileID: 931956364}
+  pauseBtn: {fileID: 2087168517}
+  endGameScreenController: {fileID: 1095104301}
+  pauseGameScreenController: {fileID: 237155615}
+  m_hitController: {fileID: 1534638099}
+--- !u!114 &931956364 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2854564491671198397, guid: c4b72bbd50ca05145b0ebd169bfea514, type: 3}
+  m_PrefabInstance: {fileID: 420924439}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &967214097
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,6 +681,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1095104301 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2854564489995662658, guid: c4b72bbd50ca05145b0ebd169bfea514, type: 3}
+  m_PrefabInstance: {fileID: 420924439}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5193197359310c349ab66e0d6b87704d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1407171648
 GameObject:
   m_ObjectHideFlags: 0
@@ -839,3 +906,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2087168517 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2854564491632252606, guid: c4b72bbd50ca05145b0ebd169bfea514, type: 3}
+  m_PrefabInstance: {fileID: 420924439}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
