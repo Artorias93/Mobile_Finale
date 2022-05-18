@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minigames/DarknessBumper.unity
     guid: 9ea3472abf2a85f4f85c04b07b3e271b
+  - enabled: 1
+    path: Assets/Scenes/Minigames/BalanceGame.unity
+    guid: f725939044cc5d24eb219c98adf940f4
   m_configObjects: {}

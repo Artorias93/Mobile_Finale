@@ -8,12 +8,12 @@ TagManager:
   - Blade
   - Item
   - OutDown
-<<<<<<< HEAD
   - MainUI
   - ShopCart
-=======
+  - BalancePan
+  - WinTrigger
+  - LoseTrigger
   - Skull
->>>>>>> feature/DarknessBumper
   layers:
   - Default
   - TransparentFX
@@ -21,8 +21,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Weight
+  - ConditionalTrigger
   - 
   - 
   - 

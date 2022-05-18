@@ -31,5 +31,12 @@ public abstract class AUIManager : MonoBehaviour
     {
         pauseBtn.interactable = true;
     }
+    public void HideScore() {
+        scoreText.enabled = false;
+    }
 
+    public void ShowScore()
+    {
+        scoreText.enabled = true;
+    }
 }
