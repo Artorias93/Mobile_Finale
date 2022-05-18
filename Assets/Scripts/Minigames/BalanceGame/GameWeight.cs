@@ -19,6 +19,7 @@ namespace BalanceGame
         private float f_contactTime = 0;
         private float stopRescaleSeconds;
         private Rigidbody2D rigidBody;
+        private Animator animator;
 
         public void InitializeGameWeight(float deltaScale, float f_initialGravityScale, float f_stopRescaleSeconds, float f_rescaleRate)
         {
@@ -26,11 +27,13 @@ namespace BalanceGame
             parentTransform = transform.parent.transform;
             scaleRate = f_rescaleRate;
             rigidBody = gameObject.GetComponent<Rigidbody2D>();
+            animator = GetComponent<Animator>();
             rigidBody.gravityScale = f_initialGravityScale;
             minScale = parentTransform.localScale.x;
             maxScale = minScale + deltaScale;
             stopRescaleSeconds = f_stopRescaleSeconds;
             b_isToScale = true;
+            setBiggerAnimation();
         }
         public void ApplyScaleRate()
         {
@@ -45,10 +48,35 @@ namespace BalanceGame
         private IEnumerator stopAndStartScale()
         {
             b_isToScale = false;
+            setIdleAnimation();
             yield return new WaitForSeconds(stopRescaleSeconds);
+            if (scaleRate > 0) {
+                setBiggerAnimation();
+            } else {
+                setSmallerAnimation();
+            }
             b_isToScale = true;
         }
 
+        private void setBiggerAnimation()
+        {
+            animator.SetBool("idle", false);
+            animator.SetBool("small", false);
+            animator.SetBool("big", true);
+        }
+
+        private void setSmallerAnimation()
+        {
+            animator.SetBool("idle", false);
+            animator.SetBool("small", true);
+            animator.SetBool("big", false);
+        }
+
+        private void setIdleAnimation() {
+            animator.SetBool("idle", true);
+            animator.SetBool("small", false);
+            animator.SetBool("big", false);
+        }
         public void checkScale()
         {
             //if we exceed the defined range then correct the sign of scaleRate.
