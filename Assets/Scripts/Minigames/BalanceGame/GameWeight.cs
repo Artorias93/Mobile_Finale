@@ -16,7 +16,7 @@ namespace BalanceGame
 
         private Transform parentTransform;
         private bool b_isToScale;
-        private float f_contactTime = 0;
+        private float f_contactTime;
         private float stopRescaleSeconds;
         private Rigidbody2D rigidBody;
         private Animator animator;
@@ -33,6 +33,7 @@ namespace BalanceGame
             maxScale = minScale + deltaScale;
             stopRescaleSeconds = f_stopRescaleSeconds;
             b_isToScale = true;
+            f_contactTime = 0;
             setBiggerAnimation();
         }
         public void ApplyScaleRate()

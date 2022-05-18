@@ -29,7 +29,7 @@ namespace BalanceGame
 
         private Transform parentTransform;
         private bool b_isToScale;
-        private float f_contactTime = 0;
+        private float f_contactTime;
         private Rigidbody2D rigidBody;
 
 
@@ -47,6 +47,7 @@ namespace BalanceGame
             b_isToScale = true;
             Input.gyro.enabled = true;
             currentScaleRate = 0;
+            f_contactTime = 0;
         }
         public void ApplyScaleRate()
         {
@@ -105,7 +106,7 @@ namespace BalanceGame
                     else {
                         currentScaleRate = 0;
                     }
-                    Debug.LogWarning(roll+" - "+ currentScaleRate);
+                    //Debug.LogWarning(roll+" - "+ currentScaleRate);
                     ApplyScaleRate();
                 }
             }

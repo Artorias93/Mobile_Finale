@@ -312,6 +312,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6670132786325966544, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670132786325966544, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670132786325966544, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 879889299}
+    - target: {fileID: 6670132786325966544, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670132786325966544, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ResumeGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670132786325966544, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: AMinigameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670132786325966544, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8770700114871763841, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
       propertyPath: m_Name
       value: MinigameUI
@@ -419,6 +447,34 @@ PrefabInstance:
     - target: {fileID: 8770700114993925834, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8770700115017892554, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8770700115017892554, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8770700115017892554, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 879889299}
+    - target: {fileID: 8770700115017892554, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8770700115017892554, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PauseGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 8770700115017892554, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: AMinigameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8770700115017892554, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8770700115017892555, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
       propertyPath: m_AnchorMax.y
@@ -572,10 +628,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bff4956f40668ec4189098f339ed0cff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_difficulty: 0
-  b_gameFinished: 0
-  b_canCloseGame: 0
-  i_score: 0
   rg_darkness:
   - {fileID: 9060803179968949582, guid: 62aa53ab5e34e004ead812f436b87123, type: 3}
   - {fileID: 9060803179968949582, guid: 162b66119c636dd4a94af884e9d5b5ae, type: 3}
@@ -604,16 +656,6 @@ MonoBehaviour:
     f_maxSpawDelay: 2
     f_timePersistence: 3
     i_maxError: 3
-  m_gameParameters:
-    i_playTime: 0
-    f_skullSpeedMultiplier: 0
-    f_minSpawnDelay: 0
-    f_maxSpawDelay: 0
-    f_timePersistence: 0
-    i_maxError: 0
-  i_numError: 0
-  m_gameTimer: {fileID: 0}
-  b_gameWon: 0
 --- !u!4 &879889300
 Transform:
   m_ObjectHideFlags: 0

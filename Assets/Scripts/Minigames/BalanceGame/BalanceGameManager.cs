@@ -34,6 +34,7 @@ namespace BalanceGame
             get { return m_gameTimer ? m_gameTimer.RemainingTime : -1; }
         }
 
+
         [SerializeField]
         private PlayerWeight m_player;
         [SerializeField]
@@ -42,29 +43,35 @@ namespace BalanceGame
         private GameParameters gp_easy, gp_medium, gp_hard;
         private bool b_gameWon = false;
         private Timer m_gameTimer;
+        private bool gameStarted=false;
 
         private void Awake()
         {
             Instance = this;
+            i_score = 0;
+            b_gameFinished = false;
         }
         void Start()
         {
-            i_score = 0;
-            BeginMinigame(Difficulty.EASY);
+
+            //BeginMinigame(Difficulty.EASY);
         }
 
         void Update()
         {
-            if (m_gameWeight.f_ContactTime >= m_gameParameters.f_loseTImeSeconds)
-            {
-                b_gameWon = false;
-                EndMinigame();
+            if (gameStarted) {
+                if (m_gameWeight.f_ContactTime >= m_gameParameters.f_loseTImeSeconds)
+                {
+                    b_gameWon = false;
+                    EndMinigame();
+                }
+                else if (m_player.f_ContactTime >= m_gameParameters.f_winTimeSeconds)
+                {
+                    b_gameWon = true;
+                    EndMinigame();
+                }
             }
-            else if(m_player.f_ContactTime >= m_gameParameters.f_winTimeSeconds)
-            {
-                b_gameWon = true;
-                EndMinigame();
-            }
+
         }
 
         public override void BeginMinigame(Difficulty difficulty)
@@ -75,11 +82,12 @@ namespace BalanceGame
                 m_gameParameters = gp_medium;
             else if (difficulty == Difficulty.HARD)
                 m_gameParameters = gp_hard;
-            m_gameTimer = Timer.Create(m_gameParameters.f_gameTime, EndMinigame, destroyOnFinish: true, name: "Minigame Timer");
-            m_gameTimer.StartTimer();
+
             m_player.InitializeGameWeight(m_gameParameters.f_deltaScale, m_gameParameters.f_initialGravityScale, m_gameParameters.f_rescaleRate);
             m_gameWeight.InitializeGameWeight(m_gameParameters.f_deltaScale, m_gameParameters.f_initialGravityScale, m_gameParameters.f_stopRescaleSeconds, m_gameParameters.f_rescaleRate);
-
+            m_gameTimer = Timer.Create(m_gameParameters.f_gameTime, EndMinigame, destroyOnFinish: true, name: "Minigame Timer");
+            m_gameTimer.StartTimer();
+            gameStarted = true;
         }
 
         protected override void EndMinigame()
