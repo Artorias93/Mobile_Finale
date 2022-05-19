@@ -417,10 +417,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gp_easy:
-    i_requestedHits: 25
+    i_requestedHits: 40
     i_PlayTime: 10
   gp_medium:
-    i_requestedHits: 50
+    i_requestedHits: 70
     i_PlayTime: 15
   gp_hard:
     i_requestedHits: 100
