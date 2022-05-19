@@ -54,7 +54,7 @@ namespace BalanceGame
         void Start()
         {
 
-            //BeginMinigame(Difficulty.EASY);
+            //BeginMinigame(Difficulty.HARD);
         }
 
         void Update()
@@ -95,8 +95,9 @@ namespace BalanceGame
             b_gameFinished = true;
             if (b_gameWon)
             {
-                float currentLosetime =f_currentLosetime == 0 ? m_gameParameters.f_loseTImeSeconds : f_currentLosetime;
-                i_score = (int)(3 * currentLosetime / m_gameParameters.f_loseTImeSeconds);
+                float decimalTime = f_currentLosetime / m_gameParameters.f_loseTImeSeconds;
+                decimalTime = 1 - decimalTime + 0.14f;
+                i_score = (int)(3 *decimalTime);
             }
         }
     }
