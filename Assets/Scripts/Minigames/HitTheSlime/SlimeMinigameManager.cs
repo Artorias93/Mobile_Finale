@@ -46,12 +46,6 @@ namespace SlimeMinigame
 
             Assert.IsNotNull(m_hitController, "Can't find Hit Controller");
         }
-
-        private void Start()
-        {
-            BeginMinigame(Difficulty.EASY);
-        }
-
         public override void BeginMinigame(Difficulty difficulty)
         {
             switch (difficulty)

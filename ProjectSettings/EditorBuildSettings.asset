@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minigames/DarknessBumper.unity
     guid: 9ea3472abf2a85f4f85c04b07b3e271b
+  - enabled: 1
+    path: Assets/Scenes/Minigames/HitTheSlime.unity
+    guid: 47ba59effce01c34badfe3d769bc3850
   m_configObjects: {}

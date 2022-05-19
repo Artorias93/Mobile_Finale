@@ -420,11 +420,11 @@ MonoBehaviour:
     i_requestedHits: 40
     i_PlayTime: 10
   gp_medium:
-    i_requestedHits: 70
+    i_requestedHits: 85
     i_PlayTime: 15
   gp_hard:
-    i_requestedHits: 100
-    i_PlayTime: 25
+    i_requestedHits: 125
+    i_PlayTime: 20
   m_hitController: {fileID: 1534638099}
 --- !u!1 &699525904
 GameObject:
