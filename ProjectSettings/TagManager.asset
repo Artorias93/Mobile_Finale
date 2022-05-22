@@ -4,6 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Skull
+  - PlayerAttack
+  - Enemy
+  - EnemyAttack
   - MinigameManager
   - Blade
   - Item
@@ -14,6 +18,8 @@ TagManager:
   - WinTrigger
   - LoseTrigger
   - Skull
+  - Boss
+  - BossAttack
   layers:
   - Default
   - TransparentFX
@@ -50,7 +56,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: UI
-    uniqueID: 1184809791
     locked: 0
