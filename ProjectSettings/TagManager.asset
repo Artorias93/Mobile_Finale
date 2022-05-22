@@ -4,16 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - MinigameManager
-  - Blade
-  - Item
-  - OutDown
-<<<<<<< HEAD
-  - MainUI
-  - ShopCart
-=======
   - Skull
->>>>>>> feature/DarknessBumper
+  - PlayerAttack
+  - Enemy
+  - EnemyAttack
+  - MinigameManager
+  - Boss
+  - BossAttack
   layers:
   - Default
   - TransparentFX
@@ -50,7 +47,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: UI
-    uniqueID: 1184809791
     locked: 0
