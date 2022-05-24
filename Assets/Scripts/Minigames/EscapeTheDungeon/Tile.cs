@@ -19,7 +19,14 @@ namespace EscapeDungeonMinigame
         {
             get { return m_reachableTiles; }
         }
-       
+
+        private bool b_occupied;
+
+        public bool IsOccupied
+        {
+            get { return b_occupied; }
+        }
+
         public void Initialize(int x, int y)
         {
             v2_Coords.Set(x, y);
@@ -58,6 +65,16 @@ namespace EscapeDungeonMinigame
         public void OnPointerDown(PointerEventData eventData)
         {
             PlayerController.Instance.SetPosition(this);
+        }
+
+        public void SetOccupied(bool value)
+        {
+            if(b_occupied && value == true)
+            {
+                Debug.Log("Trying to occupy an already occupied tile");
+                return;
+            }
+            b_occupied = value;
         }
     }
 }

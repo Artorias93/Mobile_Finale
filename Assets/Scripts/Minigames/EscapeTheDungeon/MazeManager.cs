@@ -140,16 +140,11 @@ namespace EscapeDungeonMinigame
             }
         }
 
-        // Start is called before the first frame update
         void Start()
         {
+            //Used to force correct positionitiong of player
+            LayoutRebuilder.ForceRebuildLayoutImmediate(m_GridGameObject.GetComponent<RectTransform>());
             PlayerController.Instance.Spawn(m_tilesMatrix[Height - 1, Width - 1]);
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
     }
 }

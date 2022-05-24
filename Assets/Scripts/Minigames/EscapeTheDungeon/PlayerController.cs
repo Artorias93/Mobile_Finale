@@ -33,13 +33,6 @@ namespace EscapeDungeonMinigame
         {
             EscapeMinigameManager.OnUpdate += UpdatePosition;
         }
-
-        // Update is called once per frame
-        void Update()
-        {
-            
-        }
-
         void UpdatePosition()
         {
             if(m_requestedTile != null)
@@ -52,9 +45,14 @@ namespace EscapeDungeonMinigame
 
         public void SetPosition(Tile t)
         {
-            if (t.ReachableTiles.Contains(m_currentTile))
+            Debug.Log("Requested movement to " + t);
+            if (t.IsOccupied)
             {
-                Debug.Log("Requested movement to " + t);
+                Debug.Log("Trying to move to occupied tile");
+                return;
+            }
+            else if (t.ReachableTiles.Contains(m_currentTile))
+            {
                 m_requestedTile = t;
             } else
             {
@@ -65,7 +63,8 @@ namespace EscapeDungeonMinigame
         public void Spawn(Tile t)
         {
             m_currentTile = t;
-            transform.position = m_currentTile.transform.position;
-        }
+            m_currentTile.SetOccupied(true);
+            transform.position = t.transform.position;
+        }       
     }
 }
