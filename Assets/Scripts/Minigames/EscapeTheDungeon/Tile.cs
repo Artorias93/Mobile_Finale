@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace EscapeDungeonMinigame
 {
-    public class Tile : MonoBehaviour
+    public class Tile : MonoBehaviour, IPointerDownHandler
     {
         private Vector2Int v2_Coords;
         private HashSet<Tile> m_reachableTiles;
@@ -52,6 +53,11 @@ namespace EscapeDungeonMinigame
             {
                 Gizmos.DrawLine(this.transform.position, tile.transform.position);
             }
+        }
+
+        public void OnPointerDown(PointerEventData eventData)
+        {
+            PlayerController.Instance.SetPosition(this);
         }
     }
 }

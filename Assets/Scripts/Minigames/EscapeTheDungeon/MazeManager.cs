@@ -34,6 +34,7 @@ namespace EscapeDungeonMinigame
         [Header("Maze settings")]
         [SerializeField] private int Width;
         [SerializeField] private int Height;
+        [SerializeField] private int i_CellSize = 200;
 
 
         private Tile[,] m_tilesMatrix;
@@ -54,6 +55,7 @@ namespace EscapeDungeonMinigame
 
             m_GridLayout.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
             m_GridLayout.constraintCount = Width;
+            m_GridLayout.cellSize = i_CellSize * Vector2.one;
 
             GenerateGrid();
             GenerateMaze();
@@ -141,7 +143,7 @@ namespace EscapeDungeonMinigame
         // Start is called before the first frame update
         void Start()
         {
-
+            PlayerController.Instance.Spawn(m_tilesMatrix[Height - 1, Width - 1]);
         }
 
         // Update is called once per frame
