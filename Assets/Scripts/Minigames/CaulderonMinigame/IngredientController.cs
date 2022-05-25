@@ -3,63 +3,91 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class IngredientController : MonoBehaviour
-{
-    
-    private float spawnTimeSeconds=3;
-    [SerializeField]
-    private GameObject ingredient;
-    
-    //[Header("Ingredients Sprites")]
-    [SerializeField]
-    public List<Sprite> listSpriteIngredients;
-
-    
-    void Start()
+namespace CouldronMinigame 
+{ 
+    public class IngredientController : MonoBehaviour
     {
-        StartCoroutine(ButtonTimer());
 
-    }
-    private void Update()
-    {
+        [SerializeField]
+        private CauldronGameManager gameManager;
+
+
+        [SerializeField]
+        private GameObject ingredient;
+
+
+        private float lives;
+        private float spawnTimeSeconds;
+
+        [SerializeField]
+        public List<Sprite> listSpriteIngredients;
+
+        public float Lives 
+        {
         
-    }
-    private IEnumerator ButtonTimer()
-    {
-        while (!ingredient.activeSelf)
-        {
-            yield return new WaitForSeconds(spawnTimeSeconds);
-
-            Debug.Log("in corutine");
-            spawnTimeSeconds = Random.Range(4, 7);
-            ingredient.SetActive(true);
-            SetImage();
-
-            yield return new WaitForSeconds(spawnTimeSeconds);
-            CheckGameOver();
-            
-
-            spawnTimeSeconds = Random.Range(2, 4);
-            yield return new WaitForSeconds(spawnTimeSeconds);
-            
+            get { return lives; }
+            set { lives = value; }
         }
-    }
-
-    private void CheckGameOver()
-    {
-        if (ingredient.activeSelf) //se è true non hai premuto in tempo e disattiva
+        public float SpawnTimeSeconds
         {
-            ingredient.SetActive(false);
-            //gameover o perdi una vita
+
+            get { return spawnTimeSeconds; }
+            set { spawnTimeSeconds = value; }
         }
 
-    }
 
-    private void SetImage()
-    {
-        int maxrand = listSpriteIngredients.Count;
-        int rand = Random.Range(0, maxrand);
-        Sprite s = (Sprite)listSpriteIngredients[rand];
-        ingredient.GetComponent<Image>().sprite=s;
+        void Start()
+        {
+
+            spawnTimeSeconds = gameManager.m_gameParameters.spawnTimeSeconds;
+            lives = gameManager.m_gameParameters.max_lives;
+
+            StartCoroutine(ButtonTimer());
+
+        }
+        private void Update()
+        {
+        
+        }
+
+
+        private IEnumerator ButtonTimer()
+        {
+            while (!ingredient.activeSelf && lives!=0)
+            {
+                yield return new WaitForSeconds(spawnTimeSeconds);
+
+                ingredient.SetActive(true);
+                SetImage();
+
+                yield return new WaitForSeconds(spawnTimeSeconds);
+                CheckLives();
+            
+
+                yield return new WaitForSeconds(spawnTimeSeconds);
+            
+            }
+        }
+
+        private void CheckLives()
+        {
+            
+               
+            if (ingredient.activeSelf) //se è true non hai premuto in tempo e disattiva
+            {
+                ingredient.SetActive(false);
+                lives--;
+                            
+            }
+
+        }
+
+        private void SetImage()
+        {
+            int maxrand = listSpriteIngredients.Count;
+            int rand = Random.Range(0, maxrand);
+            Sprite s = (Sprite)listSpriteIngredients[rand];
+            ingredient.GetComponent<Image>().sprite=s;
+        }
     }
 }
