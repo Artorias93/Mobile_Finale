@@ -35,19 +35,22 @@ namespace CouldronMinigame
             f_xLimit *= paddingPercentage;
             f_yLimit *= paddingPercentage;
 
-            v2_cauldronCenter = Camera.main.WorldToScreenPoint(img_cauldron.rectTransform.anchoredPosition);
+            v2_cauldronCenter = img_cauldron.rectTransform.position;
         }
 
         private void Update()
         {
+            Debug.DrawLine(Vector3.zero, v2_cauldronCenter, Color.yellow);
+
             foreach(Touch touch in Input.touches)
             {
                 if(touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
                 {
-
+                    
                     //This math could possibly be simplified, but is held like this for readibility
                     //Computes the projection of a point on an ellipse
                     Vector2 distanceFromCenter = touch.position - v2_cauldronCenter;
+
                     float theta = Mathf.Atan2(distanceFromCenter.y, distanceFromCenter.x);
 
                     float x = Mathf.Cos(theta);
@@ -83,7 +86,7 @@ namespace CouldronMinigame
                 f_xLimit *= paddingPercentage;
                 f_yLimit *= paddingPercentage;
 
-                v2_cauldronCenter = Camera.main.WorldToScreenPoint(img_cauldron.rectTransform.anchoredPosition);
+                v2_cauldronCenter = img_cauldron.rectTransform.position;
             }
 #endif
         }
