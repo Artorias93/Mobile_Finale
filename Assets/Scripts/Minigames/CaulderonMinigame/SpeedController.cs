@@ -77,6 +77,13 @@ namespace CouldronMinigame
 
         private void Update()
         {
+            /*
+             * if( sei_in_errore)
+             *      timeinerrore -= Time.deltaTime;
+             * if(timeInErrore <= 0)
+             *  EndGame();
+             */
+
             
             float speedDelta = 2*((mouseDelta - m_maxSpeed/2) / m_maxSpeed);
             speedDelta = Mathf.Clamp(speedDelta, f_mouseDeceleration, f_mouseAcceleration);
@@ -120,11 +127,6 @@ namespace CouldronMinigame
             }
 
 
-        }
-
-        private void EndGame()
-        {
-            gameManager.EndMinigame();
         }
 
         private void RandomSpeed()
@@ -172,10 +174,15 @@ namespace CouldronMinigame
             }
         }
 
-     
+        
+        private void EndGame()
+        {
+            gameManager.LoseMinigame();
+        }
+
         private void CheckSpeed()//controlla se sei in gameover
         {
-            if (TimeInError == 0)
+            if (TimeInError <= 0)
                 EndGame();
 
             Debug.Log("in checkspeed");

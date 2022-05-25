@@ -22,7 +22,6 @@ namespace CouldronMinigame
         private Difficulty difficulty1;
         private Timer m_timer;
 
-        public bool b_gameFinished=false;
         public bool b_gameWon=false;
 
         IngredientController ingredientController;
@@ -67,19 +66,32 @@ namespace CouldronMinigame
         void Start()
         {
             BeginMinigame(Difficulty.EASY);
-        }
+        }  
 
-        
-
-
-       
-        public override void EndMinigame()
+        protected override void EndMinigame()
         {
-            if (m_timer != null && m_timer.RemainingTime == 0.0f && ingredientController.Lives > 0 && speedController.TimeinError > 0)
-                b_gameWon = true;
+            //i_score = blablabla
+            //stop ladle
+            m_timer?.StopTimer();
             b_gameFinished = true;
             
         }
+
+        public void LoseMinigame()
+        {
+            //lose logic
+            b_gameWon = false;
+            //...
+            EndMinigame();
+        }
+
+        public void WinMinigame()
+        {
+            b_gameWon = true;
+            //...
+            EndMinigame();
+        }
+
 
         public override void PauseGame()
         {
@@ -92,8 +104,6 @@ namespace CouldronMinigame
         {
             base.ResumeGame();
             if (m_timer != null && m_timer.RemainingTime > 0.0f && ingredientController.Lives > 0 && speedController.TimeinError < m_gameParameters.maxTimeInError) { }
-                
-               
         }
     }
 }

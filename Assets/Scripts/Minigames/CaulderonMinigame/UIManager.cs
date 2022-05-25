@@ -22,9 +22,9 @@ namespace CouldronMinigame
                 
             }
 
-            if(gameManager.b_gameFinished)
+            if(gameManager.GameFinished)
             {
-                endGameScreenController.showEndGamePanel(gameManager.b_gameWon);
+                endGameScreenController.showEndGamePanel(0);
             }
         }
 
