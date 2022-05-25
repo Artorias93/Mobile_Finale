@@ -37,6 +37,7 @@ public class PotionUiManager : MonoBehaviour
         {
             GameObject go = Instantiate(m_selectableItemPrefab, m_selectablePotionsContainer.transform);
             go.name = "Selectable" + i;
+            
             int i_colorIndex = Random.Range(0,s_colors.Count);
             ColorUtility.TryParseHtmlString(s_colors[i_colorIndex], out potionColor);
             go.transform.GetChild(0).GetComponent<Image>().color =potionColor;

@@ -16,14 +16,16 @@ namespace OuijaBoardMinigame
         protected override void LateUpdate()
         {
             OuijaBoardManager obm = OuijaBoardManager.m_instance;
-
-            if(obm != null)
+            if (obm == null) return;
+            if (obm.GameFinished)
+            {
+                endGameScreenController.showEndGamePanel(obm.Score);
+            }
+            else if (obm.RemainingTime >= 0)
             {
                 float normalizedTime = (float)obm.RemainingTime / obm.PlayTime;
                 UpdateSlider(normalizedTime);
-                if (obm.b_gameFinished) {
-                    endGameScreenController.showEndGamePanel(obm.b_win);
-                }
+                
             }
             
         }

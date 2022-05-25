@@ -44,11 +44,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   f_minAngle: 0
-  f_slowAngle: 57
-  f_mediumAngle: 62
-  f_fastAngle: 67
-  f_overFlowAngle: 72
-  f_maxAngle: 90
+  f_slowAngle: 10
+  f_mediumAngle: 20
+  f_fastAngle: 40
+  f_overFlowAngle: 50
+  f_maxAngle: 60
 --- !u!1 &4317052384797965692
 GameObject:
   m_ObjectHideFlags: 0

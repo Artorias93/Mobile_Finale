@@ -14,12 +14,16 @@ namespace DecodeAudioMinigame
             DecodeAudioManager dam = DecodeAudioManager.m_instance;
 
             scoreText.text = dam.currentTurn + "/" + dam.TurnNumber;
-
-            if(dam.RemainingTime >= 0)
+            if (dam.GameFinished)
+            {
+                endGameScreenController.showEndGamePanel(dam.Score);
+            }
+            else
             {
                 float normalizedTime = (float)dam.RemainingTime / dam.PlayTime;
-                UpdateSlider(normalizedTime);
+                UpdateSlider(normalizedTime);               
             }
+
             
         }
     }
