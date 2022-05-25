@@ -22,9 +22,9 @@ namespace CouldronMinigame
         private Difficulty difficulty1;
         private Timer m_timer;
 
-        public bool b_gameWon=false;
-
+        [SerializeField]
         IngredientController ingredientController;
+        [SerializeField]
         SpeedController speedController;
         public float remaningTime
         {
@@ -65,39 +65,33 @@ namespace CouldronMinigame
         // Start is called before the first frame update
         void Start()
         {
-            BeginMinigame(Difficulty.EASY);
+            //BeginMinigame(Difficulty.EASY);
         }  
 
         protected override void EndMinigame()
         {
-            
+
             m_timer?.StopTimer();
             b_gameFinished = true;
         }
 
         public void LoseMinigame()
         {
-            if (ingredientController.Lives == 0 || speedController.TimeinError == 0)
-            {
-                b_gameWon = false;
                 i_score = 0;
-                //...
                 EndMinigame();
-
-            }
         }
 
         public void WinMinigame()
         {
-            b_gameWon = true;
+
             float percentageTime = (float)speedController.TimeinError / m_gameParameters.maxTimeInError;
-            float percentageLives = (float)ingredientController.Lives / m_gameParameters.max_lives ;
-            int i_scoreTemp = (int)(3f * Mathf.Clamp(percentageTime, 0f, 1f));
-            i_scoreTemp += (int)(3f * Mathf.Clamp(percentageLives, 0f, 1f));
-            i_score = i_scoreTemp / 2;
-            
-            //...
+            float percentageLives = (float)ingredientController.Lives / m_gameParameters.max_lives;
+
+            float percentage = (percentageLives + percentageTime)/2;
+            i_score = (int)(3f * Mathf.Clamp(percentage, 0f, 1f));
             EndMinigame();
+        
+            
         }
     }
 }

@@ -47,7 +47,8 @@ namespace CouldronMinigame
         }
         private void Update()
         {
-        
+            if (gameManager.GameFinished)
+                StopAllCoroutines();
         }
 
 
@@ -77,11 +78,19 @@ namespace CouldronMinigame
             {
                 ingredient.SetActive(false);
                 lives--;
-                            
+                if (lives <= 0)
+                {
+                    EndGame();
+                    StopCoroutine(ButtonTimer());                   
+                }            
             }
 
         }
 
+        private void EndGame()
+        {
+            gameManager.LoseMinigame();
+        }
         private void SetImage()
         {
             int maxrand = listSpriteIngredients.Count;

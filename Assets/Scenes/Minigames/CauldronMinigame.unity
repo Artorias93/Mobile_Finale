@@ -252,28 +252,29 @@ MonoBehaviour:
   gp_easy:
     f_gameTime: 25
     changeSecondsSpeedController: 7
-    maxTimeInError: 5000
+    maxTimeInError: 15
     max_lives: 4
     spawnTimeSeconds: 2
   gp_medium:
     f_gameTime: 8
-    changeSecondsSpeedController: 0
-    maxTimeInError: 0
+    changeSecondsSpeedController: 5
+    maxTimeInError: 8
     max_lives: 3
-    spawnTimeSeconds: 10
+    spawnTimeSeconds: 1
   gp_hard:
     f_gameTime: 6
-    changeSecondsSpeedController: 0
-    maxTimeInError: 0
+    changeSecondsSpeedController: 3
+    maxTimeInError: 5
     max_lives: 2
-    spawnTimeSeconds: 5
+    spawnTimeSeconds: 1
   m_gameParameters:
     f_gameTime: 0
     changeSecondsSpeedController: 0
     maxTimeInError: 0
     max_lives: 0
     spawnTimeSeconds: 0
-  b_gameWon: 0
+  ingredientController: {fileID: 619144664}
+  speedController: {fileID: 472681087}
 --- !u!4 &8122636
 Transform:
   m_ObjectHideFlags: 0

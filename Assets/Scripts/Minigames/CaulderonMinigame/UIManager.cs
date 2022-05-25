@@ -24,7 +24,7 @@ namespace CouldronMinigame
 
             if(gameManager.GameFinished)
             {
-                endGameScreenController.showEndGamePanel(0);
+                endGameScreenController.showEndGamePanel(gameManager.Score);
             }
         }
 
