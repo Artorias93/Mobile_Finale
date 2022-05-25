@@ -37,7 +37,10 @@ namespace PlaceTheCandles
         private GameParameters m_gameParameters;
         private Timer m_gameTimer;
 
+        GameObject obj_rune;
         int i_runeCompleted = 0;
+        int i_candlesPlaced = 0;
+        int i_candlesCount;
         int i_childToCheckId;
 
         private bool b_gameWon = false;
@@ -123,11 +126,17 @@ namespace PlaceTheCandles
             m_gameTimer = Timer.Create(m_gameParameters.i_playTime, onTimeEnd, name: "Game Timer");
             m_gameTimer.StartTimer();
 
+            GenerateRound();
+        }
+
+        private void GenerateRound()
+        {
+            i_candlesPlaced = 0;
+            i_candlesCount = 0;
             int i_runeId = Random.Range(0, rg_runes.Count);
-            GameObject obj_rune = Instantiate(rg_runes[i_runeId]);
+            obj_rune = Instantiate(rg_runes[i_runeId]);
             rg_runes.RemoveAt(i_runeId);
-            int i_candlesCount = 0;
-            
+
             for (int i = 0; i <= i_childToCheckId; i++)
             {
                 obj_rune.transform.GetChild(i).gameObject.SetActive(true);
@@ -150,9 +159,18 @@ namespace PlaceTheCandles
         public void CountRunes()
         {
             i_runeCompleted++;
+            Destroy(obj_rune);
+            if (i_runeCompleted < GameParameters.i_runeToComplete) GenerateRound();
+            else VictoryBehaviour();
         }
 
-        public void LoseBehaviour(bool b_check)
+        public void CountCandles()
+        {
+            i_candlesPlaced++;
+            if (i_candlesPlaced == i_candlesCount) CountRunes();
+        }
+
+        public void LoseBehaviour()
         {
             EndMinigame();
         }
@@ -174,7 +192,7 @@ namespace PlaceTheCandles
         }
         private void onTimeEnd()
         {
-            LoseBehaviour(false);
+            LoseBehaviour();
         }
 
     }

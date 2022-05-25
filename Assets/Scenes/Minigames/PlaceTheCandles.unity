@@ -555,8 +555,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rg_runes:
-  - {fileID: 5839523327160473720, guid: 8c65616c2551d1f40a94d955ee20722f, type: 3}
-  - {fileID: 1336283645520542006, guid: f3868bc50b185cf49b9a827f085bc3f4, type: 3}
+  - {fileID: 658981354705722265, guid: 8c65616c2551d1f40a94d955ee20722f, type: 3}
+  - {fileID: 8601786690851541328, guid: f3868bc50b185cf49b9a827f085bc3f4, type: 3}
+  - {fileID: 6222723260081244722, guid: c5b601e1c8e928346b7174ffea923e50, type: 3}
+  - {fileID: 3471783813464239348, guid: 7851c5ff4e6a90444b67aefc19d37ca3, type: 3}
+  - {fileID: 6885704577857049350, guid: 8f64868277303494f89a0c7cb58b3082, type: 3}
+  - {fileID: 5769998650168358559, guid: afebac3feba95be47813ad5846e686d0, type: 3}
+  - {fileID: 6076168036648429759, guid: 03e205a2358500b4a9cfe6a6aabaf5cd, type: 3}
+  - {fileID: 4361286602628685187, guid: 6b64124ac8e57c24bb3893f2c8401d82, type: 3}
   obj_spawnCandles: {fileID: 548436808}
   obj_candles: {fileID: 4522161315103966883, guid: 4375f705f0f35ce47a12baa6d8beecac, type: 3}
   gp_easy:
@@ -564,12 +570,12 @@ MonoBehaviour:
     i_runeToComplete: 2
   gp_medium:
     i_playTime: 30
-    i_runeToComplete: 2
+    i_runeToComplete: 3
   gp_hard:
     i_playTime: 30
     i_runeToComplete: 2
   b_enableDebug: 1
-  diff: 1
+  diff: 2
 --- !u!4 &745970310
 Transform:
   m_ObjectHideFlags: 0
