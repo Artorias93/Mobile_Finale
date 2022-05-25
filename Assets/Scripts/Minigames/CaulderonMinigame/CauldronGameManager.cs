@@ -9,10 +9,10 @@ namespace CouldronMinigame
     public struct GameParameters
     {
         public float f_gameTime;
-        public float changeSecondsSpeedController;
+        
         public float maxTimeInError;
         public float max_lives;
-        public float spawnTimeSeconds;
+        
     }
     public class CauldronGameManager : AMinigameManager
     {
@@ -70,24 +70,32 @@ namespace CouldronMinigame
 
         protected override void EndMinigame()
         {
-            //stop ladle
+            
             m_timer?.StopTimer();
             b_gameFinished = true;
         }
 
         public void LoseMinigame()
         {
-            //lose logic
-            b_gameWon = false;
-            //i_score = 0;
-            //...
-            EndMinigame();
+            if (ingredientController.Lives == 0 || speedController.TimeinError == 0)
+            {
+                b_gameWon = false;
+                i_score = 0;
+                //...
+                EndMinigame();
+
+            }
         }
 
         public void WinMinigame()
         {
             b_gameWon = true;
-            //i_score = calcolo normale in percentuale di errori
+            float percentageTime = (float)speedController.TimeinError / m_gameParameters.maxTimeInError;
+            float percentageLives = (float)ingredientController.Lives / m_gameParameters.max_lives ;
+            int i_scoreTemp = (int)(3f * Mathf.Clamp(percentageTime, 0f, 1f));
+            i_scoreTemp += (int)(3f * Mathf.Clamp(percentageLives, 0f, 1f));
+            i_score = i_scoreTemp / 2;
+            
             //...
             EndMinigame();
         }
