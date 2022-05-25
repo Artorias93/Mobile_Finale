@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,28 +9,36 @@ namespace PlaceTheCandles
     public struct GameParameters
     {
         public int i_playTime;
-        public int i_enemiesRows;
-        public float f_monsterSpeedMultiplier;
-        public float f_monsterFireRateMultiplier;
-        public float f_monsterAttackSpeedMultiplier;
-        public int i_maxError;
+        public int i_runeToComplete;
+    }
+
+    public enum Diff
+    {
+        easy,
+        medium,
+        hard
     }
 
     public class PlaceCandlesGameManager : AMinigameManager
     {
         [Header("References")]
-        [SerializeField] private GameObject[] rg_runes;
-        [SerializeField] private GameObject obj_boss;
-        [SerializeField] private GameObject obj_bossSpawnPoint;
-        [SerializeField] private GameObject obj_spawnGrid;
+        [SerializeField] private List<GameObject> rg_runes;
+        [SerializeField] private GameObject obj_spawnCandles;
+        [SerializeField] private GameObject obj_candles;
 
         [Header("Game Parameters")]
         [SerializeField] private GameParameters gp_easy, gp_medium, gp_hard;
 
+
+        [Header("Debug")]
+        [SerializeField] private bool b_enableDebug;
+        [SerializeField] private Diff diff;
+
         private GameParameters m_gameParameters;
         private Timer m_gameTimer;
 
-        int i_numError = 0;
+        int i_runeCompleted = 0;
+        int i_childToCheckId;
 
         private bool b_gameWon = false;
 
@@ -49,9 +59,9 @@ namespace PlaceTheCandles
             get { return i_score; }
         }
 
-        public int ErrorCount
+        public int RunesCount
         {
-            get { return i_numError; }
+            get { return i_runeCompleted; }
         }
 
         public float RemainingTime
@@ -68,10 +78,12 @@ namespace PlaceTheCandles
 
         private void Awake()
         {
-            //BeginMinigame(Difficulty.EASY);       //TEST
-            //BeginMinigame(Difficulty.MEDIUM);     //TEST
-            //BeginMinigame(Difficulty.HARD);       //TEST
-
+            if (b_enableDebug)
+            {
+                if (diff == Diff.easy) BeginMinigame(Difficulty.EASY);
+                else if (diff == Diff.medium) BeginMinigame(Difficulty.MEDIUM);
+                else if (diff == Diff.hard) BeginMinigame(Difficulty.HARD);
+            }
 
             if (Instance == null)
             {
@@ -93,30 +105,51 @@ namespace PlaceTheCandles
         {
             m_difficulty = difficulty;
             if (difficulty == Difficulty.EASY)
+            {
                 m_gameParameters = gp_easy;
+                i_childToCheckId = 0;
+            }
             else if (difficulty == Difficulty.MEDIUM)
+            {
                 m_gameParameters = gp_medium;
+                i_childToCheckId = 1;
+            }
             else if (difficulty == Difficulty.HARD)
+            {
                 m_gameParameters = gp_hard;
+                i_childToCheckId = 2;
+            }
 
             m_gameTimer = Timer.Create(m_gameParameters.i_playTime, onTimeEnd, name: "Game Timer");
             m_gameTimer.StartTimer();
+
+            int i_runeId = Random.Range(0, rg_runes.Count);
+            GameObject obj_rune = Instantiate(rg_runes[i_runeId]);
+            rg_runes.RemoveAt(i_runeId);
+            int i_candlesCount = 0;
+            
+            for (int i = 0; i <= i_childToCheckId; i++)
+            {
+                obj_rune.transform.GetChild(i).gameObject.SetActive(true);
+                i_candlesCount += obj_rune.transform.GetChild(i).childCount;
+            }
+
+            SpawnCandles(i_candlesCount);
         }
 
-        private void EnemyParams(GameObject obj_monster)
+        private void SpawnCandles(int i_candlesNum)
         {
-//             obj_monster.GetComponent<Enemy>().f_speedMultiplier = m_gameParameters.f_monsterSpeedMultiplier;
-//             obj_monster.GetComponent<Enemy>().f_fireRateMultiplier = m_gameParameters.f_monsterFireRateMultiplier;
-//             obj_monster.GetComponent<Enemy>().f_attackSpeedMultiplier = m_gameParameters.f_monsterAttackSpeedMultiplier;
+            for (int i = 0; i <= i_candlesNum - 1; i++)
+            {
+                GameObject obj_candle = Instantiate(obj_candles);
+                obj_candle.transform.SetParent(obj_spawnCandles.transform.GetChild(i).transform);
+                obj_candle.transform.localPosition = Vector3.zero;
+            }
         }
 
-        public void CountError(int i_errSum)
+        public void CountRunes()
         {
-            i_numError += i_errSum;
-
-            if (i_numError >= m_gameParameters.i_maxError) LoseBehaviour(false);
-            if (i_numError < 0) i_numError = 0;
-
+            i_runeCompleted++;
         }
 
         public void LoseBehaviour(bool b_check)
@@ -129,7 +162,7 @@ namespace PlaceTheCandles
             m_gameTimer?.StopTimer();
             b_gameFinished = true;
 
-            i_score = Mathf.FloorToInt((Mathf.Abs(((float)i_numError / (float)m_gameParameters.i_maxError * 100) - 100) / 100 * 4));
+            i_score = Mathf.FloorToInt((Mathf.Abs(((float)i_runeCompleted / (float)m_gameParameters.i_runeToComplete * 100) - 100) / 100 * 4));
             if (i_score > 3) i_score = 3;
 
         }

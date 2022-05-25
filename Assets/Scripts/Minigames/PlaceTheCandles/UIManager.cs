@@ -10,7 +10,7 @@ namespace PlaceTheCandles
                 float normalizedTime = (float) gm.RemainingTime / gm.GameParameters.i_playTime;
                 UpdateSlider(normalizedTime);
                  
-                scoreText.text = gm.ErrorCount + "/" + gm.GameParameters.i_maxError;
+                scoreText.text = gm.RunesCount + "/" + gm.GameParameters.i_runeToComplete;
 
                 if (gm.GameFinished)
                 {
