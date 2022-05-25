@@ -9,10 +9,10 @@ namespace CouldronMinigame
     public struct GameParameters
     {
         public float f_gameTime;
-        
+        public float changeSecondsSpeedController;
         public float maxTimeInError;
         public float max_lives;
-        
+        public float spawnTimeSeconds;
     }
     public class CauldronGameManager : AMinigameManager
     {
