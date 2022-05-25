@@ -133,8 +133,8 @@ namespace CouldronMinigame
         {
             Debug.Log("in random speed");
             
-                randomSpeedIndex = Random.Range(0, 3);
-            
+            randomSpeedIndex = Random.Range(0, 3);
+
             if (randomSpeedIndex == (int)Speed.REGULAR)
             {
                 //modifica colore poi metti colore in immagine
@@ -187,6 +187,20 @@ namespace CouldronMinigame
 
             Debug.Log("in checkspeed");
             Debug.Log(f_ladleCurrentSpeed);
+            
+            /*
+            Speed currentSpeed;
+            if (m_maximumRegularNormalizedSpeed > f_ladleCurrentSpeed && m_maximumRegularNormalizedSpeed > f_ladleCurrentSpeed)
+                currentSpeed = Speed.REGULAR;
+            else if (m_maximumRegularNormalizedSpeed < f_ladleCurrentSpeed)
+                currentSpeed = Speed.FAST;
+            else
+                currentSpeed = Speed.SLOW;
+
+            if (randomSpeedIndex != currentSpeed)
+                timeInErrore -= Time.deltaTime;
+            */
+
             if(f_ladleCurrentSpeed == 0)
             {
                 //se stai fermo dopo tot tempo  gameover

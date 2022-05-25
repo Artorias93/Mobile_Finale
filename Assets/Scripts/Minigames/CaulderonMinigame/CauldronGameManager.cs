@@ -54,7 +54,7 @@ namespace CouldronMinigame
             {
                 m_gameParameters = gp_hard;
             }
-            m_timer = Timer.Create(m_gameParameters.f_gameTime, EndMinigame,destroyOnFinish:true,name:"timer");
+            m_timer = Timer.Create(m_gameParameters.f_gameTime, WinMinigame ,destroyOnFinish:true,name:"timer");
             m_timer.StartTimer();
             
 
@@ -70,17 +70,16 @@ namespace CouldronMinigame
 
         protected override void EndMinigame()
         {
-            //i_score = blablabla
             //stop ladle
             m_timer?.StopTimer();
             b_gameFinished = true;
-            
         }
 
         public void LoseMinigame()
         {
             //lose logic
             b_gameWon = false;
+            //i_score = 0;
             //...
             EndMinigame();
         }
@@ -88,22 +87,9 @@ namespace CouldronMinigame
         public void WinMinigame()
         {
             b_gameWon = true;
+            //i_score = calcolo normale in percentuale di errori
             //...
             EndMinigame();
-        }
-
-
-        public override void PauseGame()
-        {
-            base.PauseGame();
-            //stop cose spawn oggetti, movimento slider, tempo
-            
-        }
-
-        public override void ResumeGame()
-        {
-            base.ResumeGame();
-            if (m_timer != null && m_timer.RemainingTime > 0.0f && ingredientController.Lives > 0 && speedController.TimeinError < m_gameParameters.maxTimeInError) { }
         }
     }
 }
