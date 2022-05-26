@@ -1,0 +1,1200 @@
+fileFormatVersion: 2
+guid: 3292b7f1ab8bb0a4aa51d304434fd4e4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5825863772236900072
+    second: Celtic-SymbolsDef_0
+  - first:
+      213: -630463445972219427
+    second: Celtic-SymbolsDef_5
+  - first:
+      213: -1125170586627621733
+    second: Celtic-SymbolsDef_6
+  - first:
+      213: 3713992346015166323
+    second: Celtic-SymbolsDef_7
+  - first:
+      213: 7403659475843007052
+    second: Celtic-SymbolsDef_8
+  - first:
+      213: -6424706628801576798
+    second: Celtic-SymbolsDef_9
+  - first:
+      213: -6363819521572102588
+    second: Celtic-SymbolsDef_14
+  - first:
+      213: -5580658938353423404
+    second: Celtic-SymbolsDef_15
+  - first:
+      213: 5241378844154996126
+    second: Celtic-SymbolsDef_16
+  - first:
+      213: -8023633290609588723
+    second: Celtic-SymbolsDef_17
+  - first:
+      213: -7649000139091082509
+    second: Celtic-SymbolsDef_18
+  - first:
+      213: -4854564563953348799
+    second: Celtic-SymbolsDef_19
+  - first:
+      213: -3129921115013083808
+    second: Celtic-SymbolsDef_20
+  - first:
+      213: 5920667324124495847
+    second: Celtic-SymbolsDef_21
+  - first:
+      213: -3579078888717302355
+    second: Celtic-SymbolsDef_22
+  - first:
+      213: -6050312032099798824
+    second: Celtic-SymbolsDef_23
+  - first:
+      213: -406635557335892317
+    second: Celtic-SymbolsDef_24
+  - first:
+      213: -1346332422952330288
+    second: Celtic-SymbolsDef_25
+  - first:
+      213: -3062315039273923575
+    second: Celtic-SymbolsDef_26
+  - first:
+      213: 6297087817742406780
+    second: Celtic-SymbolsDef_27
+  - first:
+      213: 1078578106665781527
+    second: Celtic-SymbolsDef_28
+  - first:
+      213: 9073115291069730942
+    second: Celtic-SymbolsDef_29
+  - first:
+      213: 6385250967782037418
+    second: Celtic-SymbolsDef_30
+  - first:
+      213: -7306112181985702909
+    second: Celtic-SymbolsDef_31
+  - first:
+      213: 2946714594989382105
+    second: Celtic-SymbolsDef_32
+  - first:
+      213: -2730164110702489431
+    second: Celtic-SymbolsDef_33
+  - first:
+      213: 1695727984677328600
+    second: Celtic-SymbolsDef_34
+  - first:
+      213: 5139929166431297357
+    second: Celtic-SymbolsDef_35
+  - first:
+      213: 8853381764056387701
+    second: Celtic-SymbolsDef_36
+  - first:
+      213: 5305010166185531565
+    second: Celtic-SymbolsDef_37
+  - first:
+      213: 2377730436243389009
+    second: Celtic-SymbolsDef_39
+  - first:
+      213: -4746206310456934046
+    second: Celtic-SymbolsDef_41
+  - first:
+      213: 6080689822846556907
+    second: Celtic-SymbolsDef_42
+  - first:
+      213: 4936737661649278216
+    second: Celtic-SymbolsDef_43
+  - first:
+      213: -1337036152230786126
+    second: Celtic-SymbolsDef_44
+  - first:
+      213: -2396392275613412020
+    second: Celtic-SymbolsDef_48
+  - first:
+      213: -5751581744697740463
+    second: Celtic-SymbolsDef_49
+  - first:
+      213: 5464515117788372352
+    second: Celtic-SymbolsDef_50
+  - first:
+      213: 8770292728866086057
+    second: Celtic-SymbolsDef_51
+  - first:
+      213: -7528096609253788592
+    second: Celtic-SymbolsDef_52
+  - first:
+      213: 7692046381449927253
+    second: Celtic-SymbolsDef_53
+  - first:
+      213: 8538182301014953553
+    second: Celtic-SymbolsDef_54
+  - first:
+      213: 8551519182975282159
+    second: Celtic-SymbolsDef_55
+  - first:
+      213: -6884181346665596490
+    second: Celtic-SymbolsDef_56
+  - first:
+      213: 1454665641617318265
+    second: Celtic-SymbolsDef_57
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_0
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 3894
+        width: 511
+        height: 503
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e66ffdeb30a9d050800000000000000
+      internalID: 5825863772236900072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_5
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 3897
+        width: 487
+        height: 487
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd905f216d42047f0800000000000000
+      internalID: -630463445972219427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_6
+      rect:
+        serializedVersion: 2
+        x: 1970
+        y: 3910
+        width: 472
+        height: 476
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9cb75810579260f0800000000000000
+      internalID: -1125170586627621733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_7
+      rect:
+        serializedVersion: 2
+        x: 2611
+        y: 3903
+        width: 477
+        height: 476
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37fe0c27c50ca8330800000000000000
+      internalID: 3713992346015166323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_8
+      rect:
+        serializedVersion: 2
+        x: 3235
+        y: 3909
+        width: 500
+        height: 468
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c42c39721151fb660800000000000000
+      internalID: 7403659475843007052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_9
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 3912
+        width: 480
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a04f245c5bd6d6a0800000000000000
+      internalID: -6424706628801576798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_14
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 3236
+        width: 537
+        height: 539
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44e9ff1bcdb2fa7a0800000000000000
+      internalID: -6363819521572102588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_15
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 3270
+        width: 487
+        height: 486
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dbe5de53448d82b0800000000000000
+      internalID: -5580658938353423404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_16
+      rect:
+        serializedVersion: 2
+        x: 1335
+        y: 3260
+        width: 466
+        height: 476
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e952b1be94e1db840800000000000000
+      internalID: 5241378844154996126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_17
+      rect:
+        serializedVersion: 2
+        x: 1970
+        y: 3270
+        width: 502
+        height: 479
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d068731880456a090800000000000000
+      internalID: -8023633290609588723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_18
+      rect:
+        serializedVersion: 2
+        x: 2572
+        y: 3303
+        width: 542
+        height: 440
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f2009e46ea49d590800000000000000
+      internalID: -7649000139091082509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_19
+      rect:
+        serializedVersion: 2
+        x: 3177
+        y: 3215
+        width: 617
+        height: 616
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14f8c5aef3f11acb0800000000000000
+      internalID: -4854564563953348799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2757
+        width: 582
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06d86a434594094d0800000000000000
+      internalID: -3129921115013083808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_21
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 2610
+        width: 435
+        height: 491
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eff3bfef8f6a2250800000000000000
+      internalID: 5920667324124495847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_22
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 2601
+        width: 496
+        height: 535
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da5c7e6a6be845ec0800000000000000
+      internalID: -3579078888717302355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_23
+      rect:
+        serializedVersion: 2
+        x: 1942
+        y: 2597
+        width: 533
+        height: 534
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d07b624349f80ca0800000000000000
+      internalID: -6050312032099798824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_24
+      rect:
+        serializedVersion: 2
+        x: 2594
+        y: 2633
+        width: 481
+        height: 477
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ae73f37d175b5af0800000000000000
+      internalID: -406635557335892317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_25
+      rect:
+        serializedVersion: 2
+        x: 3257
+        y: 2633
+        width: 458
+        height: 458
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dbd5546bcdd05de0800000000000000
+      internalID: -1346332422952330288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_26
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1908
+        width: 414
+        height: 576
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90ccdb552b87085d0800000000000000
+      internalID: -3062315039273923575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_27
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 1934
+        width: 515
+        height: 539
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c74d9ffb100c36750800000000000000
+      internalID: 6297087817742406780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_28
+      rect:
+        serializedVersion: 2
+        x: 1385
+        y: 1912
+        width: 375
+        height: 587
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 719c35ec211e7fe00800000000000000
+      internalID: 1078578106665781527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_29
+      rect:
+        serializedVersion: 2
+        x: 1972
+        y: 1951
+        width: 474
+        height: 503
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e70506a294e2aed70800000000000000
+      internalID: 9073115291069730942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_30
+      rect:
+        serializedVersion: 2
+        x: 2609
+        y: 1970
+        width: 477
+        height: 477
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa71e58bce7fc9850800000000000000
+      internalID: 6385250967782037418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_31
+      rect:
+        serializedVersion: 2
+        x: 3274
+        y: 2018
+        width: 500
+        height: 423
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30c869f0ea97b9a90800000000000000
+      internalID: -7306112181985702909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_32
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1362
+        width: 435
+        height: 435
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d91dc0df45d4e820800000000000000
+      internalID: 2946714594989382105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_33
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 1358
+        width: 492
+        height: 454
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a0de03d4328c1ad0800000000000000
+      internalID: -2730164110702489431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_34
+      rect:
+        serializedVersion: 2
+        x: 1353
+        y: 1347
+        width: 437
+        height: 467
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d691622e9f688710800000000000000
+      internalID: 1695727984677328600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_35
+      rect:
+        serializedVersion: 2
+        x: 1981
+        y: 1325
+        width: 459
+        height: 507
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4f9ec72852b45740800000000000000
+      internalID: 5139929166431297357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_36
+      rect:
+        serializedVersion: 2
+        x: 2605
+        y: 1329
+        width: 487
+        height: 470
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5709083aec78dda70800000000000000
+      internalID: 8853381764056387701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_37
+      rect:
+        serializedVersion: 2
+        x: 3214
+        y: 1331
+        width: 532
+        height: 502
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da8135593ae2f9940800000000000000
+      internalID: 5305010166185531565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_39
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 772
+        width: 554
+        height: 336
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15afbe7eb356ff020800000000000000
+      internalID: 2377730436243389009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_41
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 671
+        width: 405
+        height: 513
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2614f72d186122eb0800000000000000
+      internalID: -4746206310456934046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_42
+      rect:
+        serializedVersion: 2
+        x: 1916
+        y: 752
+        width: 591
+        height: 313
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bea1a105d23f26450800000000000000
+      internalID: 6080689822846556907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_43
+      rect:
+        serializedVersion: 2
+        x: 2607
+        y: 814
+        width: 489
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 805d5ef4fb0d28440800000000000000
+      internalID: 4936737661649278216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_44
+      rect:
+        serializedVersion: 2
+        x: 3230
+        y: 762
+        width: 529
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bbcd6614b4e17de0800000000000000
+      internalID: -1337036152230786126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_48
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 548
+        width: 526
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4592950ced4ebed0800000000000000
+      internalID: -2396392275613412020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_49
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 99
+        width: 568
+        height: 359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1537baa50e64e20b0800000000000000
+      internalID: -5751581744697740463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_50
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 19
+        width: 529
+        height: 529
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08d17812c8bd5db40800000000000000
+      internalID: 5464515117788372352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_51
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 256
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ac114815c656b970800000000000000
+      internalID: 8770292728866086057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_52
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 14
+        width: 528
+        height: 526
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 054fa9af404d68790800000000000000
+      internalID: -7528096609253788592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_53
+      rect:
+        serializedVersion: 2
+        x: 2042
+        y: 21
+        width: 344
+        height: 502
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55ad6220e63afba60800000000000000
+      internalID: 7692046381449927253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_54
+      rect:
+        serializedVersion: 2
+        x: 2586
+        y: 31
+        width: 502
+        height: 507
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15e0687c097bd7670800000000000000
+      internalID: 8538182301014953553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_55
+      rect:
+        serializedVersion: 2
+        x: 3246
+        y: 27
+        width: 500
+        height: 509
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feb2e2793691da670800000000000000
+      internalID: 8551519182975282159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_56
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 246
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b970a60a897670a0800000000000000
+      internalID: -6884181346665596490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Celtic-SymbolsDef_57
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 225
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 971e093a1b2003410800000000000000
+      internalID: 1454665641617318265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

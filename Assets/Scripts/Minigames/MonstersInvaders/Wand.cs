@@ -30,7 +30,7 @@ namespace MonstersInvaders
                 Instantiate(obj_spell, transform.position + new Vector3(0, 0.2f, 0), Quaternion.Euler(transform.eulerAngles + new Vector3(0, 0, -180)));
             }
 
-            if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Horizontal") < 0) f_dirX = Input.GetAxis("Horizontal") * ((f_moveSpeed-5f) * Time.deltaTime);
+            if (Input.GetAxis("Horizontal") != 0) f_dirX = Input.GetAxis("Horizontal") * ((f_moveSpeed-5f) * Time.deltaTime);
             else f_dirX = Input.acceleration.x * (f_moveSpeed * Time.deltaTime);
 
             transform.position += new Vector3(f_dirX, 0, 0);
