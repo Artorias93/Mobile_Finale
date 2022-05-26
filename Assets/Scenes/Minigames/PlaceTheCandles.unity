@@ -567,13 +567,13 @@ MonoBehaviour:
   obj_candles: {fileID: 4522161315103966883, guid: 4375f705f0f35ce47a12baa6d8beecac, type: 3}
   gp_easy:
     i_playTime: 30
-    i_runeToComplete: 2
+    i_runeToComplete: 4
   gp_medium:
-    i_playTime: 30
-    i_runeToComplete: 3
+    i_playTime: 45
+    i_runeToComplete: 6
   gp_hard:
-    i_playTime: 30
-    i_runeToComplete: 2
+    i_playTime: 60
+    i_runeToComplete: 8
   b_enableDebug: 1
   diff: 2
 --- !u!4 &745970310

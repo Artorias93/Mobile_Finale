@@ -180,7 +180,7 @@ namespace PlaceTheCandles
             m_gameTimer?.StopTimer();
             b_gameFinished = true;
 
-            i_score = Mathf.FloorToInt((Mathf.Abs(((float)i_runeCompleted / (float)m_gameParameters.i_runeToComplete * 100) - 100) / 100 * 4));
+            i_score = 3 - Mathf.FloorToInt((Mathf.Abs(((float)i_runeCompleted / (float)m_gameParameters.i_runeToComplete * 100) - 100) / 100 * 4));
             if (i_score > 3) i_score = 3;
 
         }
