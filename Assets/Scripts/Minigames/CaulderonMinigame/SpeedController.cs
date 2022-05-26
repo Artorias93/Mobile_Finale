@@ -10,19 +10,16 @@ namespace CouldronMinigame
     public class SpeedController : MonoBehaviour
     {
 
+        [Header("Input Parameters")]
         
-        private float f_ladleCurrentSpeed;
-        [SerializeField] private float m_maxSpeed=40000;
-        private float m_normalizedSpeed = 0;
+        [SerializeField] private float m_maxSpeed=1000;
+        [SerializeField, Tooltip("Regulates how fast the slider decreases"), Range(-1.0f, -0.1f)] private float f_mouseDeceleration = -0.8f;
+        [SerializeField, Tooltip("Regulates how fast the slider increases"), Range(0.1f, 1f)] private float f_mouseAcceleration = 1f;
 
-        private Vector3 m_prevPos = Vector3.zero;
-        private Vector3 m_ladlePos = Vector3.zero;
         private float m_speed;
+        private float mouseDelta;
 
-        [SerializeField]
-        private GameObject m_ladle;
-        
-
+        [Header("References")]
         [SerializeField]
         private Image m_imgSlow;
         [SerializeField]
@@ -38,22 +35,33 @@ namespace CouldronMinigame
         private float m_visibleAlpha = 1f;
 
         private Color m_colorFast;
-        
         private Color m_colorSlow;
-        
         private Color m_colorRegular;
         
-        public float startCheckTimeSeconds = 3f;
+        private float timeSeconds;
 
         //usare enum per velocità
         public enum Speed { SLOW=0, REGULAR=1, FAST=2 };
+       
 
         private float m_minimumRegularNormalizedSpeed = 0.33f;
         private float m_maximumRegularNormalizedSpeed = 0.66f;
         
-        private int randomSpeedIndex;
+        private Speed randomSpeedIndex;
+        private Speed currentSpeed;
         
 
+        [SerializeField] private CauldronGameManager gameManager;
+
+        private float timeInError;
+        private bool isInError = false;
+
+        public float TimeinError
+        {
+
+            get { return timeInError; }
+            set { timeInError = value; }
+        }
         void Start()
         {
             m_colorSlow = m_imgSlow.color;
@@ -61,22 +69,42 @@ namespace CouldronMinigame
             m_colorFast = m_imgFast.color;
 
             
+            timeSeconds = gameManager.m_gameParameters.changeSecondsSpeedController;
+            timeInError = gameManager.m_gameParameters.maxTimeInError;
+
             StartCoroutine(ChangeSpeed());
+            
             
         }
 
 
         private void Update()
-        {
-            m_ladlePos = m_ladle.transform.position;
-            m_speed = (m_ladlePos - m_prevPos).magnitude / Time.fixedDeltaTime;  //pixel/second
-            m_prevPos = m_ladlePos;
-        }
+        {            
+            float speedDelta = 2*((mouseDelta - m_maxSpeed/2) / m_maxSpeed);
+            speedDelta = Mathf.Clamp(speedDelta, f_mouseDeceleration, f_mouseAcceleration);
+            m_speed += speedDelta*Time.deltaTime;
+            m_speed = Mathf.Clamp(m_speed, 0, 1);
 
+            CheckSpeed();
+
+            if (isInError)
+                timeInError -= Time.deltaTime;
+            
+            if (timeInError <= 0)
+                EndGame();
+
+            Debug.Log(timeInError);
+            if (gameManager.GameFinished)
+                StopAllCoroutines();
+        }
+        public void setMouseDelta(float magnitude)
+        {
+            mouseDelta = magnitude;
+        }
         void LateUpdate()
         {
-            m_normalizedSpeed = Mathf.Clamp(m_speed / m_maxSpeed, 0, 1);
-            m_speedIndicator.value = m_normalizedSpeed;
+            
+            m_speedIndicator.value = m_speed;
         }
 
 
@@ -85,22 +113,21 @@ namespace CouldronMinigame
             //chiamo la random, dopo n secondi faccio il check della ladle e la velocità---se non è andato in gameover ripeto
             while (true)
             {
-                Debug.Log("in corutine");
+                Debug.Log("changing speed...");
                 RandomSpeed();
-                yield return new WaitForSeconds(startCheckTimeSeconds);
-                CheckSpeed();
+                yield return new WaitForSeconds(timeSeconds);
+                
             }
         }
 
-        
 
         private void RandomSpeed()
         {
-            Debug.Log("in random speed");
+            Debug.Log("setting new speed...");
             
-                randomSpeedIndex = Random.Range(0, 3);
-            
-            if (randomSpeedIndex == (int)Speed.REGULAR)
+            randomSpeedIndex = (Speed)Random.Range(0, 3);
+
+            if (randomSpeedIndex == Speed.REGULAR)
             {
                 //modifica colore poi metti colore in immagine
                 m_colorRegular.a = m_visibleAlpha;
@@ -113,7 +140,7 @@ namespace CouldronMinigame
                 m_imgSlow.color = m_colorSlow;
 
             }
-            else if (randomSpeedIndex == (int)Speed.SLOW)
+            else if (randomSpeedIndex == Speed.SLOW)
             {
                 m_colorSlow.a = m_visibleAlpha;
                 m_imgSlow.color = m_colorSlow;
@@ -125,7 +152,7 @@ namespace CouldronMinigame
                 m_imgRegular.color = m_colorRegular;
 
             }
-            else if (randomSpeedIndex == (int)Speed.FAST)
+            else if (randomSpeedIndex == Speed.FAST)
             {
                 m_colorFast.a = m_visibleAlpha;
                 m_imgFast.color = m_colorFast;
@@ -139,53 +166,29 @@ namespace CouldronMinigame
             }
         }
 
-     
-        private void CheckSpeed()
+        
+        private void EndGame()
         {
-            //controlla se sei in gameover
+            gameManager.LoseMinigame();
+            StopCoroutine(ChangeSpeed());
+        }
 
-            Debug.Log("in checkspeed");
-            Debug.Log(f_ladleCurrentSpeed);
-            if(f_ladleCurrentSpeed == 0)
-            {
-                //se stai fermo dopo tot tempo  gameover
-                Debug.Log("gameover fermo");
-            }
-            else if(m_speedIndicator.value > 0 && m_speedIndicator.value <= m_minimumRegularNormalizedSpeed)
-            {
-                //sei in slow -> randomSpeedIndex = 0
-                if (randomSpeedIndex != 0)
-                {
-                    //gameover
-                    Debug.Log("gameover");
-                }
-            }
-            else if (m_speedIndicator.value > 0 && m_speedIndicator.value >= m_minimumRegularNormalizedSpeed && m_speedIndicator.value <= m_maximumRegularNormalizedSpeed)
-            {
-                //sei in regular  -> randomSpeedIndex = 1
-                if (randomSpeedIndex != 1)
-                {
-                    //gameover
-                    Debug.Log("gameover");
+        private void CheckSpeed()
+        {                       
+            if (m_maximumRegularNormalizedSpeed >= m_speedIndicator.value && m_minimumRegularNormalizedSpeed <= m_speedIndicator.value)
+                currentSpeed = Speed.REGULAR;
+            else if (m_maximumRegularNormalizedSpeed < m_speedIndicator.value)
+                currentSpeed = Speed.FAST;
+            else
+                currentSpeed = Speed.SLOW;
 
-                }
-            }
-            else if (m_speedIndicator.value > 0 && m_speedIndicator.value >= m_maximumRegularNormalizedSpeed)
-            {
-                //sei in fast  -> randomSpeedIndex = 2
-                if (randomSpeedIndex != 2)
-                {
-                    //gameover
-                    Debug.Log("gameover");
-
-                }
-            }
-
-
-
+            if (randomSpeedIndex != currentSpeed || m_speedIndicator.value <= 0)
+                isInError = true;
+            else
+                isInError = false;
 
         }
 
-      
+
     }
 }

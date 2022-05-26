@@ -6,53 +6,90 @@ using UnityEngine;
 
 namespace CouldronMinigame
 {
-    public class TouchController : MonoBehaviour, IDragHandler, IPointerDownHandler
+    public class TouchController : MonoBehaviour
     {
+        [Header("References")]
         [SerializeField]
         private Image img_cauldron;
         [SerializeField]
         private Image img_ladle;
-        
-        private Vector3 m_vr3_input;
+        [SerializeField]
+        SpeedController speedController;
+        [Header("Parameters")]
+        [SerializeField, Range(0.1f, 1.0f)]
+        float paddingPercentage = 0.8f;
+#if UNITY_EDITOR
+        [SerializeField, Tooltip("Updates radiuses and center of ellipse when deforming screen, shouldn't be needed in release")]
+        bool b_shouldUpdateDynamically = false;
+#endif
+
+        private Vector2 v2_ladleNewPosition;
 
 
-
-        void Start()
+        private float f_xLimit, f_yLimit;
+        private Vector2 v2_cauldronCenter;
+        private void Start()
         {
-            
-            
+            f_xLimit = (img_cauldron.rectTransform.sizeDelta.x * img_cauldron.canvas.scaleFactor) / 2;
+            f_yLimit = (img_cauldron.rectTransform.sizeDelta.y * img_cauldron.canvas.scaleFactor) / 2;
+            f_xLimit *= paddingPercentage;
+            f_yLimit *= paddingPercentage;
+
+            v2_cauldronCenter = img_cauldron.rectTransform.position;
         }
 
-        public virtual void OnDrag(PointerEventData pointerEventData)
+        private void Update()
         {
-            Vector2 m_vt2_position;
+            Debug.DrawLine(Vector3.zero, v2_cauldronCenter, Color.yellow);
 
-           // pointerEventData.delta.magnitude;
-            Vector3 screenPosition = new Vector3(pointerEventData.position.x, pointerEventData.position.y);
-            Vector3 touchWorldCoordinates = Camera.main.ScreenToWorldPoint(screenPosition);
-                if (img_cauldron.rectTransform.rect.Contains(touchWorldCoordinates))
+            foreach(Touch touch in Input.touches)
+            {
+                if(touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
                 {
-                RectTransformUtility.ScreenPointToLocalPointInRectangle(img_cauldron.rectTransform, pointerEventData.position, pointerEventData.pressEventCamera, out m_vt2_position);
-                    //normalized input
-                    m_vr3_input = new Vector3(m_vt2_position.x * 2 + 1, 0, m_vt2_position.y * 2 - 1);
-                    m_vr3_input = m_vr3_input.normalized;
+                    
+                    //This math could possibly be simplified, but is held like this for readibility
+                    //Computes the projection of a point on an ellipse
+                    Vector2 distanceFromCenter = touch.position - v2_cauldronCenter;
 
-                    //ladle movement
-                    img_ladle.rectTransform.anchoredPosition = new Vector3(m_vr3_input.x * (img_cauldron.rectTransform.sizeDelta.x / 3),
-                                                                            m_vr3_input.z * (img_cauldron.rectTransform.sizeDelta.y / 3));
-                //pointerEventData.delta.magnitude per i valori del mouse
-                //img_ladle.transform.position = pointerEventData.delta.magnitude
+                    float theta = Mathf.Atan2(distanceFromCenter.y, distanceFromCenter.x);
+
+                    float x = Mathf.Cos(theta);
+                    float y = Mathf.Sin(theta);
+
+                    Vector2 distanceVector = new Vector2(f_xLimit * y, f_yLimit * x);
+                    float k = (f_xLimit * f_yLimit) / distanceVector.magnitude;
+
+
+                    v2_ladleNewPosition = k*(new Vector2(x, y));
+                    v2_ladleNewPosition += v2_cauldronCenter;
+
+                    img_ladle.rectTransform.position = v2_ladleNewPosition;
+
+                    Debug.DrawLine(v2_cauldronCenter, touch.position, Color.green);
+                    Debug.DrawLine(v2_cauldronCenter, v2_ladleNewPosition, Color.red);
+
+                    speedController.setMouseDelta(touch.deltaPosition.magnitude);
+                    return; //Only first touch will count
+                }
             }
-
+            speedController.setMouseDelta(0);
         }
-        
 
 
-        public virtual void OnPointerDown(PointerEventData pointerEventData)
+        private void LateUpdate()
         {
-            OnDrag(pointerEventData);
+#if UNITY_EDITOR
+            if (b_shouldUpdateDynamically)
+            {
+                f_xLimit = (img_cauldron.rectTransform.sizeDelta.x * img_cauldron.canvas.scaleFactor) / 2;
+                f_yLimit = (img_cauldron.rectTransform.sizeDelta.y * img_cauldron.canvas.scaleFactor) / 2;
+                f_xLimit *= paddingPercentage;
+                f_yLimit *= paddingPercentage;
+
+                v2_cauldronCenter = img_cauldron.rectTransform.position;
+            }
+#endif
         }
-      
 
     }
 }
