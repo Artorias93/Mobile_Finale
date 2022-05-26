@@ -10,19 +10,25 @@ namespace PlaceTheCandles
         bool b_triggerCollision = false;
         bool b_collName = false;
         bool b_canMove = true;
+        bool b_destroy = false;
         GameObject obj_collider;
 
 
         // Start is called before the first frame update
         void Start()
         {
-            GetComponent<Animator>().SetFloat("Speed", Random.Range(0.8f, 1.2f));
+            anim = GetComponent<Animator>();
+            anim.SetFloat("Speed", Random.Range(0.8f, 1.2f));
         }
 
         // Update is called once per frame
         void Update()
         {
-
+            if (PlaceCandlesGameManager.Instance.CandleCheck && !b_destroy)
+            {
+                b_destroy = true;
+                anim.SetTrigger("Destroy");
+            }
         }
 
         void OnMouseDrag()
@@ -58,6 +64,13 @@ namespace PlaceTheCandles
         private void OnTriggerExit2D(Collider2D collision)
         {
             b_triggerCollision = false;
+        }
+
+        private void OnTriggerStay2D(Collider2D collision)
+        {
+            b_triggerCollision = true;
+            b_collName = collision.gameObject.name.StartsWith("Place");
+            obj_collider = collision.gameObject;
         }
     }
 }

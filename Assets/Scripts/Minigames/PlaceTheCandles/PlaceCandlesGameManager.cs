@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -37,6 +38,7 @@ namespace PlaceTheCandles
         private GameParameters m_gameParameters;
         private Timer m_gameTimer;
 
+        Animator anim;
         GameObject obj_rune;
         int i_runeCompleted = 0;
         int i_candlesPlaced = 0;
@@ -65,6 +67,11 @@ namespace PlaceTheCandles
         public int RunesCount
         {
             get { return i_runeCompleted; }
+        }
+
+        public bool CandleCheck
+        {
+            get { return i_candlesPlaced == i_candlesCount; }
         }
 
         public float RemainingTime
@@ -135,6 +142,7 @@ namespace PlaceTheCandles
             i_candlesCount = 0;
             int i_runeId = Random.Range(0, rg_runes.Count);
             obj_rune = Instantiate(rg_runes[i_runeId]);
+            anim = obj_rune.transform.GetChild(3).GetComponent<Animator>();
             rg_runes.RemoveAt(i_runeId);
 
             for (int i = 0; i <= i_childToCheckId; i++)
@@ -156,12 +164,24 @@ namespace PlaceTheCandles
             }
         }
 
+        IEnumerator WaitGenerate()
+        {
+            if (i_runeCompleted == GameParameters.i_runeToComplete)
+            {
+                VictoryBehaviour();
+                yield break;
+            }
+
+            yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
+            GenerateRound();
+        }
+
         public void CountRunes()
         {
             i_runeCompleted++;
-            Destroy(obj_rune);
-            if (i_runeCompleted < GameParameters.i_runeToComplete) GenerateRound();
-            else VictoryBehaviour();
+            anim.SetTrigger("Destroy");
+            Destroy(obj_rune, anim.GetCurrentAnimatorStateInfo(0).length);
+            StartCoroutine(WaitGenerate());
         }
 
         public void CountCandles()
