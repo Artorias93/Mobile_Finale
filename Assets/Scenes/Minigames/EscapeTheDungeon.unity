@@ -177,7 +177,7 @@ MonoBehaviour:
   m_GridLayout: {fileID: 367484373}
   m_CellPrefab: {fileID: 6318860190619909991, guid: 49eff03d9785541429cb27678952b9de, type: 3}
   Width: 10
-  Height: 5
+  Height: 6
   i_CellSize: 150
 --- !u!1 &367484371
 GameObject:
@@ -236,7 +236,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 100, y: 100}
-  m_Spacing: {x: 3, y: 3}
+  m_Spacing: {x: 0, y: 0}
   m_Constraint: 1
   m_ConstraintCount: 1
 --- !u!1 &480033694
@@ -574,7 +574,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.11764706, g: 0.11764706, b: 0.14509805, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

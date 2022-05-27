@@ -9,7 +9,6 @@ namespace EscapeDungeonMinigame
         [Header("Game Settings")]
         [SerializeField] private float frameTime = 0.5f;
 
-
         public static EscapeMinigameManager Instance;
 
         public delegate void UpdateEvent();

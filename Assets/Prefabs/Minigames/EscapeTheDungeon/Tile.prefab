@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -88,3 +88,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 321e9be55c98d5a4abb36f7c749f141d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_TilesDictionaryEntries:
+  - Type: 0
+    sprite: {fileID: 1807125615787039003, guid: 8e41dad70622d5647a1657b41429d8a8, type: 3}
+  - Type: 1
+    sprite: {fileID: 349823833441268365, guid: 8e41dad70622d5647a1657b41429d8a8, type: 3}
+  - Type: 2
+    sprite: {fileID: -6614373457484812694, guid: 8e41dad70622d5647a1657b41429d8a8, type: 3}
+  - Type: 4
+    sprite: {fileID: 1639214462598301798, guid: 8e41dad70622d5647a1657b41429d8a8, type: 3}
+  - Type: 8
+    sprite: {fileID: 2157240733274199957, guid: 8e41dad70622d5647a1657b41429d8a8, type: 3}
+  - Type: 5
+    sprite: {fileID: 4798128000316562087, guid: 8e41dad70622d5647a1657b41429d8a8, type: 3}
+  - Type: 10
+    sprite: {fileID: -7995846982363831464, guid: 8e41dad70622d5647a1657b41429d8a8, type: 3}
+  - Type: 3
+    sprite: {fileID: -4202638810691693305, guid: 8e41dad70622d5647a1657b41429d8a8, type: 3}
+  - Type: 6
+    sprite: {fileID: -7708644975649761358, guid: 8e41dad70622d5647a1657b41429d8a8, type: 3}
+  - Type: 12
+    sprite: {fileID: -1530080802165054831, guid: 8e41dad70622d5647a1657b41429d8a8, type: 3}
+  - Type: 9
+    sprite: {fileID: 5560954434011818755, guid: 8e41dad70622d5647a1657b41429d8a8, type: 3}
+  - Type: 11
+    sprite: {fileID: 4239528737361974724, guid: 8e41dad70622d5647a1657b41429d8a8, type: 3}
+  - Type: 14
+    sprite: {fileID: -4672163745296329812, guid: 8e41dad70622d5647a1657b41429d8a8, type: 3}
+  - Type: 7
+    sprite: {fileID: -8305803365058092108, guid: 8e41dad70622d5647a1657b41429d8a8, type: 3}
+  - Type: 13
+    sprite: {fileID: 5541110501864291823, guid: 8e41dad70622d5647a1657b41429d8a8, type: 3}
+  - Type: 15
+    sprite: {fileID: -5012251703786577423, guid: 8e41dad70622d5647a1657b41429d8a8, type: 3}

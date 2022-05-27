@@ -59,6 +59,10 @@ namespace EscapeDungeonMinigame
 
             GenerateGrid();
             GenerateMaze();
+
+            //After Generating maze I need to update tile appearance to refresh connections;
+            foreach (Tile t in m_tilesMatrix)
+                t.UpdateAppearance();
         }
 
         private void GenerateGrid()
