@@ -10,11 +10,12 @@ namespace FightChtulu
         [SerializeField]
         private Sprite s_emptySpace;
         [SerializeField]
-        private Sprite s_playerSprite;
+        private List<Sprite> playerMovementSprites;
 
         public static PlayerManager Instance;
         private List<GameObject> m_positions= new List<GameObject>();
         private GameObject playerCurrentPosition=null;
+        private int i_spriteIndex=0;
 
         private void Awake()
         {
@@ -45,8 +46,16 @@ namespace FightChtulu
                 playerCurrentPosition.GetComponent<SpriteRenderer>().sprite = s_emptySpace;
                 playerCurrentPosition.GetComponent<Collider2D>().enabled = true;
             }
+            if (i_spriteIndex == playerMovementSprites.Count - 1)
+            {
+                i_spriteIndex = 0;
+            }
+            else {
+                i_spriteIndex++;
+            }
+
             playerCurrentPosition = position;
-            playerCurrentPosition.GetComponent<SpriteRenderer>().sprite = s_playerSprite;
+            playerCurrentPosition.GetComponent<SpriteRenderer>().sprite = playerMovementSprites[i_spriteIndex];
             playerCurrentPosition.GetComponent<Collider2D>().enabled = false;
         }
         public void setPlayerPosition(GameObject obj)
