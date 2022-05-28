@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace FightChtulu
+namespace FightCthulhu
 {
     public class PlayerManager : MonoBehaviour
     {
@@ -76,7 +76,7 @@ namespace FightChtulu
             {
                 Vector3 dir = playerCurrentPosition.transform.position - requestedPosition.transform.position;
                 //If movement is straight (not diagonal)
-                if (dir.x == 0 || dir.y == 0)
+                if (Mathf.Approximately((int) dir.x,0)|| Mathf.Approximately((int)dir.y, 0))
                 {
                     //Length of the ray
                     float rayLength = 100f;
@@ -89,23 +89,48 @@ namespace FightChtulu
                     {
                         setCurrentPosition(requestedPosition, true);
                     }
+                    else {
+                        requestedPosition = null;
+                    }
 
                     //Debug.DrawRay(playerCurrentPosition.transform.position, dir * rayLength, Color.red);
 
                 }
                 else
                 {
-                    requestedPosition = null;
                     Debug.LogWarning("Can't move diagonal");
+                    requestedPosition = null;
+
                 }
 
             }
         }
 
-        // Update is called once per frame
-        void Update()
-        {
+        public int tryHit(GameObject tentacle) {
+            Vector3 dir;
+            if (playerCurrentPosition.transform.position.x < tentacle.transform.position.x)
+            {
+                dir = Vector3.right;
+            }
+            else {
+                dir = Vector3.left;
+            }
+            float rayLength = 100f;
+//            dir *= -1;
 
+            //Get the first object hit by the ray
+            RaycastHit2D hit = Physics2D.Raycast(playerCurrentPosition.transform.position, dir, rayLength);
+            //Debug.DrawRay(playerCurrentPosition.transform.position, dir * rayLength, Color.red);
+            if (hit.collider.CompareTag("Tentacle"))
+            {
+                CthulhuManager cthulhuManager = CthulhuManager.Instance;
+                Debug.LogWarning("HitIndex"+ cthulhuManager.i_CurrentTentacleIndex);
+                return cthulhuManager.i_CurrentTentacleIndex;
+            }
+            else {
+                Debug.LogWarning("NoHit");
+                return -1;
+            }
         }
     }
 }

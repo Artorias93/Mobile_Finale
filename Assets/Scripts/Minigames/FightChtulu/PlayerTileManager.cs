@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace FightChtulu
+namespace FightCthulhu
 {
     public class PlayerTileManager : MonoBehaviour, IPointerDownHandler
     {
