@@ -40,20 +40,23 @@ namespace FightChtulu
             setCurrentPosition(startPosition,false);
         }
 
-
+        private void changeSpriteIndex() {
+            if (i_spriteIndex == playerMovementSprites.Count - 1)
+            {
+                i_spriteIndex = 0;
+            }
+            else
+            {
+                i_spriteIndex++;
+            }
+        }
         private void setCurrentPosition(GameObject position, bool resetCurrent) {
             if (resetCurrent) {
                 playerCurrentPosition.GetComponent<SpriteRenderer>().sprite = s_emptySpace;
                 playerCurrentPosition.GetComponent<Collider2D>().enabled = true;
             }
-            if (i_spriteIndex == playerMovementSprites.Count - 1)
-            {
-                i_spriteIndex = 0;
-            }
-            else {
-                i_spriteIndex++;
-            }
 
+            changeSpriteIndex();
             playerCurrentPosition = position;
             playerCurrentPosition.GetComponent<SpriteRenderer>().sprite = playerMovementSprites[i_spriteIndex];
             playerCurrentPosition.GetComponent<Collider2D>().enabled = false;
