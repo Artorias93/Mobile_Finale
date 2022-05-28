@@ -1,0 +1,76 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Assertions;
+
+namespace EscapeDungeonMinigame
+{
+    public class EnemyController : MonoBehaviour
+    {
+        [Header("References")]
+        [SerializeField] private MazeManager m_mazeManager;
+
+        private Tile m_currentTile;
+        private Tile m_requestedTile;
+
+        public Vector2Int Position { get { return m_currentTile.Coords; } }
+
+        private bool b_isDisabled = false;
+
+        private void Awake()
+        {
+            Assert.IsNotNull(m_mazeManager, "No maze manager");
+        }
+
+        void Start()
+        {
+            EscapeMinigameManager.OnUpdate += UpdatePosition;
+        }
+        void UpdatePosition()
+        {
+            if (!b_isDisabled && m_requestedTile != null)
+            {
+                transform.position = m_requestedTile.transform.position;
+                m_currentTile.SetOccupied(false);
+                m_currentTile = m_requestedTile;
+                m_currentTile.SetOccupied(true);
+                m_requestedTile = null;
+            }
+        }
+
+        public void SetPosition(Tile t)
+        {
+            Debug.Log("Requested movement to " + t);
+            if (t.IsOccupied)
+            {
+                Debug.Log("Trying to move to occupied tile");
+                return;
+            }
+            else if (t.ReachableTiles.Contains(m_currentTile))
+            {
+                m_requestedTile = t;
+            }
+            else
+            {
+                Debug.Log("Requested " + t + " but not reacheable");
+            }
+        }
+
+        public void Spawn(Tile t)
+        {
+            m_currentTile = t;
+            m_currentTile.SetOccupied(true);
+            transform.position = t.transform.position;
+        }
+
+        public void DisableEnemyMovement()
+        {
+            b_isDisabled = true;
+        }
+
+        public void EnableEnemyMovement()
+        {
+            b_isDisabled = false;
+        }
+    }
+}

@@ -32,12 +32,14 @@ namespace EscapeDungeonMinigame
         [SerializeField] private GridLayoutGroup m_GridLayout;
         [SerializeField] private GameObject m_CellPrefab;
         [Header("Maze settings")]
-        [SerializeField] private int Width;
-        [SerializeField] private int Height;
+        [SerializeField] private int width;
+        [SerializeField] private int height;
         [SerializeField] private int i_CellSize = 200;
 
-
         private Tile[,] m_tilesMatrix;
+
+        public int Width { get { return width; } }
+        public int Height { get { return height; } }
 
         private void Awake()
         {
@@ -144,11 +146,39 @@ namespace EscapeDungeonMinigame
             }
         }
 
-        void Start()
+        public void CallLayoutRebuilder()
         {
             //Used to force correct positionitiong of player
             LayoutRebuilder.ForceRebuildLayoutImmediate(m_GridGameObject.GetComponent<RectTransform>());
-            PlayerController.Instance.Spawn(m_tilesMatrix[Height - 1, Width - 1]);
+        }
+
+        public Tile GetRandomFreeTile()
+        {
+            Tile t = null;
+            do
+            {
+                int row = Random.Range(0, Height);
+                int col = Random.Range(0, Width);
+
+
+                if (!m_tilesMatrix[row, col].IsOccupied)
+                {
+                    t = m_tilesMatrix[row, col];
+                    break;
+                }
+            } while (t == null);
+            return t;
+        }
+
+        public Tile GetTile(int row, int col)
+        {
+            if(row > 0 && col > 0 && row < Height && col < Width)
+                return m_tilesMatrix[row, col];
+            else
+            {
+                Debug.LogWarning("Asked for out of bound tile");
+                return null;
+            }
         }
     }
 }

@@ -38,7 +38,9 @@ namespace EscapeDungeonMinigame
             if(m_requestedTile != null)
             {
                 transform.position = m_requestedTile.transform.position;
+                m_currentTile.SetOccupied(false);
                 m_currentTile = m_requestedTile;
+                m_currentTile.SetOccupied(true);
                 m_requestedTile = null;
             }
         }

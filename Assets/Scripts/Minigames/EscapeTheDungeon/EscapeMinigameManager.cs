@@ -1,20 +1,53 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace EscapeDungeonMinigame
 {
+    [System.Serializable]
+    public struct GameParameters
+    {
+        public float f_PlayTime;
+        public int i_numEnemies;
+    }
+
     public class EscapeMinigameManager : AMinigameManager
     {
         [Header("Game Settings")]
         [SerializeField] private float frameTime = 0.5f;
+        [SerializeField] private GameObject m_EnemyPrefab;
+        [SerializeField] private MazeManager m_MazeManager;
 
+        [Header("Difficulty Settings")]
+        [SerializeField] private GameParameters gp_easy;
+        [SerializeField] private GameParameters gp_medium;
+        [SerializeField] private GameParameters gp_hard;
+
+        private GameParameters gp_selectedParameters;
+
+#if UNITY_EDITOR
+        [Header("DEBUG")]
+        public bool b_debug = false;
+        public Difficulty m_TestDifficulty;
+#endif
+
+        private Timer m_Timer;
         public static EscapeMinigameManager Instance;
 
         public delegate void UpdateEvent();
         public static event UpdateEvent OnUpdate;
 
         private float f_elapsedTime;
+        private List<EnemyController> m_EnemyControllers;
+
+        #region PROPERTIES
+        public float RemainingTime
+        {
+            get { return m_Timer ? m_Timer.RemainingTime : -1; }
+        }
+
+        #endregion
 
         private void Awake()
         {
@@ -23,13 +56,19 @@ namespace EscapeDungeonMinigame
             else
                 Destroy(this.gameObject);
 
+            Assert.IsNotNull(m_MazeManager);
+            Assert.IsNotNull(m_EnemyPrefab);
 
         }
 
         // Start is called before the first frame update
         void Start()
         {
-
+#if UNITY_EDITOR
+            if (b_debug) {
+                BeginMinigame(m_difficulty);
+            }
+#endif
         }
 
         // Update is called once per frame
@@ -47,12 +86,49 @@ namespace EscapeDungeonMinigame
 
         public override void BeginMinigame(Difficulty difficulty)
         {
-            throw new System.NotImplementedException();
+            if (difficulty == Difficulty.EASY)
+                gp_selectedParameters = gp_easy;
+            else if (difficulty == Difficulty.MEDIUM)
+                gp_selectedParameters = gp_medium;
+            else if(difficulty == Difficulty.HARD)
+                gp_selectedParameters = gp_hard;
+
+            m_EnemyControllers = new List<EnemyController>();
+
+            //Used to force correct positionitiong of player
+            m_MazeManager.CallLayoutRebuilder();
+            PlayerController.Instance.Spawn(m_MazeManager.GetTile(m_MazeManager.Height - 1, m_MazeManager.Width-1));
+
+            for (int i = 0; i < gp_selectedParameters.i_numEnemies; i++)
+            {
+                GameObject enemyGO = Instantiate(m_EnemyPrefab, m_MazeManager.transform);
+                enemyGO.name = "Enemy " + i.ToString();
+                m_EnemyControllers.Add(enemyGO.GetComponent<EnemyController>());
+                m_EnemyControllers[i].Spawn(m_MazeManager.GetRandomFreeTile());
+            }
+
+
+            m_Timer = Timer.Create(gp_selectedParameters.f_PlayTime, OnTimerEnd, name: "MinigameTimer");
+            m_Timer.StartTimer();
         }
 
         protected override void EndMinigame()
         {
-            throw new System.NotImplementedException();
+            
+        }
+
+        public void VictoryBehaviour()
+        {
+            i_score = (int) (3f * (float)RemainingTime / gp_selectedParameters.f_PlayTime);
+
+            EndMinigame();
+        }
+
+        public void OnTimerEnd()
+        {
+            i_score = 0;
+
+            EndMinigame();
         }
     }
 }
