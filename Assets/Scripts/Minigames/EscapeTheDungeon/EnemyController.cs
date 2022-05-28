@@ -19,9 +19,20 @@ namespace EscapeDungeonMinigame
         [SerializeField] private MazeManager m_mazeManager;
         [Header("Options")]
         [SerializeField] private SearchAlgorithm m_searchAlgorithm = SearchAlgorithm.BFS;
+        [SerializeField, Tooltip("Probability that if the enemy is far enough it will just patrol randomly instead of moving toward the mage")
+            , Range(.0f, 1.0f)] 
+        private float f_probabilityOfRandomStep = 0.8f;
+        [SerializeField, Tooltip("Probability that if the enemy is chasing he will pick a bad move"), Range(.0f, 1.0f)]
+        private float f_probabilityOfMistakeChase = 0.1f;
+        [SerializeField, Tooltip("Probability of backtracking"), Range(.0f, 1.0f)]
+        private float f_probabilityOfBacktracking = 0.2f;
+        [SerializeField, Tooltip("Minimum distance after which the enemy will never do a wrong move")]
+        private int i_minimumDistanceBeforeChase = 5;
+        private int i_StepsFromPlayer = int.MaxValue;
 
         private Tile m_currentTile;
         private Tile m_requestedTile;
+        private Tile m_previousTile = null;
 
         public Vector2Int Position { get { return m_currentTile.Coords; } }
 
@@ -55,17 +66,22 @@ namespace EscapeDungeonMinigame
 
         void UpdatePosition()
         {
-
-            AlgorithmSelection();
-
-            if (!b_isDisabled && m_requestedTile != null && !m_requestedTile.IsOccupied)
+            if (!b_isDisabled)
             {
-                transform.position = m_requestedTile.transform.position;
-                m_currentTile.SetOccupied(false);
-                m_currentTile = m_requestedTile;
-                m_currentTile.SetOccupied(true);
-                m_requestedTile = null;
+                AlgorithmSelection();   //This needs to be called before TileRandomization to update steps from player
+                TileRandomization();
+
+                if (m_requestedTile != null && !m_requestedTile.IsOccupied)
+                {
+                    transform.position = m_requestedTile.transform.position;
+                    m_currentTile.SetOccupied(false);
+                    m_previousTile = m_currentTile;
+                    m_currentTile = m_requestedTile;
+                    m_currentTile.SetOccupied(true);
+                    m_requestedTile = null;
+                }
             }
+
         }
 
         public void SetPosition(Tile t)
@@ -140,13 +156,14 @@ namespace EscapeDungeonMinigame
                 }
 
                 //Find Next move
+                i_StepsFromPlayer = 0;
+
                 Tile next = playerTile;
                 while (next != null && parentPaths[next] != m_currentTile)
                 {
+                    i_StepsFromPlayer++;
                     next = parentPaths[next];
                 }
-                    
-
                 m_requestedTile = next;
             }
         }
@@ -169,6 +186,56 @@ namespace EscapeDungeonMinigame
                 }
             }
             m_requestedTile = minimumDistanceTile;
+            i_StepsFromPlayer = Mathf.RoundToInt(minimumDistance);
+        }
+
+        private void TileRandomization()
+        {
+            //Decides if using selected "optimal" tile or randomize
+            if(i_StepsFromPlayer > i_minimumDistanceBeforeChase)
+            {
+                float randomValue = Random.Range(0.0f, 1.0f);
+                if (randomValue < f_probabilityOfRandomStep)
+                {
+                    Debug.Log(name + " decides to randomize");
+                    GetRandomAdjacentTile();
+                    return;
+                }
+            } else if(i_StepsFromPlayer < i_minimumDistanceBeforeChase)
+            {
+                float randomValue = Random.Range(0.0f, 1.0f);
+                if(randomValue < f_probabilityOfMistakeChase)
+                {
+                    Debug.Log(name + " makes a mistake chasing");
+                    GetRandomAdjacentTile();
+                    return;
+                }
+                
+            }
+            Debug.Log(name + " picks optimal");
+        }
+
+        private void GetRandomAdjacentTile()
+        {
+            if(m_currentTile.ReachableTiles.Count > 2) //I need at least 2 tiles to pick one random with backtracking
+            {
+
+                Tile suboptimalTile = m_requestedTile;
+                Tile[] possibleTiles = new Tile[m_currentTile.ReachableTiles.Count];
+                m_currentTile.ReachableTiles.CopyTo(possibleTiles);
+                do
+                {
+                    int randomIndex = Random.Range(0, possibleTiles.Length);
+                    suboptimalTile = possibleTiles[randomIndex];
+
+                    float randomBacktracking = Random.Range(0.0f, 1.0f);
+                    if(randomBacktracking > f_probabilityOfBacktracking && suboptimalTile.Equals(m_previousTile))
+                    {
+                        continue;
+                    }
+                } while (m_requestedTile == suboptimalTile);
+                m_requestedTile = suboptimalTile;
+            }
         }
     }
 }

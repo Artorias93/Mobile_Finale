@@ -110,3 +110,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_mazeManager: {fileID: 8008243491145411122, guid: deedec2b78d392b4a897d5718809da8e, type: 3}
   m_searchAlgorithm: 1
+  f_probabilityOfRandomStep: 0.8
+  f_probabilityOfMistakeChase: 0.05
+  i_minimumDistanceBeforeChase: 4
