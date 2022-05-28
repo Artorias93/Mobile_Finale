@@ -12,7 +12,7 @@ namespace FightChtulu
         public void OnPointerDown(PointerEventData eventData)
         {
             playerManager = PlayerManager.Instance;
-            playerManager.setPlayerPosition(this.gameObject);
+            playerManager.setPlayerRequestedPosition(this.gameObject);
         }
     }
 }

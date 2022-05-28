@@ -15,6 +15,7 @@ namespace FightChtulu
         public static PlayerManager Instance;
         private List<GameObject> m_positions= new List<GameObject>();
         private GameObject playerCurrentPosition=null;
+        private GameObject requestedPosition=null;
         private int i_spriteIndex=0;
 
         private void Awake()
@@ -38,6 +39,7 @@ namespace FightChtulu
                 position.GetComponent<SpriteRenderer>().sprite = s_emptySpace;
             }
             setCurrentPosition(startPosition,false);
+            MiniGameManager.OnUpdate += setPlayerPosition;
         }
 
         private void changeSpriteIndex() {
@@ -61,10 +63,18 @@ namespace FightChtulu
             playerCurrentPosition.GetComponent<SpriteRenderer>().sprite = playerMovementSprites[i_spriteIndex];
             playerCurrentPosition.GetComponent<Collider2D>().enabled = false;
         }
-        public void setPlayerPosition(GameObject obj)
+
+        public void setPlayerRequestedPosition(GameObject obj) {
+
+            if (obj != null && !obj.Equals(playerCurrentPosition)) {
+                requestedPosition = obj;
+            }
+        }
+        public void setPlayerPosition()
         {
-            if (m_positions.Contains(obj) && !playerCurrentPosition.Equals(obj)) {
-                Vector3 dir = playerCurrentPosition.transform.position - obj.transform.position;
+            if (m_positions.Contains(requestedPosition) && !playerCurrentPosition.Equals(requestedPosition))
+            {
+                Vector3 dir = playerCurrentPosition.transform.position - requestedPosition.transform.position;
                 //If movement is straight (not diagonal)
                 if (dir.x == 0 || dir.y == 0)
                 {
@@ -75,15 +85,17 @@ namespace FightChtulu
                     //Get the first object hit by the ray
                     RaycastHit2D hit = Physics2D.Raycast(playerCurrentPosition.transform.position, dir, rayLength);
 
-                    if (hit.collider == obj.GetComponent<Collider2D>())
+                    if (hit.collider == requestedPosition.GetComponent<Collider2D>())
                     {
-                        setCurrentPosition(obj,true);
+                        setCurrentPosition(requestedPosition, true);
                     }
 
                     //Debug.DrawRay(playerCurrentPosition.transform.position, dir * rayLength, Color.red);
 
                 }
-                else {
+                else
+                {
+                    requestedPosition = null;
                     Debug.LogWarning("Can't move diagonal");
                 }
 
