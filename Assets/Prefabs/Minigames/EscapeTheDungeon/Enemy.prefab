@@ -109,3 +109,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_mazeManager: {fileID: 8008243491145411122, guid: deedec2b78d392b4a897d5718809da8e, type: 3}
+  m_searchAlgorithm: 1

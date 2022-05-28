@@ -334,7 +334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fd774dd5f935d3428f6d88a95a3ed5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frameTime: 0.5
+  frameTime: 1
   m_EnemyPrefab: {fileID: 4193592139450738849, guid: 77180f9493dddd7429feecc04f18a243, type: 3}
   m_MazeManager: {fileID: 339509718}
   gp_easy:
