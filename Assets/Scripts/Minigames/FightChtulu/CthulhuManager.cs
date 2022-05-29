@@ -33,7 +33,7 @@ namespace FightCthulhu
                 m_tentacles.Add(child.gameObject);
             }
             maxChildIndex = m_tentacles[0].transform.childCount - 1;
-            MiniGameManager.OnUpdate += tentacleStep;
+            MiniGameManager.OnUpdate += UpdateInTime;
         }
 
         private int findDeactivateIndex() {
@@ -52,17 +52,24 @@ namespace FightCthulhu
             return -1;
         }
 
-        private void tentacleStep() {
-            int deactivateIndex=findDeactivateIndex();
+        private void UpdateInTime() {
+            makeTentacleStep();
+        }
 
-            foreach (GameObject tentacle in m_tentacles) {
+        private void makeTentacleStep() {
+            int deactivateIndex = findDeactivateIndex();
+
+            foreach (GameObject tentacle in m_tentacles)
+            {
                 CthulhuTentacleManager tentacleManager = tentacle.GetComponent<CthulhuTentacleManager>();
 
-                if (tentacleManager.i_HitIndex == i_nextTentaclesStepIndex) {
+                if (tentacleManager.i_HitIndex == i_nextTentaclesStepIndex)
+                {
                     tentacleManager.resetHit();
                 }
 
-                if (tentacleManager.i_HitIndex == -1) {
+                if (tentacleManager.i_HitIndex == -1)
+                {
                     if (deactivateIndex != -1)
                     {
                         tentacle.transform.GetChild(deactivateIndex).gameObject.SetActive(false);
@@ -71,19 +78,13 @@ namespace FightCthulhu
                 }
             }
 
-            if ((i_nextTentaclesStepIndex == 0 && !b_directionDown) || (i_nextTentaclesStepIndex == maxChildIndex && b_directionDown)) {
+            if ((i_nextTentaclesStepIndex == 0 && !b_directionDown) || (i_nextTentaclesStepIndex == maxChildIndex && b_directionDown))
+            {
                 b_directionDown = !b_directionDown;
             }
             i_currentTentaclesStepIndex = i_nextTentaclesStepIndex;
 
             i_nextTentaclesStepIndex = b_directionDown ? i_nextTentaclesStepIndex + 1 : i_nextTentaclesStepIndex - 1;
-        }
-
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
     }
 }

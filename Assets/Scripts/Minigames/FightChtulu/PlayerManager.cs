@@ -39,7 +39,7 @@ namespace FightCthulhu
                 position.GetComponent<SpriteRenderer>().sprite = s_emptySpace;
             }
             setCurrentPosition(startPosition,false);
-            MiniGameManager.OnUpdate += setPlayerPosition;
+            MiniGameManager.OnUpdate += UpdateInTime;
         }
 
         private void changeSpriteIndex() {
@@ -58,7 +58,6 @@ namespace FightCthulhu
                 playerCurrentPosition.GetComponent<Collider2D>().enabled = true;
             }
 
-            changeSpriteIndex();
             playerCurrentPosition = position;
             playerCurrentPosition.GetComponent<SpriteRenderer>().sprite = playerMovementSprites[i_spriteIndex];
             playerCurrentPosition.GetComponent<Collider2D>().enabled = false;
@@ -70,13 +69,19 @@ namespace FightCthulhu
                 requestedPosition = obj;
             }
         }
-        public void setPlayerPosition()
+        public void UpdateInTime()
         {
+            changeSpriteIndex();
+            moveToRequestedPosition();
+
+        }
+
+        private void moveToRequestedPosition() {
             if (m_positions.Contains(requestedPosition) && !playerCurrentPosition.Equals(requestedPosition))
             {
                 Vector3 dir = playerCurrentPosition.transform.position - requestedPosition.transform.position;
                 //If movement is straight (not diagonal)
-                if (Mathf.Approximately((int) dir.x,0)|| Mathf.Approximately((int)dir.y, 0))
+                if (Mathf.Approximately((int)dir.x, 0) || Mathf.Approximately((int)dir.y, 0))
                 {
                     //Length of the ray
                     float rayLength = 100f;
@@ -89,7 +94,8 @@ namespace FightCthulhu
                     {
                         setCurrentPosition(requestedPosition, true);
                     }
-                    else {
+                    else
+                    {
                         requestedPosition = null;
                     }
 
@@ -104,6 +110,7 @@ namespace FightCthulhu
                 }
 
             }
+
         }
 
         public int tryHit(GameObject tentacle) {
