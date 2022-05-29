@@ -37,6 +37,8 @@ namespace EscapeDungeonMinigame
         public Vector2Int Position { get { return m_currentTile.Coords; } }
 
         private bool b_isDisabled = false;
+        private bool b_AttackedPlayer = false;
+        public bool AttackedPlayer { get { return b_AttackedPlayer; } }
 
         private void Awake()
         {
@@ -79,6 +81,10 @@ namespace EscapeDungeonMinigame
                     m_currentTile = m_requestedTile;
                     m_currentTile.SetOccupied(true);
                     m_requestedTile = null;
+                } else if(m_requestedTile.Equals(PlayerController.Instance.CurrentTile) && i_StepsFromPlayer == 0)
+                {
+                    //I'm adjacent to player, moving toward him means I'm attacking
+                    b_AttackedPlayer = true;
                 }
             }
 

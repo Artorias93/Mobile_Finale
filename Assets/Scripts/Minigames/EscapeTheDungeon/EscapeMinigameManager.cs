@@ -73,7 +73,7 @@ namespace EscapeDungeonMinigame
         {
 #if UNITY_EDITOR
             if (b_debug) {
-                BeginMinigame(m_difficulty);
+                BeginMinigame(m_TestDifficulty);
             }
 #endif
         }
@@ -91,6 +91,16 @@ namespace EscapeDungeonMinigame
                 if (m_PlayerController.CurrentTile.Equals(m_MazeManager.Goal))
                 {
                     VictoryBehaviour();
+                }
+                else
+                {
+                    foreach(EnemyController enemy in m_EnemyControllers)
+                    {
+                        if (enemy.AttackedPlayer)
+                        {
+                            DeathByEnemy();
+                        }
+                    }
                 }
             }
 
@@ -150,6 +160,13 @@ namespace EscapeDungeonMinigame
         {
             i_score = 0;
 
+            EndMinigame();
+        }
+
+        public void DeathByEnemy()
+        {
+            i_score = 0;
+            m_Timer.PauseTimer();
             EndMinigame();
         }
     }
