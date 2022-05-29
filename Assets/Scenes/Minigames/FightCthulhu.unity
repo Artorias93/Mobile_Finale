@@ -613,7 +613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a772a0b15fd3249aa061960a89bc0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frameTime: 1.5
+  frameTime: 1
 --- !u!1 &1439663911
 GameObject:
   m_ObjectHideFlags: 0

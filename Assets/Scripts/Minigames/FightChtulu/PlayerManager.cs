@@ -65,7 +65,19 @@ namespace FightCthulhu
             }
 
             playerCurrentPosition = position;
+            if (b_isRightOriented && playerCurrentPosition.transform.localScale.x < 0 || !b_isRightOriented && playerCurrentPosition.transform.localScale.x > 0)
+            {
+                tiltSprite();
+            }           
+            playerCurrentPosition.GetComponent<SpriteRenderer>().sprite = playerMovementSprites[i_spriteIndex];
             playerCurrentPosition.GetComponent<Collider2D>().enabled = false;
+        }
+
+        private void tiltSprite() {
+            Vector3 tmpScale = playerCurrentPosition.transform.localScale;
+            tmpScale.x *= -1;
+            playerCurrentPosition.transform.localScale = tmpScale;
+            b_isRightOriented = tmpScale.x < 0 ? false : true;
         }
 
         public void setPlayerRequestedPosition(GameObject obj) {
@@ -107,7 +119,15 @@ namespace FightCthulhu
 
                     if (hit.collider == requestedPosition.GetComponent<Collider2D>())
                     {
-                        setCurrentPosition(requestedPosition, true);
+                        if (playerPosition.x < requestedTilePoisition.x)
+                        {
+                            b_isRightOriented = true;
+                        }
+                        else if(playerPosition.x > requestedTilePoisition.x)
+                        {
+                            b_isRightOriented = false;
+                        }
+                            setCurrentPosition(requestedPosition, true);
                     }
                     else
                     {
@@ -150,6 +170,9 @@ namespace FightCthulhu
             {
                 CthulhuManager cthulhuManager = CthulhuManager.Instance;
                 Debug.LogWarning("HitIndex"+ cthulhuManager.i_CurrentTentacleIndex);
+                if (b_isRightOriented && dir.Equals(Vector3.left) || !b_isRightOriented && dir.Equals(Vector3.right)) {
+                    tiltSprite();
+                }
                 playerCurrentPosition.GetComponent<SpriteRenderer>().sprite = attackSprite;
                 return cthulhuManager.i_CurrentTentacleIndex;
             }
