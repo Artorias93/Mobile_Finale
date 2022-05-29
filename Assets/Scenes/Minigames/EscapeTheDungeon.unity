@@ -552,5 +552,21 @@ PrefabInstance:
       propertyPath: height
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 8008243491145411122, guid: deedec2b78d392b4a897d5718809da8e, type: 3}
+      propertyPath: exitColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8008243491145411122, guid: deedec2b78d392b4a897d5718809da8e, type: 3}
+      propertyPath: exitColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8008243491145411122, guid: deedec2b78d392b4a897d5718809da8e, type: 3}
+      propertyPath: exitColor.r
+      value: 0.101122975
+      objectReference: {fileID: 0}
+    - target: {fileID: 8008243491145411122, guid: deedec2b78d392b4a897d5718809da8e, type: 3}
+      propertyPath: m_flagPrefab
+      value: 
+      objectReference: {fileID: 401380507539530481, guid: d851c2b15c227b942a4266141ebb32a8, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deedec2b78d392b4a897d5718809da8e, type: 3}

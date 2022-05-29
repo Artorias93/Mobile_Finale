@@ -35,8 +35,11 @@ namespace EscapeDungeonMinigame
         [SerializeField] private int width;
         [SerializeField] private int height;
         [SerializeField] private int i_CellSize = 200;
+        [SerializeField] private Color exitColor = Color.yellow;
+        [SerializeField] private GameObject m_flagPrefab;
 
         private Tile[,] m_tilesMatrix;
+        private Tile m_goal;
 
         public int Width { get { return width; } }
         public int Height { get { return height; } }
@@ -45,6 +48,7 @@ namespace EscapeDungeonMinigame
         {
             Assert.IsNotNull(m_GridGameObject, "No Grid Gameobject assigned");
             Assert.IsNotNull(m_CellPrefab, "No cell prefab assigned");
+            Assert.IsNotNull(m_flagPrefab, "No flag prefab");
 
             if(m_GridLayout == null)
             {
@@ -61,6 +65,8 @@ namespace EscapeDungeonMinigame
 
             GenerateGrid();
             GenerateMaze();
+            GenerateExit();
+
 
             //After Generating maze I need to update tile appearance to refresh connections;
             foreach (Tile t in m_tilesMatrix)
@@ -146,6 +152,19 @@ namespace EscapeDungeonMinigame
             }
         }
 
+        private void GenerateExit()
+        {
+            m_goal = m_tilesMatrix[0, Width / 2];
+            Tile.Connect(m_goal, m_tilesMatrix[0, Width / 2 - 1]);
+            Tile.Connect(m_goal, m_tilesMatrix[0, Width / 2 + 1]);
+            Tile.Connect(m_goal, m_tilesMatrix[1, Width / 2]);
+
+            m_goal.GetComponent<Image>().color = exitColor;
+
+            GameObject flagGo = Instantiate(m_flagPrefab, m_goal.transform);
+            RectTransform rectTransform = flagGo.GetComponent<RectTransform>();
+            rectTransform.localPosition = Vector3.zero;
+        }
         public void CallLayoutRebuilder()
         {
             //Used to force correct positionitiong of player
