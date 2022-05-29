@@ -10,6 +10,7 @@ namespace FightCthulhu
         public int i_HitIndex
         {
             get { return i_hitIndex;}
+            set { i_hitIndex = value; }
         }
         private int i_hitIndex = -1;
 
@@ -20,7 +21,7 @@ namespace FightCthulhu
         public void OnPointerDown(PointerEventData eventData)
         {
             PlayerManager playerManager = PlayerManager.Instance;
-            i_hitIndex = playerManager.tryHit(this.gameObject);
+            playerManager.setAttackTarget(this.gameObject);
         }
     }
 }

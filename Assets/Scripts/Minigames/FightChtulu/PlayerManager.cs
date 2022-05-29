@@ -11,12 +11,17 @@ namespace FightCthulhu
         private Sprite s_emptySpace;
         [SerializeField]
         private List<Sprite> playerMovementSprites;
+        [SerializeField]
+        private Sprite attackSprite;
 
         public static PlayerManager Instance;
         private List<GameObject> m_positions= new List<GameObject>();
         private GameObject playerCurrentPosition=null;
         private GameObject requestedPosition=null;
         private int i_spriteIndex=0;
+        private GameObject attackTarget = null;
+        private bool b_isRightOriented = true;
+
 
         private void Awake()
         {
@@ -51,6 +56,7 @@ namespace FightCthulhu
             {
                 i_spriteIndex++;
             }
+            playerCurrentPosition.GetComponent<SpriteRenderer>().sprite = playerMovementSprites[i_spriteIndex];
         }
         private void setCurrentPosition(GameObject position, bool resetCurrent) {
             if (resetCurrent) {
@@ -59,7 +65,6 @@ namespace FightCthulhu
             }
 
             playerCurrentPosition = position;
-            playerCurrentPosition.GetComponent<SpriteRenderer>().sprite = playerMovementSprites[i_spriteIndex];
             playerCurrentPosition.GetComponent<Collider2D>().enabled = false;
         }
 
@@ -72,14 +77,24 @@ namespace FightCthulhu
         public void UpdateInTime()
         {
             changeSpriteIndex();
-            moveToRequestedPosition();
+            if (attackTarget != null)
+            { 
+              int attackIndex = tryHit();
+              attackTarget.GetComponent<CthulhuTentacleManager>().i_HitIndex = attackIndex;  
+              attackTarget = null;
+            }
+            else {
+                moveToRequestedPosition();
+            }
 
         }
 
         private void moveToRequestedPosition() {
             if (m_positions.Contains(requestedPosition) && !playerCurrentPosition.Equals(requestedPosition))
             {
-                Vector3 dir = playerCurrentPosition.transform.position - requestedPosition.transform.position;
+                Vector3 playerPosition = playerCurrentPosition.transform.position;
+                Vector3 requestedTilePoisition = requestedPosition.transform.position;
+                Vector3 dir = playerPosition - requestedTilePoisition;
                 //If movement is straight (not diagonal)
                 if (Mathf.Approximately((int)dir.x, 0) || Mathf.Approximately((int)dir.y, 0))
                 {
@@ -113,9 +128,13 @@ namespace FightCthulhu
 
         }
 
-        public int tryHit(GameObject tentacle) {
+
+        public void setAttackTarget(GameObject tentacle) {
+            attackTarget = tentacle;
+        }
+        public int tryHit() {
             Vector3 dir;
-            if (playerCurrentPosition.transform.position.x < tentacle.transform.position.x)
+            if (playerCurrentPosition.transform.position.x < attackTarget.transform.position.x)
             {
                 dir = Vector3.right;
             }
@@ -123,7 +142,6 @@ namespace FightCthulhu
                 dir = Vector3.left;
             }
             float rayLength = 100f;
-//            dir *= -1;
 
             //Get the first object hit by the ray
             RaycastHit2D hit = Physics2D.Raycast(playerCurrentPosition.transform.position, dir, rayLength);
@@ -132,6 +150,7 @@ namespace FightCthulhu
             {
                 CthulhuManager cthulhuManager = CthulhuManager.Instance;
                 Debug.LogWarning("HitIndex"+ cthulhuManager.i_CurrentTentacleIndex);
+                playerCurrentPosition.GetComponent<SpriteRenderer>().sprite = attackSprite;
                 return cthulhuManager.i_CurrentTentacleIndex;
             }
             else {

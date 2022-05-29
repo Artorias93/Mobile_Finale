@@ -256,6 +256,7 @@ MonoBehaviour:
   playerMovementSprites:
   - {fileID: 4495478712733764576, guid: 68c75ed835d18f64184d15db8c3a96ec, type: 3}
   - {fileID: -2735361975599426438, guid: 68c75ed835d18f64184d15db8c3a96ec, type: 3}
+  attackSprite: {fileID: 21300000, guid: 50b806bf7a55e4d43b4f08bd3b9464fa, type: 3}
 --- !u!4 &332222874
 Transform:
   m_ObjectHideFlags: 0
@@ -612,7 +613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a772a0b15fd3249aa061960a89bc0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frameTime: 2
+  frameTime: 1.5
 --- !u!1 &1439663911
 GameObject:
   m_ObjectHideFlags: 0
