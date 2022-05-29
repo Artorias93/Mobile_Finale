@@ -43,6 +43,7 @@ namespace EscapeDungeonMinigame
 
         public int Width { get { return width; } }
         public int Height { get { return height; } }
+        public Tile Goal { get { return m_goal; } }
 
         private void Awake()
         {

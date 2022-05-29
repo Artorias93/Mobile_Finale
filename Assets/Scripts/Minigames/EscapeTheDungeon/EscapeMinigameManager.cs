@@ -18,6 +18,7 @@ namespace EscapeDungeonMinigame
         [SerializeField] private float frameTime = 0.5f;
         [SerializeField] private GameObject m_EnemyPrefab;
         [SerializeField] private MazeManager m_MazeManager;
+        [SerializeField] private PlayerController m_PlayerController;
 
         [Header("Difficulty Settings")]
         [SerializeField] private GameParameters gp_easy;
@@ -47,6 +48,11 @@ namespace EscapeDungeonMinigame
             get { return m_Timer ? m_Timer.RemainingTime : -1; }
         }
 
+        public GameParameters SelectedParameters
+        {
+            get { return gp_selectedParameters; }
+        }
+
         #endregion
 
         private void Awake()
@@ -58,6 +64,7 @@ namespace EscapeDungeonMinigame
 
             Assert.IsNotNull(m_MazeManager);
             Assert.IsNotNull(m_EnemyPrefab);
+            Assert.IsNotNull(m_PlayerController);
 
         }
 
@@ -80,6 +87,11 @@ namespace EscapeDungeonMinigame
                 f_elapsedTime -= frameTime;
                 if(OnUpdate != null)
                     OnUpdate();
+
+                if (m_PlayerController.CurrentTile.Equals(m_MazeManager.Goal))
+                {
+                    VictoryBehaviour();
+                }
             }
 
         }
@@ -114,12 +126,22 @@ namespace EscapeDungeonMinigame
 
         protected override void EndMinigame()
         {
-            
+            foreach (EnemyController enemyController in m_EnemyControllers)
+            {
+                enemyController.DisableEnemyMovement();
+            }
+            m_PlayerController.DisableMovement();
+
+            b_gameFinished = true;
         }
 
         public void VictoryBehaviour()
         {
-            i_score = (int) (3f * (float)RemainingTime / gp_selectedParameters.f_PlayTime);
+            m_Timer?.PauseTimer();
+
+            float normalizedTime = (float)RemainingTime / gp_selectedParameters.f_PlayTime;
+
+            i_score = (int) (3 * normalizedTime) + 1;
 
             EndMinigame();
         }

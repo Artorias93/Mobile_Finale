@@ -17,6 +17,8 @@ namespace EscapeDungeonMinigame
         public Vector2Int Position { get { return m_currentTile.Coords; } }
         public Tile CurrentTile { get { return m_currentTile; } }
 
+        private bool b_IsMovementDisabled = false;
+
 
         public static PlayerController Instance;
 
@@ -37,7 +39,7 @@ namespace EscapeDungeonMinigame
         }
         void UpdatePosition()
         {
-            if(m_requestedTile != null && !m_requestedTile.IsOccupied)
+            if(!b_IsMovementDisabled && m_requestedTile != null && !m_requestedTile.IsOccupied)
             {
                 transform.position = m_requestedTile.transform.position;
                 m_currentTile.SetOccupied(false);
@@ -69,6 +71,16 @@ namespace EscapeDungeonMinigame
             m_currentTile = t;
             m_currentTile.SetOccupied(true);
             transform.position = t.transform.position;
-        }       
+        }
+
+        public void DisableMovement()
+        {
+            b_IsMovementDisabled = true;
+        }
+
+        public void EnableMovement()
+        {
+            b_IsMovementDisabled = false;
+        }
     }
 }
