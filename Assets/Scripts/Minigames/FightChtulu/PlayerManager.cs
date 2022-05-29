@@ -110,24 +110,19 @@ namespace FightCthulhu
                 //If movement is straight (not diagonal)
                 if (Mathf.Approximately((int)dir.x, 0) || Mathf.Approximately((int)dir.y, 0))
                 {
-                    //Length of the ray
                     float rayLength = 100f;
                     dir *= -1;
 
-                    //Get the first object hit by the ray
                     RaycastHit2D hit = Physics2D.Raycast(playerCurrentPosition.transform.position, dir, rayLength);
 
                     if (hit.collider == requestedPosition.GetComponent<Collider2D>())
                     {
-                        if (playerPosition.x < requestedTilePoisition.x)
+                        //questo if serve a causa di un bug che per la tile 4 e 5 in verticale trova due valori di x diversi nonostante siano uguali
+                        if (!Mathf.Approximately((int)dir.x, 0))
                         {
-                            b_isRightOriented = true;
+                            changeOrientationInMovement(playerPosition, requestedTilePoisition);
                         }
-                        else if(playerPosition.x > requestedTilePoisition.x)
-                        {
-                            b_isRightOriented = false;
-                        }
-                            setCurrentPosition(requestedPosition, true);
+                        setCurrentPosition(requestedPosition, true);
                     }
                     else
                     {
@@ -148,6 +143,16 @@ namespace FightCthulhu
 
         }
 
+        private void changeOrientationInMovement(Vector3 playerPosition, Vector3 requestedTilePoisition) {
+                if (playerPosition.x < requestedTilePoisition.x)
+                {
+                    b_isRightOriented = true;
+                }
+                else if (playerPosition.x > requestedTilePoisition.x)
+                {
+                    b_isRightOriented = false;
+                }
+        }
 
         public void setAttackTarget(GameObject tentacle) {
             attackTarget = tentacle;
