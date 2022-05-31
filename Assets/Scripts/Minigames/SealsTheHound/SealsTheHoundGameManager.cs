@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
@@ -20,18 +22,23 @@ namespace SealsTheHound
         hard
     }
 
+    class DistanceFromPrev
+    {
+        public string s_previousNode { get; set; }
+        public int i_cost { get; set; }
+    }
+
     public class SealsTheHoundGameManager : AMinigameManager
     {
         [Header("References")]
         [SerializeField] private Grid grid;
-        [SerializeField] private GameObject obj_hound;
+        [SerializeField] private GameObject obj_houndRef;
         [SerializeField] private Tilemap tileMap;
         [SerializeField] private Tile water;
         [SerializeField] private Tile terrain;
         [SerializeField] private GameObject texto;
         [SerializeField] private GameObject obj_cellRef;
         [SerializeField] private GameObject obj_cellsContainer;
-
 
 
         [Header("Game Parameters")]
@@ -53,9 +60,14 @@ namespace SealsTheHound
         private GameObject obj_rune;
         private Vector3Int gridPos2;
         private GameObject obj_cell;
+        private GameObject obj_hound;
+        private GameObject obj_currentNode;
 
-
-        public Dictionary<string, GameObject> rg_cellsDict = new Dictionary<string, GameObject> { };
+        public List<GameObject> rg_adjacencyList = new List<GameObject> { };
+        private Dictionary<string, GameObject> rg_cellsDict = new Dictionary<string, GameObject> { };
+        private Dictionary<string, Tuple<string, int>> rg_pathCost = new Dictionary<string, Tuple<string, int>> { };
+        public List<GameObject> rg_queue = new List<GameObject> { };
+        public HashSet<GameObject> rg_markedNodes = new HashSet<GameObject> { };
 
         private int i_runeCompleted = 0;
         private int i_candlesPlaced = 0;
@@ -139,7 +151,6 @@ namespace SealsTheHound
         {
             gridPos2 = new Vector3Int(gridPos.y, gridPos.x, 0);
             obj_hound.transform.position = grid.GetCellCenterWorld(gridPos2 + Vector3Int.right);
-            tileMap.SetTile(gridPos2, water);
         }
 
         public override void BeginMinigame(Difficulty difficulty)
@@ -166,12 +177,17 @@ namespace SealsTheHound
             m_gameTimer = Timer.Create(m_gameParameters.i_playTime, onTimeEnd, name: "Game Timer");
             m_gameTimer.StartTimer();
 
+            GenerateBoard();
+        }
+
+        private void GenerateBoard()
+        {
+            obj_hound = Instantiate(obj_houndRef, grid.GetCellCenterWorld(Vector3Int.right), transform.rotation);
+
             for (int i = 0; i <= i_gridHeight; i++)
             {
                 for (int j = 0; j <= i_gridWidth; j++)
                 {
-
-
                     Vector3Int cellPos1 = new Vector3Int(i, j, 0);
                     Vector3Int cellPos2 = new Vector3Int(i, -j, 0);
 
@@ -204,7 +220,9 @@ namespace SealsTheHound
                 }
             }
 
-            //GenerateRound();
+            //rg_adjacencyList = rg_cellsDict.Values.ToList();
+            //print(rg_adjacencyList[0].GetComponent<Cell>().rg_neighbors[0]);
+            //BFS(rg_adjacencyList[0]);
         }
 
         private void CreateCells(Vector3Int cellPos, int x, int y)
@@ -229,6 +247,41 @@ namespace SealsTheHound
             text.name = $"TextCell({x},{y})";                                                                                  //TEST
             text.GetComponent<TextMesh>().text = (new Vector2Int(cellPos.y, cellPos.x)).ToString();                            //TEST
         }
+
+        public void BFS(GameObject source)
+        {
+            Vector2Int houndPos = (Vector2Int)(grid.WorldToCell(obj_hound.transform.position) - Vector3Int.right);
+            houndPos = new Vector2Int(houndPos.y, houndPos.x);
+            rg_queue.Add(source);
+            rg_markedNodes.Add(source);
+
+            rg_pathCost.Add(source.name, new Tuple<string, int>(source.name, 0));
+
+            while (rg_queue.Count!=0)
+            {
+                obj_currentNode = rg_queue[0];
+                rg_queue.RemoveAt(0);
+
+                print($"{obj_currentNode.name} has distance {rg_pathCost[obj_currentNode.name].Item2} from the source {source.name} and his previous node is {rg_pathCost[obj_currentNode.name].Item1}");
+
+                foreach (string s_node in obj_currentNode.GetComponent<Cell>().rg_neighbors)
+                {
+                    if(!rg_markedNodes.Contains(rg_cellsDict[s_node]))
+                    {
+                        rg_queue.Add(rg_cellsDict[s_node]);
+                        rg_markedNodes.Add(rg_cellsDict[s_node]);
+                        rg_pathCost.Add(s_node, new Tuple<string, int>(obj_currentNode.name, rg_pathCost[obj_currentNode.name].Item2 + 1));
+                    }
+                }
+            }
+
+
+        }
+
+
+
+
+
 
         private void GenerateRound()
         {

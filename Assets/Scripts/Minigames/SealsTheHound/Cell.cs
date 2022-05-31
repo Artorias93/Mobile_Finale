@@ -19,7 +19,6 @@ namespace SealsTheHound
         public bool b_isWalkable = true;
         public bool b_trigger = false;
 
-
         SealsTheHoundGameManager gm;
         int i_gridWidth;
         int i_gridHeight;
@@ -28,8 +27,8 @@ namespace SealsTheHound
         void Start()
         {
             gm = SealsTheHoundGameManager.Instance;
-            i_gridWidth = gm.GridHeight;
-            i_gridHeight = gm.GridWidth;
+            i_gridWidth = gm.GridWidth;
+            i_gridHeight = gm.GridHeight;
 
             rg_neighbors.Add($"({i_x + 1},{i_y})");
             rg_neighbors.Add($"({i_x - 1},{i_y})");
@@ -46,7 +45,6 @@ namespace SealsTheHound
                 rg_neighbors.Add($"({i_x + 1},{i_y + 1})");
                 rg_neighbors.Add($"({i_x - 1},{i_y + 1})");
             }
-
 
             if (Mathf.Abs(i_x) == i_gridWidth)
             {
@@ -101,24 +99,6 @@ namespace SealsTheHound
 
         }
 
-        private void OnMouseDown()
-        {
-            if (b_trigger)
-            {
-
-            }
-        }
-
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            b_trigger = true;
-        }
-
-        private void OnTriggerExit2D(Collider2D collision)
-        {
-            b_trigger = false;
-        }
-
         public void OnPointerDown(PointerEventData pointerEventData)
         {
             b_trigger = true;
@@ -126,8 +106,7 @@ namespace SealsTheHound
             Vector3Int mouseWorldPos = gm.GetGrid.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition));
             //Vector3Int coordinates = gm.GetGrid.GetCellCenterWorld(mouseWorldPos);
             gm.GetTilemap.SetTile(mouseWorldPos, water);
+            gm.BFS(gameObject);
         }
-
-
     }
 }
