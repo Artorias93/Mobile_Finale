@@ -21,6 +21,7 @@ TagManager:
   - Boss
   - BossAttack
   - Ladder
+  - PatrolZone
   layers:
   - Default
   - TransparentFX

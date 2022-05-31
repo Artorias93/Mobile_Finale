@@ -1,33 +1,74 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Patrol : MonoBehaviour
+namespace TheMadCthulhuMinigame
 {
-    [SerializeField]
-    private float speed, distance;
-
-    [SerializeField]
-    private bool movingRight = true;
-    [SerializeField]
-    private Transform groundDetection;
-
-    void Update()
+    public class Patrol : MonoBehaviour
     {
-        transform.Translate(Vector2.right * speed * Time.deltaTime);
-        RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distance);
-        if (groundInfo.collider == false)
+        [SerializeField]
+        private float speed, distance;
+
+        [SerializeField]
+        private bool isMovingVertically;
+
+        private bool movingRight = true;
+        [SerializeField]
+        private Transform groundDetector;
+
+        void Update()
         {
-            if (movingRight == true)
+           
+            Move();
+        }
+
+        private void Move()
+        {
+            RaycastHit2D groundInfo;
+            if (isMovingVertically)
             {
-                transform.eulerAngles = new Vector3(0, -180, 0);
-                movingRight = false;
+                groundInfo = Physics2D.Raycast(groundDetector.position, Vector2.left, distance);
+                
+                transform.Translate(Vector2.down * speed * Time.deltaTime);
+                
             }
             else
             {
-                transform.eulerAngles = new Vector3(0, 0, 0);
-                movingRight = true;
+                groundInfo = Physics2D.Raycast(groundDetector.position, Vector2.down, distance);
+                //if (groundInfo.collider.tag == "PatrolZone")
+
+                    transform.Translate(Vector2.right * speed * Time.deltaTime);
+               
+            }
+
+            
+            if (groundInfo.collider == false /*groundInfo.collider.tag != "PatrolZone"*/)
+            {
+                if (movingRight == true)
+                {
+                    if (!isMovingVertically)
+                    {
+
+                        transform.eulerAngles = new Vector3(0, -180, 0);
+                        movingRight = false;
+                    }
+                    else
+                    {
+                        transform.eulerAngles = new Vector3(-180, 0, 0);
+                        movingRight = false;
+                    }
+
+
+                }
+                else
+                {
+                    transform.eulerAngles = new Vector3(0, 0, 0);
+                    movingRight = true;
+                }
+           
             }
         }
+
+        
     }
 }

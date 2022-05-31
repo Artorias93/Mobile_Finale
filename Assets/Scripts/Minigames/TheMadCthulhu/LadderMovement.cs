@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class LadderMovement : MonoBehaviour
+namespace TheMadCthulhuMinigame
 {
-   
+    public class LadderMovement : MonoBehaviour
+    {
+
         private float dirY;
         private float speed = 8f;
         private bool isLadder;
@@ -50,20 +51,21 @@ public class LadderMovement : MonoBehaviour
                 isClimbing = false;
             }
         }
-    public void MoveUp()
-    {
+        public void MoveUp()
+        {
 
-        dirY = 1;
-    }
-    public void MoveDown()
-    {
+            dirY = 1;
+        }
+        public void MoveDown()
+        {
 
-        dirY = -1;
+            dirY = -1;
+        }
+        public void StopMoving()
+        {
+            dirY = 0;
+            rb.velocity = Vector2.zero;
+        }
     }
-    public void StopMoving()
-    {
-        dirY = 0;
-        rb.velocity = Vector2.zero;
-    }
+
 }
-
