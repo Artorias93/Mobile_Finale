@@ -20,6 +20,7 @@ TagManager:
   - Skull
   - Boss
   - BossAttack
+  - Ladder
   layers:
   - Default
   - TransparentFX
