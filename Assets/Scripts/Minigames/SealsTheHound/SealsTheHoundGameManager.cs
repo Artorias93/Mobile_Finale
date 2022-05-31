@@ -1,10 +1,8 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using UnityEngine.UI;
 
 namespace SealsTheHound
 {
@@ -12,7 +10,6 @@ namespace SealsTheHound
     public struct GameParameters
     {
         public int i_playTime;
-        public int i_runeToComplete;
     }
 
     public enum Diff
@@ -20,12 +17,6 @@ namespace SealsTheHound
         easy,
         medium,
         hard
-    }
-
-    class DistanceFromPrev
-    {
-        public string s_previousNode { get; set; }
-        public int i_cost { get; set; }
     }
 
     public class SealsTheHoundGameManager : AMinigameManager
@@ -57,22 +48,15 @@ namespace SealsTheHound
         private Timer m_gameTimer;
 
         private Animator anim;
-        private GameObject obj_rune;
-        private Vector3Int gridPos2;
         private GameObject obj_cell;
         private GameObject obj_hound;
         private GameObject obj_currentNode;
 
-        public List<GameObject> rg_adjacencyList = new List<GameObject> { };
         private Dictionary<string, GameObject> rg_cellsDict = new Dictionary<string, GameObject> { };
         private Dictionary<string, Tuple<string, int>> rg_pathCost = new Dictionary<string, Tuple<string, int>> { };
         public List<GameObject> rg_queue = new List<GameObject> { };
         public HashSet<GameObject> rg_markedNodes = new HashSet<GameObject> { };
-
-        private int i_runeCompleted = 0;
-        private int i_candlesPlaced = 0;
-        private int i_candlesCount;
-        private int i_childToCheckId;
+        public HashSet<GameObject> rg_leavesNodes = new HashSet<GameObject> { };
 
         private bool b_gameWon = false;
 
@@ -93,10 +77,6 @@ namespace SealsTheHound
             get { return i_score; }
         }
 
-        public int RunesCount
-        {
-            get { return i_runeCompleted; }
-        }
         public int GridHeight
         {
             get { return i_gridHeight; }
@@ -149,8 +129,7 @@ namespace SealsTheHound
 
         private void Update()
         {
-            gridPos2 = new Vector3Int(gridPos.y, gridPos.x, 0);
-            obj_hound.transform.position = grid.GetCellCenterWorld(gridPos2 + Vector3Int.right);
+
         }
 
         public override void BeginMinigame(Difficulty difficulty)
@@ -159,17 +138,14 @@ namespace SealsTheHound
             if (difficulty == Difficulty.EASY)
             {
                 m_gameParameters = gp_easy;
-                i_childToCheckId = 0;
             }
             else if (difficulty == Difficulty.MEDIUM)
             {
                 m_gameParameters = gp_medium;
-                i_childToCheckId = 1;
             }
             else if (difficulty == Difficulty.HARD)
             {
                 m_gameParameters = gp_hard;
-                i_childToCheckId = 2;
             }
 
             gridPos = Vector3Int.FloorToInt(new Vector3(gridPos.y, gridPos.x, 0));
@@ -193,36 +169,32 @@ namespace SealsTheHound
 
                     if (!(i == 5 && j % 2 != 0))
                     {
-                        if (!(rg_cellsDict.ContainsKey($"({j},{i})")))
+                        if (!(rg_cellsDict.ContainsKey($"({j}, {i})")))
                         {
                             CreateCells(cellPos1, j, i);
                             tileMap.SetTile(cellPos1, terrain);
                         }
 
-                        if (!(rg_cellsDict.ContainsKey($"({-j},{i})")))
+                        if (!(rg_cellsDict.ContainsKey($"({-j}, {i})")))
                         {
                             CreateCells(cellPos2, -j, i);
                             tileMap.SetTile(cellPos2, terrain);
                         }
                     }
 
-                    if (!(rg_cellsDict.ContainsKey($"({-j},{-i})")))
+                    if (!(rg_cellsDict.ContainsKey($"({-j}, {-i})")))
                     {
                         CreateCells(-cellPos1, -j, -i);
                         tileMap.SetTile(-cellPos1, terrain);
                     }
 
-                    if (!(rg_cellsDict.ContainsKey($"({j},{-i})")))
+                    if (!(rg_cellsDict.ContainsKey($"({j}, {-i})")))
                     {
                         CreateCells(-cellPos2, j, -i);
                         tileMap.SetTile(-cellPos2, terrain);
                     }
                 }
             }
-
-            //rg_adjacencyList = rg_cellsDict.Values.ToList();
-            //print(rg_adjacencyList[0].GetComponent<Cell>().rg_neighbors[0]);
-            //BFS(rg_adjacencyList[0]);
         }
 
         private void CreateCells(Vector3Int cellPos, int x, int y)
@@ -231,8 +203,8 @@ namespace SealsTheHound
             obj_cell.transform.SetParent(obj_cellsContainer.transform);
             obj_cell.GetComponent<Cell>().i_x = x;
             obj_cell.GetComponent<Cell>().i_y = y;
-            obj_cell.name = $"({x},{y})";
-            rg_cellsDict.Add($"({x},{y})", obj_cell);
+            obj_cell.name = $"({x}, {y})";
+            rg_cellsDict.Add($"({x}, {y})", obj_cell);
 
             if (Mathf.Abs(x) == i_gridWidth || Mathf.Abs(y) == i_gridHeight) obj_cell.GetComponent<Cell>().b_isLeaf = true;
             if (y == i_gridHeight-1 && x % 2 != 0) obj_cell.GetComponent<Cell>().b_isLeaf = true;
@@ -244,95 +216,113 @@ namespace SealsTheHound
         {
             GameObject text = Instantiate(texto, grid.GetCellCenterWorld(cellPos) + Vector3.up / 20, transform.rotation);      //TEST
             text.transform.SetParent(obj_cell.transform);                                                                      //TEST
-            text.name = $"TextCell({x},{y})";                                                                                  //TEST
+            text.name = $"TextCell({x}, {y})";                                                                                  //TEST
             text.GetComponent<TextMesh>().text = (new Vector2Int(cellPos.y, cellPos.x)).ToString();                            //TEST
         }
 
-        public void BFS(GameObject source)
+        public void BFS(GameObject root)
         {
+            rg_queue.Clear();
+            rg_pathCost.Clear();
+            rg_markedNodes.Clear();
+            rg_leavesNodes.Clear();
+
             Vector2Int houndPos = (Vector2Int)(grid.WorldToCell(obj_hound.transform.position) - Vector3Int.right);
             houndPos = new Vector2Int(houndPos.y, houndPos.x);
-            rg_queue.Add(source);
-            rg_markedNodes.Add(source);
+            Vector2Int source = houndPos;
+            string s_sourceName = source.ToString();
 
-            rg_pathCost.Add(source.name, new Tuple<string, int>(source.name, 0));
+            rg_queue.Add(rg_cellsDict[s_sourceName]);
+            rg_markedNodes.Add(rg_cellsDict[s_sourceName]);
+            rg_cellsDict.Remove(root.name);
+            rg_pathCost.Add(s_sourceName, new Tuple<string, int>(s_sourceName, 0));
+
+            int i = 0;
 
             while (rg_queue.Count!=0)
             {
-                obj_currentNode = rg_queue[0];
-                rg_queue.RemoveAt(0);
 
-                print($"{obj_currentNode.name} has distance {rg_pathCost[obj_currentNode.name].Item2} from the source {source.name} and his previous node is {rg_pathCost[obj_currentNode.name].Item1}");
+                obj_currentNode = rg_queue[0];
+
+                rg_queue.RemoveAt(0);
+                i++;
+
+                //print($"Clicked on {root.name} -> {obj_currentNode.name} has distance {rg_pathCost[obj_currentNode.name].Item2} from the source {s_sourceName} and his previous node is {rg_pathCost[obj_currentNode.name].Item1}   {i}");
 
                 foreach (string s_node in obj_currentNode.GetComponent<Cell>().rg_neighbors)
                 {
-                    if(!rg_markedNodes.Contains(rg_cellsDict[s_node]))
+
+                    if (rg_cellsDict.ContainsKey(s_node))
                     {
-                        rg_queue.Add(rg_cellsDict[s_node]);
-                        rg_markedNodes.Add(rg_cellsDict[s_node]);
-                        rg_pathCost.Add(s_node, new Tuple<string, int>(obj_currentNode.name, rg_pathCost[obj_currentNode.name].Item2 + 1));
+
+
+                        if (!rg_markedNodes.Contains(rg_cellsDict[s_node]))
+                        {
+
+                            rg_queue.Add(rg_cellsDict[s_node]);
+                            rg_markedNodes.Add(rg_cellsDict[s_node]);
+                            rg_pathCost.Add(s_node, new Tuple<string, int>(obj_currentNode.name, rg_pathCost[obj_currentNode.name].Item2 + 1));
+                            if (rg_cellsDict[s_node].GetComponent<Cell>().b_isLeaf) rg_leavesNodes.Add(rg_cellsDict[s_node]);
+                        }
                     }
                 }
             }
 
+            int i_minDistance = rg_pathCost.Values.Max(x => x.Item2);
+            GameObject obj_nearestNode = null;
 
-        }
-
-
-
-
-
-
-        private void GenerateRound()
-        {
-            i_candlesPlaced = 0;
-            i_candlesCount = 0;
-
-            for (int i = 0; i <= i_childToCheckId; i++)
-            {
-                obj_rune.transform.GetChild(i).gameObject.SetActive(true);
-                i_candlesCount += obj_rune.transform.GetChild(i).childCount;
-            }
-
-            SpawnCandles(i_candlesCount);
-        }
-
-        private void SpawnCandles(int i_candlesNum)
-        {
-            for (int i = 0; i <= i_candlesNum - 1; i++)
-            {
-
-            }
-        }
-
-        IEnumerator WaitGenerate()
-        {
-            if (i_runeCompleted == GameParameters.i_runeToComplete)
+            if (rg_leavesNodes.Count == 0)
             {
                 VictoryBehaviour();
-                yield break;
+                return;
             }
 
-            yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
-            GenerateRound();
+            foreach (GameObject obj_leaf in rg_leavesNodes)
+            {
+                //print(obj_leaf.name + " " + rg_pathCost[obj_leaf.name].Item2 + " " + i_minDistance);
+
+                if (rg_pathCost[obj_leaf.name].Item2 <= i_minDistance)
+                {
+                    i_minDistance = rg_pathCost[obj_leaf.name].Item2;
+                    obj_nearestNode = obj_leaf;
+                }
+
+            }
+
+            //print(obj_nearestNode.name);
+
+            while (rg_pathCost[obj_nearestNode.name].Item1 != s_sourceName)
+            {
+                string s_prevNode = rg_pathCost[obj_nearestNode.name].Item1;
+                obj_nearestNode = rg_cellsDict[rg_pathCost[obj_nearestNode.name].Item1];
+            }
+      
+            obj_hound.transform.position = grid.GetCellCenterWorld(Vector3Int.FloorToInt(new Vector3(rg_cellsDict[obj_nearestNode.name].GetComponent<Cell>().i_y, rg_cellsDict[obj_nearestNode.name].GetComponent<Cell>().i_x, 0)) + Vector3Int.right);
+            houndPos = new Vector2Int(grid.WorldToCell(obj_hound.transform.position).y, grid.WorldToCell(obj_hound.transform.position).x) + Vector2Int.down;
+            if (rg_leavesNodes.Contains(rg_cellsDict[houndPos.ToString()])) LoseBehaviour();
+
+            //print(obj_nearestNode.name);
         }
 
-        public void CountRunes()
-        {
-            i_runeCompleted++;
-            anim.SetTrigger("Destroy");
-            Destroy(obj_rune, anim.GetCurrentAnimatorStateInfo(0).length);
-            StartCoroutine(WaitGenerate());
-        }
+// 
+//         IEnumerator WaitGenerate()
+//         {
+//             if (i_runeCompleted == GameParameters.i_runeToComplete)
+//             {
+//                 VictoryBehaviour();
+//                 yield break;
+//             }
+// 
+//             yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
+//             GenerateRound();
+//         }
 
-        public void CountCandles()
-        {
-            i_candlesPlaced++;
-            if (i_candlesPlaced == i_candlesCount) CountRunes();
-        }
+            //Destroy(obj_rune, anim.GetCurrentAnimatorStateInfo(0).length);
+            //StartCoroutine(WaitGenerate());
 
         public void LoseBehaviour()
         {
+            print("HAI PERSO, BELLO!!!");
             EndMinigame();
         }
 
@@ -341,7 +331,7 @@ namespace SealsTheHound
             m_gameTimer?.StopTimer();
             b_gameFinished = true;
 
-            i_score = 3 - Mathf.FloorToInt((Mathf.Abs(((float)i_runeCompleted / (float)m_gameParameters.i_runeToComplete * 100) - 100) / 100 * 4));
+            //i_score = 3 - Mathf.FloorToInt((Mathf.Abs(((float)i_runeCompleted / (float)m_gameParameters.i_runeToComplete * 100) - 100) / 100 * 4));
             if (i_score > 3) i_score = 3;
 
         }
@@ -349,6 +339,7 @@ namespace SealsTheHound
         private void VictoryBehaviour()
         {
             b_gameWon = true;
+            print("NON PUO' SCAPPARE: HAI VINTO ,BELLO!");
             EndMinigame();
         }
         private void onTimeEnd()

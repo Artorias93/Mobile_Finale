@@ -10,7 +10,7 @@ namespace SealsTheHound
                 float normalizedTime = (float) gm.RemainingTime / gm.GameParameters.i_playTime;
                 UpdateSlider(normalizedTime);
                  
-                scoreText.text = gm.RunesCount + "/" + gm.GameParameters.i_runeToComplete;
+                //scoreText.text = gm.RunesCount + "/" + gm.GameParameters.i_runeToComplete;
 
                 if (gm.GameFinished)
                 {

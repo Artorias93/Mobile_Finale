@@ -30,63 +30,63 @@ namespace SealsTheHound
             i_gridWidth = gm.GridWidth;
             i_gridHeight = gm.GridHeight;
 
-            rg_neighbors.Add($"({i_x + 1},{i_y})");
-            rg_neighbors.Add($"({i_x - 1},{i_y})");
-            rg_neighbors.Add($"({i_x},{i_y + 1})");
-            rg_neighbors.Add($"({i_x},{i_y - 1})");
+            rg_neighbors.Add($"({i_x + 1}, {i_y})");
+            rg_neighbors.Add($"({i_x - 1}, {i_y})");
+            rg_neighbors.Add($"({i_x}, {i_y + 1})");
+            rg_neighbors.Add($"({i_x}, {i_y - 1})");
             
             if (i_x % 2 == 0)
             {
-                rg_neighbors.Add($"({i_x + 1},{i_y - 1})");
-                rg_neighbors.Add($"({i_x - 1},{i_y - 1})");
+                rg_neighbors.Add($"({i_x + 1}, {i_y - 1})");
+                rg_neighbors.Add($"({i_x - 1}, {i_y - 1})");
             }
             else
             {
-                rg_neighbors.Add($"({i_x + 1},{i_y + 1})");
-                rg_neighbors.Add($"({i_x - 1},{i_y + 1})");
+                rg_neighbors.Add($"({i_x + 1}, {i_y + 1})");
+                rg_neighbors.Add($"({i_x - 1}, {i_y + 1})");
             }
 
             if (Mathf.Abs(i_x) == i_gridWidth)
             {
                 if (Mathf.Abs(i_y) == i_gridHeight)
                 {
-                    rg_neighbors.Remove($"({i_x},{i_y + Mathf.Sign(i_y)})");
-                    rg_neighbors.Remove($"({i_x + Mathf.Sign(i_x)},{i_y})");
+                    rg_neighbors.Remove($"({i_x}, {i_y + Mathf.Sign(i_y)})");
+                    rg_neighbors.Remove($"({i_x + Mathf.Sign(i_x)}, {i_y})");
 
                     if (Mathf.Sign(i_y) < 0)
                     {
-                        rg_neighbors.Remove($"({i_x - Mathf.Sign(i_x)},{i_y + Mathf.Sign(i_y)})");
-                        rg_neighbors.Remove($"({i_x + Mathf.Sign(i_x)},{i_y + Mathf.Sign(i_y)})");
+                        rg_neighbors.Remove($"({i_x - Mathf.Sign(i_x)}, {i_y + Mathf.Sign(i_y)})");
+                        rg_neighbors.Remove($"({i_x + Mathf.Sign(i_x)}, {i_y + Mathf.Sign(i_y)})");
                     }
                     else
                     {
-                        rg_neighbors.Remove($"({i_x - Mathf.Sign(i_x)},{i_y})");
-                        rg_neighbors.Remove($"({i_x + Mathf.Sign(i_x)},{i_y - Mathf.Sign(i_y)})");
+                        rg_neighbors.Remove($"({i_x - Mathf.Sign(i_x)}, {i_y})");
+                        rg_neighbors.Remove($"({i_x + Mathf.Sign(i_x)}, {i_y - Mathf.Sign(i_y)})");
                     }
                 }
                 else
                 {
-                    rg_neighbors.Remove($"({i_x + Mathf.Sign(i_x)},{i_y})");
-                    rg_neighbors.Remove($"({i_x + Mathf.Sign(i_x)},{i_y - 1})");
+                    rg_neighbors.Remove($"({i_x + Mathf.Sign(i_x)}, {i_y})");
+                    rg_neighbors.Remove($"({i_x + Mathf.Sign(i_x)}, {i_y - 1})");
                 }
             }
             else
             {
                 if (Mathf.Abs(i_y) == i_gridHeight || ((i_y) == i_gridHeight-1 && i_x % 2 != 0))
                 {
-                    rg_neighbors.Remove($"({i_x},{i_y + Mathf.Sign(i_y)})");
+                    rg_neighbors.Remove($"({i_x}, {i_y + Mathf.Sign(i_y)})");
 
                     if (Mathf.Abs(i_y) == i_gridHeight && i_x % 2 == 0)
                     {
                         if (Mathf.Sign(i_y) < 0)
                         {
-                            rg_neighbors.Remove($"({i_x + 1},{i_y - 1})");
-                            rg_neighbors.Remove($"({i_x - 1},{i_y - 1})");
+                            rg_neighbors.Remove($"({i_x + 1}, {i_y - 1})");
+                            rg_neighbors.Remove($"({i_x - 1}, {i_y - 1})");
                         }
                         else
                         {
-                            rg_neighbors.Remove($"({i_x + 1},{i_y})");
-                            rg_neighbors.Remove($"({i_x - 1},{i_y})");
+                            rg_neighbors.Remove($"({i_x + 1}, {i_y})");
+                            rg_neighbors.Remove($"({i_x - 1}, {i_y})");
                         }
                     }
                 }
@@ -101,11 +101,10 @@ namespace SealsTheHound
 
         public void OnPointerDown(PointerEventData pointerEventData)
         {
-            b_trigger = true;
             GetComponent<Collider2D>().enabled = false;
             Vector3Int mouseWorldPos = gm.GetGrid.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition));
-            //Vector3Int coordinates = gm.GetGrid.GetCellCenterWorld(mouseWorldPos);
             gm.GetTilemap.SetTile(mouseWorldPos, water);
+            b_isWalkable = false;
             gm.BFS(gameObject);
         }
     }
