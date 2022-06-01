@@ -201,5 +201,58 @@ namespace EscapeDungeonMinigame
             }
         }
 
+        public int BFSCountDistance(Tile t1, Tile t2)
+        {
+            //Like BFS but used only to get distance from two Tiles
+            if (t1 == null || t2 == null)
+            {
+                Debug.LogWarning("One of the tile was null");
+                return -1;
+            }
+            else
+            {
+
+                Queue<Tile> stack = new Queue<Tile>();
+                HashSet<Tile> visited = new HashSet<Tile>();
+                Dictionary<Tile, Tile> parentPaths = new Dictionary<Tile, Tile>();
+
+                stack.Enqueue(t1);
+                parentPaths.Add(t1, null);
+                visited.Add(t1);
+
+                while (stack.Count > 0)
+                {
+                    Tile t = stack.Dequeue();
+                    if (t.Equals(t2))
+                    {
+                        Debug.Log("Found tile t2");
+                        break;
+                    }
+
+                    foreach (Tile v in t.ReachableTiles)
+                    {
+                        if (!visited.Contains(v))
+                        {
+                            stack.Enqueue(v);
+                            visited.Add(v);
+                            parentPaths[v] = t;
+                        }
+                    }
+                }
+
+                //Count going backwards
+                int i_steps = 0;
+
+                Tile next = t2;
+                while (next != null && parentPaths[next] != t1)
+                {
+                    i_steps++;
+                    next = parentPaths[next];
+                }
+                return i_steps;
+            }
+
+
+        }
     }
 }

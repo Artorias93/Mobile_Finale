@@ -16,6 +16,8 @@ namespace EscapeDungeonMinigame
     {
         [Header("Game Settings")]
         [SerializeField] private float frameTime = 0.5f;
+        [SerializeField, Tooltip("Minimum distance from player when spawning enemies")] 
+        private int i_minimumDistance = 9;
         [SerializeField] private GameObject m_EnemyPrefab;
         [SerializeField] private MazeManager m_MazeManager;
         [SerializeField] private PlayerController m_PlayerController;
@@ -41,7 +43,7 @@ namespace EscapeDungeonMinigame
 
         private float f_elapsedTime;
         private List<EnemyController> m_EnemyControllers;
-
+        
         #region PROPERTIES
         public float RemainingTime
         {
@@ -126,7 +128,18 @@ namespace EscapeDungeonMinigame
                 GameObject enemyGO = Instantiate(m_EnemyPrefab, m_MazeManager.transform);
                 enemyGO.name = "Enemy " + i.ToString();
                 m_EnemyControllers.Add(enemyGO.GetComponent<EnemyController>());
-                m_EnemyControllers[i].Spawn(m_MazeManager.GetRandomFreeTile());
+                int distance = 0;
+                do
+                {
+                    Tile t = m_MazeManager.GetRandomFreeTile();
+                    distance = m_MazeManager.BFSCountDistance(t, PlayerController.Instance.CurrentTile);
+                    if (distance > i_minimumDistance)
+                    {
+                        m_EnemyControllers[i].Spawn(m_MazeManager.GetRandomFreeTile());
+                        break;
+                    }
+                    Debug.Log("Too close, respawning");
+                } while (distance < i_minimumDistance);
             }
 
 
