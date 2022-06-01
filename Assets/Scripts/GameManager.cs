@@ -31,12 +31,16 @@ public class GameManager : MonoBehaviour
     }
     public void StartLoadingCoroutine(string minigameName, Difficulty difficulty)
     {
+        //Used for single minigames
         StartCoroutine(_loadMinigame(minigameName, difficulty));
     }
 
     private IEnumerator _loadMinigame(string minigameName, Difficulty difficulty)
     {
+        //used for single minigames NOT recipes
+        m_minigameManager = null;
 
+        
         AsyncOperation loading = SceneManager.LoadSceneAsync(minigameName, LoadSceneMode.Single);
         yield return new WaitUntil(() => { return loading.isDone; } );
 
@@ -46,6 +50,29 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitUntil(() => { return m_minigameManager.CanCloseGame; } );
         ReturnToMainMenu();
+    }
+
+    private IEnumerator _loadEntry(RecipeEntry entry)
+    {
+        m_minigameManager = null;
+
+        Debug.Log("Loading scene: " + entry.m_minigameScene.name);
+        yield return StartCoroutine(_asyncSceneLoad(entry.m_minigameScene.name));
+
+        m_minigameManager = GameObject.FindGameObjectWithTag(AMinigameManager.s_minigameTag).GetComponent<AMinigameManager>();
+        if (m_minigameManager == null)
+        {
+            Debug.Log("Can't find Minigame Manager, returning to main menu");
+            ReturnToMainMenu();
+            yield return null;
+        }
+        else
+        {
+            m_minigameManager.BeginMinigame(entry.m_difficulty);
+            Debug.Log("Scene loaded");
+        }
+        
+        
     }
 
     public void ReturnToMainMenu()
@@ -79,18 +106,13 @@ public class GameManager : MonoBehaviour
         {
             RecipeEntry nextLevel = recipe.getEntry(i);
 
-            Debug.Log("Loading scene: " + nextLevel.m_minigameScene.name);
-            yield return StartCoroutine(_loadMinigame(nextLevel.m_minigameScene.name, nextLevel.m_difficulty));
-            Debug.Log("Scene loaded");
-            if(m_minigameManager == null)
-            {
-                Debug.Log("Can't find Minigame Manager");
-                yield return null;
-            }
+            yield return StartCoroutine(_loadEntry(nextLevel));
 
             yield return new WaitUntil(() => { return m_minigameManager.CanCloseGame; });
             i_scores.Add(m_minigameManager.Score);
+
             Debug.Log("Closing Game and proceding to next");
+            
         }
 
         Debug.Log("Played all scenes");
