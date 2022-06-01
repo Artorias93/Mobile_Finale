@@ -19,7 +19,6 @@ namespace CouldronMinigame
         [SerializeField]
         public GameParameters gp_easy, gp_medium, gp_hard;
         public GameParameters m_gameParameters;
-        private Difficulty difficulty1;
         private Timer m_timer;
 
         [SerializeField]
@@ -36,26 +35,31 @@ namespace CouldronMinigame
 
         private void Awake()
         {
-            Instance = this;
+            if (Instance == null)
+                Instance = this;
+            else
+                Destroy(this.gameObject);
         }
         
         public override void BeginMinigame(Difficulty difficulty)
         {
-            difficulty1=difficulty;
-            if (difficulty1 == Difficulty.EASY)
+            m_difficulty = difficulty;
+            if (m_difficulty == Difficulty.EASY)
             {
                 m_gameParameters = gp_easy;
             }
-            else if(difficulty1 == Difficulty.MEDIUM)
+            else if(m_difficulty == Difficulty.MEDIUM)
             {
                 m_gameParameters = gp_medium;
             }
-            else if (difficulty1 == Difficulty.HARD)
+            else if (m_difficulty == Difficulty.HARD)
             {
                 m_gameParameters = gp_hard;
             }
             m_timer = Timer.Create(m_gameParameters.f_gameTime, WinMinigame ,destroyOnFinish:true,name:"timer");
             m_timer.StartTimer();
+
+            speedController.BeginPlay();
             
 
         }

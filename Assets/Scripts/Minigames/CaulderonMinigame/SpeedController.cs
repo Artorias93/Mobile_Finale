@@ -53,7 +53,7 @@ namespace CouldronMinigame
 
         [SerializeField] private CauldronGameManager gameManager;
 
-        private float timeInError;
+        private float timeInError = float.MaxValue;
         private bool isInError = false;
 
         public float TimeinError
@@ -69,14 +69,18 @@ namespace CouldronMinigame
             m_colorFast = m_imgFast.color;
 
             
-            timeSeconds = gameManager.m_gameParameters.changeSecondsSpeedController;
-            timeInError = gameManager.m_gameParameters.maxTimeInError;
-
-            StartCoroutine(ChangeSpeed());
+            
             
             
         }
 
+        public void BeginPlay()
+        {
+            timeSeconds = gameManager.m_gameParameters.changeSecondsSpeedController;
+            timeInError = gameManager.m_gameParameters.maxTimeInError;
+
+            StartCoroutine(ChangeSpeed());
+        }
 
         private void Update()
         {            
@@ -182,7 +186,7 @@ namespace CouldronMinigame
             else
                 currentSpeed = Speed.SLOW;
 
-            if (randomSpeedIndex != currentSpeed || m_speedIndicator.value <= 0)
+            if (randomSpeedIndex != currentSpeed)
                 isInError = true;
             else
                 isInError = false;
