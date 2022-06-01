@@ -134,6 +134,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5193197359310c349ab66e0d6b87704d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &100882794 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8008243491273330810, guid: deedec2b78d392b4a897d5718809da8e, type: 3}
+  m_PrefabInstance: {fileID: 8008243490812259300}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &100882795
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100882794}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 56dcd624c3ce0a14e91de0e3b06123ea, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &269285054 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3413110077793520228, guid: 87cddbaa44c81af4e84103595c1df1b7, type: 3}
@@ -365,7 +389,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8008243491273330758, guid: deedec2b78d392b4a897d5718809da8e, type: 3}
   m_PrefabInstance: {fileID: 8008243490812259300}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 100882794}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e7a40691a8d60f40bb1a43e13cbff39, type: 3}
@@ -584,6 +608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frameTime: 1
+  i_minimumDistance: 6
   m_EnemyPrefab: {fileID: 4193592139450738849, guid: 77180f9493dddd7429feecc04f18a243, type: 3}
   m_MazeManager: {fileID: 339509718}
   m_PlayerController: {fileID: 1439097354}
@@ -597,7 +622,7 @@ MonoBehaviour:
     f_PlayTime: 40
     i_numEnemies: 2
   b_debug: 1
-  m_TestDifficulty: 0
+  m_TestDifficulty: 2
 --- !u!4 &1933511677
 Transform:
   m_ObjectHideFlags: 0
