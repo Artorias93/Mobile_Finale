@@ -139,7 +139,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8008243491273330810, guid: deedec2b78d392b4a897d5718809da8e, type: 3}
   m_PrefabInstance: {fileID: 8008243490812259300}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &100882795
+--- !u!95 &100882798
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -621,7 +621,7 @@ MonoBehaviour:
   gp_hard:
     f_PlayTime: 40
     i_numEnemies: 2
-  b_debug: 1
+  b_debug: 0
   m_TestDifficulty: 2
 --- !u!4 &1933511677
 Transform:
