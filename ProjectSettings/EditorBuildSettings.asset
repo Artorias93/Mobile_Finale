@@ -36,6 +36,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Minigames/BalanceGame.unity
     guid: f725939044cc5d24eb219c98adf940f4
   - enabled: 1
+    path: Assets/Scenes/Minigames/EscapeTheDungeon.unity
+    guid: b1989acfe2f95a2418c36587cdb45ce1
+  - enabled: 1
+    path: Assets/Scenes/Minigames/MonstersInvaders.unity
+    guid: e8ef5294ac8c95f468e44f5106c59c87
+  - enabled: 1
+    path: Assets/Scenes/Minigames/PlaceTheCandles.unity
+    guid: 9d6133fb9a8f1b94c8253f39c9785559
+  - enabled: 1
     path: Assets/Scenes/Minigames/HitTheSlime.unity
     guid: 47ba59effce01c34badfe3d769bc3850
   m_configObjects: {}

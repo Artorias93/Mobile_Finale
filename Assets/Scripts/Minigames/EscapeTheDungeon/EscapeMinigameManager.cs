@@ -110,6 +110,7 @@ namespace EscapeDungeonMinigame
 
         public override void BeginMinigame(Difficulty difficulty)
         {
+            m_difficulty = difficulty;
             if (difficulty == Difficulty.EASY)
                 gp_selectedParameters = gp_easy;
             else if (difficulty == Difficulty.MEDIUM)
@@ -135,7 +136,7 @@ namespace EscapeDungeonMinigame
                     distance = m_MazeManager.BFSCountDistance(t, PlayerController.Instance.CurrentTile);
                     if (distance > i_minimumDistance)
                     {
-                        m_EnemyControllers[i].Spawn(m_MazeManager.GetRandomFreeTile());
+                        m_EnemyControllers[i].Spawn(t);
                         break;
                     }
                     Debug.Log("Too close, respawning");
