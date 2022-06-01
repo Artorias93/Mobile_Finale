@@ -1,0 +1,159 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Tile
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: 321e9be55c98d5a4abb36f7c749f141d, type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_TilesDictionaryEntries.Array.size
+    value: 16
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_TilesDictionaryEntries.Array.data[0].Type
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_TilesDictionaryEntries.Array.data[0].sprite
+    value: 
+    objectReference: {fileID: 1807125615787039003, guid: 8e41dad70622d5647a1657b41429d8a8, type: 3}
+  - target: {fileID: 0}
+    propertyPath: m_TilesDictionaryEntries.Array.data[1].Type
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_TilesDictionaryEntries.Array.data[1].sprite
+    value: 
+    objectReference: {fileID: 349823833441268365, guid: 8e41dad70622d5647a1657b41429d8a8, type: 3}
+  - target: {fileID: 0}
+    propertyPath: m_TilesDictionaryEntries.Array.data[2].Type
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_TilesDictionaryEntries.Array.data[2].sprite
+    value: 
+    objectReference: {fileID: -6614373457484812694, guid: 8e41dad70622d5647a1657b41429d8a8, type: 3}
+  - target: {fileID: 0}
+    propertyPath: m_TilesDictionaryEntries.Array.data[3].Type
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_TilesDictionaryEntries.Array.data[3].sprite
+    value: 
+    objectReference: {fileID: 1639214462598301798, guid: 8e41dad70622d5647a1657b41429d8a8, type: 3}
+  - target: {fileID: 0}
+    propertyPath: m_TilesDictionaryEntries.Array.data[4].Type
+    value: 8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_TilesDictionaryEntries.Array.data[4].sprite
+    value: 
+    objectReference: {fileID: 2157240733274199957, guid: 8e41dad70622d5647a1657b41429d8a8, type: 3}
+  - target: {fileID: 0}
+    propertyPath: m_TilesDictionaryEntries.Array.data[5].Type
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_TilesDictionaryEntries.Array.data[5].sprite
+    value: 
+    objectReference: {fileID: 4798128000316562087, guid: 8e41dad70622d5647a1657b41429d8a8, type: 3}
+  - target: {fileID: 0}
+    propertyPath: m_TilesDictionaryEntries.Array.data[6].Type
+    value: 10
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_TilesDictionaryEntries.Array.data[6].sprite
+    value: 
+    objectReference: {fileID: -7995846982363831464, guid: 8e41dad70622d5647a1657b41429d8a8, type: 3}
+  - target: {fileID: 0}
+    propertyPath: m_TilesDictionaryEntries.Array.data[7].Type
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_TilesDictionaryEntries.Array.data[7].sprite
+    value: 
+    objectReference: {fileID: -4202638810691693305, guid: 8e41dad70622d5647a1657b41429d8a8, type: 3}
+  - target: {fileID: 0}
+    propertyPath: m_TilesDictionaryEntries.Array.data[8].Type
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_TilesDictionaryEntries.Array.data[8].sprite
+    value: 
+    objectReference: {fileID: -7708644975649761358, guid: 8e41dad70622d5647a1657b41429d8a8, type: 3}
+  - target: {fileID: 0}
+    propertyPath: m_TilesDictionaryEntries.Array.data[9].Type
+    value: 12
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_TilesDictionaryEntries.Array.data[9].sprite
+    value: 
+    objectReference: {fileID: -1530080802165054831, guid: 8e41dad70622d5647a1657b41429d8a8, type: 3}
+  - target: {fileID: 0}
+    propertyPath: m_TilesDictionaryEntries.Array.data[10].Type
+    value: 9
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_TilesDictionaryEntries.Array.data[10].sprite
+    value: 
+    objectReference: {fileID: 5560954434011818755, guid: 8e41dad70622d5647a1657b41429d8a8, type: 3}
+  - target: {fileID: 0}
+    propertyPath: m_TilesDictionaryEntries.Array.data[11].Type
+    value: 11
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_TilesDictionaryEntries.Array.data[11].sprite
+    value: 
+    objectReference: {fileID: 4239528737361974724, guid: 8e41dad70622d5647a1657b41429d8a8, type: 3}
+  - target: {fileID: 0}
+    propertyPath: m_TilesDictionaryEntries.Array.data[12].Type
+    value: 14
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_TilesDictionaryEntries.Array.data[12].sprite
+    value: 
+    objectReference: {fileID: -4672163745296329812, guid: 8e41dad70622d5647a1657b41429d8a8, type: 3}
+  - target: {fileID: 0}
+    propertyPath: m_TilesDictionaryEntries.Array.data[13].Type
+    value: 7
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_TilesDictionaryEntries.Array.data[13].sprite
+    value: 
+    objectReference: {fileID: -8305803365058092108, guid: 8e41dad70622d5647a1657b41429d8a8, type: 3}
+  - target: {fileID: 0}
+    propertyPath: m_TilesDictionaryEntries.Array.data[14].Type
+    value: 13
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_TilesDictionaryEntries.Array.data[14].sprite
+    value: 
+    objectReference: {fileID: 5541110501864291823, guid: 8e41dad70622d5647a1657b41429d8a8, type: 3}
+  - target: {fileID: 0}
+    propertyPath: m_TilesDictionaryEntries.Array.data[15].Type
+    value: 15
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_TilesDictionaryEntries.Array.data[15].sprite
+    value: 
+    objectReference: {fileID: -5012251703786577423, guid: 8e41dad70622d5647a1657b41429d8a8, type: 3}
+  m_ExcludedProperties: []
