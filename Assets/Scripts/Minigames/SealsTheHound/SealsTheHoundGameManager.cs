@@ -10,6 +10,8 @@ namespace SealsTheHound
     public struct GameParameters
     {
         public int i_playTime;
+        public int i_unwalkableNodes;
+        [Range(0.0f, 1.0f)] public float i_errorChance;
     }
 
     public enum Diff
@@ -27,12 +29,14 @@ namespace SealsTheHound
         [SerializeField] private Tilemap tileMap;
         [SerializeField] private Tile water;
         [SerializeField] private Tile terrain;
+        [SerializeField] private Tile savePoint;
         [SerializeField] private GameObject texto;
         [SerializeField] private GameObject obj_cellRef;
         [SerializeField] private GameObject obj_cellsContainer;
 
 
         [Header("Game Parameters")]
+        [SerializeField] private Vector3 houndOffset = new Vector3(0.15f, -0.3f, 0);
         [SerializeField, Range(3, 5)] private int i_gridHeight;
         [SerializeField, Range(4, 6)] private int i_gridWidth;
         [SerializeField] private GameParameters gp_easy, gp_medium, gp_hard;
@@ -47,16 +51,18 @@ namespace SealsTheHound
         private GameParameters m_gameParameters;
         private Timer m_gameTimer;
 
-        private Animator anim;
         private GameObject obj_cell;
         private GameObject obj_hound;
         private GameObject obj_currentNode;
+        private Vector2Int houndPos;
+        private Cell cellComp;
 
         private Dictionary<string, GameObject> rg_cellsDict = new Dictionary<string, GameObject> { };
-        private Dictionary<string, Tuple<string, int>> rg_pathCost = new Dictionary<string, Tuple<string, int>> { };
-        public List<GameObject> rg_queue = new List<GameObject> { };
-        public HashSet<GameObject> rg_markedNodes = new HashSet<GameObject> { };
-        public HashSet<GameObject> rg_leavesNodes = new HashSet<GameObject> { };
+        private Dictionary<GameObject, Tuple<GameObject, int>> rg_pathCost = new Dictionary<GameObject, Tuple<GameObject, int>> { };
+        private List<GameObject> rg_queue = new List<GameObject> { };
+        private HashSet<GameObject> rg_markedNodes = new HashSet<GameObject> { };
+        private HashSet<GameObject> rg_leavesNodes = new HashSet<GameObject> { };
+        private List<GameObject> rg_nearestLeaves = new List<GameObject> { };
 
         private bool b_gameWon = false;
 
@@ -76,7 +82,10 @@ namespace SealsTheHound
         {
             get { return i_score; }
         }
-
+        public Vector2Int HoundPosition
+        {
+            get { return houndPos; }
+        }
         public int GridHeight
         {
             get { return i_gridHeight; }
@@ -154,11 +163,12 @@ namespace SealsTheHound
             m_gameTimer.StartTimer();
 
             GenerateBoard();
+            SetUnwalkableNodes();
         }
 
         private void GenerateBoard()
         {
-            obj_hound = Instantiate(obj_houndRef, grid.GetCellCenterWorld(Vector3Int.right), transform.rotation);
+            obj_hound = Instantiate(obj_houndRef, grid.GetCellCenterWorld(Vector3Int.right) + houndOffset, transform.rotation);
 
             for (int i = 0; i <= i_gridHeight; i++)
             {
@@ -201,75 +211,87 @@ namespace SealsTheHound
         {
             obj_cell = Instantiate(obj_cellRef, grid.GetCellCenterWorld(cellPos) + Vector3.up / 20, transform.rotation);
             obj_cell.transform.SetParent(obj_cellsContainer.transform);
-            obj_cell.GetComponent<Cell>().i_x = x;
-            obj_cell.GetComponent<Cell>().i_y = y;
+            cellComp = obj_cell.GetComponent<Cell>();
+            cellComp.i_x = x;
+            cellComp.i_y = y;
             obj_cell.name = $"({x}, {y})";
             rg_cellsDict.Add($"({x}, {y})", obj_cell);
 
-            if (Mathf.Abs(x) == i_gridWidth || Mathf.Abs(y) == i_gridHeight) obj_cell.GetComponent<Cell>().b_isLeaf = true;
-            if (y == i_gridHeight-1 && x % 2 != 0) obj_cell.GetComponent<Cell>().b_isLeaf = true;
+            if (Mathf.Abs(x) == i_gridWidth || Mathf.Abs(y) == i_gridHeight) cellComp.b_isLeaf = true;
+            if (y == i_gridHeight-1 && x % 2 != 0) cellComp.b_isLeaf = true;
 
-            LabelCell(cellPos, x, y);
+            //LabelCell(cellPos, x, y);             //Labelize all Cells with (x, y) coords
         }
 
         private void LabelCell(Vector3Int cellPos, int x, int y)
         {
             GameObject text = Instantiate(texto, grid.GetCellCenterWorld(cellPos) + Vector3.up / 20, transform.rotation);      //TEST
             text.transform.SetParent(obj_cell.transform);                                                                      //TEST
-            text.name = $"TextCell({x}, {y})";                                                                                  //TEST
+            text.name = $"TextCell({x}, {y})";                                                                                 //TEST
             text.GetComponent<TextMesh>().text = (new Vector2Int(cellPos.y, cellPos.x)).ToString();                            //TEST
         }
 
-        public void BFS(GameObject root)
+        private void SetUnwalkableNodes()
+        {
+            int i_unwalkabledNode = 0;
+            HashSet<Vector3Int> rg_unwalkableSet = new HashSet<Vector3Int> { };
+
+            while (i_unwalkabledNode < m_gameParameters.i_unwalkableNodes)
+            {
+                int random_x = UnityEngine.Random.Range(-i_gridWidth, i_gridWidth);
+                int random_y = UnityEngine.Random.Range(-i_gridHeight, i_gridHeight);
+                
+                Vector3Int unwalkableNode = new Vector3Int(random_y, random_x, 0);
+
+                if (!rg_unwalkableSet.Contains(unwalkableNode) && (unwalkableNode != Vector3Int.zero))
+                {
+                    i_unwalkabledNode++;
+                    rg_unwalkableSet.Add(unwalkableNode);
+                    tileMap.SetTile(unwalkableNode, water);
+                    rg_cellsDict[$"({random_x}, {random_y})"].GetComponent<Collider2D>().enabled = false;
+                    rg_cellsDict.Remove($"({random_x}, {random_y})");
+                }
+            }
+        }
+
+        public void BFS(GameObject obj_touchedNode)
         {
             rg_queue.Clear();
             rg_pathCost.Clear();
             rg_markedNodes.Clear();
             rg_leavesNodes.Clear();
 
-            Vector2Int houndPos = (Vector2Int)(grid.WorldToCell(obj_hound.transform.position) - Vector3Int.right);
+            Vector3Int houndPosCell = grid.WorldToCell(obj_hound.transform.position);
+            houndPos = (Vector2Int)(houndPosCell - Vector3Int.right);
             houndPos = new Vector2Int(houndPos.y, houndPos.x);
-            Vector2Int source = houndPos;
-            string s_sourceName = source.ToString();
+            string s_sourceNode = houndPos.ToString();
 
-            rg_queue.Add(rg_cellsDict[s_sourceName]);
-            rg_markedNodes.Add(rg_cellsDict[s_sourceName]);
-            rg_cellsDict.Remove(root.name);
-            rg_pathCost.Add(s_sourceName, new Tuple<string, int>(s_sourceName, 0));
-
-            int i = 0;
+            rg_queue.Add(rg_cellsDict[s_sourceNode]);
+            rg_markedNodes.Add(rg_queue.Last());
+            rg_cellsDict.Remove(obj_touchedNode.name);
+            rg_pathCost.Add(rg_queue.Last(), new Tuple<GameObject, int>(rg_queue.Last(), 0));
 
             while (rg_queue.Count!=0)
             {
-
                 obj_currentNode = rg_queue[0];
-
                 rg_queue.RemoveAt(0);
-                i++;
-
-                //print($"Clicked on {root.name} -> {obj_currentNode.name} has distance {rg_pathCost[obj_currentNode.name].Item2} from the source {s_sourceName} and his previous node is {rg_pathCost[obj_currentNode.name].Item1}   {i}");
 
                 foreach (string s_node in obj_currentNode.GetComponent<Cell>().rg_neighbors)
                 {
-
                     if (rg_cellsDict.ContainsKey(s_node))
                     {
+                        GameObject obj_neighbor = rg_cellsDict[s_node];
 
-
-                        if (!rg_markedNodes.Contains(rg_cellsDict[s_node]))
+                        if (!rg_markedNodes.Contains(obj_neighbor))
                         {
-
-                            rg_queue.Add(rg_cellsDict[s_node]);
-                            rg_markedNodes.Add(rg_cellsDict[s_node]);
-                            rg_pathCost.Add(s_node, new Tuple<string, int>(obj_currentNode.name, rg_pathCost[obj_currentNode.name].Item2 + 1));
-                            if (rg_cellsDict[s_node].GetComponent<Cell>().b_isLeaf) rg_leavesNodes.Add(rg_cellsDict[s_node]);
+                            rg_queue.Add(obj_neighbor);
+                            rg_markedNodes.Add(obj_neighbor);
+                            rg_pathCost.Add(obj_neighbor, new Tuple<GameObject, int>(obj_currentNode, rg_pathCost[obj_currentNode].Item2 + 1));
+                            if (obj_neighbor.GetComponent<Cell>().b_isLeaf) rg_leavesNodes.Add(obj_neighbor);
                         }
                     }
                 }
             }
-
-            int i_minDistance = rg_pathCost.Values.Max(x => x.Item2);
-            GameObject obj_nearestNode = null;
 
             if (rg_leavesNodes.Count == 0)
             {
@@ -277,52 +299,69 @@ namespace SealsTheHound
                 return;
             }
 
-            foreach (GameObject obj_leaf in rg_leavesNodes)
+            MinLeavesDistance();
+
+            GameObject obj_nearestNode = rg_nearestLeaves[UnityEngine.Random.Range(0, rg_nearestLeaves.Count)];                 //Choose Random Path between shortest ones
+
+            while (rg_pathCost[obj_nearestNode].Item1.name != s_sourceNode)                                                     //Reverse Path to find first Node to walk
             {
-                //print(obj_leaf.name + " " + rg_pathCost[obj_leaf.name].Item2 + " " + i_minDistance);
-
-                if (rg_pathCost[obj_leaf.name].Item2 <= i_minDistance)
-                {
-                    i_minDistance = rg_pathCost[obj_leaf.name].Item2;
-                    obj_nearestNode = obj_leaf;
-                }
-
+                obj_nearestNode = rg_pathCost[obj_nearestNode].Item1;
             }
 
-            //print(obj_nearestNode.name);
+            HoundMoveAndError(s_sourceNode, obj_nearestNode.name);
 
-            while (rg_pathCost[obj_nearestNode.name].Item1 != s_sourceName)
-            {
-                string s_prevNode = rg_pathCost[obj_nearestNode.name].Item1;
-                obj_nearestNode = rg_cellsDict[rg_pathCost[obj_nearestNode.name].Item1];
-            }
-      
-            obj_hound.transform.position = grid.GetCellCenterWorld(Vector3Int.FloorToInt(new Vector3(rg_cellsDict[obj_nearestNode.name].GetComponent<Cell>().i_y, rg_cellsDict[obj_nearestNode.name].GetComponent<Cell>().i_x, 0)) + Vector3Int.right);
-            houndPos = new Vector2Int(grid.WorldToCell(obj_hound.transform.position).y, grid.WorldToCell(obj_hound.transform.position).x) + Vector2Int.down;
+            houndPosCell = grid.WorldToCell(obj_hound.transform.position);
+            houndPos = new Vector2Int(houndPosCell.y, houndPosCell.x) + Vector2Int.down;
+
             if (rg_leavesNodes.Contains(rg_cellsDict[houndPos.ToString()])) LoseBehaviour();
-
-            //print(obj_nearestNode.name);
         }
 
-// 
-//         IEnumerator WaitGenerate()
-//         {
-//             if (i_runeCompleted == GameParameters.i_runeToComplete)
-//             {
-//                 VictoryBehaviour();
-//                 yield break;
-//             }
-// 
-//             yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
-//             GenerateRound();
-//         }
+        private void MinLeavesDistance()                                                //Compute Leaves with Min Distance from SourceNode
+        {
+            int i_minDistance = rg_pathCost.Values.Max(x => x.Item2);
 
-            //Destroy(obj_rune, anim.GetCurrentAnimatorStateInfo(0).length);
-            //StartCoroutine(WaitGenerate());
+            foreach (GameObject obj_leaf in rg_leavesNodes)
+            {
+                if (rg_pathCost[obj_leaf].Item2 == i_minDistance) rg_nearestLeaves.Add(obj_leaf);
+
+                if (rg_pathCost[obj_leaf].Item2 < i_minDistance)
+                {
+                    rg_nearestLeaves.Clear();
+                    rg_nearestLeaves.Add(obj_leaf);
+                    i_minDistance = rg_pathCost[obj_leaf].Item2;
+                }
+            }
+        }
+
+        private void HoundMoveAndError(string s_source, string s_nearestNode)           //Move Hound with Error Chance
+        {
+            if (UnityEngine.Random.Range(0f, 1f) < m_gameParameters.i_errorChance)
+            {
+                cellComp = rg_cellsDict[s_source].GetComponent<Cell>();
+                int i_errorID = UnityEngine.Random.Range(0, cellComp.rg_neighbors.Count);
+
+                while (!rg_cellsDict.ContainsKey(cellComp.rg_neighbors[i_errorID]))
+                {
+                    i_errorID = UnityEngine.Random.Range(0, cellComp.rg_neighbors.Count);
+                }
+
+                string s_errorNode = cellComp.rg_neighbors[i_errorID];
+                cellComp = rg_cellsDict[s_errorNode].GetComponent<Cell>();
+                obj_hound.transform.position = grid.GetCellCenterWorld(Vector3Int.FloorToInt(new Vector3(cellComp.i_y, cellComp.i_x, 0)) + Vector3Int.right) + houndOffset;
+            }
+            else
+            {
+                cellComp = rg_cellsDict[s_nearestNode].GetComponent<Cell>();
+                obj_hound.transform.position = grid.GetCellCenterWorld(Vector3Int.FloorToInt(new Vector3(cellComp.i_y, cellComp.i_x, 0)) + Vector3Int.right) + houndOffset;
+            }
+        }
 
         public void LoseBehaviour()
         {
-            print("HAI PERSO, BELLO!!!");
+            tileMap.SetTile(new Vector3Int(houndPos.y, houndPos.x, 0), savePoint);
+            obj_hound.transform.position = obj_hound.transform.position + new Vector3(-0.1f, 0.1f, 0);
+            obj_hound.GetComponent<Animator>().SetTrigger("Wins");
+            i_score = 0;
             EndMinigame();
         }
 
@@ -330,16 +369,13 @@ namespace SealsTheHound
         {
             m_gameTimer?.StopTimer();
             b_gameFinished = true;
-
-            //i_score = 3 - Mathf.FloorToInt((Mathf.Abs(((float)i_runeCompleted / (float)m_gameParameters.i_runeToComplete * 100) - 100) / 100 * 4));
-            if (i_score > 3) i_score = 3;
-
         }
 
         private void VictoryBehaviour()
         {
+            obj_hound.GetComponent<Animator>().SetTrigger("Death");
             b_gameWon = true;
-            print("NON PUO' SCAPPARE: HAI VINTO ,BELLO!");
+            i_score = (int)(RemainingTime / m_gameParameters.i_playTime * 3) + 1;
             EndMinigame();
         }
         private void onTimeEnd()

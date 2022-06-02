@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Terrain 1 - Thick - Texture Outline 2px - 128x144 (Burned)_10
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: -7996820064930449204, guid: 6e3fb3956718c1b44af21fc3579df0d2, type: 3}
-  m_Color: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 1}
+  m_Color: {r: 0.764151, g: 0.764151, b: 0.764151, a: 1}
   m_Transform:
     e00: 1
     e01: 0

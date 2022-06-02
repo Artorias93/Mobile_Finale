@@ -16,7 +16,6 @@ namespace SealsTheHound
         [HideInInspector] public int i_y;
 
         public bool b_isLeaf;
-        public bool b_isWalkable = true;
         public bool b_trigger = false;
 
         SealsTheHoundGameManager gm;
@@ -101,11 +100,14 @@ namespace SealsTheHound
 
         public void OnPointerDown(PointerEventData pointerEventData)
         {
-            GetComponent<Collider2D>().enabled = false;
             Vector3Int mouseWorldPos = gm.GetGrid.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition));
-            gm.GetTilemap.SetTile(mouseWorldPos, water);
-            b_isWalkable = false;
-            gm.BFS(gameObject);
+            
+            if (new Vector2Int(mouseWorldPos.y, mouseWorldPos.x) != gm.HoundPosition)
+            {
+                GetComponent<Collider2D>().enabled = false;
+                gm.GetTilemap.SetTile(mouseWorldPos, water);
+                gm.BFS(gameObject);
+            }
         }
     }
 }
