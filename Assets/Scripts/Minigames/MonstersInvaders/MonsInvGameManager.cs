@@ -33,7 +33,6 @@ namespace MonstersInvaders
         private bool b_spawnBoss = true;
         private bool b_isTimeEnded = false;
 
-
         private bool b_gameWon = false;
 
         public static MonsInvGameManager Instance;
@@ -67,7 +66,6 @@ namespace MonstersInvaders
             //BeginMinigame(Difficulty.MEDIUM);     //TEST
             //BeginMinigame(Difficulty.HARD);       //TEST
 
-
             if (Instance == null)
             {
                 Instance = this;
@@ -81,7 +79,6 @@ namespace MonstersInvaders
 
         private void Update()
         {
-            if (Time.frameCount == 5) obj_spawnGrid.GetComponent<GridLayoutGroup>().enabled = false;
             if (obj_spawnGrid.transform.childCount == 0) VictoryBehaviour();
 
             if (RemainingTime <= GameParameters.i_playTime/2 && b_spawnBoss)
@@ -112,8 +109,10 @@ namespace MonstersInvaders
                 EnemyParams(obj_monster);
             }
 
+            LayoutRebuilder.ForceRebuildLayoutImmediate(obj_spawnGrid.GetComponent<RectTransform>());
             m_gameTimer = Timer.Create(m_gameParameters.i_playTime, onTimeEnd, name: "Game Timer");
             m_gameTimer.StartTimer();
+            obj_spawnGrid.GetComponent<GridLayoutGroup>().enabled = false;
         }
 
         private void EnemyParams(GameObject obj_monster)
@@ -129,7 +128,6 @@ namespace MonstersInvaders
 
             if (i_numError >= m_gameParameters.i_maxError) LoseBehaviour(false);
             if (i_numError < 0) i_numError = 0;
-
         }
 
         public void LoseBehaviour(bool b_check)
