@@ -57,7 +57,6 @@ public class MusicManager : MonoBehaviour
         yield return StartCoroutine(FadeOut());
         b_Switching = true;
         yield return StartCoroutine(FadeIn(target, ClipToPlay));
-        b_Switching = false;
         b_Fading = false;
         yield return null;
     }
