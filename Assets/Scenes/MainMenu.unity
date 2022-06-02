@@ -1773,6 +1773,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 938964189}
   m_CullTransparentMesh: 1
+--- !u!114 &1012501187 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1012501187, guid: daa4f987101c4904789057c5877c06a3, type: 3}
+  m_PrefabInstance: {fileID: 6936751785664875614}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 081817a2336bb644fa801ec726767d9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1166169626
 GameObject:
   m_ObjectHideFlags: 0
@@ -4377,6 +4388,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1012501187, guid: daa4f987101c4904789057c5877c06a3, type: 3}
+      propertyPath: f_FadeInSpeed
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1012501187, guid: daa4f987101c4904789057c5877c06a3, type: 3}
+      propertyPath: f_FadeOutSpeed
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1012501187, guid: daa4f987101c4904789057c5877c06a3, type: 3}
+      propertyPath: f_mainMenuVolume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1012501187, guid: daa4f987101c4904789057c5877c06a3, type: 3}
+      propertyPath: f_minigameMusicVolume
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 6936751786891787414, guid: daa4f987101c4904789057c5877c06a3, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -4425,5 +4452,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6936751786891787417, guid: daa4f987101c4904789057c5877c06a3, type: 3}
+      propertyPath: m_musicManager
+      value: 
+      objectReference: {fileID: 1012501187}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daa4f987101c4904789057c5877c06a3, type: 3}

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -9,6 +10,9 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// This class is the overall game manager, tasked with managing scene changes, recipes loading, score storing, and general overall flow
     /// </summary>
+
+    [SerializeField]
+    private MusicManager m_musicManager;
 
     public static GameManager m_instance;
     private AMinigameManager m_minigameManager;
@@ -27,6 +31,8 @@ public class GameManager : MonoBehaviour
             return;
         }
 
+        Assert.IsNotNull(m_musicManager);
+
         DontDestroyOnLoad(gameObject);
     }
     public void StartLoadingCoroutine(string minigameName, Difficulty difficulty)
@@ -40,9 +46,10 @@ public class GameManager : MonoBehaviour
         //used for single minigames NOT recipes
         m_minigameManager = null;
 
-        
+
         AsyncOperation loading = SceneManager.LoadSceneAsync(minigameName, LoadSceneMode.Single);
-        yield return new WaitUntil(() => { return loading.isDone; } );
+        m_musicManager.switchToMinigame();
+        yield return new WaitUntil(() => loading.isDone && m_musicManager.Switching);
 
         m_minigameManager = GameObject.FindGameObjectWithTag("MinigameManager").GetComponent<AMinigameManager>();
         m_minigameManager.BeginMinigame(difficulty);
@@ -56,7 +63,10 @@ public class GameManager : MonoBehaviour
     {
         m_minigameManager = null;
 
+        
         Debug.Log("Loading scene: " + entry.m_minigameScene.name);
+
+        m_musicManager.switchToMinigame();
         yield return StartCoroutine(_asyncSceneLoad(entry.m_minigameScene.name));
 
         m_minigameManager = GameObject.FindGameObjectWithTag(AMinigameManager.s_minigameTag).GetComponent<AMinigameManager>();
@@ -64,7 +74,6 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Can't find Minigame Manager, returning to main menu");
             ReturnToMainMenu();
-            yield return null;
         }
         else
         {
@@ -80,13 +89,14 @@ public class GameManager : MonoBehaviour
         if (Time.timeScale == 0) {
             Time.timeScale = 1;
         }
+        m_musicManager.switchToMainMenu();
         StartCoroutine(_asyncSceneLoad("Mainmenu"));
     }
 
     private IEnumerator _asyncSceneLoad(string sceneName)
     {
         AsyncOperation loading = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
-        yield return new WaitUntil(() => { return loading.isDone; });
+        yield return new WaitUntil(() => loading.isDone && m_musicManager.Switching);
     }
 
     public void StartRecipe(SORecipe recipe)
@@ -101,7 +111,7 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
         i_scores = new List<int>();
-
+        
         for (int i = 0; i<recipe.getLength(); i++)
         {
             RecipeEntry nextLevel = recipe.getEntry(i);
