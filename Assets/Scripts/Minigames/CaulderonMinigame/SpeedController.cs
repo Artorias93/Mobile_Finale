@@ -76,8 +76,8 @@ namespace CouldronMinigame
 
         public void BeginPlay()
         {
-            timeSeconds = gameManager.m_gameParameters.changeSecondsSpeedController;
-            timeInError = gameManager.m_gameParameters.maxTimeInError;
+            timeSeconds = gameManager.GameParameters.changeSecondsSpeedController;
+            timeInError = gameManager.GameParameters.maxTimeInError;
 
             StartCoroutine(ChangeSpeed());
         }

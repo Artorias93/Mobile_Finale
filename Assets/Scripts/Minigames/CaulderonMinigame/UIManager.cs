@@ -16,9 +16,9 @@ namespace CouldronMinigame
             gameManager = CauldronGameManager.Instance;
             if (gameManager != null)
             {
-                float normalizedTime = gameManager.remaningTime/gameManager.m_gameParameters.f_gameTime;
+                float normalizedTime = gameManager.remaningTime/gameManager.GameParameters.f_gameTime;
                 UpdateSlider(normalizedTime);
-                scoreText.text = ingredientController.Lives+"/"+gameManager.m_gameParameters.max_lives;
+                scoreText.text = ingredientController.Lives+"/"+gameManager.GameParameters.max_lives;
                 
             }
 
