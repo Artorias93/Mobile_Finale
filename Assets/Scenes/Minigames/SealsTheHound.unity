@@ -198,7 +198,7 @@ RectTransform:
   m_Children:
   - {fileID: 1824411816}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -313,7 +313,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 745970311}
+  - component: {fileID: 745970310}
   - component: {fileID: 745970309}
   m_Layer: 0
   m_Name: SealsTheHoundGameManager
@@ -358,28 +358,23 @@ MonoBehaviour:
     i_playTime: 40
     i_unwalkableNodes: 5
     i_errorChance: 0.25
-  b_enableDebug: 1
+  b_enableDebug: 0
   gridPos: {x: 0, y: 0, z: 0}
   diff: 2
---- !u!224 &745970311
-RectTransform:
+--- !u!4 &745970310
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 745970308}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 519.36487}
+  m_LocalPosition: {x: -0.035823755, y: 0.22253726, z: 519.36487}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.035823755, y: 0.22253726}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &806521239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -405,7 +400,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8770700114871763854, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8770700114871763854, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
       propertyPath: m_AnchorMax.x
@@ -561,7 +556,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8770700116535484727, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
       propertyPath: m_TagString
-      value: MinigameManager
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
@@ -1002,7 +997,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2110497357
 GameObject:

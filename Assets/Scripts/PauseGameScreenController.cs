@@ -10,9 +10,10 @@ public class PauseGameScreenController : MonoBehaviour
 
     private AMinigameManager m_MinigameManager;
 
-    private void Awake()
+    private void Start()
     {
-        m_MinigameManager = GameObject.FindGameObjectWithTag(AMinigameManager.s_minigameTag).GetComponent<AMinigameManager>();
+        GameObject go = GameObject.FindGameObjectWithTag(AMinigameManager.s_minigameTag);
+        m_MinigameManager = go.GetComponent<AMinigameManager>();
         if(m_MinigameManager == null)
         {
             Debug.LogWarning("Couldn't find a minigame manager for pause controller");
