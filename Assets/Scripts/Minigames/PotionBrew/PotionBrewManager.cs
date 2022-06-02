@@ -253,16 +253,5 @@ namespace PotionBrewMinigame
             }
         }
 
-        public override void PauseGame()
-        {
-            base.PauseGame();
-            AudioListener.pause = true;
-        }
-
-        public override void ResumeGame()
-        {
-            base.ResumeGame();
-            AudioListener.pause = false;
-        }
     }
 }
