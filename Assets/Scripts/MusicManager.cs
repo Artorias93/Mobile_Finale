@@ -13,11 +13,17 @@ public class MusicManager : MonoBehaviour
     [SerializeField, Range(0, 1)] private float f_minigameMusicVolume = 0.5f;
 
     [Header("Settings")]
-    private float f_FadeOutSpeed = 0.1f;
-    private float f_FadeInSpeed = 0.1f;
+    [SerializeField] private float f_FadeOutSpeed = 0.1f;
+    [SerializeField] private float f_FadeInSpeed = 0.1f;
 
     [Header("Reference")]
     [SerializeField] private AudioSource m_musicSource;
+
+    private bool b_Fading = false;
+    private bool b_Switching = false;
+
+    public bool Fading { get { return b_Fading; } }
+    public bool Switching { get { return b_Switching; } }
 
     // Start is called before the first frame update
     void Awake()
@@ -46,27 +52,36 @@ public class MusicManager : MonoBehaviour
 
     public IEnumerator FadeInAndOut(float target, AudioClip ClipToPlay)
     {
-        FadeOut();
-        FadeIn(target, ClipToPlay);
+        b_Fading = true;
+        b_Switching = false;
+        yield return StartCoroutine(FadeOut());
+        b_Switching = true;
+        yield return StartCoroutine(FadeIn(target, ClipToPlay));
+        b_Switching = false;
+        b_Fading = false;
         yield return null;
     }
 
-    public void FadeOut()
+    public IEnumerator FadeOut()
     {
         while(m_musicSource.volume > 0)
         {
-            m_musicSource.volume -= f_FadeOutSpeed;
+            m_musicSource.volume -= f_FadeOutSpeed * Time.unscaledDeltaTime;
+            yield return null;
         }
+        yield return null;
     }
     
-    public void FadeIn(float target, AudioClip ClipToPlay)
+    public IEnumerator FadeIn(float target, AudioClip ClipToPlay)
     {
         m_musicSource.clip = ClipToPlay;
         m_musicSource.Play();
         while (m_musicSource.volume < target)
         {
-            m_musicSource.volume += f_FadeInSpeed;
+            m_musicSource.volume += f_FadeInSpeed * Time.unscaledDeltaTime;
+            yield return null;
         }
+        yield return null;
     }
 
     private AudioClip GetRandomClip(ref AudioClip[] audioClips)
