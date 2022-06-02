@@ -57,7 +57,6 @@ public class GameManager : MonoBehaviour
 
         m_minigameManager = GameObject.FindGameObjectWithTag("MinigameManager").GetComponent<AMinigameManager>();
         m_minigameManager.BeginMinigame(difficulty);
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName(minigameName));
 
         yield return new WaitUntil(() => { return m_minigameManager.CanCloseGame; } );
         ReturnToMainMenu();
@@ -110,7 +109,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Loading Complete, start detransitioning");
 
         m_TransitionManager.StartReadyTransition();
-        yield return new WaitUntil(() => m_TransitionManager.AnimationCompleted);
+        //yield return new WaitUntil(() => m_TransitionManager.AnimationCompleted);
         Debug.Log("Detransition complete");
     }
 
