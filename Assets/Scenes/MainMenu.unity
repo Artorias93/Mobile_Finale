@@ -1333,6 +1333,31 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4528962256270432712, guid: e7d399aace01ca44a96052cc14dd2218, type: 3}
   m_PrefabInstance: {fileID: 1540540270}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &777133143 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 777133143, guid: daa4f987101c4904789057c5877c06a3, type: 3}
+  m_PrefabInstance: {fileID: 6936751785664875614}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &777133144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777133143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d1aa7166af98df40966689c3c47c5b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_animator: {fileID: 777133145}
+  m_loadingTrigger: StartedLoading
+  m_finishedLoadingTrigger: Ready
+--- !u!95 &777133145 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 777133145, guid: daa4f987101c4904789057c5877c06a3, type: 3}
+  m_PrefabInstance: {fileID: 6936751785664875614}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &801389411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1773,17 +1798,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 938964189}
   m_CullTransparentMesh: 1
---- !u!114 &1012501187 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1012501187, guid: daa4f987101c4904789057c5877c06a3, type: 3}
-  m_PrefabInstance: {fileID: 6936751785664875614}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 081817a2336bb644fa801ec726767d9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1166169626
 GameObject:
   m_ObjectHideFlags: 0
@@ -4388,21 +4402,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1012501187, guid: daa4f987101c4904789057c5877c06a3, type: 3}
-      propertyPath: f_FadeInSpeed
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1012501187, guid: daa4f987101c4904789057c5877c06a3, type: 3}
-      propertyPath: f_FadeOutSpeed
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1012501187, guid: daa4f987101c4904789057c5877c06a3, type: 3}
-      propertyPath: f_mainMenuVolume
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1012501187, guid: daa4f987101c4904789057c5877c06a3, type: 3}
-      propertyPath: f_minigameMusicVolume
-      value: 0.2
+    - target: {fileID: 1244202646, guid: daa4f987101c4904789057c5877c06a3, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6936751786891787414, guid: daa4f987101c4904789057c5877c06a3, type: 3}
       propertyPath: m_RootOrder
@@ -4453,8 +4455,8 @@ PrefabInstance:
       value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 6936751786891787417, guid: daa4f987101c4904789057c5877c06a3, type: 3}
-      propertyPath: m_musicManager
+      propertyPath: m_TransitionManager
       value: 
-      objectReference: {fileID: 1012501187}
+      objectReference: {fileID: 777133144}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daa4f987101c4904789057c5877c06a3, type: 3}

@@ -11,8 +11,10 @@ public class GameManager : MonoBehaviour
     /// This class is the overall game manager, tasked with managing scene changes, recipes loading, score storing, and general overall flow
     /// </summary>
 
-    [SerializeField]
-    private MusicManager m_musicManager;
+
+    [SerializeField] private MusicManager m_musicManager;
+    [SerializeField] private TransitionManager m_TransitionManager;
+    [SerializeField] private float f_waitTimeBetweenScenes = 1f;
 
     public static GameManager m_instance;
     private AMinigameManager m_minigameManager;
@@ -32,6 +34,7 @@ public class GameManager : MonoBehaviour
         }
 
         Assert.IsNotNull(m_musicManager);
+        Assert.IsNotNull(m_TransitionManager);
 
         DontDestroyOnLoad(gameObject);
     }
@@ -47,13 +50,13 @@ public class GameManager : MonoBehaviour
         m_minigameManager = null;
 
 
-        AsyncOperation loading = SceneManager.LoadSceneAsync(minigameName, LoadSceneMode.Single);
+        
         m_musicManager.switchToMinigame();
-        yield return new WaitUntil(() => loading.isDone && m_musicManager.Switching);
+
+        yield return StartCoroutine(_asyncSceneLoad(minigameName));
 
         m_minigameManager = GameObject.FindGameObjectWithTag("MinigameManager").GetComponent<AMinigameManager>();
         m_minigameManager.BeginMinigame(difficulty);
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName(minigameName));
 
         yield return new WaitUntil(() => { return m_minigameManager.CanCloseGame; } );
         ReturnToMainMenu();
@@ -95,8 +98,19 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator _asyncSceneLoad(string sceneName)
     {
+        m_TransitionManager.StartLoadingTransition();
+        
+
+        yield return new WaitUntil(() => m_TransitionManager.AnimationCompleted);
+        Debug.Log("Transition Complete, start loading");
+
         AsyncOperation loading = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
-        yield return new WaitUntil(() => loading.isDone && m_musicManager.Switching);
+        yield return new WaitUntil(() => loading.isDone);
+        Debug.Log("Loading Complete, start detransitioning");
+
+        m_TransitionManager.StartReadyTransition();
+        //yield return new WaitUntil(() => m_TransitionManager.AnimationCompleted);
+        Debug.Log("Detransition complete");
     }
 
     public void StartRecipe(SORecipe recipe)
