@@ -4377,6 +4377,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1012501187, guid: daa4f987101c4904789057c5877c06a3, type: 3}
+      propertyPath: f_mainMenuVolume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1012501187, guid: daa4f987101c4904789057c5877c06a3, type: 3}
+      propertyPath: f_minigameMusicVolume
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 6936751786891787414, guid: daa4f987101c4904789057c5877c06a3, type: 3}
       propertyPath: m_RootOrder
       value: 3

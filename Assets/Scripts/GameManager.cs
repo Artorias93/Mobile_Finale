@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     /// This class is the overall game manager, tasked with managing scene changes, recipes loading, score storing, and general overall flow
     /// </summary>
 
+    [SerializeField]
+    private MusicManager m_musicManager;
+
     public static GameManager m_instance;
     private AMinigameManager m_minigameManager;
 
