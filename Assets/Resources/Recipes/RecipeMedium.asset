@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: RecipeMedium
   m_EditorClassIdentifier: 
   m_entry:
-  - m_minigameScene: {fileID: 102900000, guid: 77d5676ef78af2d4c9c4bc39280c92fe, type: 3}
+  - m_minigameScene: CauldronMinigame
     m_difficulty: 1
-  - m_minigameScene: {fileID: 102900000, guid: 4f3da8ac35633aa4b89356d1e740890c, type: 3}
+  - m_minigameScene: PotionBrew
     m_difficulty: 1
-  - m_minigameScene: {fileID: 102900000, guid: b45b6dc5586a59e41a34813899f4d3a5, type: 3}
+  - m_minigameScene: BalanceGame
     m_difficulty: 0
-  - m_minigameScene: {fileID: 102900000, guid: 5769cce6468020947943d872dbcd2c81, type: 3}
+  - m_minigameScene: HitTheSlime
     m_difficulty: 1
-  - m_minigameScene: {fileID: 102900000, guid: fafb1ce3144c7974681db25764ad9ac1, type: 3}
+  - m_minigameScene: SealsTheHound
     m_difficulty: 1

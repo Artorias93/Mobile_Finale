@@ -65,7 +65,7 @@ namespace MonstersInvaders
         {
             //BeginMinigame(Difficulty.EASY);       //TEST
             //BeginMinigame(Difficulty.MEDIUM);     //TEST
-            BeginMinigame(Difficulty.HARD);       //TEST
+            //BeginMinigame(Difficulty.HARD);       //TEST
 
 
             if (Instance == null)

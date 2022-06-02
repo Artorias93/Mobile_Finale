@@ -66,10 +66,10 @@ public class GameManager : MonoBehaviour
         m_minigameManager = null;
 
         
-        Debug.Log("Loading scene: " + entry.m_minigameScene.name);
+        Debug.Log("Loading scene: " + entry.m_minigameScene);
 
         m_musicManager.switchToMinigame();
-        yield return StartCoroutine(_asyncSceneLoad(entry.m_minigameScene.name));
+        yield return StartCoroutine(_asyncSceneLoad(entry.m_minigameScene));
 
         m_minigameManager = GameObject.FindGameObjectWithTag(AMinigameManager.s_minigameTag).GetComponent<AMinigameManager>();
         if (m_minigameManager == null)
