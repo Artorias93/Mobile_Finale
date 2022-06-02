@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private MusicManager m_musicManager;
     [SerializeField] private TransitionManager m_TransitionManager;
-    [SerializeField] private float f_waitTimeBetweenScenes = 1f;
 
     public static GameManager m_instance;
     private AMinigameManager m_minigameManager;
