@@ -38,7 +38,7 @@ namespace FightCthulhu
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (i_hitIndex == -1 && b_canGrab) {
+            if (b_canGrab) {
                 grabbedItem = collision.gameObject;
                 grabbedItem.GetComponent<DefendableItem>().b_isGrabbed = true;
             }
