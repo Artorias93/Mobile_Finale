@@ -8,13 +8,19 @@ namespace FightCthulhu
     {
 
         [SerializeField] 
-        private float frameTime = 0.5f;
+        public float frameTime = 0.5f;
 
         public delegate void UpdateEvent();
         public static event UpdateEvent OnUpdate;
 
         private float f_elapsedTime=0;
+        public static MiniGameManager Instance;
         // Start is called before the first frame update
+
+        private void Awake()
+        {
+            Instance = this;
+        }
         void Start()
         {
 

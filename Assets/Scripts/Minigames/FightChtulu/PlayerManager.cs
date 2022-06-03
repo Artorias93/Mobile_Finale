@@ -12,7 +12,7 @@ namespace FightCthulhu
         [SerializeField]
         private List<Sprite> playerMovementSprites;
         [SerializeField]
-        private Sprite attackSprite;
+        private List<Sprite> attackSprite;
 
         public static PlayerManager Instance;
         private List<GameObject> m_positions= new List<GameObject>();
@@ -179,13 +179,27 @@ namespace FightCthulhu
                 if (b_isRightOriented && dir.Equals(Vector3.left) || !b_isRightOriented && dir.Equals(Vector3.right)) {
                     tiltSprite();
                 }
-                playerCurrentPosition.GetComponent<SpriteRenderer>().sprite = attackSprite;
+
+
+                StartCoroutine(setAttackSprite());
+                CthulhuTentacleManager tentacleManager= tentacle.GetComponent<CthulhuTentacleManager>();
+                if (tentacleManager.g_GrabbedItem != null) {
+                    tentacleManager.b_CanGrab = false;
+                    tentacleManager.g_GrabbedItem.GetComponent<DefendableItem>().b_isGrabbed = false;
+                    tentacleManager.g_GrabbedItem = null;
+
+                }
                 return cthulhuManager.i_CurrentTentacleIndex;
             }
             else {
                 Debug.LogWarning("NoHit");
                 return -1;
             }
+        }
+        private IEnumerator setAttackSprite() {
+            playerCurrentPosition.GetComponent<SpriteRenderer>().sprite = attackSprite[0];
+            yield return new WaitForSeconds(MiniGameManager.Instance.frameTime/2);
+            playerCurrentPosition.GetComponent<SpriteRenderer>().sprite = attackSprite[1];
         }
     }
 }

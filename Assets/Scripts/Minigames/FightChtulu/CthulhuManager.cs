@@ -31,6 +31,7 @@ namespace FightCthulhu
             foreach (Transform child in transform)
             {
                 m_tentacles.Add(child.gameObject);
+                child.GetComponent<CthulhuTentacleManager>().b_CanGrab = true;
             }
             maxChildIndex = m_tentacles[0].transform.childCount - 1;
             MiniGameManager.OnUpdate += UpdateInTime;
@@ -75,6 +76,11 @@ namespace FightCthulhu
                         tentacle.transform.GetChild(deactivateIndex).gameObject.SetActive(false);
                     }
                     tentacle.transform.GetChild(i_nextTentaclesStepIndex).gameObject.SetActive(true);
+                    GameObject grabbedItem = tentacle.GetComponent<CthulhuTentacleManager>().g_GrabbedItem;
+                    if ( grabbedItem != null) {
+                        //grabbedItem.transform.parent = tentacle.transform.GetChild(i_nextTentaclesStepIndex).transform;
+                        grabbedItem.transform.position = tentacle.transform.GetChild(i_nextTentaclesStepIndex).transform.GetChild(0).position;
+                    }
                 }
             }
 
