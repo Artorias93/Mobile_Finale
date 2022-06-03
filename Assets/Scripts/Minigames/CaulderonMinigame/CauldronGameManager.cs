@@ -17,46 +17,57 @@ namespace CouldronMinigame
     public class CauldronGameManager : AMinigameManager
     {
         [SerializeField]
-        public GameParameters gp_easy, gp_medium, gp_hard;
-        public GameParameters m_gameParameters;
-        private Difficulty difficulty1;
+        private GameParameters gp_easy, gp_medium, gp_hard;
+        //public GameParameters m_gameParameters;
         private Timer m_timer;
+
+        private GameParameters m_gameParameters;
 
         [SerializeField]
         IngredientController ingredientController;
         [SerializeField]
         SpeedController speedController;
+
         public float remaningTime
         {
             get { return m_timer ? m_timer.RemainingTime : -1; }
 
+        }
+        public GameParameters GameParameters
+        {
+            get { return m_gameParameters; }
         }
 
         public static CauldronGameManager Instance;
 
         private void Awake()
         {
-            Instance = this;
+            if (Instance == null)
+                Instance = this;
+            else
+                Destroy(this.gameObject);
         }
         
         public override void BeginMinigame(Difficulty difficulty)
         {
-            difficulty1=difficulty;
-            if (difficulty1 == Difficulty.EASY)
+            m_difficulty = difficulty;
+            if (m_difficulty == Difficulty.EASY)
             {
                 m_gameParameters = gp_easy;
             }
-            else if(difficulty1 == Difficulty.MEDIUM)
+            else if(m_difficulty == Difficulty.MEDIUM)
             {
                 m_gameParameters = gp_medium;
             }
-            else if (difficulty1 == Difficulty.HARD)
+            else if (m_difficulty == Difficulty.HARD)
             {
                 m_gameParameters = gp_hard;
             }
             m_timer = Timer.Create(m_gameParameters.f_gameTime, WinMinigame ,destroyOnFinish:true,name:"timer");
             m_timer.StartTimer();
-            
+
+            speedController.BeginPlay();
+            ingredientController.InitializeValue();
 
         }
 
@@ -87,7 +98,7 @@ namespace CouldronMinigame
             float percentageTime = (float)speedController.TimeinError / m_gameParameters.maxTimeInError;
             float percentageLives = (float)ingredientController.Lives / m_gameParameters.max_lives;
 
-            float percentage = (percentageLives + percentageTime)/2;
+            float percentage = (float)(percentageLives + percentageTime)/2;
             i_score = (int)(3f * Mathf.Clamp(percentage, 0f, 1f));
             EndMinigame();
         

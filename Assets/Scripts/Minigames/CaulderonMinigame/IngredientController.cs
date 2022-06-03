@@ -39,12 +39,8 @@ namespace CouldronMinigame
         void Start()
         {
 
-            spawnTimeSeconds = gameManager.m_gameParameters.spawnTimeSeconds;
-            lives = gameManager.m_gameParameters.max_lives;
-
-            StartCoroutine(ButtonTimer());
-
         }
+
         private void Update()
         {
             if (gameManager.GameFinished)
@@ -97,6 +93,16 @@ namespace CouldronMinigame
             int rand = Random.Range(0, maxrand);
             Sprite s = (Sprite)listSpriteIngredients[rand];
             ingredient.GetComponent<Image>().sprite=s;
+        }
+
+        public void InitializeValue()
+        {
+            CauldronGameManager gm = CauldronGameManager.Instance;
+            spawnTimeSeconds = gm.GameParameters.spawnTimeSeconds;
+
+            spawnTimeSeconds = gm.GameParameters.spawnTimeSeconds;
+            lives = gm.GameParameters.max_lives;
+            StartCoroutine(ButtonTimer());
         }
     }
 }

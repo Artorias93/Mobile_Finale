@@ -56,6 +56,7 @@ namespace NecromancerShop
         public void addCorrectIngredientsToList(List<GameObject> m_ingredients) {
             for (int i = 0; i < m_ingredients.Count; i++) {
                 GameObject go=Instantiate(m_ingredients[i], m_IngredientsList.transform);
+                go.transform.localScale = new Vector3(0.9f, 0.9f, 0);
                 DraggableItem draggable = go.GetComponent<DraggableItem>();
                 go.name = m_ingredients[i].name + "L";
                 m_ingredients[i].GetComponent<DraggableItem>().listElement = draggable;

@@ -191,6 +191,7 @@ namespace DrawingRunes
         }
 
 
+#if UNITY_EDITOR
         private void OnDrawGizmos()
         {
             //This code helps on editing shapes
@@ -211,6 +212,7 @@ namespace DrawingRunes
             }
                 
         }
+#endif
     }
 }
 

@@ -50,18 +50,10 @@ namespace PlaceTheCandles
         public static PlaceCandlesGameManager Instance;
 
 #region PROPERTIES
-        public bool GameFinished
-        {
-            get { return b_gameFinished; }
-        }
 
         public bool GameWon
         {
             get { return b_gameWon; }
-        }
-        public int Score
-        {
-            get { return i_score; }
         }
 
         public int RunesCount

@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-
 [System.Serializable]
 public struct RecipeEntry
 {
-    public SceneAsset m_minigameScene;
+    public string m_minigameScene;
     public Difficulty m_difficulty;
 }
 [CreateAssetMenu(fileName = "Recipe", menuName = "ScriptableObjects/Recipe", order = 1)]

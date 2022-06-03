@@ -348,7 +348,7 @@ RectTransform:
   m_Children:
   - {fileID: 1824411816}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -477,7 +477,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &667696038
 MonoBehaviour:
@@ -537,7 +537,7 @@ GameObject:
   - component: {fileID: 745970309}
   m_Layer: 0
   m_Name: PlaceCandlesGameManager
-  m_TagString: Untagged
+  m_TagString: MinigameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -576,7 +576,7 @@ MonoBehaviour:
   gp_hard:
     i_playTime: 60
     i_runeToComplete: 5
-  b_enableDebug: 1
+  b_enableDebug: 0
   diff: 0
 --- !u!4 &745970310
 Transform:
@@ -590,7 +590,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &806521239
 PrefabInstance:
@@ -617,7 +617,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8770700114871763854, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8770700114871763854, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
       propertyPath: m_AnchorMax.x
@@ -769,7 +769,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8770700116535484727, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
       propertyPath: m_TagString
-      value: MinigameManager
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
@@ -1120,7 +1120,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1938880868
 GameObject:

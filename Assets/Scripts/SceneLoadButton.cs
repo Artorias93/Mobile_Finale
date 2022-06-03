@@ -11,7 +11,7 @@ public class SceneLoadButton : MonoBehaviour
     [SerializeField] private Button m_btn;
 
     [Header("Next Scene Options")]
-    [SerializeField] private SceneAsset m_minigameScene;
+    [SerializeField] private string m_minigameScene;
     [SerializeField] private Difficulty m_difficulty = Difficulty.EASY;
     [SerializeField] private difficultyUI m_dUI;
 
@@ -36,6 +36,6 @@ public class SceneLoadButton : MonoBehaviour
 
     private void buttonCallback()
     {
-        GameManager.m_instance.StartLoadingCoroutine(m_minigameScene.name, m_difficulty);
+        GameManager.m_instance.StartLoadingCoroutine(m_minigameScene, m_difficulty);
     }
 }
