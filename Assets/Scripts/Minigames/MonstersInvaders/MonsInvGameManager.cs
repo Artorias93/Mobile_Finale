@@ -32,6 +32,8 @@ namespace MonstersInvaders
         private bool b_floorColl;
         private bool b_spawnBoss = true;
         private bool b_isTimeEnded = false;
+        private bool b_isInitialized = false;
+
 
         private bool b_gameWon = false;
 
@@ -79,15 +81,18 @@ namespace MonstersInvaders
 
         private void Update()
         {
-            if (obj_spawnGrid.transform.childCount == 0) VictoryBehaviour();
-
-            if (RemainingTime <= GameParameters.i_playTime/2 && b_spawnBoss)
+            if (b_isInitialized)
             {
-                b_spawnBoss = false;
-                GameObject obj_monster = Instantiate(obj_boss);
-                obj_monster.transform.SetParent(obj_bossSpawnPoint.transform);
-                obj_monster.transform.localPosition = Vector3.zero;
-                EnemyParams(obj_monster);
+                if (obj_spawnGrid.transform.childCount == 0) VictoryBehaviour();
+
+                if (RemainingTime <= GameParameters.i_playTime / 2 && b_spawnBoss)
+                {
+                    b_spawnBoss = false;
+                    GameObject obj_monster = Instantiate(obj_boss);
+                    obj_monster.transform.SetParent(obj_bossSpawnPoint.transform);
+                    obj_monster.transform.localPosition = Vector3.zero;
+                    EnemyParams(obj_monster);
+                }
             }
         }
 
@@ -113,6 +118,7 @@ namespace MonstersInvaders
             m_gameTimer = Timer.Create(m_gameParameters.i_playTime, onTimeEnd, name: "Game Timer");
             m_gameTimer.StartTimer();
             obj_spawnGrid.GetComponent<GridLayoutGroup>().enabled = false;
+            b_isInitialized = true;
         }
 
         private void EnemyParams(GameObject obj_monster)
