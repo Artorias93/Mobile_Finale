@@ -171,8 +171,13 @@ namespace FightCthulhu
             //Get the first object hit by the ray
             RaycastHit2D hit = Physics2D.Raycast(playerCurrentPosition.transform.position, dir, rayLength);
             //Debug.DrawRay(playerCurrentPosition.transform.position, dir * rayLength, Color.red);
-            GameObject tentacle = hit.collider.transform.parent.gameObject;
-            if (tentacle.Equals(attackTarget))
+
+            GameObject tentacle=null;
+            if (hit.collider != null) { 
+                tentacle= hit.collider.transform.parent.gameObject;
+            }
+                
+            if (tentacle != null && tentacle.Equals(attackTarget))
             {
                 CthulhuManager cthulhuManager = CthulhuManager.Instance;
                 Debug.LogWarning("HitIndex"+ cthulhuManager.i_CurrentTentacleIndex);

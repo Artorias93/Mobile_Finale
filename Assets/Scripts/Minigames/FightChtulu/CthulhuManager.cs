@@ -46,7 +46,8 @@ namespace FightCthulhu
         }
 
         private void addActiveTentacles() {
-            int i_tmpGrabCount = i_grabbingTentaclesCount;
+            int i_tmpGrabCount = i_grabbingTentaclesCount <= m_tentacles.Count? i_grabbingTentaclesCount: m_tentacles.Count;
+            i_ActiveTentacles = i_ActiveTentacles <= m_tentacles.Count ? i_ActiveTentacles : m_tentacles.Count;
             while (activeTentacles.Count < i_ActiveTentacles)
             {
                 int tentacleIdx = Random.Range(0, m_tentacles.Count);
@@ -122,7 +123,11 @@ namespace FightCthulhu
             if (b_tentaclesNeedReset) {
 
                 foreach (GameObject tentacle in activeTentacles) {
-                    tentacle.GetComponent<CthulhuTentacleManager>().b_CanGrab = false;
+                    CthulhuTentacleManager tentacleManager = tentacle.GetComponent<CthulhuTentacleManager>();
+                    tentacleManager.b_CanGrab = false;
+                    if (tentacleManager.g_GrabbedItem != null && m_tentacles.Contains(tentacle) ) {
+                        m_tentacles.Remove(tentacle);
+                    }
                 }
                 activeTentacles.Clear();
                 addActiveTentacles();
