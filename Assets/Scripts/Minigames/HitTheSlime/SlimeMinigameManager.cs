@@ -12,6 +12,12 @@ namespace SlimeMinigame
         public int i_requestedHits;
         public int i_PlayTime;
     }
+    public enum Diff
+    {
+        easy,
+        medium,
+        hard
+    }
 
     public class SlimeMinigameManager : AMinigameManager
     {
@@ -21,6 +27,10 @@ namespace SlimeMinigame
 
         [Header("References")]
         [SerializeField] private HitController m_hitController;
+
+        [Header("Debug")]
+        [SerializeField] private bool b_enableDebug;
+        [SerializeField] private Diff diff;
 
         private Timer m_gameTimer;
         public static SlimeMinigameManager Instance;
@@ -58,6 +68,16 @@ namespace SlimeMinigame
 
             m_gameTimer = Timer.Create(gp_selectedParameters.i_PlayTime, EndMinigame, name: "GameTimer");
             m_gameTimer.StartTimer();
+        }
+
+        private void Start()
+        {
+            if (b_enableDebug)
+            {
+                if (diff == Diff.easy) BeginMinigame(Difficulty.EASY);
+                else if (diff == Diff.medium) BeginMinigame(Difficulty.MEDIUM);
+                else if (diff == Diff.hard) BeginMinigame(Difficulty.HARD);
+            }
         }
 
         protected override void EndMinigame()

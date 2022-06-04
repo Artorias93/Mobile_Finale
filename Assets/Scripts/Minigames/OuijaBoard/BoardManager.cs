@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -20,7 +19,6 @@ namespace OuijaBoardMinigame
         [SerializeField] private OuijaBoardUIManager m_ouijaBoardUIManager;
         [SerializeField] private OuijaBoardManager m_ouijaBoardManager;
 
-
         [Header("Letters' Settings")]
         [SerializeField] float f_maxRot = 30;
         [SerializeField] float f_maxHeight = 1;
@@ -32,7 +30,6 @@ namespace OuijaBoardMinigame
         int i_collID;
         string s_word;
         bool b_finish;
-
 
         private void Start()
         {   //Remove comment for debug
@@ -46,10 +43,12 @@ namespace OuijaBoardMinigame
 
             foreach (char c_letter in ouijaLetters)
             {
-                f_countXpos += f_lettersSpacing;
-                if (i_letterId == 13) f_countXpos = f_lettersSpacing;
+                if (i_letterId == 13) f_countXpos = 0;
                 if (i_letterId < 13) Spawn(m_line1, c_letter, f_countXpos);
+
                 else Spawn(m_line2, c_letter, f_countXpos);
+                f_countXpos += f_lettersSpacing;
+
                 i_letterId++;
             }
         }
@@ -80,7 +79,7 @@ namespace OuijaBoardMinigame
             else
             {
                 i_collID = System.Array.IndexOf(ouijaLetters, char.ToUpper(s_word[i_lettersCount]));
-                m_letterList[i_collID].GetComponent<TextMeshPro>().color = new Color32(200, 190, 0, 255);
+                m_letterList[i_collID].GetComponent<TextMeshPro>().color = new Color32(230, 135, 0, 255);
                 m_letterList[i_collID].GetComponent<Collider2D>().enabled = true;
             }
         }

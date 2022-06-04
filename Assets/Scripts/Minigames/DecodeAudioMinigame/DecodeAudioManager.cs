@@ -22,6 +22,13 @@ namespace DecodeAudioMinigame
         public float m_playTime;
     }
 
+    public enum Diff
+    {
+        easy,
+        medium,
+        hard
+    }
+
     public class DecodeAudioManager : AMinigameManager
     {
         [Header("Game Parameters")]
@@ -33,6 +40,10 @@ namespace DecodeAudioMinigame
         [SerializeField] private BookManager m_bookManager;
         [SerializeField] private AudioSource m_audioSource;
         [SerializeField] private DecodeAudioUIManager m_decodeUIManager;
+
+        [Header("Debug")]
+        [SerializeField] private bool b_enableDebug;
+        [SerializeField] private Diff diff;
 
         public static DecodeAudioManager m_instance;
 
@@ -72,10 +83,18 @@ namespace DecodeAudioMinigame
                 return;
             }
 
-            
-
             Assert.IsNotNull(m_bookManager);
             Assert.IsNotNull(m_decodeUIManager);
+        }
+
+        private void Start()
+        {
+            if (b_enableDebug)
+            {
+                if (diff == Diff.easy) BeginMinigame(Difficulty.EASY);
+                else if (diff == Diff.medium) BeginMinigame(Difficulty.MEDIUM);
+                else if (diff == Diff.hard) BeginMinigame(Difficulty.HARD);
+            }
         }
 
         public override void BeginMinigame(Difficulty difficulty)

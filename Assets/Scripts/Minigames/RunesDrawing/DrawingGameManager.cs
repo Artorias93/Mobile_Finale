@@ -18,6 +18,12 @@ namespace DrawingRunes
         public string name;
         public Vector3[] vertices;
     }
+    public enum Diff
+    {
+        easy,
+        medium,
+        hard
+    }
 
     public class DrawingGameManager : AMinigameManager
     {
@@ -36,8 +42,10 @@ namespace DrawingRunes
 #if UNITY_EDITOR
         [Header("Debug functionalities")]
         [SerializeField] private bool b_enableDebug = false;
+        [SerializeField] private Diff diff;
         [SerializeField, Min(0.0f)] private int i_debugShape;
         [SerializeField, Range(0, 1)] private float f_debugGizmosSize;
+
 #endif
 
         private GameParameters m_gameParameters;
@@ -89,6 +97,16 @@ namespace DrawingRunes
 
             b_pickedIndexes = new bool[m_shapes.Length];
             i_score = 0;
+        }
+
+        private void Start()
+        {
+            if (b_enableDebug)
+            {
+                if (diff == Diff.easy) BeginMinigame(Difficulty.EASY);
+                else if (diff == Diff.medium) BeginMinigame(Difficulty.MEDIUM);
+                else if (diff == Diff.hard) BeginMinigame(Difficulty.HARD);
+            }
         }
 
         public override void BeginMinigame(Difficulty difficulty)

@@ -164,7 +164,8 @@ MonoBehaviour:
     m_wordsNum: 7
   m_ouijaManager: {fileID: 1895374559}
   m_ouijaBoardUIManager: {fileID: 1025244260}
-  b_win: 0
+  b_enableDebug: 0
+  diff: 0
 --- !u!114 &163589292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,6 +199,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3133833933966804420, guid: c6fddbbae964e3e4f967c60fd229d675, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2490324197575698133, guid: 5eda074925126f6419cb00cc3b4797d2, type: 2}
     - target: {fileID: 3133833933966804421, guid: c6fddbbae964e3e4f967c60fd229d675, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -513,7 +518,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 54f8f0fcea218dd43bf39b04b106e870, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cc5039ed126c0384ab48d489f4855da7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1003,7 +1008,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: ebc7a79d8217c014890d63f5f2ec449a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db9ba77aa6e81744c996b45031c32b8e, type: 3}
   m_Color: {r: 0.2830189, g: 0.21534045, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 1
@@ -1053,6 +1058,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3133833933966804420, guid: c6fddbbae964e3e4f967c60fd229d675, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2490324197575698133, guid: 5eda074925126f6419cb00cc3b4797d2, type: 2}
     - target: {fileID: 3133833933966804421, guid: c6fddbbae964e3e4f967c60fd229d675, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1343,7 +1352,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 1.5, y: 1.5}
-  m_Spacing: {x: -0.3, y: 0}
+  m_Spacing: {x: -0.1, y: 0}
   m_Constraint: 2
   m_ConstraintCount: 1
 --- !u!224 &1435227412
@@ -1362,7 +1371,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -8.4, y: 0.6999999}
+  m_AnchoredPosition: {x: -8.4, y: 1}
   m_SizeDelta: {x: 16.8, y: 2}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!1 &1448290991
@@ -1445,7 +1454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ouijaLetters: 4100420043004400450046004700480049004a004b004c004d004e004f0050005100520053005400550056005700580059005a00
   ouijaWords:
-  - Chtulu
+  - Chtulhu
   - Rite
   - Rune
   - Ghost
@@ -1463,5 +1472,5 @@ MonoBehaviour:
   m_ouijaBoardManager: {fileID: 163589291}
   f_maxRot: 30
   f_maxHeight: 0.5
-  f_lettersSpacing: 1.2
+  f_lettersSpacing: 1.4
   usedWords: []

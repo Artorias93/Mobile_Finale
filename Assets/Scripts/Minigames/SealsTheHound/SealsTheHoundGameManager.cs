@@ -111,13 +111,6 @@ namespace SealsTheHound
 
         private void Awake()
         {
-            if (b_enableDebug)
-            {
-                if (diff == Diff.easy) BeginMinigame(Difficulty.EASY);
-                else if (diff == Diff.medium) BeginMinigame(Difficulty.MEDIUM);
-                else if (diff == Diff.hard) BeginMinigame(Difficulty.HARD);
-            }
-
             if (Instance == null)
             {
                 Instance = this;
@@ -129,11 +122,15 @@ namespace SealsTheHound
             }
         }
 
-        private void Update()
+        private void Start()
         {
-
+            if (b_enableDebug)
+            {
+                if (diff == Diff.easy) BeginMinigame(Difficulty.EASY);
+                else if (diff == Diff.medium) BeginMinigame(Difficulty.MEDIUM);
+                else if (diff == Diff.hard) BeginMinigame(Difficulty.HARD);
+            }
         }
-
         public override void BeginMinigame(Difficulty difficulty)
         {
             m_difficulty = difficulty;

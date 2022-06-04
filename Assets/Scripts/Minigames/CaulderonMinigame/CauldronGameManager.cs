@@ -14,6 +14,14 @@ namespace CouldronMinigame
         public float max_lives;
         public float spawnTimeSeconds;
     }
+
+    public enum Diff
+    {
+        easy,
+        medium,
+        hard
+    }
+
     public class CauldronGameManager : AMinigameManager
     {
         [SerializeField]
@@ -27,6 +35,10 @@ namespace CouldronMinigame
         IngredientController ingredientController;
         [SerializeField]
         SpeedController speedController;
+
+        [Header("Debug")]
+        [SerializeField] private bool b_enableDebug;
+        [SerializeField] private Diff diff;
 
         public float remaningTime
         {
@@ -76,7 +88,12 @@ namespace CouldronMinigame
         // Start is called before the first frame update
         void Start()
         {
-            //BeginMinigame(Difficulty.EASY);
+            if (b_enableDebug)
+            {
+                if (diff == Diff.easy) BeginMinigame(Difficulty.EASY);
+                else if (diff == Diff.medium) BeginMinigame(Difficulty.MEDIUM);
+                else if (diff == Diff.hard) BeginMinigame(Difficulty.HARD);
+            }
         }  
 
         protected override void EndMinigame()

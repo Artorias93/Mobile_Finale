@@ -14,8 +14,15 @@ namespace BalanceGame
         public float f_loseTImeSeconds;
         public float f_initialGravityScale;
         public float f_stopRescaleSeconds;
-
     }
+
+    public enum Diff
+    {
+        easy,
+        medium,
+        hard
+    }
+
     public class BalanceGameManager : AMinigameManager
     {
         public GameParameters m_gameParameters;
@@ -41,6 +48,11 @@ namespace BalanceGame
         private GameWeight m_gameWeight;
         [SerializeField]
         private GameParameters gp_easy, gp_medium, gp_hard;
+
+        [Header("Debug")]
+        [SerializeField] private bool b_enableDebug;
+        [SerializeField] private Diff diff;
+
         private bool b_gameWon = false;
         private Timer m_gameTimer;
         private bool gameStarted=false;
@@ -53,8 +65,12 @@ namespace BalanceGame
         }
         void Start()
         {
-
-            //BeginMinigame(Difficulty.HARD);
+            if (b_enableDebug)
+            {
+                if (diff == Diff.easy) BeginMinigame(Difficulty.EASY);
+                else if (diff == Diff.medium) BeginMinigame(Difficulty.MEDIUM);
+                else if (diff == Diff.hard) BeginMinigame(Difficulty.HARD);
+            }
         }
 
         void Update()

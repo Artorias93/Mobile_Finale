@@ -13,6 +13,12 @@ namespace MonstersInvaders
         public float f_monsterAttackSpeedMultiplier;
         public int i_maxError;
     }
+    public enum Diff
+    {
+        easy,
+        medium,
+        hard
+    }
 
     public class MonsInvGameManager : AMinigameManager
     {
@@ -24,6 +30,10 @@ namespace MonstersInvaders
 
         [Header("Game Parameters")]
         [SerializeField] private GameParameters gp_easy, gp_medium, gp_hard;
+
+        [Header("Debug")]
+        [SerializeField] private bool b_enableDebug;
+        [SerializeField] private Diff diff;
 
         private GameParameters m_gameParameters;
         private Timer m_gameTimer;
@@ -64,10 +74,6 @@ namespace MonstersInvaders
 
         private void Awake()
         {
-            //BeginMinigame(Difficulty.EASY);       //TEST
-            //BeginMinigame(Difficulty.MEDIUM);     //TEST
-            //BeginMinigame(Difficulty.HARD);       //TEST
-
             if (Instance == null)
             {
                 Instance = this;
@@ -76,6 +82,15 @@ namespace MonstersInvaders
             {
                 Destroy(gameObject);
                 return;
+            }
+        }
+        private void Start()
+        {
+            if (b_enableDebug)
+            {
+                if (diff == Diff.easy) BeginMinigame(Difficulty.EASY);
+                else if (diff == Diff.medium) BeginMinigame(Difficulty.MEDIUM);
+                else if (diff == Diff.hard) BeginMinigame(Difficulty.HARD);
             }
         }
 

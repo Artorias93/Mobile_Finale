@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 
 namespace OuijaBoardMinigame
 {
@@ -25,9 +22,7 @@ namespace OuijaBoardMinigame
             {
                 float normalizedTime = (float)obm.RemainingTime / obm.PlayTime;
                 UpdateSlider(normalizedTime);
-                
             }
-            
         }
     }
 }

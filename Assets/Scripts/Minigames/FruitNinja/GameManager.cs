@@ -12,12 +12,25 @@ namespace FruitNinjaMinigame
         public float f_minDelay;
         public float f_maxDelay;
     }
+    public enum Diff
+    {
+        easy,
+        medium,
+        hard
+    }
 
     public class GameManager : AMinigameManager
     {
+        [Header("References")]
         [SerializeField] private GameObject obj_blade;
-        [SerializeField] private GameParameters gp_easy, gp_medium, gp_hard;
         [SerializeField] private EndGameScreenController endGameUI;
+
+        [Header("Game Parameters")]
+        [SerializeField] private GameParameters gp_easy, gp_medium, gp_hard;
+        
+        [Header("Debug")]
+        [SerializeField] private bool b_enableDebug;
+        [SerializeField] private Diff diff;
 
         private GameParameters gp_selectedParameters;
         private int i_outCount = 0;
@@ -66,6 +79,15 @@ namespace FruitNinjaMinigame
 
             m_gameWon = false;
             b_gameFinished = false;
+        }
+        private void Start()
+        {
+            if (b_enableDebug)
+            {
+                if (diff == Diff.easy) BeginMinigame(Difficulty.EASY);
+                else if (diff == Diff.medium) BeginMinigame(Difficulty.MEDIUM);
+                else if (diff == Diff.hard) BeginMinigame(Difficulty.HARD);
+            }
         }
 
         public void increaseErrorCount()

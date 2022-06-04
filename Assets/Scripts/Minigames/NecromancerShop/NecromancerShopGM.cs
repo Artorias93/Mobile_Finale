@@ -17,6 +17,13 @@ namespace NecromancerShop
         public int i_maxSecondsStopObstacle;
         public int i_activeSpawnersCounter;
     }
+    public enum Diff
+    {
+        easy,
+        medium,
+        hard
+    }
+
     public class NecromancerShopGM : AMinigameManager
     {
         [SerializeField]
@@ -29,6 +36,15 @@ namespace NecromancerShop
         private GeneralUiManager m_GeneralUI;
         [SerializeField]
         private List<Image> cartPositionImages;
+
+        public static NecromancerShopGM Instance;
+        public GameParameters m_gameParameters;
+        public int i_inizializedSpawners = 0;
+
+        [Header("Debug")]
+        [SerializeField] private bool b_enableDebug;
+        [SerializeField] private Diff diff;
+
         public int i_CurrentErrorCount
         {
             get { return i_currentErrorCount; }
@@ -45,26 +61,24 @@ namespace NecromancerShop
         {
             get { return b_gameFinished; }
         }
-        public static NecromancerShopGM Instance;
-        public GameParameters m_gameParameters;
-        public int i_inizializedSpawners = 0;
 
         private List<GameObject> m_totalIngredients;
-        private List<GameObject> m_correctIngredients=new List<GameObject>();
-        private int i_currentCorrectsCount=0,i_currentErrorCount=0;
+        private List<GameObject> m_correctIngredients = new List<GameObject>();
+        private int i_currentCorrectsCount = 0, i_currentErrorCount = 0;
         private Timer m_gameTimer;
         private bool b_winCondition = false;
-       
-
-
 
         void Awake() {
             Instance = this;
         }
         void Start()
         {
-            //Remove comment for debug single scene
-            //BeginMinigame(Difficulty.HARD);
+            if (b_enableDebug)
+            {
+                if (diff == Diff.easy) BeginMinigame(Difficulty.EASY);
+                else if (diff == Diff.medium) BeginMinigame(Difficulty.MEDIUM);
+                else if (diff == Diff.hard) BeginMinigame(Difficulty.HARD);
+            }
         }
         public override void BeginMinigame(Difficulty difficulty)
         {

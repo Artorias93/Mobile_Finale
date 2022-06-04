@@ -15,6 +15,12 @@ namespace PotionBrewMinigame
         public int i_maxStepsCount;
         public int i_maxOverflowSeconds; 
     }
+    public enum Diff
+    {
+        easy,
+        medium,
+        hard
+    }
 
     public class PotionBrewManager : AMinigameManager
     {
@@ -23,6 +29,11 @@ namespace PotionBrewMinigame
         private PotionUiManager m_potionUIManager;
         [SerializeField] private GameParameters gp_easy, gp_medium, gp_hard;
         [SerializeField] private GeneralUIManager generalUIManager;
+
+        [Header("Debug")]
+        [SerializeField] private bool b_enableDebug;
+        [SerializeField] private Diff diff;
+
         private GameParameters m_gameParameters;
         public static PotionBrewManager Instance;
         public float RemainingTime
@@ -74,8 +85,12 @@ namespace PotionBrewMinigame
         }
         private void Start()
         {
-            //Remove comment for scene debug
-            //BeginMinigame(Difficulty.MEDIUM);
+            if (b_enableDebug)
+            {
+                if (diff == Diff.easy) BeginMinigame(Difficulty.EASY);
+                else if (diff == Diff.medium) BeginMinigame(Difficulty.MEDIUM);
+                else if (diff == Diff.hard) BeginMinigame(Difficulty.HARD);
+            }
         }
         public override void BeginMinigame(Difficulty difficulty)
         {

@@ -1,10 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Assertions;
-using TMPro;
-
-
 
 namespace OuijaBoardMinigame
 {
@@ -14,6 +8,13 @@ namespace OuijaBoardMinigame
     {
         public float m_playTime;
         public int m_wordsNum;
+    }
+
+    public enum Diff
+    {
+        easy,
+        medium,
+        hard
     }
 
     public class OuijaBoardManager : AMinigameManager
@@ -26,10 +27,14 @@ namespace OuijaBoardMinigame
         [SerializeField] private BoardManager m_ouijaManager;
         [SerializeField] private OuijaBoardUIManager m_ouijaBoardUIManager;
 
+        [Header("Debug")]
+        [SerializeField] private bool b_enableDebug;
+        [SerializeField] private Diff diff;
+
         public static OuijaBoardManager m_instance;
         private Timer m_gameTimer;
 
-        public bool b_win = false;
+        private bool b_win = false;
 
 #region PROPERTIES
 
@@ -59,6 +64,15 @@ namespace OuijaBoardMinigame
                 return;
             }
         }
+        private void Start()
+        {
+            if (b_enableDebug)
+            {
+                if (diff == Diff.easy) BeginMinigame(Difficulty.EASY);
+                else if (diff == Diff.medium) BeginMinigame(Difficulty.MEDIUM);
+                else if (diff == Diff.hard) BeginMinigame(Difficulty.HARD);
+            }
+        }
 
         public override void BeginMinigame(Difficulty difficulty)
         {
@@ -76,6 +90,7 @@ namespace OuijaBoardMinigame
             m_ouijaManager.Initialize();
             m_ouijaManager.ProposeWord();
             i_score = 0;
+            
         }
 
         protected override void EndMinigame()
