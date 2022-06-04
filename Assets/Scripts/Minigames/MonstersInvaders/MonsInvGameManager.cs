@@ -83,15 +83,18 @@ namespace MonstersInvaders
         {
             if (b_isInitialized)
             {
-                if (obj_spawnGrid.transform.childCount == 0) VictoryBehaviour();
-
-                if (RemainingTime <= GameParameters.i_playTime / 2 && b_spawnBoss)
+                if (!b_gameFinished)
                 {
-                    b_spawnBoss = false;
-                    GameObject obj_monster = Instantiate(obj_boss);
-                    obj_monster.transform.SetParent(obj_bossSpawnPoint.transform);
-                    obj_monster.transform.localPosition = Vector3.zero;
-                    EnemyParams(obj_monster);
+                    if (obj_spawnGrid.transform.childCount == 0) VictoryBehaviour();
+
+                    if (RemainingTime <= GameParameters.i_playTime / 2 && b_spawnBoss)
+                    {
+                        b_spawnBoss = false;
+                        GameObject obj_monster = Instantiate(obj_boss);
+                        obj_monster.transform.SetParent(obj_bossSpawnPoint.transform);
+                        obj_monster.transform.localPosition = Vector3.zero;
+                        EnemyParams(obj_monster);
+                    }
                 }
             }
         }
@@ -151,7 +154,7 @@ namespace MonstersInvaders
             else i_score = Mathf.FloorToInt((Mathf.Abs(((float)i_numError / (float)m_gameParameters.i_maxError * 100) - 100) / 100 * 4));
             if (i_score > 3) i_score = 3;
 
-            if (b_isTimeEnded || i_score > 0) i_score--;
+            if (b_isTimeEnded && i_score > 0) i_score--;
         }
 
         private void VictoryBehaviour()

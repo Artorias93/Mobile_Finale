@@ -42,7 +42,6 @@ namespace MonstersInvaders
         // Update is called once per frame
         void FixedUpdate()
         {
-
             if (!b_destroyed)
             {
                 if (b_bossAttack)
@@ -64,6 +63,7 @@ namespace MonstersInvaders
             bool b_outOfBounds = !Screen.safeArea.Contains(pos);
 
             if (b_outOfBounds) Destroy(gameObject, 0.2f);
+            if (MonsInvGameManager.Instance.RemainingTime == -1) Destroy(gameObject);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
