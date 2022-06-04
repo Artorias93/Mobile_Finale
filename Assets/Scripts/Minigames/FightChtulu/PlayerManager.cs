@@ -27,10 +27,6 @@ namespace FightCthulhu
         {
             Instance = this;
         }
-        void Start()
-        {
-            InitializePlayer();
-        }
 
         public void InitializePlayer() {
             foreach (Transform child in transform)

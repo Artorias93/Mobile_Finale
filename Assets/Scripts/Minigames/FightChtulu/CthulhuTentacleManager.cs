@@ -26,10 +26,6 @@ namespace FightCthulhu
         private bool b_canGrab = false;
         private GameObject grabbedItem = null;
 
-        // Start is called before the first frame update
-        public void resetHit() {
-            i_hitIndex = -1;
-        }
         public void OnPointerDown(PointerEventData eventData)
         {
             PlayerManager playerManager = PlayerManager.Instance;

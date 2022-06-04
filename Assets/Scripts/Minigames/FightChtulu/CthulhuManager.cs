@@ -10,6 +10,10 @@ namespace FightCthulhu
         {
             get { return i_currentTentaclesStepIndex; }
         }
+        public int i_ErrorCount
+        {
+            get { return i_errorCount; }
+        }
         public static CthulhuManager Instance;
 
         private List<GameObject> m_tentacles = new List<GameObject>();
@@ -21,14 +25,11 @@ namespace FightCthulhu
         private int i_grabbingTentaclesCount;
         private List<GameObject> activeTentacles = new List<GameObject>();
         private bool b_tentaclesNeedReset = false;
+        private int i_errorCount=0;
 
         private void Awake()
         {
             Instance = this;
-        }
-        void Start()
-        {
-            InitializeCthulhu(2,1);
         }
 
         public void InitializeCthulhu(int i_activeTentacles,int grabbingCount) {
@@ -84,7 +85,10 @@ namespace FightCthulhu
         }
 
         private void UpdateInTime() {
-            makeTentacleStep();
+            int skipIdx =Random.Range(0, 5);
+            if (skipIdx>0) {
+                makeTentacleStep();
+            }
         }
 
         private void makeTentacleStep() {
@@ -94,14 +98,6 @@ namespace FightCthulhu
             {
                 CthulhuTentacleManager tentacleManager = tentacle.GetComponent<CthulhuTentacleManager>();
 
-                //if (tentacleManager.i_HitIndex == i_nextTentaclesStepIndex)
-                //{
-                //    tentacleManager.resetHit();
-                //}
-
-
-                //if (tentacleManager.i_HitIndex == -1)
-                //{
                     if (deactivateIndex != -1)
                     {
                         tentacle.transform.GetChild(deactivateIndex).gameObject.SetActive(false);
@@ -118,7 +114,6 @@ namespace FightCthulhu
                     if ( grabbedItem != null) {
                         grabbedItem.transform.position = tentacle.transform.GetChild(i_nextTentaclesStepIndex).transform.GetChild(0).position;
                     }
-               // }
             }
             if (b_tentaclesNeedReset) {
 
@@ -127,6 +122,7 @@ namespace FightCthulhu
                     tentacleManager.b_CanGrab = false;
                     if (tentacleManager.g_GrabbedItem != null && m_tentacles.Contains(tentacle) ) {
                         m_tentacles.Remove(tentacle);
+                        i_errorCount++;
                     }
                 }
                 activeTentacles.Clear();

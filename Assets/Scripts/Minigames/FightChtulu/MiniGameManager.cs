@@ -4,48 +4,99 @@ using UnityEngine;
 
 namespace FightCthulhu
 {
+    [System.Serializable]
+    public struct GameParameters
+    {
+        public float f_gameTime;
+        public int i_activeTentacles;
+        public int i_grabbingTentacles;
+        public int i_maxErrorCount;
+
+    }
     public class MiniGameManager : AMinigameManager
     {
-
-        [SerializeField] 
-        public float frameTime = 0.5f;
-
+        public GameParameters GetGameParameters
+        {
+            get { return m_gameParameters; }
+        }
+        public float RemainingTime
+        {
+            get { return m_gameTimer ? m_gameTimer.RemainingTime : -1; }
+        }
+        public int GetCurrentErrorCount
+        {
+            get { return cthulhu.i_ErrorCount; }
+        }
+        public static MiniGameManager Instance;
         public delegate void UpdateEvent();
         public static event UpdateEvent OnUpdate;
 
+        [SerializeField] 
+        public float frameTime = 0.5f;
+        [SerializeField]
+        private GameParameters gp_easy, gp_medium, gp_hard;
+        [SerializeField]
+        private PlayerManager player;
+        [SerializeField]
+        private CthulhuManager cthulhu;
+
+        private GameParameters m_gameParameters;
+        private Timer m_gameTimer;
         private float f_elapsedTime=0;
-        public static MiniGameManager Instance;
+        private bool b_gameStarted = false;
+
         // Start is called before the first frame update
 
         private void Awake()
         {
             Instance = this;
+            i_score = 0;
+            b_gameFinished = false;
         }
         void Start()
         {
-
+            BeginMinigame(Difficulty.EASY);
         }
 
         // Update is called once per frame
         void Update()
         {
-            f_elapsedTime += Time.deltaTime;
-            if (f_elapsedTime > frameTime)
-            {
-                f_elapsedTime -= frameTime;
-                if (OnUpdate != null)
-                    OnUpdate();
+            if (b_gameStarted) {
+                f_elapsedTime += Time.deltaTime;
+                if (f_elapsedTime > frameTime)
+                {
+                    f_elapsedTime -= frameTime;
+                    if (OnUpdate != null)
+                        OnUpdate();
+                    if (cthulhu.i_ErrorCount >= m_gameParameters.i_maxErrorCount) {
+                        EndMinigame();
+                    }
+                }
             }
         }
 
         public override void BeginMinigame(Difficulty difficulty)
         {
-            throw new System.NotImplementedException();
+            if (difficulty == Difficulty.EASY)
+                m_gameParameters = gp_easy;
+            else if (difficulty == Difficulty.MEDIUM)
+                m_gameParameters = gp_medium;
+            else if (difficulty == Difficulty.HARD)
+                m_gameParameters = gp_hard;
+
+            player.InitializePlayer();
+            cthulhu.InitializeCthulhu(m_gameParameters.i_activeTentacles, m_gameParameters.i_grabbingTentacles);
+            m_gameTimer = Timer.Create(m_gameParameters.f_gameTime, EndMinigame, destroyOnFinish: true, name: "Minigame Timer");
+            m_gameTimer.StartTimer();
+            b_gameStarted = true;
         }
 
         protected override void EndMinigame()
         {
-            throw new System.NotImplementedException();
+            b_gameFinished = true;
+            float percentageError = cthulhu.i_ErrorCount/(float)m_gameParameters.i_maxErrorCount;
+            percentageError = 1 - percentageError;
+            i_score = (int)(3 * percentageError);
         }
     }
 }
