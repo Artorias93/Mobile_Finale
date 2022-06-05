@@ -50,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minigames/HitTheSlime.unity
     guid: 47ba59effce01c34badfe3d769bc3850
+  - enabled: 1
+    path: Assets/Scenes/Minigames/FightCthulhu.unity
+    guid: 4158507279e580e43a2b3d0c550c5f25
   m_configObjects: {}
