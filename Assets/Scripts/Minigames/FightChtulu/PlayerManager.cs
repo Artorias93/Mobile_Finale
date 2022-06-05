@@ -190,6 +190,7 @@ namespace FightCthulhu
                     tentacleManager.g_GrabbedItem = null;
 
                 }
+                tentacleManager.b_Hitted = true;
                 return cthulhuManager.i_CurrentTentacleIndex;
             }
             else {

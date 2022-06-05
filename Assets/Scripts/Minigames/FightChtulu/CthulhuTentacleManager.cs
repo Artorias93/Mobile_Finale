@@ -21,9 +21,15 @@ namespace FightCthulhu
             get { return grabbedItem; }
             set { grabbedItem = value; }
         }
+        public bool b_Hitted
+        {
+            get { return b_hitted; }
+            set { b_hitted = value; }
+        }
 
         private int i_hitIndex = -1;
         private bool b_canGrab = false;
+        private bool b_hitted = false;
         private GameObject grabbedItem = null;
 
         public void OnPointerDown(PointerEventData eventData)

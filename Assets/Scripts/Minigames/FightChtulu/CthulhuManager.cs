@@ -70,6 +70,7 @@ namespace FightCthulhu
                 int tentacleIdx = Random.Range(0, m_tentacles.Count);
                 if (!activeTentacles.Contains(m_tentacles[tentacleIdx]))
                 {
+                    m_tentacles[tentacleIdx].GetComponent<CthulhuTentacleManager>().b_Hitted = false;
                     activeTentacles.Add(m_tentacles[tentacleIdx]);
                 }
             }
@@ -114,22 +115,40 @@ namespace FightCthulhu
             foreach (GameObject tentacle in activeTentacles)
             {
                 CthulhuTentacleManager tentacleManager = tentacle.GetComponent<CthulhuTentacleManager>();
+                Transform tentacleStep = tentacle.transform.GetChild(i_nextTentaclesStepIndex);
 
-                    if (deactivateIndex != -1)
-                    {
-                        tentacle.transform.GetChild(deactivateIndex).gameObject.SetActive(false);
-                    }
-                    tentacle.transform.GetChild(i_nextTentaclesStepIndex).gameObject.SetActive(true);
+                if (deactivateIndex != -1)
+                {
+                    tentacle.transform.GetChild(deactivateIndex).gameObject.SetActive(false);
+                }
+                tentacleStep.gameObject.SetActive(true);
+                
                 if (tentacleManager.b_CanGrab)
                 {
-                    tentacle.transform.GetChild(i_nextTentaclesStepIndex).GetComponent<SpriteRenderer>().color = Color.red;
+                    tentacleStep.GetComponent<SpriteRenderer>().color = Color.red;
                 }
                 else {
-                    tentacle.transform.GetChild(i_nextTentaclesStepIndex).GetComponent<SpriteRenderer>().color = Color.white;
+                    tentacleStep.GetComponent<SpriteRenderer>().color = Color.white;
                 }
-                    GameObject grabbedItem = tentacleManager.g_GrabbedItem;
+                if (i_nextTentaclesStepIndex != 0) {
+                    if (tentacleManager.b_Hitted)
+                    {
+                        tentacleStep.GetComponent<CapsuleCollider2D>().enabled = false;
+                        Color tmpcolor = tentacleStep.GetComponent<SpriteRenderer>().color;
+                        tmpcolor.a = 0.5f;
+                        tentacleStep.GetComponent<SpriteRenderer>().color = tmpcolor;
+                    }
+                    else
+                    {
+                        tentacleStep.GetComponent<CapsuleCollider2D>().enabled = true;
+                        Color tmpcolor = tentacleStep.GetComponent<SpriteRenderer>().color;
+                        tmpcolor.a = 1;
+                        tentacleStep.GetComponent<SpriteRenderer>().color = tmpcolor;
+                    }
+                }
+                GameObject grabbedItem = tentacleManager.g_GrabbedItem;
                     if ( grabbedItem != null) {
-                        grabbedItem.transform.position = tentacle.transform.GetChild(i_nextTentaclesStepIndex).transform.GetChild(0).position;
+                        grabbedItem.transform.position = tentacleStep.transform.GetChild(0).position;
                     }
             }
             if (b_tentaclesNeedReset) {

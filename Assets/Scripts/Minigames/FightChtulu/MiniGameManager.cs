@@ -55,7 +55,7 @@ namespace FightCthulhu
         }
         void Start()
         {
-            BeginMinigame(Difficulty.HARD);
+            //BeginMinigame(Difficulty.HARD);
         }
 
         // Update is called once per frame
