@@ -269,6 +269,8 @@ MonoBehaviour:
     spawnTimeSeconds: 1
   ingredientController: {fileID: 619144664}
   speedController: {fileID: 472681087}
+  b_enableDebug: 0
+  diff: 0
 --- !u!4 &8122636
 Transform:
   m_ObjectHideFlags: 0
@@ -318,7 +320,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -143}
-  m_SizeDelta: {x: 2831.23, y: 2898.4}
+  m_SizeDelta: {x: 2831.23, y: 2703.61}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &29806679
 MonoBehaviour:
@@ -340,7 +342,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3abc9be02cafd584a97e52ac2bb43ed2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: edf3a14a726f36d4ebc3628a8fc92d73, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1367,7 +1369,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 75b85d1217f30c34bae9f04d9ac678a1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2cf8a6ac27a91c5409d422cd26c32488, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
