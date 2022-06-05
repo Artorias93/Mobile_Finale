@@ -16,6 +16,9 @@ namespace FightCthulhu
         }
         public static CthulhuManager Instance;
 
+        [SerializeField]
+        private List<Sprite> idleSprites;
+
         private List<GameObject> m_tentacles = new List<GameObject>();
         private int i_nextTentaclesStepIndex = 0;
         private int i_currentTentaclesStepIndex = 0;
@@ -26,6 +29,7 @@ namespace FightCthulhu
         private List<GameObject> activeTentacles = new List<GameObject>();
         private bool b_tentaclesNeedReset = false;
         private int i_errorCount=0;
+        private int i_spriteIndex = 0;
 
         private void Awake()
         {
@@ -46,6 +50,18 @@ namespace FightCthulhu
             MiniGameManager.OnUpdate += UpdateInTime;
         }
 
+        private void changeSpriteIndex()
+        {
+            if (i_spriteIndex == idleSprites.Count - 1)
+            {
+                i_spriteIndex = 0;
+            }
+            else
+            {
+                i_spriteIndex++;
+            }
+           GetComponent<SpriteRenderer>().sprite = idleSprites[i_spriteIndex];
+        }
         private void addActiveTentacles() {
             int i_tmpGrabCount = i_grabbingTentaclesCount <= m_tentacles.Count? i_grabbingTentaclesCount: m_tentacles.Count;
             i_ActiveTentacles = i_ActiveTentacles <= m_tentacles.Count ? i_ActiveTentacles : m_tentacles.Count;
@@ -86,6 +102,7 @@ namespace FightCthulhu
 
         private void UpdateInTime() {
             int skipIdx =Random.Range(0, 5);
+            changeSpriteIndex();
             if (skipIdx>0) {
                 makeTentacleStep();
             }

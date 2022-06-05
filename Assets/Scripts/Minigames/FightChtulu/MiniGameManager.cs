@@ -55,7 +55,7 @@ namespace FightCthulhu
         }
         void Start()
         {
-            BeginMinigame(Difficulty.EASY);
+            BeginMinigame(Difficulty.HARD);
         }
 
         // Update is called once per frame
@@ -94,9 +94,9 @@ namespace FightCthulhu
         protected override void EndMinigame()
         {
             b_gameFinished = true;
-            float percentageError = cthulhu.i_ErrorCount/(float)m_gameParameters.i_maxErrorCount;
-            percentageError = 1 - percentageError;
-            i_score = (int)(3 * percentageError);
+            int errorDifference = m_gameParameters.i_maxErrorCount - cthulhu.i_ErrorCount;
+            errorDifference = errorDifference > 3 ? 3 : errorDifference;
+            i_score = errorDifference;
         }
     }
 }
