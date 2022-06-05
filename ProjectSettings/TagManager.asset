@@ -19,6 +19,7 @@ TagManager:
   - Skull
   - Boss
   - BossAttack
+  - Tentacle
   layers:
   - Default
   - TransparentFX
