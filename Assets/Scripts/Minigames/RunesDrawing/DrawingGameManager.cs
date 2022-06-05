@@ -39,14 +39,11 @@ namespace DrawingRunes
         [SerializeField] private Shape[] m_shapes;
         [SerializeField] private GameParameters gp_easy, gp_medium, gp_hard;
 
-#if UNITY_EDITOR
         [Header("Debug functionalities")]
         [SerializeField] private bool b_enableDebug = false;
         [SerializeField] private Diff diff;
         [SerializeField, Min(0.0f)] private int i_debugShape;
         [SerializeField, Range(0, 1)] private float f_debugGizmosSize;
-
-#endif
 
         private GameParameters m_gameParameters;
         private int i_currentTurn = 1;

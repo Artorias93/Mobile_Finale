@@ -142,4 +142,9 @@ public class GameManager : MonoBehaviour
         //Load end recipe scene
         ReturnToMainMenu();
     }
+
+    public void ExitApplication()
+    {
+        Application.Quit();
+    }
 }

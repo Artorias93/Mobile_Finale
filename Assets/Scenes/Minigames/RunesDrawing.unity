@@ -216,7 +216,7 @@ RectTransform:
   m_Children:
   - {fileID: 972786637}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -871,7 +871,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3816807273759814823
 PrefabInstance:
@@ -880,6 +880,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 505122717, guid: 12bbe2498bb53454fa9a813bfc8e679f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 505122717, guid: 12bbe2498bb53454fa9a813bfc8e679f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -890,7 +894,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3816807274125603009, guid: 12bbe2498bb53454fa9a813bfc8e679f, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3816807274125603009, guid: 12bbe2498bb53454fa9a813bfc8e679f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -933,6 +937,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3816807274125603010, guid: 12bbe2498bb53454fa9a813bfc8e679f, type: 3}
+      propertyPath: b_enableDebug
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3816807274125603010, guid: 12bbe2498bb53454fa9a813bfc8e679f, type: 3}
       propertyPath: m_touchManager
       value: 
       objectReference: {fileID: 972786638}
@@ -961,6 +969,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 101218825}
     m_Modifications:
+    - target: {fileID: 7014527882507340359, guid: f026afe599f193b4e9f73ec009d67ce9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014527882507340359, guid: f026afe599f193b4e9f73ec009d67ce9, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7014527882507340359, guid: f026afe599f193b4e9f73ec009d67ce9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
