@@ -445,3 +445,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_musicManager: {fileID: 1012501187}
+  m_TransitionManager: {fileID: 0}
