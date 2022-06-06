@@ -82,5 +82,10 @@ namespace EscapeDungeonMinigame
         {
             b_IsMovementDisabled = false;
         }
+
+        private void OnDestroy()
+        {
+            EscapeMinigameManager.OnUpdate -= UpdatePosition;   
+        }
     }
 }

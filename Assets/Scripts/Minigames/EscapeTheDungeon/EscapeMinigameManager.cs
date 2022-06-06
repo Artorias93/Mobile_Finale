@@ -126,9 +126,11 @@ namespace EscapeDungeonMinigame
 
             for (int i = 0; i < gp_selectedParameters.i_numEnemies; i++)
             {
+                Debug.Log("===Instantiating enemy " + i + "===");
                 GameObject enemyGO = Instantiate(m_EnemyPrefab, m_MazeManager.transform);
                 enemyGO.name = "Enemy " + i.ToString();
                 m_EnemyControllers.Add(enemyGO.GetComponent<EnemyController>());
+                Debug.Log("Added to list, generating position");
                 int distance = 0;
                 do
                 {
@@ -140,9 +142,10 @@ namespace EscapeDungeonMinigame
                         break;
                     }
                     Debug.Log("Too close, respawning");
-                } while (distance < i_minimumDistance);
+                } while (distance <= i_minimumDistance);
+                Debug.Log("Positioned");
             }
-
+            Debug.Log("===Enemy spawning Complete===");
 
             m_Timer = Timer.Create(gp_selectedParameters.f_PlayTime, OnTimerEnd, name: "MinigameTimer");
             m_Timer.StartTimer();

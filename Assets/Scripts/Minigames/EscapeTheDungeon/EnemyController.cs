@@ -243,5 +243,10 @@ namespace EscapeDungeonMinigame
                 m_requestedTile = suboptimalTile;
             }
         }
+
+        private void OnDestroy()
+        {
+            EscapeMinigameManager.OnUpdate -= UpdatePosition;
+        }
     }
 }
