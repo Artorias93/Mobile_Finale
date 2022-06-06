@@ -57,8 +57,14 @@ public class GameManager : MonoBehaviour
         m_minigameManager = GameObject.FindGameObjectWithTag("MinigameManager").GetComponent<AMinigameManager>();
         m_minigameManager.BeginMinigame(difficulty);
 
-        yield return new WaitUntil(() => { return m_minigameManager.CanCloseGame; } );
-        ReturnToMainMenu();
+        yield return new WaitUntil(() => {
+            if (m_minigameManager)
+                return m_minigameManager.CanCloseGame;
+            else
+                return false;
+        });
+        if(m_minigameManager != null)
+            ReturnToMainMenu();
     }
 
     private IEnumerator _loadEntry(RecipeEntry entry)
