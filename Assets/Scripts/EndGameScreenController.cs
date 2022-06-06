@@ -7,10 +7,10 @@ using UnityEngine.Assertions;
 public class EndGameScreenController : MonoBehaviour
 {
     [Header("UI References")]
-    [SerializeField] private GameObject panel;
-    [SerializeField] private Image[] GO_stars;
+    [SerializeField] protected GameObject panel;
+    [SerializeField] protected Image[] GO_stars;
     [SerializeField] private AMinigameManager m_currentManager;
-    [SerializeField, Range(0.0f, 1.0f)] private float i_hiddenAlpha = 0.2f;
+    [SerializeField, Range(0.0f, 1.0f)] protected float i_hiddenAlpha = 0.2f;
 
     private void Awake()
     {      
@@ -30,7 +30,7 @@ public class EndGameScreenController : MonoBehaviour
         }
     }
 
-    private void showStar(int index)
+    protected void showStar(int index)
     {
         if (index >= 0 && index < GO_stars.Length)
             GO_stars[index].color = Color.white;
@@ -38,7 +38,7 @@ public class EndGameScreenController : MonoBehaviour
             Debug.Log("Invalid Index");
     }
 
-    private void hideStar(int index)
+    protected void hideStar(int index)
     {
         if (index >= 0 && index < GO_stars.Length)
             GO_stars[index].color = new Color(1f, 1f, 1f, i_hiddenAlpha);

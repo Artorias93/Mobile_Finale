@@ -147,6 +147,20 @@ public class GameManager : MonoBehaviour
         Debug.Log("Played all scenes");
         //Load end recipe scene
         ReturnToMainMenu();
+        yield return new WaitUntil(() => SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Mainmenu"));
+        float average = 0;
+        i_scores.ForEach((int i) => { average += i; });
+        average /= i_scores.Count;
+
+        UIMainMenu MainMenu = GameObject.FindGameObjectWithTag(UIMainMenu.Tag)?.GetComponent<UIMainMenu>();
+        if (MainMenu)
+        {
+            MainMenu.ShowEndRecipe((int)average);
+        } else
+        {
+            Debug.Log("Can't find Main Menu Script");
+        }
+
     }
 
     public void ExitApplication()
