@@ -51,5 +51,9 @@ namespace FightCthulhu
             }
 
         }
+        private void OnDestroy()
+        {
+            MiniGameManager.OnUpdate -= UpdateInTime;
+        }
     }
 }

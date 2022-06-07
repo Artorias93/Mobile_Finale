@@ -203,5 +203,10 @@ namespace FightCthulhu
             yield return new WaitForSeconds(MiniGameManager.Instance.frameTime/2);
             playerCurrentPosition.GetComponent<SpriteRenderer>().sprite = attackSprite[1];
         }
+
+        private void OnDestroy()
+        {
+            MiniGameManager.OnUpdate -= UpdateInTime;
+        }
     }
 }

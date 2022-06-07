@@ -1098,19 +1098,19 @@ MonoBehaviour:
   frameTime: 0.7
   gp_easy:
     f_gameTime: 18
-    i_activeTentacles: 3
+    i_activeTentacles: 2
     i_grabbingTentacles: 1
     i_maxErrorCount: 5
   gp_medium:
     f_gameTime: 25
     i_activeTentacles: 3
-    i_grabbingTentacles: 2
+    i_grabbingTentacles: 1
     i_maxErrorCount: 4
   gp_hard:
     f_gameTime: 30
     i_activeTentacles: 4
-    i_grabbingTentacles: 2
-    i_maxErrorCount: 3
+    i_grabbingTentacles: 3
+    i_maxErrorCount: 2
   player: {fileID: 332222873}
   cthulhu: {fileID: 834141451}
 --- !u!1 &1439663911

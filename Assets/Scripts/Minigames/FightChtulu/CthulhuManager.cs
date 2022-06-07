@@ -184,5 +184,12 @@ namespace FightCthulhu
 
             i_nextTentaclesStepIndex = b_directionDown ? i_nextTentaclesStepIndex + 1 : i_nextTentaclesStepIndex - 1;
         }
+
+        private void OnDestroy()
+        {
+            MiniGameManager.OnUpdate -= UpdateInTime;
+        }
+
     }
+    
 }
