@@ -162,6 +162,7 @@ MonoBehaviour:
     f_stopRescaleSeconds: 0
   m_player: {fileID: 1119119834}
   m_gameWeight: {fileID: 1595404822}
+  m_balanceRigidBody: {fileID: 7418775100975551040}
   gp_easy:
     f_gameTime: 35
     f_rescaleRate: 0.2
@@ -186,6 +187,8 @@ MonoBehaviour:
     f_loseTImeSeconds: 10
     f_initialGravityScale: 4
     f_stopRescaleSeconds: 3
+  b_enableDebug: 0
+  diff: 0
 --- !u!4 &41366249
 Transform:
   m_ObjectHideFlags: 0
@@ -1080,3 +1083,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930633ced6c799742881667155fc74d1, type: 3}
+--- !u!50 &7418775100975551040 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 7418775099420475276, guid: 930633ced6c799742881667155fc74d1, type: 3}
+  m_PrefabInstance: {fileID: 7418775100975551039}
+  m_PrefabAsset: {fileID: 0}

@@ -47,6 +47,9 @@ namespace BalanceGame
         [SerializeField]
         private GameWeight m_gameWeight;
         [SerializeField]
+        private Rigidbody2D m_balanceRigidBody;
+
+        [SerializeField]
         private GameParameters gp_easy, gp_medium, gp_hard;
 
         [Header("Debug")]
@@ -75,7 +78,7 @@ namespace BalanceGame
 
         void Update()
         {
-            if (gameStarted) {
+            if (gameStarted && !b_gameFinished) {
                 if (m_gameWeight.f_ContactTime >= m_gameParameters.f_loseTImeSeconds)
                 {
                     b_gameWon = false;
@@ -108,6 +111,8 @@ namespace BalanceGame
 
         protected override void EndMinigame()
         {
+            m_balanceRigidBody.constraints = RigidbodyConstraints2D.FreezeAll;
+            m_gameTimer?.PauseTimer();
             b_gameFinished = true;
             if (b_gameWon)
             {
