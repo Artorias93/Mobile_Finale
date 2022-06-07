@@ -23,7 +23,8 @@ namespace MonstersInvaders
 
         // Update is called once per frame
         void Update()
-        { 
+        {
+            if (MonsInvGameManager.Instance.GameFinished) return;
             if (Input.GetMouseButtonDown(0))
             {
                 anim.SetTrigger("Shot");
