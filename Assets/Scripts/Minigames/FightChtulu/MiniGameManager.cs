@@ -27,6 +27,10 @@ namespace FightCthulhu
         {
             get { return cthulhu.i_ErrorCount; }
         }
+        public bool b_GameFinished
+        {
+            get { return b_gameFinished; }
+        }
         public static MiniGameManager Instance;
         public delegate void UpdateEvent();
         public static event UpdateEvent OnUpdate;
@@ -39,6 +43,7 @@ namespace FightCthulhu
         private PlayerManager player;
         [SerializeField]
         private CthulhuManager cthulhu;
+
 
         private GameParameters m_gameParameters;
         private Timer m_gameTimer;

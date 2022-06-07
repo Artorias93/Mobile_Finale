@@ -83,16 +83,19 @@ namespace FightCthulhu
             }
         }
         public void UpdateInTime()
-        {
-            changeSpriteIndex();
-            if (attackTarget != null)
-            { 
-              int attackIndex = tryHit();
-              attackTarget.GetComponent<CthulhuTentacleManager>().i_HitIndex = attackIndex;  
-              attackTarget = null;
-            }
-            else {
-                moveToRequestedPosition();
+        { MiniGameManager miniGameManager = MiniGameManager.Instance;
+            if (miniGameManager != null && !miniGameManager.GameFinished) {
+                changeSpriteIndex();
+                if (attackTarget != null)
+                {
+                    int attackIndex = tryHit();
+                    attackTarget.GetComponent<CthulhuTentacleManager>().i_HitIndex = attackIndex;
+                    attackTarget = null;
+                }
+                else
+                {
+                    moveToRequestedPosition();
+                }
             }
 
         }

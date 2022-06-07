@@ -102,10 +102,15 @@ namespace FightCthulhu
         }
 
         private void UpdateInTime() {
-            int skipIdx =Random.Range(0, 5);
-            changeSpriteIndex();
-            if (skipIdx>0) {
-                makeTentacleStep();
+            MiniGameManager miniGameManager = MiniGameManager.Instance;
+            if (miniGameManager != null && !miniGameManager.GameFinished)
+            {
+                int skipIdx = Random.Range(0, 5);
+                changeSpriteIndex();
+                if (skipIdx > 0)
+                {
+                    makeTentacleStep();
+                }
             }
         }
 

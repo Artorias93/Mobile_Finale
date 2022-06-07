@@ -29,13 +29,18 @@ namespace FightCthulhu
         }
 
         void UpdateInTime() {
-            changeSpriteIndex();
-            if (b_isGrabbed)
+            MiniGameManager miniGameManager = MiniGameManager.Instance;
+            if (miniGameManager != null && !miniGameManager.GameFinished)
             {
-                GetComponent<SpriteRenderer>().sprite = grabbedSprites[i_spriteIndex];
-            }
-            else {
-                GetComponent<SpriteRenderer>().sprite = idleSprites[i_spriteIndex];
+                changeSpriteIndex();
+                if (b_isGrabbed)
+                {
+                    GetComponent<SpriteRenderer>().sprite = grabbedSprites[i_spriteIndex];
+                }
+                else
+                {
+                    GetComponent<SpriteRenderer>().sprite = idleSprites[i_spriteIndex];
+                }
             }
         }
 
