@@ -24,6 +24,8 @@ public class EndGameScreenController : MonoBehaviour
     public void showEndGamePanel(int score)
     {
         panel.SetActive(true);
+        foreach(Transform child in panel.transform)
+            child.gameObject.SetActive(true);
         for(int i = 0; i<score; i++)
         {
             showStar(i);

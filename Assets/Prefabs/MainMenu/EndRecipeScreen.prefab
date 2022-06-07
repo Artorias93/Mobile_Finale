@@ -187,6 +187,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6186863887292585173, guid: b30ba9b11e66acb43bfe07672d4c4069, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6202246843102482011, guid: b30ba9b11e66acb43bfe07672d4c4069, type: 3}
       propertyPath: m_Name
       value: MainMenu
