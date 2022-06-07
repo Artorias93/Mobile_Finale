@@ -792,6 +792,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: diff
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: b_enableDebug
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
       propertyPath: m_bookManager
       value: 
       objectReference: {fileID: 221282440}

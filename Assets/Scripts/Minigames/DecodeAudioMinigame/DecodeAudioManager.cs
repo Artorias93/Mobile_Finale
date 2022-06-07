@@ -49,7 +49,7 @@ namespace DecodeAudioMinigame
 
         private List<RuneEntry> m_selectedRunes;
         private int m_correctIndex;
-        private int m_currentTurn = 1;
+        private int m_currentTurn = 0;
         private Timer gameTimer;
 
 #region PROPERTIES
@@ -180,7 +180,7 @@ namespace DecodeAudioMinigame
                 Debug.Log("Giusto!!!!");
                 m_currentTurn++;
                 i_score++;
-                if (m_currentTurn > m_gameParameters.m_turnNumber)
+                if (m_currentTurn == m_gameParameters.m_turnNumber)
                 {
                     //End Minigame
                     victoryBehaviour();

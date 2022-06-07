@@ -46,7 +46,7 @@ namespace DrawingRunes
         [SerializeField, Range(0, 1)] private float f_debugGizmosSize;
 
         private GameParameters m_gameParameters;
-        private int i_currentTurn = 1;
+        private int i_currentTurn = 0;
         private Timer m_gameTimer;
         private bool[] b_pickedIndexes; //Used to prevent drawing the same shape over and over
         private bool b_gameWon = false;
@@ -188,7 +188,7 @@ namespace DrawingRunes
                         Debug.Log("Round won");
                         i_currentTurn++;
                         i_score++;
-                        if (i_currentTurn > m_gameParameters.i_maxTurns)
+                        if (i_currentTurn == m_gameParameters.i_maxTurns)
                         {
                             VictoryBehaviour();
                         }
