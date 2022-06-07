@@ -1779,7 +1779,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 443108828}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6936751785664875615}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: StartEndlessMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &443108828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2736,31 +2748,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &777133143 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 777133143, guid: daa4f987101c4904789057c5877c06a3, type: 3}
-  m_PrefabInstance: {fileID: 6936751785664875614}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &777133144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 777133143}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d1aa7166af98df40966689c3c47c5b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_animator: {fileID: 777133145}
-  m_loadingTrigger: StartedLoading
-  m_finishedLoadingTrigger: Ready
---- !u!95 &777133145 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 777133145, guid: daa4f987101c4904789057c5877c06a3, type: 3}
-  m_PrefabInstance: {fileID: 6936751785664875614}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &886508967
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8197,38 +8184,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1196274860, guid: daa4f987101c4904789057c5877c06a3, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1196274860, guid: daa4f987101c4904789057c5877c06a3, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1196274860, guid: daa4f987101c4904789057c5877c06a3, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1196274860, guid: daa4f987101c4904789057c5877c06a3, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1196274860, guid: daa4f987101c4904789057c5877c06a3, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1196274860, guid: daa4f987101c4904789057c5877c06a3, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1196274860, guid: daa4f987101c4904789057c5877c06a3, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 1920
-      objectReference: {fileID: 0}
-    - target: {fileID: 1244202646, guid: daa4f987101c4904789057c5877c06a3, type: 3}
-      propertyPath: m_MatchWidthOrHeight
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6936751786891787414, guid: daa4f987101c4904789057c5877c06a3, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -8277,10 +8232,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 6936751786891787417, guid: daa4f987101c4904789057c5877c06a3, type: 3}
-      propertyPath: m_TransitionManager
-      value: 
-      objectReference: {fileID: 777133144}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daa4f987101c4904789057c5877c06a3, type: 3}
 --- !u!114 &6936751785664875615 stripped

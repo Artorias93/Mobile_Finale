@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private MusicManager m_musicManager;
     [SerializeField] private TransitionManager m_TransitionManager;
 
+    [Header("Endless mode")]
+    [SerializeField] List<string> m_ScenesName;
+
     public static GameManager m_instance;
     private AMinigameManager m_minigameManager;
 
@@ -34,7 +37,8 @@ public class GameManager : MonoBehaviour
 
         Assert.IsNotNull(m_musicManager);
         Assert.IsNotNull(m_TransitionManager);
-
+        Assert.IsNotNull(m_ScenesName);
+        Assert.AreNotEqual<int>(0, m_ScenesName.Count, "List of scenes is empty");
         DontDestroyOnLoad(gameObject);
     }
     public void StartLoadingCoroutine(string minigameName, Difficulty difficulty)
@@ -97,6 +101,8 @@ public class GameManager : MonoBehaviour
         if (Time.timeScale == 0) {
             Time.timeScale = 1;
         }
+
+        StopAllCoroutines();
         m_musicManager.switchToMainMenu();
         StartCoroutine(_asyncSceneLoad("Mainmenu"));
     }
@@ -161,6 +167,53 @@ public class GameManager : MonoBehaviour
             Debug.Log("Can't find Main Menu Script");
         }
 
+    }
+
+    public void StartEndlessMode()
+    {
+        StartCoroutine(EndlessModeCoroutine());
+    }
+
+    public IEnumerator EndlessModeCoroutine()
+    {
+        //Cycle through all available games in random order with increasing difficulty
+        bool[] bPlayedArray = new bool[m_ScenesName.Count];
+        for (int i = 0; i < bPlayedArray.Length; i++) bPlayedArray[i] = false;
+
+        while (true)
+        {
+            //Check if I played all games, if true cleanup
+            bool playedAllGame = true;
+            for (int i = 0; i < m_ScenesName.Count; i++)
+                if (bPlayedArray[i] == false)
+                {
+                    playedAllGame = false;
+                    break;
+                }
+
+            if(playedAllGame)
+                for (int i = 0; i < bPlayedArray.Length; i++) bPlayedArray[i] = false;
+
+
+            int nextScene = -1;
+
+            do
+            {
+                nextScene = Random.Range(0, m_ScenesName.Count);
+            } while (bPlayedArray[nextScene]);
+
+            bPlayedArray[nextScene] = true;
+
+            RecipeEntry entryToLoad;
+            entryToLoad.m_minigameScene = m_ScenesName[nextScene];
+            Difficulty difficultyToPlay = (Difficulty)Random.Range(0, 3);
+            entryToLoad.m_difficulty = difficultyToPlay;
+
+            yield return StartCoroutine(_loadEntry(entryToLoad));
+
+            yield return new WaitUntil(() => { return m_minigameManager.CanCloseGame; });
+
+        }
     }
 
     public void ExitApplication()

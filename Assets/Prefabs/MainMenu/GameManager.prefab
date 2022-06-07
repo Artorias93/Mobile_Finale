@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 777133144}
   - component: {fileID: 777133145}
+  - component: {fileID: 4869885227916201659}
   m_Layer: 0
   m_Name: TransitionManager
   m_TagString: Untagged
@@ -51,6 +52,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4869885227916201659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777133143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d1aa7166af98df40966689c3c47c5b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_animator: {fileID: 777133145}
+  m_loadingTrigger: StartedLoading
+  m_finishedLoadingTrigger: Ready
 --- !u!1 &1012501185
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,10 +253,10 @@ RectTransform:
   m_Father: {fileID: 1244202644}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 1920, y: 0}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!95 &1196274863
 Animator:
@@ -445,4 +461,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_musicManager: {fileID: 1012501187}
-  m_TransitionManager: {fileID: 0}
+  m_TransitionManager: {fileID: 4869885227916201659}
+  m_ScenesName:
+  - BalanceGame
+  - CauldronMinigame
+  - DarknessBumper
+  - DecodeAudioMinigame
+  - EscapeTheDungeon
+  - FightCthulhu
+  - FruitNinjaMinigame
+  - HitTheSlime
+  - MonstersInvaders
+  - NecromancerShop
+  - OuijaBoardMinigame
+  - PlaceTheCandles
+  - PotionBrew
+  - RunesDrawing
+  - SealsTheHound
