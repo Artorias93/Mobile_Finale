@@ -29,6 +29,7 @@ namespace FruitNinjaMinigame
 		// Update is called once per frame
 		void Update()
 		{
+			if (FruitNinjaMinigame.GameManager.Instance.GameFinished || Time.timeScale == 0) return;	//stop pause and end input
 			if (Input.GetMouseButtonDown(0))
 			{
 				StartCutting();
@@ -47,7 +48,7 @@ namespace FruitNinjaMinigame
 
 		void FixedUpdate()
 		{
-
+			if (FruitNinjaMinigame.GameManager.Instance.GameFinished || Time.timeScale == 0) return;
 			if (b_isCutting)
 			{
 				UpdateCut();
