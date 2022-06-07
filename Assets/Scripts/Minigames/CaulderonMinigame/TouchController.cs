@@ -40,6 +40,8 @@ namespace CouldronMinigame
 
         private void Update()
         {
+            if (CauldronGameManager.Instance.GameFinished) return;
+
             Debug.DrawLine(Vector3.zero, v2_cauldronCenter, Color.yellow);
 
             foreach(Touch touch in Input.touches)

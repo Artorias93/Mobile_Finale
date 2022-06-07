@@ -98,9 +98,9 @@ namespace CouldronMinigame
 
         protected override void EndMinigame()
         {
-
-            m_timer?.StopTimer();
+            m_timer?.PauseTimer();
             b_gameFinished = true;
+            speedController.StopAllCoroutines();
         }
 
         public void LoseMinigame()

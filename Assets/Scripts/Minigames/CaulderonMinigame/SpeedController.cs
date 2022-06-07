@@ -83,7 +83,9 @@ namespace CouldronMinigame
         }
 
         private void Update()
-        {            
+        {
+            if (CauldronGameManager.Instance.GameFinished) return;
+
             float speedDelta = 2*((mouseDelta - m_maxSpeed/2) / m_maxSpeed);
             speedDelta = Mathf.Clamp(speedDelta, f_mouseDeceleration, f_mouseAcceleration);
             m_speed += speedDelta*Time.deltaTime;
@@ -98,8 +100,6 @@ namespace CouldronMinigame
                 EndGame();
 
             Debug.Log(timeInError);
-            if (gameManager.GameFinished)
-                StopAllCoroutines();
         }
         public void setMouseDelta(float magnitude)
         {
@@ -120,7 +120,6 @@ namespace CouldronMinigame
                 Debug.Log("changing speed...");
                 RandomSpeed();
                 yield return new WaitForSeconds(timeSeconds);
-                
             }
         }
 
@@ -174,7 +173,6 @@ namespace CouldronMinigame
         private void EndGame()
         {
             gameManager.LoseMinigame();
-            StopCoroutine(ChangeSpeed());
         }
 
         private void CheckSpeed()
