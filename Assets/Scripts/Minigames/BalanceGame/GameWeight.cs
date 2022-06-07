@@ -10,7 +10,8 @@ namespace BalanceGame
         {
             get { return f_contactTime; }
         }
-        // Start is called before the first frame update
+        [SerializeField]
+        private BalanceGameManager balanceGameManager;
         private float scaleRate;
         private float minScale, maxScale;
 
@@ -99,9 +100,14 @@ namespace BalanceGame
 
         private void Update()
         {
-            checkScale();
+            if (!balanceGameManager.b_GameFInished)
+            {
+                checkScale();
+            }
         }
-
+        public void StopAnimation() {
+            animator.enabled = false;
+        }
         private void OnTriggerStay2D(Collider2D collision)
         {
             if (collision.gameObject.CompareTag("LoseTrigger"))

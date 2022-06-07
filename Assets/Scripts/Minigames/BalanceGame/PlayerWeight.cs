@@ -12,7 +12,8 @@ namespace BalanceGame
         {
             get { return f_contactTime; }
         }
-
+        [SerializeField]
+        private BalanceGameManager balanceGameManager;
         [SerializeField]
         private int i_ChangeScaleAngle;
         [SerializeField]
@@ -31,6 +32,7 @@ namespace BalanceGame
         private bool b_isToScale;
         private float f_contactTime;
         private Rigidbody2D rigidBody;
+        private Animator animator;
 
 
         public void InitializeGameWeight(float deltaScale, float f_initialGravityScale, float f_rescaleRate)
@@ -48,6 +50,7 @@ namespace BalanceGame
             Input.gyro.enabled = true;
             currentScaleRate = 0;
             f_contactTime = 0;
+            animator = GetComponent<Animator>();
         }
         public void ApplyScaleRate()
         {
@@ -114,7 +117,14 @@ namespace BalanceGame
 
         private void Update()
         {
-            checkScale();
+            if (!balanceGameManager.b_GameFInished)
+            {
+                checkScale();
+            }
+        }
+        public void StopAnimation()
+        {
+            animator.enabled = false;
         }
 
         private void OnTriggerStay2D(Collider2D collision)

@@ -1081,6 +1081,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Balance
       objectReference: {fileID: 0}
+    - target: {fileID: 7418775099875884005, guid: 930633ced6c799742881667155fc74d1, type: 3}
+      propertyPath: balanceGameManager
+      value: 
+      objectReference: {fileID: 41366248}
+    - target: {fileID: 7418775100356223017, guid: 930633ced6c799742881667155fc74d1, type: 3}
+      propertyPath: balanceGameManager
+      value: 
+      objectReference: {fileID: 41366248}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930633ced6c799742881667155fc74d1, type: 3}
 --- !u!50 &7418775100975551040 stripped

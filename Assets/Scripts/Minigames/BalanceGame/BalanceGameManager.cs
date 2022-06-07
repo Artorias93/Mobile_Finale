@@ -41,6 +41,10 @@ namespace BalanceGame
             get { return m_gameTimer ? m_gameTimer.RemainingTime : -1; }
         }
 
+        public bool b_GameFInished
+        {
+            get { return b_gameFinished; }
+        }
 
         [SerializeField]
         private PlayerWeight m_player;
@@ -112,6 +116,8 @@ namespace BalanceGame
         protected override void EndMinigame()
         {
             m_balanceRigidBody.constraints = RigidbodyConstraints2D.FreezeAll;
+            m_player.StopAnimation();
+            m_gameWeight.StopAnimation();
             m_gameTimer?.PauseTimer();
             b_gameFinished = true;
             if (b_gameWon)

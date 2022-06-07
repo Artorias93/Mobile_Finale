@@ -15,7 +15,9 @@ namespace BalanceGame
 
         private void Update()
         {
-            GetFill();
+            if (!balanceGameManager.b_GameFInished) {
+                GetFill();
+            }
         }
         private void GetFill() {
             float current=0;
