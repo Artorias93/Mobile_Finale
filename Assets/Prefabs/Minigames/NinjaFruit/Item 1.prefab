@@ -84,6 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj_fruitSlicedPrefab: {fileID: 5709730346827454478, guid: 303e3a12019a1324c9a05df89d9fe750, type: 3}
+  i_status: 0
 --- !u!1 &732722412184818117
 GameObject:
   m_ObjectHideFlags: 0

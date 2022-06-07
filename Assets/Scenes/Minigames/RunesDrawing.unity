@@ -938,7 +938,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3816807274125603010, guid: 12bbe2498bb53454fa9a813bfc8e679f, type: 3}
       propertyPath: b_enableDebug
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3816807274125603010, guid: 12bbe2498bb53454fa9a813bfc8e679f, type: 3}
       propertyPath: m_touchManager
