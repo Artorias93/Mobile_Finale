@@ -50,13 +50,14 @@ namespace DarknessBumper
 
         void FixedUpdate()
         {
+            if (DarkBumpGameManager.Instance.GameFinished) Exploding();
+
             if ((int)(Time.time - f_startTime) >= f_persistence && anim.GetBool("Touched") == false)
             {
-                if(i_moveType != -1) DarkBumpGameManager.Instance.CountError();
+                if (i_moveType != -1) DarkBumpGameManager.Instance.CountError();
+                
                 i_moveType = -1;
-                GetComponent<SpriteRenderer>().sprite = explosionSprite;
-                anim.SetBool("Exploded", true);
-                GetComponent<Collider2D>().enabled = false;
+                Exploding();
             }
 
             float f_finalSpeed = Time.deltaTime * f_speed * f_speedMultiplier;
@@ -66,7 +67,7 @@ namespace DarknessBumper
 
             float f_xDeltaPos = startPos.x + Mathf.Cos(f_timeCounter) * f_width;
             float f_yDeltaPos = startPos.y + Mathf.Sin(f_timeCounter) * f_height;
-            
+
             switch (i_moveType)
             {
                 case 0:
@@ -119,6 +120,16 @@ namespace DarknessBumper
             anim.SetBool("Touched", true);
             GetComponent<Collider2D>().enabled = false;
             StartCoroutine(WaitToDestroy());
+        }
+
+        private void Exploding()
+        {
+            f_speed = 0;
+            GetComponent<SpriteRenderer>().sprite = explosionSprite;
+            anim.SetBool("Exploded", true);
+            GetComponent<Collider2D>().enabled = false;
+            StartCoroutine(WaitToDestroy());
+
         }
 
         private IEnumerator WaitToDestroy()

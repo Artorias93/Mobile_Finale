@@ -139,6 +139,7 @@ namespace DarknessBumper
 
         protected override void EndMinigame()
         {
+            StopCoroutine("SpawnSkulls");
             b_gameFinished = true;
             i_score = Mathf.FloorToInt((Mathf.Abs(((float)i_numError / (float)m_gameParameters.i_maxError * 100) - 100)/100*4));
             if (i_score > 3) i_score = 3;
