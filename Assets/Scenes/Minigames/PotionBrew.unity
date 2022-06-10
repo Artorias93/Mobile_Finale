@@ -474,11 +474,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &257562666 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4910900451245838018, guid: ffa7dc37a7295ea45af63b591ea7dbcb, type: 3}
-  m_PrefabInstance: {fileID: 1608777819}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &258500656
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,7 +508,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 346, y: -58.34}
+  m_AnchoredPosition: {x: 346, y: 84}
   m_SizeDelta: {x: 342.4, y: 116.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &258500658
@@ -529,7 +524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.02745098, g: 0.75686276, b: 0.1764706, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -537,7 +532,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: d5d529c76cf2a234aabb03f11ec05eea, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
@@ -621,6 +616,8 @@ MonoBehaviour:
     i_maxStepsCount: 9
     i_maxOverflowSeconds: 3
   generalUIManager: {fileID: 635542237}
+  b_enableDebug: 0
+  diff: 2
 --- !u!4 &508258256
 Transform:
   m_ObjectHideFlags: 0
@@ -1102,11 +1099,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1585137077 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4910900450105034125, guid: ffa7dc37a7295ea45af63b591ea7dbcb, type: 3}
-  m_PrefabInstance: {fileID: 1608777819}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1597495109
 GameObject:
   m_ObjectHideFlags: 0
@@ -1375,11 +1367,11 @@ PrefabInstance:
     - target: {fileID: 4910900451149346978, guid: ffa7dc37a7295ea45af63b591ea7dbcb, type: 3}
       propertyPath: winContent
       value: 
-      objectReference: {fileID: 1585137077}
+      objectReference: {fileID: 0}
     - target: {fileID: 4910900451149346978, guid: ffa7dc37a7295ea45af63b591ea7dbcb, type: 3}
       propertyPath: loseContent
       value: 
-      objectReference: {fileID: 257562666}
+      objectReference: {fileID: 0}
     - target: {fileID: 6990113100887856964, guid: ffa7dc37a7295ea45af63b591ea7dbcb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -1460,7 +1452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.024207853, g: 0.754717, b: 0.17363021, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1468,7 +1460,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: d5d529c76cf2a234aabb03f11ec05eea, type: 3}
     m_FontSize: 76
     m_FontStyle: 0
     m_BestFit: 0

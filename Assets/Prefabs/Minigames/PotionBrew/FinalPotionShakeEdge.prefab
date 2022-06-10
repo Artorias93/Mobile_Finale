@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4939609641254214654}
   - component: {fileID: 4939609641254214655}
-  - component: {fileID: 4939609641254214652}
-  - component: {fileID: 5579953729806100889}
   - component: {fileID: 1059001263999820197}
   m_Layer: 0
   m_Name: FinalPotion
@@ -85,53 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &4939609641254214652
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4939609641254214641}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 0
---- !u!61 &5579953729806100889
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4939609641254214641}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.010000944, y: -0.6816366}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 7, y: 7}
-    newSize: {x: 7, y: 7}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.2898955, y: 5.5292573}
-  m_EdgeRadius: 0
 --- !u!114 &1059001263999820197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,6 +98,7 @@ MonoBehaviour:
   f_ShakeTreshOld: 2.5
   s_baseSprite: {fileID: 21300000, guid: 86a6fa6872ad9f945b68960efdad3ba3, type: 3}
   s_overFlowSprite: {fileID: 21300000, guid: 419e498a32543624f95a27911ce01129, type: 3}
+  f_shakeSpeed: 0.2
   b_startShake: 0
 --- !u!1 &4939609641292062902
 GameObject:
@@ -157,7 +109,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4939609641292062900}
-  - component: {fileID: 4939609641292062899}
   m_Layer: 0
   m_Name: FinalPotionShakeEdge
   m_TagString: Untagged
@@ -180,28 +131,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!68 &4939609641292062899
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4939609641292062902}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 27dc9ef26adef1b4989668919cdd82ad, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -1.06}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.88, y: -0.42117703}
-  - {x: 0.83530295, y: -0.41186965}
-  - {x: 0.8465359, y: 3.3574202}
-  - {x: -0.83310187, y: 3.3541474}
-  - {x: -0.83397007, y: -0.4190141}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0

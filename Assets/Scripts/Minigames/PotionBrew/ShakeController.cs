@@ -11,6 +11,8 @@ namespace PotionBrewMinigame
         private Sprite s_baseSprite;
         [SerializeField]
         private Sprite s_overFlowSprite;
+        [SerializeField]
+        private float f_shakeSpeed=0.5f;
 
         private Rigidbody2D m_rigidBody;
         private SpriteRenderer spriteRenderer;
@@ -19,6 +21,7 @@ namespace PotionBrewMinigame
         //Public for debug
         public bool b_startShake = false;
         private int i_shakesCount=0;
+        private Vector2 startingPosition;
         public int i_ShakeCount {
             get { return i_shakesCount; }
         }
@@ -28,6 +31,7 @@ namespace PotionBrewMinigame
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
             m_rigidBody = gameObject.GetComponent<Rigidbody2D>();
+            startingPosition = transform.position;
         }
         public void InitShakeController()
         {
@@ -38,21 +42,21 @@ namespace PotionBrewMinigame
         {
             f_magnitude = Input.acceleration.magnitude;
             m_acceleration = Input.acceleration;
-        }
-        private void FixedUpdate()
-        {
             if (b_startShake && f_magnitude >= f_ShakeTreshOld)
             {
                 i_shakesCount++;
-                shake(m_acceleration);
+                shake();
             }
-
+            else if (!transform.position.Equals(startingPosition)) {
+                transform.position = startingPosition;
+            }
         }
 
-        private void shake(Vector3 deviceAcceleration)
+        private void shake()
         {
-            deviceAcceleration.y = Mathf.Pow(deviceAcceleration.z, 2);
-            m_rigidBody.AddForce(deviceAcceleration, ForceMode2D.Impulse);
+            Vector2 tmpOriginalPos = transform.position;
+            tmpOriginalPos.y = Mathf.Sin(Time.time * f_shakeSpeed) * 0.5f;
+            transform.position = tmpOriginalPos;
         }
         public void ResetShakeCount() {
             i_shakesCount = 0;
