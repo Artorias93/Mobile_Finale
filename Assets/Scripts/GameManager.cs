@@ -22,7 +22,18 @@ public class GameManager : MonoBehaviour
     private AMinigameManager m_minigameManager;
 
     private List<int> i_scores;
-    Difficulty diff;
+    private Difficulty diff;
+    private SORecipe currentRecipe;
+    private bool b_endless = false;
+
+    public SORecipe CurrRecipe
+    {
+        get { return currentRecipe; }
+    }
+    public bool IsEndless
+    {
+        get { return b_endless; }
+    }
 
     private void Awake()
     {
@@ -98,6 +109,7 @@ public class GameManager : MonoBehaviour
         
         
     }
+
     public void RetryCurrentScene()
     {
         if (Time.timeScale == 0)
@@ -110,12 +122,38 @@ public class GameManager : MonoBehaviour
         StartLoadingCoroutine(SceneManager.GetActiveScene().name, diff);
     }
 
-    public void ReturnToMainMenu()
+    public void RetryCurrentRecipe()
     {
-        if (Time.timeScale == 0) {
+        if (Time.timeScale == 0)
+        {
             Time.timeScale = 1;
         }
 
+        StopAllCoroutines();
+        m_musicManager.switchToMinigame();
+        StartRecipe(currentRecipe);
+    }
+    public void RetryEndless()
+    {
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
+
+        StopAllCoroutines();
+        m_musicManager.switchToMinigame();
+        StartEndlessMode();
+    }
+
+    public void ReturnToMainMenu()
+    {
+        if (Time.timeScale == 0) 
+        {
+            Time.timeScale = 1;
+        }
+
+        b_endless = false;
+        currentRecipe = null;
         StopAllCoroutines();
         m_musicManager.switchToMainMenu();
         StartCoroutine(_asyncSceneLoad("Mainmenu"));
@@ -140,6 +178,7 @@ public class GameManager : MonoBehaviour
 
     public void StartRecipe(SORecipe recipe)
     {
+        currentRecipe = recipe;
         StartCoroutine(PlayRecipe(recipe));
     }
     private IEnumerator PlayRecipe(SORecipe recipe)
@@ -185,6 +224,7 @@ public class GameManager : MonoBehaviour
 
     public void StartEndlessMode()
     {
+        b_endless = true;
         StartCoroutine(EndlessModeCoroutine());
     }
 

@@ -13,6 +13,14 @@ namespace FightCthulhu
         public int i_maxErrorCount;
 
     }
+
+    public enum Diff
+    {
+        easy,
+        medium,
+        hard
+    }
+
     public class MiniGameManager : AMinigameManager
     {
         public GameParameters GetGameParameters
@@ -44,6 +52,10 @@ namespace FightCthulhu
         [SerializeField]
         private CthulhuManager cthulhu;
 
+        [Header("Debug")]
+        [SerializeField] private bool b_enableDebug;
+        [SerializeField] private Diff diff;
+
 
         private GameParameters m_gameParameters;
         private Timer m_gameTimer;
@@ -60,7 +72,12 @@ namespace FightCthulhu
         }
         void Start()
         {
-            //BeginMinigame(Difficulty.HARD);
+            if (b_enableDebug)
+            {
+                if (diff == Diff.easy) BeginMinigame(Difficulty.EASY);
+                else if (diff == Diff.medium) BeginMinigame(Difficulty.MEDIUM);
+                else if (diff == Diff.hard) BeginMinigame(Difficulty.HARD);
+            }
         }
 
         // Update is called once per frame

@@ -264,6 +264,8 @@ MonoBehaviour:
   - {fileID: 6021753269732742422}
   m_currentManager: {fileID: 0}
   i_hiddenAlpha: 0.2
+  retryTxt: {fileID: 1329240635548929917}
+  returnTxt: {fileID: 6625549833993146042}
 --- !u!1 &4276109330112010905
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,7 +494,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4276109329567815420}
         m_TargetAssemblyTypeName: EndGameScreenController, Assembly-CSharp
-        m_MethodName: RequestRetry
+        m_MethodName: RequestRetryScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
