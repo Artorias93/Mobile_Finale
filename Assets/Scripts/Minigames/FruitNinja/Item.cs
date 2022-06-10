@@ -22,6 +22,7 @@ namespace FruitNinjaMinigame
                 GameObject obj_slicedFruit = Instantiate(obj_fruitSlicedPrefab, transform.position, transform.rotation);
                 obj_slicedFruit.transform.GetChild(0).GetComponent<Rigidbody2D>().AddForce(new Vector2(-1,5),ForceMode2D.Impulse);
                 obj_slicedFruit.transform.GetChild(1).GetComponent<Rigidbody2D>().AddForce(new Vector2(1, 5), ForceMode2D.Impulse);
+                obj_slicedFruit.transform.GetChild(2).GetComponent<Animator>().SetInteger("Color", Random.Range(1, 6));
 
                 Destroy(obj_slicedFruit, 3f);
                 Destroy(gameObject);
