@@ -38,7 +38,7 @@ namespace BalanceGame
         public void InitializeGameWeight(float deltaScale, float f_initialGravityScale, float f_rescaleRate)
         {
             parentTransform = transform.parent.transform;
-            scaleRate = f_rescaleRate;
+            scaleRate = f_rescaleRate*1.5f;
             fastScaleRate = scaleRate * 2;
             rigidBody = gameObject.GetComponent<Rigidbody2D>();
             rigidBody.gravityScale = f_initialGravityScale;

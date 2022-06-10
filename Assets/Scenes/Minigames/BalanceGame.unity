@@ -188,7 +188,7 @@ MonoBehaviour:
     f_initialGravityScale: 4
     f_stopRescaleSeconds: 3
   b_enableDebug: 0
-  diff: 0
+  diff: 1
 --- !u!4 &41366249
 Transform:
   m_ObjectHideFlags: 0
@@ -932,6 +932,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameUI
       objectReference: {fileID: 0}
+    - target: {fileID: 6949919876143858988, guid: 6857b0153d07cd1448cdcaf5c8045a7b, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6949919876143858990, guid: 6857b0153d07cd1448cdcaf5c8045a7b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1020,6 +1024,26 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 63912303}
+    - target: {fileID: 6949919876143858991, guid: 6857b0153d07cd1448cdcaf5c8045a7b, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6949919876143858991, guid: 6857b0153d07cd1448cdcaf5c8045a7b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6949919876295500862, guid: 6857b0153d07cd1448cdcaf5c8045a7b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6949919876295500863, guid: 6857b0153d07cd1448cdcaf5c8045a7b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 245.18141
+      objectReference: {fileID: 0}
+    - target: {fileID: 6949919876295500863, guid: 6857b0153d07cd1448cdcaf5c8045a7b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.54
+      objectReference: {fileID: 0}
     - target: {fileID: 6949919876897584081, guid: 6857b0153d07cd1448cdcaf5c8045a7b, type: 3}
       propertyPath: balanceGameManager
       value: 
@@ -1033,6 +1057,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7418775099420475272, guid: 930633ced6c799742881667155fc74d1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7418775099420475273, guid: 930633ced6c799742881667155fc74d1, type: 3}
       propertyPath: m_RootOrder
       value: 6
