@@ -57,5 +57,10 @@ public class EndGameScreenController : MonoBehaviour
     {
         m_currentManager?.SetReadyToClose();
     }
+
+    public void RequestRetry()
+    {
+        GameManager.m_instance.RetryCurrentScene();
+    }
 }
 

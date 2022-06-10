@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     private AMinigameManager m_minigameManager;
 
     private List<int> i_scores;
+    Difficulty diff;
 
     private void Awake()
     {
@@ -44,12 +45,14 @@ public class GameManager : MonoBehaviour
     public void StartLoadingCoroutine(string minigameName, Difficulty difficulty)
     {
         //Used for single minigames
+        diff = difficulty;
         StartCoroutine(_loadMinigame(minigameName, difficulty));
     }
 
     private IEnumerator _loadMinigame(string minigameName, Difficulty difficulty)
     {
         //used for single minigames NOT recipes
+        diff = difficulty;
         m_minigameManager = null;
 
 
@@ -94,6 +97,17 @@ public class GameManager : MonoBehaviour
         }
         
         
+    }
+    public void RetryCurrentScene()
+    {
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
+
+        StopAllCoroutines();
+        m_musicManager.switchToMinigame();
+        StartLoadingCoroutine(SceneManager.GetActiveScene().name, diff);
     }
 
     public void ReturnToMainMenu()

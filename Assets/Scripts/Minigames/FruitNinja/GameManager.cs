@@ -8,7 +8,8 @@ namespace FruitNinjaMinigame
     [System.Serializable]
     public struct GameParameters
     {
-        public float f_gameTime;
+        public int i_playTime;
+        public int i_maxError;
         public float f_minDelay;
         public float f_maxDelay;
     }
@@ -32,7 +33,7 @@ namespace FruitNinjaMinigame
         [SerializeField] private bool b_enableDebug;
         [SerializeField] private Diff diff;
 
-        private GameParameters gp_selectedParameters;
+        private GameParameters m_gameParameters;
         private int i_outCount = 0;
 
 
@@ -58,7 +59,7 @@ namespace FruitNinjaMinigame
 
         public GameParameters GameParameters
         {
-            get { return gp_selectedParameters; }
+            get { return m_gameParameters; }
         }
 
 #endregion
@@ -93,9 +94,9 @@ namespace FruitNinjaMinigame
         public void increaseErrorCount()
         {
             i_outCount++;
-            if (i_outCount > 3)
+            if (i_outCount >= m_gameParameters.i_maxError)
             {
-                i_outCount = 3;
+                i_outCount = m_gameParameters.i_maxError;
                 EndMinigame();
             }
         }
@@ -105,30 +106,38 @@ namespace FruitNinjaMinigame
             switch (difficulty)
             {
                 case (Difficulty.EASY):
-                    gp_selectedParameters = gp_easy;
+                    m_gameParameters = gp_easy;
                     break;
                 case (Difficulty.MEDIUM):
-                    gp_selectedParameters = gp_medium;
+                    m_gameParameters = gp_medium;
                     break;
                 case (Difficulty.HARD):
-                    gp_selectedParameters = gp_hard;
+                    m_gameParameters = gp_hard;
                     break;
             }
 
-            m_gameTimer = Timer.Create(gp_selectedParameters.f_gameTime, EndMinigame, destroyOnFinish: true, name: "Minigame Timer");
-            Spawner.Instance.MinDelay = gp_selectedParameters.f_minDelay;
-            Spawner.Instance.MaxDelay = gp_selectedParameters.f_maxDelay;
+            m_gameTimer = Timer.Create(m_gameParameters.i_playTime, EndMinigame, destroyOnFinish: true, name: "Minigame Timer");
+            Spawner.Instance.MinDelay = m_gameParameters.f_minDelay;
+            Spawner.Instance.MaxDelay = m_gameParameters.f_maxDelay;
             m_gameTimer.StartTimer();
         }
 
 
         protected override void EndMinigame()
-        {
-            if (m_gameTimer != null && m_gameTimer.RemainingTime > 0.0f && i_outCount < 3)
-                m_gameWon = true;
+        { 
+            m_gameTimer?.StopTimer();
             b_gameFinished = true;
             i_score = 3 - i_outCount;
             Spawner.Instance.Stop();
+        }
+        private void VictoryBehaviour()
+        {
+            m_gameWon = true;
+            EndMinigame();
+        }
+        private void onTimeEnd()
+        {
+            VictoryBehaviour();
         }
 
         public override void PauseGame()
@@ -140,8 +149,7 @@ namespace FruitNinjaMinigame
         public override void ResumeGame()
         {
             base.ResumeGame();
-            if (m_gameTimer != null && m_gameTimer.RemainingTime > 0.0f && i_outCount < 3)
-                Spawner.Instance.Start();
+            Spawner.Instance.Start();
         }
     }
 }

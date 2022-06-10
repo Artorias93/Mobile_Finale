@@ -32,6 +32,11 @@ public class PauseGameScreenController : MonoBehaviour
             m_MinigameManager.ResumeGame();
     }
 
+    public void RequestRetry()
+    {
+        GameManager.m_instance.RetryCurrentScene();
+    }
+
     public void showPausePanel() {
         panel.SetActive(true);
         blockPanel.SetActive(true);

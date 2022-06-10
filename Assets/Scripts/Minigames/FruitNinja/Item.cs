@@ -9,9 +9,13 @@ namespace FruitNinjaMinigame
         public GameObject obj_fruitSlicedPrefab;
         public int i_status = 0;
 
+        private void Update()
+        {
+            if (GameManager.Instance.GameFinished) Destroy(gameObject);
+        }
+
         void OnTriggerEnter2D(Collider2D col)
         {
-
             if (col.CompareTag("Blade"))
             {
                 //Splitting Sliced Objects
@@ -24,9 +28,11 @@ namespace FruitNinjaMinigame
             }
 
             //Add 1 to Not-Sliced Objects
-            if (i_status == 1 && col.CompareTag("OutDown")) 
+            if (i_status == 1 && col.CompareTag("OutDown"))
+            {
                 GameManager.Instance.increaseErrorCount();
-
+                Destroy(gameObject);
+            }
         }
 
         void OnTriggerExit2D(Collider2D col)
@@ -34,6 +40,5 @@ namespace FruitNinjaMinigame
             //Set New Object "Coming In-Screen"
             if (col.CompareTag("OutDown")) if (i_status == 0) i_status++;
         }
-
     }
 }
