@@ -159,6 +159,20 @@ public class GameManager : MonoBehaviour
         StartCoroutine(_asyncSceneLoad("Mainmenu"));
     }
 
+    public void ReturnToMainMenuNonStopping()
+    {
+        //Variant of return to main menu which doesn't stop current coroutine
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
+
+        b_endless = false;
+        currentRecipe = null;
+        m_musicManager.switchToMainMenu();
+        StartCoroutine(_asyncSceneLoad("Mainmenu"));
+    }
+
     private IEnumerator _asyncSceneLoad(string sceneName)
     {
         m_TransitionManager.StartLoadingTransition();
@@ -205,7 +219,7 @@ public class GameManager : MonoBehaviour
 
         Debug.Log("Played all scenes");
         //Load end recipe scene
-        ReturnToMainMenu();
+        ReturnToMainMenuNonStopping();
         yield return new WaitUntil(() => SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Mainmenu"));
         float average = 0;
         i_scores.ForEach((int i) => { average += i; });
@@ -215,6 +229,9 @@ public class GameManager : MonoBehaviour
         {
             if (PlayerPrefs.GetInt(recipe.name) < average)
                 PlayerPrefs.SetInt(recipe.name, (int)average);
+        } else
+        {
+            PlayerPrefs.SetInt(recipe.name, (int)average);
         }
 
         UIMainMenu MainMenu = GameObject.FindGameObjectWithTag(UIMainMenu.Tag)?.GetComponent<UIMainMenu>();

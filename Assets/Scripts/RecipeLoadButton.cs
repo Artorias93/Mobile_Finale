@@ -12,6 +12,8 @@ public class RecipeLoadButton : MonoBehaviour
     [Header("Recipe Options")]
     [SerializeField] private SORecipe m_recipe;
 
+    private int i_savedScore = 0;
+
     private void Awake()
     {
         if (m_btn == null)
@@ -19,6 +21,10 @@ public class RecipeLoadButton : MonoBehaviour
         Assert.IsNotNull(m_btn);
 
         m_btn.onClick.AddListener(buttonCallback);
+
+        //Load score if present
+        if (PlayerPrefs.HasKey(m_recipe.name))
+            i_savedScore = PlayerPrefs.GetInt(m_recipe.name);
     }
 
     private void buttonCallback()
