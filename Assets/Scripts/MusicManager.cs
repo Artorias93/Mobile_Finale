@@ -25,9 +25,19 @@ public class MusicManager : MonoBehaviour
     public bool Fading { get { return b_Fading; } }
     public bool Switching { get { return b_Switching; } }
 
+    public static MusicManager Instance;
+
     // Start is called before the first frame update
     void Awake()
     {
+        if(Instance == null)
+        {
+            Instance = this;
+        } else
+        {
+            Destroy(this.gameObject);
+        }
+
         if(m_musicSource == null)
             m_musicSource = GetComponent<AudioSource>();
         Assert.IsNotNull(m_musicSource);
@@ -87,5 +97,30 @@ public class MusicManager : MonoBehaviour
     {
         int randomIndex = Random.Range(0, audioClips.Length);
         return audioClips[randomIndex];
+    }
+
+    public void SetMainMenuVolume(float volume)
+    {
+        if (volume >= 0 && volume <= 1)
+        {
+            m_musicSource.volume = volume;
+            f_mainMenuVolume = volume;
+        }
+    }
+    public void SetMinigameMusicVolume(float volume)
+    {
+        if (volume >= 0 && volume <= 1)
+        {
+            f_minigameMusicVolume = volume;
+        }
+    }
+
+    public float GetMainMenuMusicVolume()
+    {
+        return f_mainMenuVolume;
+    }
+    public float GetMinigameMusicVolume()
+    {
+        return f_minigameMusicVolume;
     }
 }
