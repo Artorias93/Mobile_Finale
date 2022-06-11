@@ -211,6 +211,12 @@ public class GameManager : MonoBehaviour
         i_scores.ForEach((int i) => { average += i; });
         average /= i_scores.Count;
 
+        if (PlayerPrefs.HasKey(recipe.name))
+        {
+            if (PlayerPrefs.GetInt(recipe.name) < average)
+                PlayerPrefs.SetInt(recipe.name, (int)average);
+        }
+
         UIMainMenu MainMenu = GameObject.FindGameObjectWithTag(UIMainMenu.Tag)?.GetComponent<UIMainMenu>();
         if (MainMenu)
         {
