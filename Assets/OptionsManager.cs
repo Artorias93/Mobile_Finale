@@ -52,4 +52,11 @@ public class OptionsManager : MonoBehaviour
         PlayerPrefs.SetFloat(m_MinigameMusicSaveString, m_minigameSlider.value);
 
     }
+
+    public void DeleteAllSaves()
+    {
+        PlayerPrefs.DeleteAll();
+        MainMenuMusicSliderChanged();
+        MinigameMusicSliderChanged();
+    }
 }
