@@ -9,8 +9,8 @@ public class OptionsManager : MonoBehaviour
     private MusicManager m_MusicManager; //Loaded via Singleton to avoid problems with don't destroy on load
     [SerializeField] private Slider m_mainMenuSlider;
     [SerializeField] private Slider m_minigameSlider;
-    [SerializeField] private string m_MainMenuMusicSaveString = "MainMenuVolume";
-    [SerializeField] private string m_MinigameMusicSaveString = "MinigameVolume";
+    [SerializeField] public static string MainMenuMusicSaveString = "MainMenuVolume";
+    [SerializeField] public static string MinigameMusicSaveString = "MinigameVolume";
 
     private void Start()
     {
@@ -19,19 +19,17 @@ public class OptionsManager : MonoBehaviour
 
         //Loads current settings from Music Manager
         m_MusicManager = MusicManager.Instance;
-        if (PlayerPrefs.HasKey(m_MainMenuMusicSaveString))
+        if (PlayerPrefs.HasKey(MainMenuMusicSaveString))
         {
-            float volume = PlayerPrefs.GetFloat(m_MainMenuMusicSaveString);
-            m_MusicManager.SetMainMenuVolume(volume);
+            float volume = PlayerPrefs.GetFloat(MainMenuMusicSaveString);
             m_mainMenuSlider.value = volume;
         } else
         {
             m_mainMenuSlider.value = m_MusicManager.GetMainMenuMusicVolume();
         }
-        if (PlayerPrefs.HasKey(m_MinigameMusicSaveString))
+        if (PlayerPrefs.HasKey(MinigameMusicSaveString))
         {
-            float volume = PlayerPrefs.GetFloat(m_MinigameMusicSaveString);
-            m_MusicManager.SetMinigameMusicVolume(volume);
+            float volume = PlayerPrefs.GetFloat(MinigameMusicSaveString);
             m_minigameSlider.value = volume;
         }
         else
@@ -44,12 +42,12 @@ public class OptionsManager : MonoBehaviour
     public void MainMenuMusicSliderChanged()
     {
         m_MusicManager.SetMainMenuVolume(m_mainMenuSlider.value);
-        PlayerPrefs.SetFloat(m_MainMenuMusicSaveString, m_mainMenuSlider.value);
+        PlayerPrefs.SetFloat(MainMenuMusicSaveString, m_mainMenuSlider.value);
     }
     public void MinigameMusicSliderChanged()
     {
         m_MusicManager.SetMinigameMusicVolume(m_minigameSlider.value);
-        PlayerPrefs.SetFloat(m_MinigameMusicSaveString, m_minigameSlider.value);
+        PlayerPrefs.SetFloat(MinigameMusicSaveString, m_minigameSlider.value);
 
     }
 

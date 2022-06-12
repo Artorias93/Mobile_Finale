@@ -42,10 +42,18 @@ public class MusicManager : MonoBehaviour
             m_musicSource = GetComponent<AudioSource>();
         Assert.IsNotNull(m_musicSource);
 
+        //Load saved volumes
+        if (PlayerPrefs.HasKey(OptionsManager.MainMenuMusicSaveString))
+            f_mainMenuVolume = PlayerPrefs.GetFloat(OptionsManager.MainMenuMusicSaveString);
+        if (PlayerPrefs.HasKey(OptionsManager.MinigameMusicSaveString))
+            f_minigameMusicVolume = PlayerPrefs.GetFloat(OptionsManager.MinigameMusicSaveString);
+
         m_musicSource.volume = f_mainMenuVolume;
 
         m_musicSource.clip = GetRandomClip(ref m_mainMenu);
         m_musicSource.Play();
+
+
     }
 
     public void switchToMainMenu()
