@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace CouldronMinigame
 {
-    public class TouchController : MonoBehaviour
+    public class TouchController : MonoBehaviour, IEndDragHandler, IDragHandler
     {
         [Header("References")]
         [SerializeField]
@@ -38,61 +38,29 @@ namespace CouldronMinigame
             v2_cauldronCenter = img_cauldron.rectTransform.position;
         }
 
-        private void Update()
+        public void OnEndDrag(PointerEventData eventData)
         {
-            if (CauldronGameManager.Instance.GameFinished) return;
-
-            Debug.DrawLine(Vector3.zero, v2_cauldronCenter, Color.yellow);
-
-            foreach(Touch touch in Input.touches)
-            {
-                if(touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
-                {
-                    
-                    //This math could possibly be simplified, but is held like this for readibility
-                    //Computes the projection of a point on an ellipse
-                    Vector2 distanceFromCenter = touch.position - v2_cauldronCenter;
-
-                    float theta = Mathf.Atan2(distanceFromCenter.y, distanceFromCenter.x);
-
-                    float x = Mathf.Cos(theta);
-                    float y = Mathf.Sin(theta);
-
-                    Vector2 distanceVector = new Vector2(f_xLimit * y, f_yLimit * x);
-                    float k = (f_xLimit * f_yLimit) / distanceVector.magnitude;
-
-
-                    v2_ladleNewPosition = k*(new Vector2(x, y));
-                    v2_ladleNewPosition += v2_cauldronCenter;
-
-                    img_ladle.rectTransform.position = v2_ladleNewPosition;
-
-                    Debug.DrawLine(v2_cauldronCenter, touch.position, Color.green);
-                    Debug.DrawLine(v2_cauldronCenter, v2_ladleNewPosition, Color.red);
-
-                    speedController.setMouseDelta(touch.deltaPosition.magnitude);
-                    return; //Only first touch will count
-                }
-            }
             speedController.setMouseDelta(0);
         }
 
-
-        private void LateUpdate()
+        public void OnDrag(PointerEventData eventData)
         {
-#if UNITY_EDITOR
-            if (b_shouldUpdateDynamically)
-            {
-                f_xLimit = (img_cauldron.rectTransform.sizeDelta.x * img_cauldron.canvas.scaleFactor) / 2;
-                f_yLimit = (img_cauldron.rectTransform.sizeDelta.y * img_cauldron.canvas.scaleFactor) / 2;
-                f_xLimit *= paddingPercentage;
-                f_yLimit *= paddingPercentage;
+            Vector2 distanceFromCenter = eventData.position - v2_cauldronCenter;
 
-                v2_cauldronCenter = img_cauldron.rectTransform.position;
-            }
-#endif
+            float theta = Mathf.Atan2(distanceFromCenter.y, distanceFromCenter.x);
+
+            float x = Mathf.Cos(theta);
+            float y = Mathf.Sin(theta);
+
+            Vector2 distanceVector = new Vector2(f_xLimit * y, f_yLimit * x);
+            float k = (f_xLimit * f_yLimit) / distanceVector.magnitude;
+
+
+            v2_ladleNewPosition = k * (new Vector2(x, y));
+            v2_ladleNewPosition += v2_cauldronCenter;
+            this.transform.position = v2_ladleNewPosition;
+            speedController.setMouseDelta(eventData.delta.magnitude);
         }
-
     }
 }
 

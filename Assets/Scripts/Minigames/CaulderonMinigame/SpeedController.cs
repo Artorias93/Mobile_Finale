@@ -99,7 +99,7 @@ namespace CouldronMinigame
             if (timeInError <= 0)
                 EndGame();
 
-            Debug.Log(timeInError);
+           // Debug.Log(timeInError);
         }
         public void setMouseDelta(float magnitude)
         {

@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 2631640}
   - component: {fileID: 2631639}
   - component: {fileID: 2631641}
+  - component: {fileID: 2631642}
   m_Layer: 5
   m_Name: Ladle
   m_TagString: Untagged
@@ -220,6 +221,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &2631642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2631637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52444ed483e450744ac38e4005a6afdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  img_cauldron: {fileID: 619144661}
+  img_ladle: {fileID: 2631639}
+  speedController: {fileID: 472681087}
+  paddingPercentage: 0.6
+  b_shouldUpdateDynamically: 1
 --- !u!1 &8122634
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,7 +268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gp_easy:
-    f_gameTime: 25
+    f_gameTime: 600
     changeSecondsSpeedController: 7
     maxTimeInError: 15
     max_lives: 4
@@ -269,7 +287,7 @@ MonoBehaviour:
     spawnTimeSeconds: 1
   ingredientController: {fileID: 619144664}
   speedController: {fileID: 472681087}
-  b_enableDebug: 0
+  b_enableDebug: 1
   diff: 0
 --- !u!4 &8122636
 Transform:
@@ -710,7 +728,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 89.503784, y: 87.89188}
+  m_AnchoredPosition: {x: 89.50391, y: 87.891846}
   m_SizeDelta: {x: 56.3877, y: 55.5596}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &522046445
@@ -818,7 +836,6 @@ GameObject:
   - component: {fileID: 619144660}
   - component: {fileID: 619144662}
   - component: {fileID: 619144661}
-  - component: {fileID: 619144663}
   - component: {fileID: 619144664}
   m_Layer: 5
   m_Name: Cauldron
@@ -885,23 +902,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 619144659}
   m_CullTransparentMesh: 1
---- !u!114 &619144663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 619144659}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52444ed483e450744ac38e4005a6afdd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  img_cauldron: {fileID: 619144661}
-  img_ladle: {fileID: 2631639}
-  speedController: {fileID: 472681087}
-  paddingPercentage: 0.6
-  b_shouldUpdateDynamically: 1
 --- !u!114 &619144664
 MonoBehaviour:
   m_ObjectHideFlags: 0
