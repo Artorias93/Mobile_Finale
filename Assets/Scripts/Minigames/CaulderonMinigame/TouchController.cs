@@ -27,6 +27,7 @@ namespace CouldronMinigame
 
 
         private float f_xLimit, f_yLimit;
+        private float theta,oldTheta;
         private Vector2 v2_cauldronCenter;
         private void Start()
         {
@@ -46,9 +47,10 @@ namespace CouldronMinigame
         public void OnDrag(PointerEventData eventData)
         {
             Vector2 distanceFromCenter = eventData.position - v2_cauldronCenter;
-
-            float theta = Mathf.Atan2(distanceFromCenter.y, distanceFromCenter.x);
-
+            oldTheta = theta;
+            theta = Mathf.Atan2(distanceFromCenter.y, distanceFromCenter.x);
+            //Debug.LogWarning("THETA: " + theta);
+            
             float x = Mathf.Cos(theta);
             float y = Mathf.Sin(theta);
 
@@ -59,7 +61,29 @@ namespace CouldronMinigame
             v2_ladleNewPosition = k * (new Vector2(x, y));
             v2_ladleNewPosition += v2_cauldronCenter;
             this.transform.position = v2_ladleNewPosition;
-            speedController.setMouseDelta(eventData.delta.magnitude);
+            if (checkCircularMovement(oldTheta, theta))
+            {
+                speedController.setMouseDelta(eventData.delta.magnitude);
+            }
+            else {
+                speedController.setMouseDelta(0);
+            }
+        }
+
+        private bool checkCircularMovement(float oldTheta, float theta) {
+            if (oldTheta >= 0)
+            {
+                if (oldTheta < theta)
+                {
+                    return false;
+                }
+            }
+            else {
+                if (oldTheta < theta && theta < 2.0f) {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }
