@@ -26,6 +26,8 @@ namespace CouldronMinigame
         private Image m_imgFast;
         [SerializeField]
         private Image m_imgRegular;
+        [SerializeField]
+        private Image m_insideCauldron;
 
         [SerializeField]
         private Slider m_speedIndicator;
@@ -37,7 +39,13 @@ namespace CouldronMinigame
         private Color m_colorFast;
         private Color m_colorSlow;
         private Color m_colorRegular;
+
+        private Gradient gradient;
+        private GradientColorKey[] colorKey;
+        private GradientAlphaKey[] alphaKey;
         
+
+
         private float timeSeconds;
 
         //usare enum per velocità
@@ -70,8 +78,23 @@ namespace CouldronMinigame
             m_colorSlow = m_imgSlow.color;
             m_colorRegular = m_imgRegular.color;
             m_colorFast = m_imgFast.color;
+            setGradientKeys();
+        }
 
+        private void setGradientKeys() {
+            gradient = new Gradient();
+            colorKey = new GradientColorKey[2];
+            colorKey[0].color = Color.white;
+            colorKey[0].time = 0.0f;
+            colorKey[1].color = Color.red;
+            colorKey[1].time = 1.0f;
+            alphaKey = new GradientAlphaKey[2];
+            alphaKey[0].alpha = 1.0f;
+            alphaKey[0].time = 0.0f;
+            alphaKey[1].alpha = 1.0f;
+            alphaKey[1].time = 1.0f;
 
+            gradient.SetKeys(colorKey, alphaKey);
         }
 
         public void BeginPlay()
@@ -93,9 +116,14 @@ namespace CouldronMinigame
 
             CheckSpeed();
 
-            if (isInError)
+            if (isInError) {
                 timeInError -= Time.deltaTime;
-            
+
+                float percentageError = timeInError / gameManager.GameParameters.maxTimeInError;
+                percentageError = 1 - percentageError;
+                m_insideCauldron.color=gradient.Evaluate(percentageError);
+            }
+
             if (timeInError <= 0)
                 EndGame();
 
