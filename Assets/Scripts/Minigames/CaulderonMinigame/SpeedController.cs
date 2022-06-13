@@ -41,12 +41,15 @@ namespace CouldronMinigame
         private float timeSeconds;
 
         //usare enum per velocità
-        public enum Speed { SLOW=0, REGULAR=1, FAST=2 };
+        public enum Speed { NOT_MOVING=0,SLOW=1, REGULAR=2, FAST=3,TOO_FAST=4 };
        
 
-        private float m_minimumRegularNormalizedSpeed = 0.33f;
-        private float m_maximumRegularNormalizedSpeed = 0.66f;
-        
+        private float m_minimumRegularNormalizedSpeed = 0.25f;
+        private float m_mediumNormalizedSpeed = 0.5f;
+        private float m_maximumRegularNormalizedSpeed = 0.75f;
+
+
+
         private Speed randomSpeedIndex;
         private Speed currentSpeed;
         
@@ -68,10 +71,7 @@ namespace CouldronMinigame
             m_colorRegular = m_imgRegular.color;
             m_colorFast = m_imgFast.color;
 
-            
-            
-            
-            
+
         }
 
         public void BeginPlay()
@@ -107,7 +107,7 @@ namespace CouldronMinigame
         }
         void LateUpdate()
         {
-            
+
             m_speedIndicator.value = m_speed;
         }
 
@@ -128,7 +128,7 @@ namespace CouldronMinigame
         {
             Debug.Log("setting new speed...");
             
-            randomSpeedIndex = (Speed)Random.Range(0, 3);
+            randomSpeedIndex = (Speed)Random.Range(1, 3);
 
             if (randomSpeedIndex == Speed.REGULAR)
             {
@@ -176,13 +176,18 @@ namespace CouldronMinigame
         }
 
         private void CheckSpeed()
-        {                       
-            if (m_maximumRegularNormalizedSpeed >= m_speedIndicator.value && m_minimumRegularNormalizedSpeed <= m_speedIndicator.value)
-                currentSpeed = Speed.REGULAR;
-            else if (m_maximumRegularNormalizedSpeed < m_speedIndicator.value)
+        {
+            if (m_speedIndicator.value > m_maximumRegularNormalizedSpeed) {
+                currentSpeed = Speed.TOO_FAST;
+            } else if (m_speedIndicator.value <= m_maximumRegularNormalizedSpeed && m_speedIndicator.value > m_mediumNormalizedSpeed) {
                 currentSpeed = Speed.FAST;
-            else
+            } else if (m_speedIndicator.value <= m_mediumNormalizedSpeed && m_speedIndicator.value > m_minimumRegularNormalizedSpeed) {
+                currentSpeed = Speed.REGULAR;
+            } else if (m_speedIndicator.value<=m_minimumRegularNormalizedSpeed && m_speedIndicator.value>0) {
                 currentSpeed = Speed.SLOW;
+            } else {
+                currentSpeed = Speed.NOT_MOVING;
+            }
 
             if (randomSpeedIndex != currentSpeed)
                 isInError = true;
