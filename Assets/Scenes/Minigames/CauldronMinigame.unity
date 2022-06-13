@@ -287,7 +287,7 @@ MonoBehaviour:
     spawnTimeSeconds: 1
   ingredientController: {fileID: 619144664}
   speedController: {fileID: 472681087}
-  b_enableDebug: 0
+  b_enableDebug: 1
   diff: 0
 --- !u!4 &8122636
 Transform:
@@ -993,8 +993,11 @@ MonoBehaviour:
   gameManager: {fileID: 8122635}
   ingredient: {fileID: 522046443}
   listSpriteIngredients:
-  - {fileID: 21300000, guid: c4fed5da69db7584084f7e34007ab53f, type: 3}
-  - {fileID: 21300000, guid: c9b10eec22a1c284c90f0567ac1926a9, type: 3}
+  - {fileID: -1228631532970502786, guid: 98245da4a6cf86c4a9b601a821e6922c, type: 3}
+  - {fileID: 7121475432202493312, guid: 98245da4a6cf86c4a9b601a821e6922c, type: 3}
+  - {fileID: -1649690771796349394, guid: 98245da4a6cf86c4a9b601a821e6922c, type: 3}
+  - {fileID: -6392682546780036172, guid: 98245da4a6cf86c4a9b601a821e6922c, type: 3}
+  - {fileID: -6392682546780036172, guid: 98245da4a6cf86c4a9b601a821e6922c, type: 3}
 --- !u!114 &841390317 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8118363232843597286, guid: ffa7dc37a7295ea45af63b591ea7dbcb, type: 3}
