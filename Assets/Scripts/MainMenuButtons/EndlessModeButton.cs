@@ -15,6 +15,7 @@ public class EndlessModeButton : MonoBehaviour
 
     private void ButtonCallback()
     {
+        GameManager.m_instance.SetReturnPage(PageToReturn.Main);
         GameManager.m_instance.StartEndlessMode();
     }
 }

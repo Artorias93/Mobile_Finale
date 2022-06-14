@@ -349,6 +349,7 @@ MonoBehaviour:
   m_minigameScene: 
   m_difficulty: 0
   m_dUI: {fileID: 0}
+  m_OwnerPage: 1
 --- !u!1 &4528962256270432715
 GameObject:
   m_ObjectHideFlags: 0

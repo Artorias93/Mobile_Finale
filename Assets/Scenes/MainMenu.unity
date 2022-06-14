@@ -601,6 +601,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 466949074}
     - target: {fileID: 4528962255796796485, guid: e7d399aace01ca44a96052cc14dd2218, type: 3}
+      propertyPath: m_OwnerPage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528962255796796485, guid: e7d399aace01ca44a96052cc14dd2218, type: 3}
       propertyPath: m_minigameScene
       value: HitTheSlime
       objectReference: {fileID: 0}
@@ -3678,6 +3682,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 641055857}
     - target: {fileID: 4528962255796796485, guid: e7d399aace01ca44a96052cc14dd2218, type: 3}
+      propertyPath: m_OwnerPage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528962255796796485, guid: e7d399aace01ca44a96052cc14dd2218, type: 3}
       propertyPath: m_minigameScene
       value: MonstersInvaders
       objectReference: {fileID: 0}
@@ -3961,6 +3969,10 @@ PrefabInstance:
       propertyPath: m_dUI
       value: 
       objectReference: {fileID: 298383066}
+    - target: {fileID: 4528962255796796485, guid: e7d399aace01ca44a96052cc14dd2218, type: 3}
+      propertyPath: m_OwnerPage
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4528962255796796485, guid: e7d399aace01ca44a96052cc14dd2218, type: 3}
       propertyPath: m_minigameScene
       value: SealsTheHound
@@ -5251,6 +5263,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1968565554}
     - target: {fileID: 4528962255796796485, guid: e7d399aace01ca44a96052cc14dd2218, type: 3}
+      propertyPath: m_OwnerPage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528962255796796485, guid: e7d399aace01ca44a96052cc14dd2218, type: 3}
       propertyPath: m_minigameScene
       value: PlaceTheCandles
       objectReference: {fileID: 0}
@@ -6247,6 +6263,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1417851914}
     - target: {fileID: 4528962255796796485, guid: e7d399aace01ca44a96052cc14dd2218, type: 3}
+      propertyPath: m_OwnerPage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528962255796796485, guid: e7d399aace01ca44a96052cc14dd2218, type: 3}
       propertyPath: m_minigameScene
       value: BalanceGame
       objectReference: {fileID: 0}
@@ -6839,6 +6859,10 @@ PrefabInstance:
       propertyPath: m_dUI
       value: 
       objectReference: {fileID: 1129250406}
+    - target: {fileID: 4528962255796796485, guid: e7d399aace01ca44a96052cc14dd2218, type: 3}
+      propertyPath: m_OwnerPage
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4528962255796796485, guid: e7d399aace01ca44a96052cc14dd2218, type: 3}
       propertyPath: m_minigameScene
       value: FightCthulhu
@@ -7814,6 +7838,10 @@ PrefabInstance:
       propertyPath: m_dUI
       value: 
       objectReference: {fileID: 8631053}
+    - target: {fileID: 4528962255796796485, guid: e7d399aace01ca44a96052cc14dd2218, type: 3}
+      propertyPath: m_OwnerPage
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4528962255796796485, guid: e7d399aace01ca44a96052cc14dd2218, type: 3}
       propertyPath: m_minigameScene
       value: EscapeTheDungeon
@@ -8931,6 +8959,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_MainMenu: {fileID: 1937251903}
   m_EndRecipe: {fileID: 1270392064}
+  m_RecipeScreen: {fileID: 60214399}
+  m_TrainingScreen: {fileID: 280637775}
+  m_TrainingPages:
+  - {fileID: 988072616}
+  - {fileID: 1243394823}
   m_EndRecipeScreenController: {fileID: 4579085143939525891}
 --- !u!1 &1396885366
 GameObject:

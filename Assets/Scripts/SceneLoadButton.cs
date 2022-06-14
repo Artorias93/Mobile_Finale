@@ -14,7 +14,7 @@ public class SceneLoadButton : MonoBehaviour
     [SerializeField] private string m_minigameScene;
     [SerializeField] private Difficulty m_difficulty = Difficulty.EASY;
     [SerializeField] private difficultyUI m_dUI;
-
+    [SerializeField] private PageToReturn m_OwnerPage = PageToReturn.Training1;
 
     private void Awake()
     {
@@ -36,6 +36,7 @@ public class SceneLoadButton : MonoBehaviour
 
     private void buttonCallback()
     {
+        GameManager.m_instance.SetReturnPage(m_OwnerPage);
         GameManager.m_instance.StartLoadingCoroutine(m_minigameScene, m_difficulty);
     }
 }

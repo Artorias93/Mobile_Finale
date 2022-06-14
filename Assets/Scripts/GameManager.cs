@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
     private SORecipe currentRecipe;
     private bool b_endless = false;
 
+    private PageToReturn m_SavedPage = PageToReturn.Main;
+
     public SORecipe CurrRecipe
     {
         get { return currentRecipe; }
@@ -147,6 +149,7 @@ public class GameManager : MonoBehaviour
 
     public void ReturnToMainMenu()
     {
+        //Used to return to main menu stopping minigame midway through (es. pause, return to main menu)
         if (Time.timeScale == 0) 
         {
             Time.timeScale = 1;
@@ -156,7 +159,7 @@ public class GameManager : MonoBehaviour
         currentRecipe = null;
         StopAllCoroutines();
         m_musicManager.switchToMainMenu();
-        StartCoroutine(_asyncSceneLoad("Mainmenu"));
+        StartCoroutine(_asyncSceneLoadMainMenuStopping());
     }
 
     public void ReturnToMainMenuNonStopping()
@@ -188,6 +191,31 @@ public class GameManager : MonoBehaviour
         m_TransitionManager.StartReadyTransition();
         //yield return new WaitUntil(() => m_TransitionManager.AnimationCompleted);
         Debug.Log("Detransition complete");
+    }    
+    private IEnumerator _asyncSceneLoadMainMenuStopping()
+    {
+        m_TransitionManager.StartLoadingTransition();
+        
+
+        yield return new WaitUntil(() => m_TransitionManager.AnimationCompleted);
+        Debug.Log("Transition Complete, start loading");
+
+        AsyncOperation loading = SceneManager.LoadSceneAsync("MainMenu", LoadSceneMode.Single);
+        yield return new WaitUntil(() => loading.isDone);
+        Debug.Log("Loading Complete, start detransitioning");
+
+        m_TransitionManager.StartReadyTransition();
+        Debug.Log("Detransition complete");
+
+        UIMainMenu MainMenu = GameObject.FindGameObjectWithTag(UIMainMenu.Tag)?.GetComponent<UIMainMenu>();
+        if (MainMenu)
+        {
+            MainMenu.ReturnToPage(m_SavedPage);
+        }
+        else
+        {
+            Debug.Log("Can't find Main Menu Script");
+        }
     }
 
     public void StartRecipe(SORecipe recipe)
@@ -291,6 +319,11 @@ public class GameManager : MonoBehaviour
             yield return new WaitUntil(() => { return m_minigameManager.CanCloseGame; });
 
         }
+    }
+
+    public void SetReturnPage(PageToReturn page)
+    {
+        m_SavedPage = page;
     }
 
     public void ExitApplication()

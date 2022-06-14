@@ -3,11 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
+public enum PageToReturn
+{
+    Main = 0, Recipe = -1, Training1 = 1, Training2 = 2
+}
+
 public class UIMainMenu : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private GameObject m_MainMenu;
     [SerializeField] private GameObject m_EndRecipe;
+    [SerializeField] private GameObject m_RecipeScreen;
+    [SerializeField] private GameObject m_TrainingScreen;
+    [SerializeField] private GameObject[] m_TrainingPages;
     [SerializeField] private EndRecipeScreenController m_EndRecipeScreenController;
 
     public static string Tag = "MainMenu";
@@ -18,5 +27,49 @@ public class UIMainMenu : MonoBehaviour
 
         m_EndRecipe.SetActive(true);
         m_EndRecipeScreenController.showEndGamePanel(finalScore);
+    }
+
+    public void ReturnToPage(PageToReturn page)
+    {
+        //Switches based on page, activating the correct set of gameobjects. Assumes that the scene has been freshly opened
+        switch (page)
+        {
+            case PageToReturn.Main:
+                OpenMainMenu();
+                break;
+            case PageToReturn.Recipe:
+                OpenRecipes();
+                break;
+            case PageToReturn.Training1:
+                OpenTraining(0);
+                break;
+            case PageToReturn.Training2:
+                OpenTraining(1);
+                break;
+            default:
+                break;
+
+        }
+    }
+
+    private void OpenRecipes()
+    {
+        m_MainMenu.SetActive(false);
+        m_RecipeScreen.SetActive(true);
+    }
+    private void OpenTraining(int page)
+    {
+        m_TrainingScreen.SetActive(true);
+        m_MainMenu.SetActive(false);
+        foreach (GameObject PageGO in m_TrainingPages)
+            PageGO.SetActive(false);
+        if (page >= 0 && page < m_TrainingPages.Length)
+            m_TrainingPages[page].SetActive(true);
+
+    }
+
+    private void OpenMainMenu()
+    {
+        m_MainMenu.SetActive(true);
     }
 }
