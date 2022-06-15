@@ -150,10 +150,6 @@ public class GameManager : MonoBehaviour
     public void ReturnToMainMenu()
     {
         //Used to return to main menu stopping minigame midway through (es. pause, return to main menu)
-        if (Time.timeScale == 0) 
-        {
-            Time.timeScale = 1;
-        }
 
         b_endless = false;
         currentRecipe = null;
@@ -216,6 +212,8 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Can't find Main Menu Script");
         }
+
+        Time.timeScale = 1;
     }
 
     public void StartRecipe(SORecipe recipe)
