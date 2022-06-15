@@ -22,6 +22,8 @@ public class PauseGameScreenController : MonoBehaviour
             Debug.LogWarning("Couldn't find a minigame manager for pause controller");
         }
 
+        returnTxt.text = "Return To Selection";
+
         if (GameManager.m_instance.CurrRecipe == null)
         {
             if (GameManager.m_instance.IsEndless)
@@ -35,11 +37,7 @@ public class PauseGameScreenController : MonoBehaviour
                 returnTxt.text = "Return To Selection";
             }
         }
-        else
-        {
-            retryTxt.text = "Retry Recipe";
-            returnTxt.text = "Return To Menu";
-        }
+        else retryTxt.text = "Retry Recipe";
     }
 
     public void RequestPause()

@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1329240635548929917, guid: b30ba9b11e66acb43bfe07672d4c4069, type: 3}
       propertyPath: m_Text
-      value: Main Menu
+      value: Return to Selection
       objectReference: {fileID: 0}
     - target: {fileID: 3905566453169501132, guid: b30ba9b11e66acb43bfe07672d4c4069, type: 3}
       propertyPath: m_Text
