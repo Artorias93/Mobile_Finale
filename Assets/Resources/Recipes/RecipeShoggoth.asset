@@ -10,16 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5854a08f85d73774c891d60edc02eb02, type: 3}
-  m_Name: RecipeMedium
+  m_Name: RecipeShoggoth
   m_EditorClassIdentifier: 
   m_entry:
-  - m_minigameScene: CauldronMinigame
-    m_difficulty: 1
-  - m_minigameScene: PotionBrew
-    m_difficulty: 1
-  - m_minigameScene: BalanceGame
+  - m_minigameScene: DecodeAudioMinigame
     m_difficulty: 0
-  - m_minigameScene: HitTheSlime
-    m_difficulty: 1
-  - m_minigameScene: SealsTheHound
-    m_difficulty: 1
+  - m_minigameScene: FruitNinjaMinigame
+    m_difficulty: 0
+  - m_minigameScene: PotionBrew
+    m_difficulty: 0
