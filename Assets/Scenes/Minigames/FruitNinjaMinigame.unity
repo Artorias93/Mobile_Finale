@@ -456,13 +456,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 303dd03ee05170044a7229426c3a0de5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rg_items:
-  - {fileID: 5229315815919255980, guid: 573fc1596b44c5d4f937d25791bfa333, type: 3}
-  - {fileID: 732722412038039997, guid: f22c9bcd76926334293171ee236c5537, type: 3}
-  - {fileID: 3509934583704546909, guid: be21a442943751549b2517e2cdda3560, type: 3}
-  - {fileID: 9042032659611167936, guid: ba441d652b2dbe24f8084253b14adea7, type: 3}
-  - {fileID: 6897475316555147266, guid: b48701f65b4e17e419f7cc9447e5993b, type: 3}
-  - {fileID: 2974289260257047307, guid: d2993a20ddc4fcb48a53b8ccaeeacfb7, type: 3}
+  rg_item: {fileID: 8577879468455735944, guid: 573fc1596b44c5d4f937d25791bfa333, type: 3}
+  rg_sprites:
+  - {fileID: 21300000, guid: eaa59ae506248bc48a02796505becf06, type: 3}
+  - {fileID: 21300000, guid: 8ae3790079b2c804ba4711a58f91fd39, type: 3}
+  - {fileID: 21300000, guid: c9b10eec22a1c284c90f0567ac1926a9, type: 3}
+  - {fileID: 21300000, guid: fdb34fab7a3c5d648ada750588336cf4, type: 3}
+  - {fileID: 21300000, guid: a969a6c469a2bcc439e6908b38a61841, type: 3}
+  - {fileID: 21300000, guid: c4fed5da69db7584084f7e34007ab53f, type: 3}
+  rg_spritesSx:
+  - {fileID: 21300000, guid: 598ddcc4dd9d51f4b842c9798f6eca81, type: 3}
+  - {fileID: 21300000, guid: 9b22cc8869309924f9490fb4702beee8, type: 3}
+  - {fileID: 21300000, guid: 999414882f922724cbd00082bcef1971, type: 3}
+  - {fileID: 21300000, guid: d84902a097cd5374ca2f1baeca55554e, type: 3}
+  - {fileID: 21300000, guid: befe4e8d34f420f46ae4823f0579fe0c, type: 3}
+  - {fileID: 21300000, guid: 7cfd911bd7df2874aa7546c0228538e3, type: 3}
+  rg_spritesDx:
+  - {fileID: 21300000, guid: 06d55a2d69e2d8a4e9afcad3dd60e7a5, type: 3}
+  - {fileID: 21300000, guid: cb1579a464a6d95498217acc70c82a6d, type: 3}
+  - {fileID: 21300000, guid: adfedb4e5bb045341b4e92ffc7664642, type: 3}
+  - {fileID: 21300000, guid: 1812e13c0d69e5e42a8fdb9838569b86, type: 3}
+  - {fileID: 21300000, guid: e23d25ab247bd284e9426710ed1b2bf8, type: 3}
+  - {fileID: 21300000, guid: 8bc195a57db2d3045a993b90f50def99, type: 3}
   m_spawnPoints:
   - {fileID: 259787105}
   - {fileID: 239380410}

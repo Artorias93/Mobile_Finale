@@ -6,7 +6,9 @@ namespace FruitNinjaMinigame
 {
     public class Item : MonoBehaviour
     {
-        public GameObject obj_fruitSlicedPrefab;
+        [SerializeField] private GameObject obj_fruitSlicedPrefab;
+        public Sprite spriteSx;
+        public Sprite spriteDx;
         public int i_status = 0;
 
         private void Update()
@@ -20,6 +22,8 @@ namespace FruitNinjaMinigame
             {
                 //Splitting Sliced Objects
                 GameObject obj_slicedFruit = Instantiate(obj_fruitSlicedPrefab, transform.position, transform.rotation);
+                obj_slicedFruit.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = spriteSx;
+                obj_slicedFruit.transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = spriteDx;
                 obj_slicedFruit.transform.GetChild(0).GetComponent<Rigidbody2D>().AddForce(new Vector2(-1,5),ForceMode2D.Impulse);
                 obj_slicedFruit.transform.GetChild(1).GetComponent<Rigidbody2D>().AddForce(new Vector2(1, 5), ForceMode2D.Impulse);
                 obj_slicedFruit.transform.GetChild(2).GetComponent<Animator>().SetInteger("Color", Random.Range(1, 6));

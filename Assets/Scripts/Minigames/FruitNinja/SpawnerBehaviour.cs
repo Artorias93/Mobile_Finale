@@ -26,12 +26,16 @@ namespace FruitNinjaMinigame
             v3_cachedDirection.Normalize();
         }
 
-        public void Spawn(GameObject objectToSpawn)
+        public void Spawn(GameObject objectToSpawn, Sprite spriteToSpawn, Sprite spriteSxToSpawn, Sprite spriteDxToSpawn)
         {
             float randomMagnitude = Random.Range(f_minForce, f_maxForce);
             float randomTorque = Random.Range(-f_torque, f_torque);
 
             GameObject spawnedItem = Instantiate(objectToSpawn, transform.position, Quaternion.identity, null);
+            spawnedItem.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = spriteToSpawn;
+            spawnedItem.GetComponent<Item>().spriteSx = spriteSxToSpawn;
+            spawnedItem.GetComponent<Item>().spriteDx = spriteDxToSpawn;
+
             Rigidbody2D rbody = spawnedItem.GetComponent<Rigidbody2D>();
 
             if (rbody != null)

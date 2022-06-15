@@ -7,7 +7,10 @@ namespace FruitNinjaMinigame
     public class Spawner : MonoBehaviour
     {
         [Header("Sprites References and Spawners")]
-        [SerializeField] private GameObject[] rg_items;
+        [SerializeField] private GameObject rg_item;
+        [SerializeField] private Sprite[] rg_sprites;
+        [SerializeField] private Sprite[] rg_spritesSx;
+        [SerializeField] private Sprite[] rg_spritesDx;
         [SerializeField] private SpawnerBehaviour[] m_spawnPoints;
         [Header("Spawner Parameters")]
         [SerializeField] private float f_minDelay = .1f;
@@ -59,9 +62,9 @@ namespace FruitNinjaMinigame
 
         public void Spawn()
         {
-            int i_item = Random.Range(0, rg_items.Length);
+            int i_sprite = Random.Range(0, rg_sprites.Length);
             int i_spawnIndex = Random.Range(0, m_spawnPoints.Length);
-            m_spawnPoints[i_spawnIndex].Spawn(rg_items[i_item]);
+            m_spawnPoints[i_spawnIndex].Spawn(rg_item, rg_sprites[i_sprite], rg_spritesSx[i_sprite], rg_spritesDx[i_sprite]);
         }
 
 
