@@ -278,7 +278,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 385042645}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10371,6 +10371,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1384765902}
+        m_TargetAssemblyTypeName: UIMainMenu, Assembly-CSharp
+        m_MethodName: SetReturnPageIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1351038526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10823,6 +10835,10 @@ MonoBehaviour:
   m_MainMenu: {fileID: 1937251903}
   m_EndRecipe: {fileID: 1270392064}
   m_RecipeScreen: {fileID: 60214399}
+  m_RecipePages:
+  - {fileID: 1651283962}
+  - {fileID: 1404797121}
+  - {fileID: 1145817301}
   m_TrainingScreen: {fileID: 280637775}
   m_TrainingPages:
   - {fileID: 988072616}
@@ -10979,6 +10995,10 @@ PrefabInstance:
       propertyPath: m_recipe
       value: 
       objectReference: {fileID: 11400000, guid: 9f4864029b826884d8aa9d3c69a67bb9, type: 2}
+    - target: {fileID: 5160518985112445813, guid: dda2d3e86902c584287d9c756a14855a, type: 3}
+      propertyPath: m_OwnerPage
+      value: -3
+      objectReference: {fileID: 0}
     - target: {fileID: 6017846995384378697, guid: dda2d3e86902c584287d9c756a14855a, type: 3}
       propertyPath: m_Type
       value: 0
@@ -12170,6 +12190,10 @@ PrefabInstance:
       propertyPath: m_recipe
       value: 
       objectReference: {fileID: 11400000, guid: 06441ea56af90e44d8abfc24a909c4c4, type: 2}
+    - target: {fileID: 5160518985112445813, guid: dda2d3e86902c584287d9c756a14855a, type: 3}
+      propertyPath: m_OwnerPage
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 6017846995384378697, guid: dda2d3e86902c584287d9c756a14855a, type: 3}
       propertyPath: m_Type
       value: 0
@@ -13785,6 +13809,10 @@ PrefabInstance:
       propertyPath: m_recipe
       value: 
       objectReference: {fileID: 11400000, guid: 631fadc7883ec954c860d9c72389395c, type: 2}
+    - target: {fileID: 5160518985112445813, guid: dda2d3e86902c584287d9c756a14855a, type: 3}
+      propertyPath: m_OwnerPage
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 6017846995384378697, guid: dda2d3e86902c584287d9c756a14855a, type: 3}
       propertyPath: m_Type
       value: 0
@@ -15474,6 +15502,10 @@ PrefabInstance:
       propertyPath: m_recipe
       value: 
       objectReference: {fileID: 11400000, guid: 631fadc7883ec954c860d9c72389395c, type: 2}
+    - target: {fileID: 5160518985112445813, guid: dda2d3e86902c584287d9c756a14855a, type: 3}
+      propertyPath: m_OwnerPage
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 6017846995384378697, guid: dda2d3e86902c584287d9c756a14855a, type: 3}
       propertyPath: m_Type
       value: 0
@@ -15670,6 +15702,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 477383119}
     m_Modifications:
+    - target: {fileID: 3281525310488563856, guid: dda2d3e86902c584287d9c756a14855a, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3281525310488563856, guid: dda2d3e86902c584287d9c756a14855a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 90.51999
+      objectReference: {fileID: 0}
     - target: {fileID: 3282486689695815560, guid: dda2d3e86902c584287d9c756a14855a, type: 3}
       propertyPath: m_Text
       value: 'Evoke
@@ -15692,6 +15732,10 @@ PrefabInstance:
       propertyPath: m_recipe
       value: 
       objectReference: {fileID: 11400000, guid: 631fadc7883ec954c860d9c72389395c, type: 2}
+    - target: {fileID: 5160518985112445813, guid: dda2d3e86902c584287d9c756a14855a, type: 3}
+      propertyPath: m_OwnerPage
+      value: -3
+      objectReference: {fileID: 0}
     - target: {fileID: 6017846995384378696, guid: dda2d3e86902c584287d9c756a14855a, type: 3}
       propertyPath: m_Interactable
       value: 0
@@ -17338,6 +17382,10 @@ PrefabInstance:
       propertyPath: m_recipe
       value: 
       objectReference: {fileID: 11400000, guid: 6b641712858555a49a458d8e62313481, type: 2}
+    - target: {fileID: 5160518985112445813, guid: dda2d3e86902c584287d9c756a14855a, type: 3}
+      propertyPath: m_OwnerPage
+      value: -3
+      objectReference: {fileID: 0}
     - target: {fileID: 6017846995384378697, guid: dda2d3e86902c584287d9c756a14855a, type: 3}
       propertyPath: m_Type
       value: 0

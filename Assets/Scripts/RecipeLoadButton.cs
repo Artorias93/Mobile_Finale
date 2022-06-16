@@ -12,6 +12,7 @@ public class RecipeLoadButton : MonoBehaviour
 
     [Header("Recipe Options")]
     [SerializeField] private SORecipe m_recipe;
+    [SerializeField] private PageToReturn m_OwnerPage = PageToReturn.Recipe1;
 
     [Header("Score options")]
     [SerializeField] private Color c_color0;
@@ -30,13 +31,13 @@ public class RecipeLoadButton : MonoBehaviour
         Assert.IsNotNull(m_Stars);
 
         m_StarImages = new Image[m_Stars.Length];
-        for (int i = 0; i < m_Stars.Length; i++)
-        {
-            m_Stars[i].SetActive(false);
-            m_StarImages[i] = m_Stars[i].GetComponent<Image>();
-        }
 
         m_btn.onClick.AddListener(buttonCallback);
+
+        for (int i = 0; i < m_Stars.Length; i++)
+        {
+            m_StarImages[i] = m_Stars[i].GetComponent<Image>();
+        }
     }
 
     private void OnEnable()
@@ -52,13 +53,14 @@ public class RecipeLoadButton : MonoBehaviour
 
     private void buttonCallback()
     {
-        GameManager.m_instance.SetReturnPage(PageToReturn.Recipe);
+        GameManager.m_instance.SetReturnPage(m_OwnerPage);
         GameManager.m_instance.StartRecipe(m_recipe);
     }
 
     private void ShowStars(int num)
     {
-        if(num >= 1 && num <= 3)
+        
+        if (num >= 1 && num <= 3)
         {
             foreach(GameObject star in m_Stars)
             {
@@ -86,6 +88,12 @@ public class RecipeLoadButton : MonoBehaviour
             for(int i = num; i<m_StarImages.Length; i++)
             {
                 m_StarImages[i].color = c_color0;
+            }
+        } else
+        {
+            for (int i = 0; i < m_Stars.Length; i++)
+            {
+                m_Stars[i].SetActive(false);
             }
         }
     }
