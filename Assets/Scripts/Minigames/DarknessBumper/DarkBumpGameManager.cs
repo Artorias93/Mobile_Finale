@@ -114,10 +114,9 @@ namespace DarknessBumper
                 var bounds = spawnBounds.bounds;
                 var f_px = Random.Range(bounds.min.x, bounds.max.x);
                 var f_py = Random.Range(bounds.min.y, bounds.max.y);
-                Vector2 pos = new Vector3(f_px, f_py);
+                Vector3 pos = new Vector3(f_px, f_py, 1);
 
                 yield return new WaitForSeconds(f_delay);
-
                 GameObject obj_skull = Instantiate(rg_darkness[f_skullIndex], pos, transform.rotation);
                 obj_skull.GetComponent<Skull>().f_speedMultiplier = m_gameParameters.f_skullSpeedMultiplier;
                 obj_skull.GetComponent<Skull>().i_moveType = Random.Range(0, 7);

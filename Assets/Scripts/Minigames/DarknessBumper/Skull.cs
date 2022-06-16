@@ -71,32 +71,32 @@ namespace DarknessBumper
             switch (i_moveType)
             {
                 case 0:
-                    if (!b_skullDir) transform.position = new Vector2(f_xDeltaPos, f_yDeltaPos);
-                    else transform.position = new Vector2(-f_xDeltaPos, f_yDeltaPos);
+                    if (!b_skullDir) transform.position = new Vector3(f_xDeltaPos, f_yDeltaPos, 1);
+                    else transform.position = new Vector3(-f_xDeltaPos, f_yDeltaPos, 1);
                     break;
                 case 1:
-                    if (!b_skullDir) transform.position = new Vector2(f_timeCounter, f_yDeltaPos);
-                    else transform.position = new Vector2(-f_timeCounter, f_yDeltaPos);
+                    if (!b_skullDir) transform.position = new Vector3(f_timeCounter, f_yDeltaPos, 1);
+                    else transform.position = new Vector3(-f_timeCounter, f_yDeltaPos, 1);
                     break;
                 case 2:
-                    if (!b_skullDir) transform.position = new Vector2(f_xDeltaPos, f_timeCounter);
-                    else transform.position = new Vector2(f_xDeltaPos, -f_timeCounter);
+                    if (!b_skullDir) transform.position = new Vector3(f_xDeltaPos, f_timeCounter, 1);
+                    else transform.position = new Vector3(f_xDeltaPos, -f_timeCounter, 1);
                     break;
                 case 3:
-                    if (!b_skullDir) transform.position = new Vector2(f_timeCounter, transform.position.y);
-                    else transform.position = new Vector2(-f_timeCounter, transform.position.y);
+                    if (!b_skullDir) transform.position = new Vector3(f_timeCounter, transform.position.y, 1);
+                    else transform.position = new Vector3(-f_timeCounter, transform.position.y, 1);
                     break;
                 case 4:
-                    if (!b_skullDir) transform.position = new Vector2(transform.position.x, f_timeCounter);
-                    else transform.position = new Vector2(transform.position.x, -f_timeCounter);
+                    if (!b_skullDir) transform.position = new Vector3(transform.position.x, f_timeCounter, 1);
+                    else transform.position = new Vector3(transform.position.x, -f_timeCounter, 1);
                     break;
                 case 5:
-                    if (!b_skullDir) transform.position = new Vector2(f_timeCounter, f_timeCounter);
-                    else transform.position = new Vector2(-f_timeCounter, -f_timeCounter);
+                    if (!b_skullDir) transform.position = new Vector3(f_timeCounter, f_timeCounter, 1);
+                    else transform.position = new Vector3(-f_timeCounter, -f_timeCounter, 1);
                     break;
                 case 6:
-                    if (!b_skullDir) transform.position = new Vector2(-f_timeCounter, f_timeCounter);
-                    else transform.position = new Vector2(f_timeCounter, -f_timeCounter);
+                    if (!b_skullDir) transform.position = new Vector3(-f_timeCounter, f_timeCounter, 1);
+                    else transform.position = new Vector3(f_timeCounter, -f_timeCounter, 1);
                     break;
                 default:
                     break;

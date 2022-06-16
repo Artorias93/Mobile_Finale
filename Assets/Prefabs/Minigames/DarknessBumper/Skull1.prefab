@@ -129,21 +129,6 @@ MonoBehaviour:
   f_maxWidth: 2
   f_minHeight: 0.5
   f_maxHeight: 2
-  countErrorEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11500000, guid: bff4956f40668ec4189098f339ed0cff, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!50 &4335181986321621203
 Rigidbody2D:
   serializedVersion: 4
