@@ -18451,6 +18451,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1244202647, guid: daa4f987101c4904789057c5877c06a3, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 921401788}
+    - target: {fileID: 1244202647, guid: daa4f987101c4904789057c5877c06a3, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1244202647, guid: daa4f987101c4904789057c5877c06a3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6936751786891787414, guid: daa4f987101c4904789057c5877c06a3, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -18498,6 +18510,18 @@ PrefabInstance:
     - target: {fileID: 6936751786891787416, guid: daa4f987101c4904789057c5877c06a3, type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7289093117396301524, guid: daa4f987101c4904789057c5877c06a3, type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7756085516720165059, guid: daa4f987101c4904789057c5877c06a3, type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9074824944196574554, guid: daa4f987101c4904789057c5877c06a3, type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daa4f987101c4904789057c5877c06a3, type: 3}

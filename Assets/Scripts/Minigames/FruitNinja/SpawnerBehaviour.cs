@@ -31,7 +31,7 @@ namespace FruitNinjaMinigame
             float randomMagnitude = Random.Range(f_minForce, f_maxForce);
             float randomTorque = Random.Range(-f_torque, f_torque);
 
-            GameObject spawnedItem = Instantiate(objectToSpawn, transform.position, Quaternion.identity, null);
+            GameObject spawnedItem = Instantiate(objectToSpawn, transform.position + Vector3.forward, Quaternion.identity, null);
             spawnedItem.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = spriteToSpawn;
             spawnedItem.GetComponent<Item>().spriteSx = spriteSxToSpawn;
             spawnedItem.GetComponent<Item>().spriteDx = spriteDxToSpawn;
