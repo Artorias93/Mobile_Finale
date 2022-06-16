@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CameraResolution : MonoBehaviour
 {
+    [HideInInspector] public float scaleheight;
+
     // Use this for initialization
     void Start()
     {
@@ -16,7 +18,7 @@ public class CameraResolution : MonoBehaviour
         float windowaspect = (float)Screen.width / (float)Screen.height;
 
         // current viewport height should be scaled by this amount
-        float scaleheight = windowaspect / targetaspect;
+        scaleheight = windowaspect / targetaspect;
 
         // obtain camera component so we can modify its viewport
         Camera camera = GetComponent<Camera>();
@@ -46,5 +48,6 @@ public class CameraResolution : MonoBehaviour
 
             camera.rect = rect;
         }
+
     }
 }

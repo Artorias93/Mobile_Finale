@@ -131,7 +131,7 @@ namespace PlaceTheCandles
             i_candlesPlaced = 0;
             i_candlesCount = 0;
             int i_runeId = Random.Range(0, rg_runes.Count);
-            obj_rune = Instantiate(rg_runes[i_runeId]);
+            obj_rune = Instantiate(rg_runes[i_runeId], transform.position + Vector3.forward, Quaternion.identity);
             anim = obj_rune.transform.GetChild(3).GetComponent<Animator>();
             rg_runes.RemoveAt(i_runeId);
 

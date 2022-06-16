@@ -24,6 +24,7 @@ namespace PlaceTheCandles
         // Update is called once per frame
         void Update()
         {
+            if (PlaceCandlesGameManager.Instance.GameFinished && anim != null) Destroy(anim);
             if (PlaceCandlesGameManager.Instance.CandleCheck && !b_destroy)
             {
                 b_destroy = true;
@@ -35,9 +36,9 @@ namespace PlaceTheCandles
         {
             if (b_canMove)
             {
-                Vector3 touchPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.z);
+                Vector3 touchPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
                 Vector3 objPosition = Camera.main.ScreenToWorldPoint(touchPosition);
-                transform.position = new Vector3(objPosition.x, objPosition.y, 0);
+                transform.position = objPosition + (Vector3.forward * 3);
             }
         }
 
