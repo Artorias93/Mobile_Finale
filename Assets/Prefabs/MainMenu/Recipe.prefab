@@ -250,6 +250,7 @@ GameObject:
   - component: {fileID: 6017846995258956401}
   - component: {fileID: 6017846995258956403}
   - component: {fileID: 3282486689695815560}
+  - component: {fileID: 1431341500065771987}
   m_Layer: 5
   m_Name: RecipeTxt
   m_TagString: Untagged
@@ -297,7 +298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.92156863, g: 0.92156863, b: 0.92156863, a: 1}
+  m_Color: {r: 0.78431374, g: 1, b: 0.7254902, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -309,15 +310,30 @@ MonoBehaviour:
     m_FontSize: 50
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 4
-    m_MaxSize: 60
+    m_MinSize: 1
+    m_MaxSize: 50
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
-    m_LineSpacing: 1.1
-  m_Text: TEXT
+    m_LineSpacing: 1
+  m_Text: Evoke
+--- !u!114 &1431341500065771987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6017846995258956400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0.09803922, b: 0, a: 1}
+  m_EffectDistance: {x: 3, y: -3}
+  m_UseGraphicAlpha: 1
 --- !u!1 &6017846995384378694
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,6 +524,7 @@ MonoBehaviour:
   - {fileID: 8138290755876593249}
   - {fileID: 5360508870628840674}
   m_recipe: {fileID: 0}
+  m_OwnerPage: -1
   c_color0: {r: 0.6509434, g: 0.6509434, b: 0.6509434, a: 0.25490198}
   c_color1: {r: 0.7176471, g: 0.44313726, b: 0.4117647, a: 1}
   c_color2: {r: 0.5686275, g: 0.73333335, b: 0.84313726, a: 1}
