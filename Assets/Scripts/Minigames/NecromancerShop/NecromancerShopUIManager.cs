@@ -45,7 +45,7 @@ namespace NecromancerShop
         }
 
         public void showIngredientsList() {
-            if (necromancerShopGM.m_gameParameters.i_remainingOpenListCount > 0) {
+            if (necromancerShopGM.m_gameParameters.i_remainingOpenListCount > 0 && !m_IngredientsListPanel.active) {
                 necromancerShopGM.m_gameParameters.i_remainingOpenListCount--;
                 setRemainingOpenListCount(necromancerShopGM.m_gameParameters.i_remainingOpenListCount);
                 m_IngredientsListPanel.SetActive(true);
