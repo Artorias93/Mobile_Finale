@@ -55,7 +55,7 @@ namespace PotionBrewMinigame
         private void shake()
         {
             Vector2 tmpOriginalPos = transform.position;
-            tmpOriginalPos.y = Mathf.Sin(Time.time * f_shakeSpeed) * 0.5f;
+            tmpOriginalPos.y = Mathf.Sin(Time.deltaTime * f_shakeSpeed) * 0.5f;
             transform.position = tmpOriginalPos;
         }
         public void ResetShakeCount() {

@@ -47,6 +47,15 @@ public class PotionUiManager : MonoBehaviour
         return selectableObjects;
     }
 
+    private void LateUpdate()
+    {   Transform gameChild = m_shakePotion.transform.GetChild(0);
+        if (gameChild.localPosition.z < 0) {
+            Vector3 tmpPos = gameChild.localPosition;
+            tmpPos.z = 0;
+            gameChild.localPosition = tmpPos;
+        }
+    }
+
     public GameObject AddTiltable(GameObject tiltPotion) {
        GameObject go= Instantiate(m_tiltingItemPrefab, m_tiltingContainer.transform);
        go.GetComponent<SpriteRenderer>().color = tiltPotion.transform.GetChild(0).GetComponent<Image>().color;
