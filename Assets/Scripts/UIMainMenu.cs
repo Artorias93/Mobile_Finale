@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [System.Serializable]
 public enum PageToReturn
 {
-    Main = 0, Recipe = -1, Training1 = 1, Training2 = 2
+    Main = 0, Recipe1 = -1,Recipe2 = -2, Recipe3 = -3 , Training1 = 1, Training2 = 2
 }
 
 public class UIMainMenu : MonoBehaviour
@@ -15,6 +15,7 @@ public class UIMainMenu : MonoBehaviour
     [SerializeField] private GameObject m_MainMenu;
     [SerializeField] private GameObject m_EndRecipe;
     [SerializeField] private GameObject m_RecipeScreen;
+    [SerializeField] private GameObject[] m_RecipePages;
     [SerializeField] private GameObject m_TrainingScreen;
     [SerializeField] private GameObject[] m_TrainingPages;
     [SerializeField] private EndRecipeScreenController m_EndRecipeScreenController;
@@ -37,9 +38,16 @@ public class UIMainMenu : MonoBehaviour
             case PageToReturn.Main:
                 OpenMainMenu();
                 break;
-            case PageToReturn.Recipe:
-                OpenRecipes();
+            case PageToReturn.Recipe1:
+                OpenRecipes(0);
                 break;
+            case PageToReturn.Recipe2:
+                OpenRecipes(1);
+                break;
+            case PageToReturn.Recipe3:
+                OpenRecipes(2);
+                break;
+
             case PageToReturn.Training1:
                 OpenTraining(0);
                 break;
@@ -52,10 +60,14 @@ public class UIMainMenu : MonoBehaviour
         }
     }
 
-    private void OpenRecipes()
+    private void OpenRecipes(int page)
     {
         m_MainMenu.SetActive(false);
         m_RecipeScreen.SetActive(true);
+        foreach (GameObject PageGO in m_RecipePages)
+            PageGO.SetActive(false);
+        if (page >= 0 && page < m_RecipePages.Length)
+            m_RecipePages[page].SetActive(true);
     }
     private void OpenTraining(int page)
     {
