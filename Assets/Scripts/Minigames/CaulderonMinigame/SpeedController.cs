@@ -26,6 +26,8 @@ namespace CouldronMinigame
         private Image m_imgFast;
         [SerializeField]
         private Image m_imgRegular;
+        [SerializeField]
+        private Image m_insideCauldron;
 
         [SerializeField]
         private Slider m_speedIndicator;
@@ -37,16 +39,25 @@ namespace CouldronMinigame
         private Color m_colorFast;
         private Color m_colorSlow;
         private Color m_colorRegular;
+
+        private Gradient gradient;
+        private GradientColorKey[] colorKey;
+        private GradientAlphaKey[] alphaKey;
         
+
+
         private float timeSeconds;
 
         //usare enum per velocità
-        public enum Speed { SLOW=0, REGULAR=1, FAST=2 };
+        public enum Speed { NOT_MOVING=0,SLOW=1, REGULAR=2, FAST=3,TOO_FAST=4 };
        
 
-        private float m_minimumRegularNormalizedSpeed = 0.33f;
-        private float m_maximumRegularNormalizedSpeed = 0.66f;
-        
+        private float m_minimumRegularNormalizedSpeed = 0.25f;
+        private float m_mediumNormalizedSpeed = 0.5f;
+        private float m_maximumRegularNormalizedSpeed = 0.75f;
+
+
+
         private Speed randomSpeedIndex;
         private Speed currentSpeed;
         
@@ -67,11 +78,23 @@ namespace CouldronMinigame
             m_colorSlow = m_imgSlow.color;
             m_colorRegular = m_imgRegular.color;
             m_colorFast = m_imgFast.color;
+            setGradientKeys();
+        }
 
-            
-            
-            
-            
+        private void setGradientKeys() {
+            gradient = new Gradient();
+            colorKey = new GradientColorKey[2];
+            colorKey[0].color = Color.white;
+            colorKey[0].time = 0.0f;
+            colorKey[1].color = Color.red;
+            colorKey[1].time = 1.0f;
+            alphaKey = new GradientAlphaKey[2];
+            alphaKey[0].alpha = 1.0f;
+            alphaKey[0].time = 0.0f;
+            alphaKey[1].alpha = 1.0f;
+            alphaKey[1].time = 1.0f;
+
+            gradient.SetKeys(colorKey, alphaKey);
         }
 
         public void BeginPlay()
@@ -93,13 +116,18 @@ namespace CouldronMinigame
 
             CheckSpeed();
 
-            if (isInError)
+            if (isInError) {
                 timeInError -= Time.deltaTime;
-            
+
+                float percentageError = timeInError / gameManager.GameParameters.maxTimeInError;
+                percentageError = 1 - percentageError;
+                m_insideCauldron.color=gradient.Evaluate(percentageError);
+            }
+
             if (timeInError <= 0)
                 EndGame();
 
-            Debug.Log(timeInError);
+           // Debug.Log(timeInError);
         }
         public void setMouseDelta(float magnitude)
         {
@@ -107,7 +135,7 @@ namespace CouldronMinigame
         }
         void LateUpdate()
         {
-            
+
             m_speedIndicator.value = m_speed;
         }
 
@@ -128,7 +156,7 @@ namespace CouldronMinigame
         {
             Debug.Log("setting new speed...");
             
-            randomSpeedIndex = (Speed)Random.Range(0, 3);
+            randomSpeedIndex = (Speed)Random.Range(1, 3);
 
             if (randomSpeedIndex == Speed.REGULAR)
             {
@@ -176,13 +204,18 @@ namespace CouldronMinigame
         }
 
         private void CheckSpeed()
-        {                       
-            if (m_maximumRegularNormalizedSpeed >= m_speedIndicator.value && m_minimumRegularNormalizedSpeed <= m_speedIndicator.value)
-                currentSpeed = Speed.REGULAR;
-            else if (m_maximumRegularNormalizedSpeed < m_speedIndicator.value)
+        {
+            if (m_speedIndicator.value > m_maximumRegularNormalizedSpeed) {
+                currentSpeed = Speed.TOO_FAST;
+            } else if (m_speedIndicator.value <= m_maximumRegularNormalizedSpeed && m_speedIndicator.value > m_mediumNormalizedSpeed) {
                 currentSpeed = Speed.FAST;
-            else
+            } else if (m_speedIndicator.value <= m_mediumNormalizedSpeed && m_speedIndicator.value > m_minimumRegularNormalizedSpeed) {
+                currentSpeed = Speed.REGULAR;
+            } else if (m_speedIndicator.value<=m_minimumRegularNormalizedSpeed && m_speedIndicator.value>0) {
                 currentSpeed = Speed.SLOW;
+            } else {
+                currentSpeed = Speed.NOT_MOVING;
+            }
 
             if (randomSpeedIndex != currentSpeed)
                 isInError = true;
