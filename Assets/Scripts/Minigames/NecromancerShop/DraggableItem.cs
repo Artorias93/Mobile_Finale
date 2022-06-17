@@ -22,7 +22,7 @@ namespace NecromancerShop
         private NecromancerShopGM m_gameManager;
         private Image image;
         private RectTransform rectTransform;
-        private bool b_isDraggable=true;
+        public bool b_isDraggable=true;
         private Canvas m_baseCanvas;
         private Vector2 v_startPosition;
         private bool b_isIngredient = false;

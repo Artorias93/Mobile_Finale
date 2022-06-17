@@ -58,6 +58,7 @@ namespace NecromancerShop
                 GameObject go=Instantiate(m_ingredients[i], m_IngredientsList.transform);
                 go.transform.localScale = new Vector3(0.9f, 0.9f, 0);
                 DraggableItem draggable = go.GetComponent<DraggableItem>();
+                draggable.b_isDraggable = false;
                 go.name = m_ingredients[i].name + "L";
                 m_ingredients[i].GetComponent<DraggableItem>().listElement = draggable;
             }
