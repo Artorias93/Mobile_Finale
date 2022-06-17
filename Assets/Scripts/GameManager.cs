@@ -184,6 +184,8 @@ public class GameManager : MonoBehaviour
         yield return new WaitUntil(() => loading.isDone);
         Debug.Log("Loading Complete, start detransitioning");
 
+        transform.GetComponentInChildren<Canvas>().worldCamera = Camera.main;
+
         m_TransitionManager.StartReadyTransition();
         //yield return new WaitUntil(() => m_TransitionManager.AnimationCompleted);
         Debug.Log("Detransition complete");
@@ -199,6 +201,8 @@ public class GameManager : MonoBehaviour
         AsyncOperation loading = SceneManager.LoadSceneAsync("MainMenu", LoadSceneMode.Single);
         yield return new WaitUntil(() => loading.isDone);
         Debug.Log("Loading Complete, start detransitioning");
+
+        transform.GetComponentInChildren<Canvas>().worldCamera = Camera.main;
 
         m_TransitionManager.StartReadyTransition();
         Debug.Log("Detransition complete");
