@@ -533,7 +533,7 @@ MonoBehaviour:
     i_maxStepsCount: 9
     i_maxOverflowSeconds: 3
   generalUIManager: {fileID: 635542237}
-  b_enableDebug: 1
+  b_enableDebug: 0
   diff: 0
 --- !u!4 &508258256
 Transform:
