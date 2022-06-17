@@ -130,7 +130,7 @@ namespace DrawingRunes
 
             m_lineRenderer.loop = false;
             m_lineRenderer.positionCount = 1;
-            m_lineRenderer.SetPosition(0, firstPos);
+            m_lineRenderer.SetPosition(0, firstPos + Vector3.forward);
         }
 
         public void OnDrag(PointerEventData eventData)
@@ -140,7 +140,7 @@ namespace DrawingRunes
             v3_positions.Add(dragPos);
 
             m_lineRenderer.positionCount++;
-            m_lineRenderer.SetPosition(v3_positions.Count - 1, dragPos);
+            m_lineRenderer.SetPosition(v3_positions.Count - 1, dragPos + Vector3.forward);
 
         }
 
