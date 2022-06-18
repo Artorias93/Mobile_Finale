@@ -326,3 +326,7 @@ MonoBehaviour:
   i_hiddenAlpha: 0.2
   retryTxt: {fileID: 0}
   returnTxt: {fileID: 0}
+  c_color0: {r: 1, g: 0.91764706, b: 0, a: 0.19607843}
+  c_color1: {r: 0.6666667, g: 0.3137255, b: 0.011764706, a: 1}
+  c_color2: {r: 0.5882353, g: 0.88235295, b: 1, a: 1}
+  c_color3: {r: 1, g: 0.91764706, b: 0, a: 1}

@@ -460,7 +460,7 @@ MonoBehaviour:
   obj_bossSpawnPoint: {fileID: 977589086}
   obj_spawnGrid: {fileID: 409386780}
   gp_easy:
-    i_playTime: 5
+    i_playTime: 49
     i_enemiesRows: 2
     f_monsterSpeedMultiplier: 1
     f_monsterFireRateMultiplier: 0.7
