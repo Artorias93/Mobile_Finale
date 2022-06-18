@@ -34,7 +34,7 @@ namespace PlaceTheCandles
 
         void OnMouseDrag()
         {
-            if (b_canMove)
+            if (b_canMove && Time.timeScale==1)
             {
                 Vector3 touchPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
                 Vector3 objPosition = Camera.main.ScreenToWorldPoint(touchPosition);
