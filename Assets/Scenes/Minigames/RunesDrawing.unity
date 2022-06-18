@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 101218824}
   - component: {fileID: 101218823}
   - component: {fileID: 101218822}
+  - component: {fileID: 101218826}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -223,6 +224,32 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!61 &101218826
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101218821}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.10406494, y: -54.101044}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1479.0231, y: 740.481}
+  m_EdgeRadius: 0
 --- !u!1 &118865624
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,7 +964,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3816807274125603010, guid: 12bbe2498bb53454fa9a813bfc8e679f, type: 3}
       propertyPath: b_enableDebug
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3816807274125603010, guid: 12bbe2498bb53454fa9a813bfc8e679f, type: 3}
       propertyPath: m_touchManager
@@ -1188,6 +1215,10 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].outWeight
       value: 0.36416185
       objectReference: {fileID: 0}
+    - target: {fileID: 7014527882507340376, guid: f026afe599f193b4e9f73ec009d67ce9, type: 3}
+      propertyPath: boxColl
+      value: 
+      objectReference: {fileID: 101218826}
     - target: {fileID: 7014527882507340378, guid: f026afe599f193b4e9f73ec009d67ce9, type: 3}
       propertyPath: m_Name
       value: TouchManager

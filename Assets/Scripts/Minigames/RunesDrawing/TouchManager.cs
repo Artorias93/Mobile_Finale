@@ -20,7 +20,7 @@ namespace DrawingRunes
         private bool b_shouldInterpolate = true;
         [SerializeField, Tooltip("Number of vertices to add between any couple of vertices. If shouldInterpolate = false it won't do anything")]
         private int f_interpolationSubdivision = 3;
-
+        [SerializeField] BoxCollider2D boxColl;
 
         private List<Vector3> targetShape;
 
@@ -126,21 +126,39 @@ namespace DrawingRunes
 
             Vector3 firstPos = screenToWorldPos(eventData.position);
 
-            v3_positions.Add(firstPos);
-
             m_lineRenderer.loop = false;
-            m_lineRenderer.positionCount = 1;
-            m_lineRenderer.SetPosition(0, firstPos + Vector3.forward);
+            m_lineRenderer.positionCount = 0;
+
+            if (boxColl.OverlapPoint(firstPos))
+            {
+                m_lineRenderer.positionCount = 1;
+                v3_positions.Add(firstPos);
+
+                m_lineRenderer.SetPosition(0, firstPos + Vector3.forward);
+            }
         }
 
         public void OnDrag(PointerEventData eventData)
         {
             Vector3 dragPos = screenToWorldPos(eventData.position);
 
-            v3_positions.Add(dragPos);
+            if (boxColl.OverlapPoint(dragPos))
+            {
+                v3_positions.Add(dragPos);
 
-            m_lineRenderer.positionCount++;
-            m_lineRenderer.SetPosition(v3_positions.Count - 1, dragPos + Vector3.forward);
+                if (m_lineRenderer.GetPosition(0).Equals(Vector3.zero))
+                {
+                    m_lineRenderer.loop = false;
+                    m_lineRenderer.positionCount = 1;
+                    m_lineRenderer.SetPosition(0, dragPos + Vector3.forward);
+
+                }
+                else
+                {
+                    m_lineRenderer.positionCount++;
+                    m_lineRenderer.SetPosition(v3_positions.Count - 1, dragPos + Vector3.forward);
+                }
+            }
 
         }
 
@@ -158,12 +176,10 @@ namespace DrawingRunes
                 m_lineRenderer.loop = true;
                 m_lineRenderer.Simplify(f_drawingSmoothness);
 
-
                 float distance = calculateSetsDistance(v3_positions.ToArray(), targetShape.ToArray());
 
                 f_distance = distance;
                 m_status = DrawingStatus.FINISHED;
-
                 m_lineRenderer.positionCount = 0;
             }
         }

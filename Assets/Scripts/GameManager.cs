@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour
     {
         //Used for single minigames
         diff = difficulty;
+        Time.timeScale = 0;
         StartCoroutine(_loadMinigame(minigameName, difficulty));
     }
 
@@ -189,7 +190,9 @@ public class GameManager : MonoBehaviour
         m_TransitionManager.StartReadyTransition();
         //yield return new WaitUntil(() => m_TransitionManager.AnimationCompleted);
         Debug.Log("Detransition complete");
-    }    
+
+        Time.timeScale = 1;
+    }
     private IEnumerator _asyncSceneLoadMainMenuStopping()
     {
         m_TransitionManager.StartLoadingTransition();

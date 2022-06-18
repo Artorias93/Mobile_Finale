@@ -1012,25 +1012,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4369583107280671827, guid: ffa7dc37a7295ea45af63b591ea7dbcb, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 762.46
-      objectReference: {fileID: 0}
-    - target: {fileID: 4369583107280671827, guid: ffa7dc37a7295ea45af63b591ea7dbcb, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 693.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4369583107280671827, guid: ffa7dc37a7295ea45af63b591ea7dbcb, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 17.83
-      objectReference: {fileID: 0}
-    - target: {fileID: 4369583107280671827, guid: ffa7dc37a7295ea45af63b591ea7dbcb, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 9.59
-      objectReference: {fileID: 0}
     - target: {fileID: 4369583107810252851, guid: ffa7dc37a7295ea45af63b591ea7dbcb, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4910900449311349598, guid: ffa7dc37a7295ea45af63b591ea7dbcb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1215,6 +1199,10 @@ PrefabInstance:
     - target: {fileID: 4910900450350563841, guid: ffa7dc37a7295ea45af63b591ea7dbcb, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070460753863824108, guid: ffa7dc37a7295ea45af63b591ea7dbcb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 96.66666
       objectReference: {fileID: 0}
     - target: {fileID: 6990113100887856964, guid: ffa7dc37a7295ea45af63b591ea7dbcb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
