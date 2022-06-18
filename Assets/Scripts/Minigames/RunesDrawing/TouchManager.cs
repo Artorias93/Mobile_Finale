@@ -146,12 +146,11 @@ namespace DrawingRunes
             {
                 v3_positions.Add(dragPos);
 
-                if (m_lineRenderer.GetPosition(0).Equals(Vector3.zero))
+                if (m_lineRenderer.positionCount == 0)
                 {
                     m_lineRenderer.loop = false;
                     m_lineRenderer.positionCount = 1;
                     m_lineRenderer.SetPosition(0, dragPos + Vector3.forward);
-
                 }
                 else
                 {
