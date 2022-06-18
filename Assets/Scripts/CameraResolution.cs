@@ -5,6 +5,8 @@ using UnityEngine;
 public class CameraResolution : MonoBehaviour
 {
     [HideInInspector] public float scaleheight;
+    [HideInInspector] public float scalewidth;
+
 
     // Use this for initialization
     void Start()
@@ -37,7 +39,7 @@ public class CameraResolution : MonoBehaviour
         }
         else // add pillarbox
         {
-            float scalewidth = 1.0f / scaleheight;
+            scalewidth = 1.0f / scaleheight;
 
             Rect rect = camera.rect;
 

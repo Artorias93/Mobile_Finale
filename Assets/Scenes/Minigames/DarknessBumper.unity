@@ -545,7 +545,7 @@ MonoBehaviour:
     f_minSpawnDelay: 2
     f_maxSpawDelay: 3
     f_timePersistence: 5
-    i_maxError: 7
+    i_maxError: 3
   gp_medium:
     i_playTime: 15
     f_skullSpeedMultiplier: 1.5
@@ -559,9 +559,9 @@ MonoBehaviour:
     f_minSpawnDelay: 1
     f_maxSpawDelay: 2
     f_timePersistence: 3
-    i_maxError: 3
-  b_enableDebug: 0
-  diff: 1
+    i_maxError: 70
+  b_enableDebug: 1
+  diff: 2
 --- !u!4 &879889300
 Transform:
   m_ObjectHideFlags: 0

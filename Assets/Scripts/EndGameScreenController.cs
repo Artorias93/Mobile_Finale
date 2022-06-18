@@ -61,7 +61,6 @@ public class EndGameScreenController : MonoBehaviour
 
     protected void showStar(int index, int score)
     {
-        print(score);
         if (index >= 0 && index < GO_stars.Length)
             
             switch (score)
@@ -76,7 +75,6 @@ public class EndGameScreenController : MonoBehaviour
                     GO_stars[index].color = c_color3;
                     break;
             }
-        //GO_stars[index].color = Color.white;
         else
             Debug.Log("Invalid Index");
     }
@@ -85,7 +83,6 @@ public class EndGameScreenController : MonoBehaviour
     {
         if (index >= 0 && index < GO_stars.Length)
             GO_stars[index].color = c_color0;
-            //GO_stars[index].color = new Color(1f, 1f, 1f, i_hiddenAlpha);
         else
             Debug.Log("Invalid Index");
     }

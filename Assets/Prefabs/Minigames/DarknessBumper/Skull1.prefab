@@ -129,6 +129,8 @@ MonoBehaviour:
   f_maxWidth: 2
   f_minHeight: 0.5
   f_maxHeight: 2
+  f_scaleHeightParam: 500
+  f_scaleWidthParam: 300
 --- !u!50 &4335181986321621203
 Rigidbody2D:
   serializedVersion: 4
