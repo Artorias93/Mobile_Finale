@@ -7,7 +7,6 @@ public class CameraResolution : MonoBehaviour
     [HideInInspector] public float scaleheight;
     [HideInInspector] public float scalewidth;
 
-
     // Use this for initialization
     void Start()
     {

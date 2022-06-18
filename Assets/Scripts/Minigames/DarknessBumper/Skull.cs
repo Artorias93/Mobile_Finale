@@ -35,8 +35,8 @@ namespace DarknessBumper
         [SerializeField] float f_maxWidth;
         [SerializeField] float f_minHeight;
         [SerializeField] float f_maxHeight;
-        [SerializeField] float f_scaleHeightParam = 400;
-        [SerializeField] float f_scaleWidthParam = 300;
+        [SerializeField] float f_boundHeight = 3.5f;
+        [SerializeField] float f_boundWidth = 8.2f;
 
 
         private void Start()
@@ -104,7 +104,7 @@ namespace DarknessBumper
 
         private void Direction(float f_pos1, float f_pos2, float f_pos3, float f_pos4)
         {
-            if (f_pos1 <= -Screen.width / f_scaleWidthParam || f_pos1 >= Screen.width / f_scaleWidthParam || f_pos3 <= -Screen.width / f_scaleWidthParam || f_pos3 >= Screen.width / f_scaleWidthParam || f_pos2 <= -Screen.height / f_scaleHeightParam || f_pos2 >= Screen.height / f_scaleHeightParam || f_pos4 <= -Screen.height / f_scaleHeightParam || f_pos4 >= Screen.height / f_scaleHeightParam)
+            if (f_pos1 <= -f_boundWidth || f_pos1 >= f_boundWidth || f_pos3 <= -f_boundWidth || f_pos3 >= f_boundWidth || f_pos2 <= -f_boundHeight || f_pos2 >= f_boundHeight || f_pos4 <= -f_boundHeight || f_pos4 >= f_boundHeight)
             {
                 StopCoroutine(switchDirCoroutine);
                 b_canChangeDir = !b_canChangeDir;
