@@ -263,9 +263,9 @@ namespace PotionBrewMinigame
         protected override void EndMinigame()
         {
             i_score = (int) (3* (float)i_currentStepCount / m_gameParameters.i_maxStepsCount);
-            if (m_gameTimer != null && m_gameTimer.RemainingTime <= 0.0f) {
-                generalUIManager.DisableAll();
-            }
+//             if (m_gameTimer != null && m_gameTimer.RemainingTime <= 0.0f) {
+//                 generalUIManager.DisableAll();
+//             }
         }
 
     }

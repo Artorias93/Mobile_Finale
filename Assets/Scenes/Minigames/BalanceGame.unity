@@ -1213,7 +1213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6949919876143858991, guid: 6857b0153d07cd1448cdcaf5c8045a7b, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6949919876295500862, guid: 6857b0153d07cd1448cdcaf5c8045a7b, type: 3}
       propertyPath: m_SortingOrder
@@ -1296,6 +1296,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Balance
       objectReference: {fileID: 0}
+    - target: {fileID: 7418775099875884002, guid: 930633ced6c799742881667155fc74d1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7418775099875884005, guid: 930633ced6c799742881667155fc74d1, type: 3}
       propertyPath: balanceGameManager
       value: 
@@ -1304,6 +1308,10 @@ PrefabInstance:
       propertyPath: balanceGameManager
       value: 
       objectReference: {fileID: 41366248}
+    - target: {fileID: 7418775100356223018, guid: 930633ced6c799742881667155fc74d1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 930633ced6c799742881667155fc74d1, type: 3}
 --- !u!50 &7418775100975551040 stripped
