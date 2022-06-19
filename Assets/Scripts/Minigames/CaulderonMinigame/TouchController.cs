@@ -40,9 +40,12 @@ namespace CouldronMinigame
         private Vector2 v2_cauldronCenter;
         private int thetaError=0;
         private int thetaRight = 0;
+        private Vector3 m_oldPos;
+
         private void Start()
         {
             Debug.Log("Scaling: " + img_cauldron.canvas.scaleFactor);
+            m_oldPos = this.transform.position;
 
             CalculateLimits();
 
@@ -76,13 +79,12 @@ namespace CouldronMinigame
 
         public void OnEndDrag(PointerEventData eventData)
         {
-            speedController.setMouseDelta(0);
+            speedController.setSpeed(0);
         }
 
         public void OnDrag(PointerEventData eventData)
         {
             Vector2 TouchPosition = Camera.main.ScreenToWorldPoint(eventData.position);
-            Debug.Log(TouchPosition);
             Vector2 distanceFromCenter = TouchPosition - v2_cauldronCenter;
             oldTheta = theta;
             theta = Mathf.Atan2(distanceFromCenter.y, distanceFromCenter.x);
@@ -96,22 +98,35 @@ namespace CouldronMinigame
             
 
             v2_ladleNewPosition = k * (new Vector2(x, y));
+
+            Vector3 oldPos = this.transform.position;
+
             this.transform.position = v2_cauldronCenter + v2_ladleNewPosition;
             Debug.DrawRay(v2_cauldronCenter, v2_cauldronCenter + v2_ladleNewPosition, Color.red);
 
-            if (isClockwiseMovement(oldTheta, theta) && thetaRight>3)
-            {
+            
+        }
 
-                speedController.setMouseDelta(eventData.delta.magnitude);
-                if (circularArrow.color.a>=1) {
+        private void Update()
+        {
+            if (isClockwiseMovement(oldTheta, theta) && thetaRight > 3)
+            {
+                float deltaMovement = (this.transform.position - m_oldPos).magnitude;
+
+                m_oldPos = this.transform.position;
+
+                speedController.setSpeed(deltaMovement);
+                if (circularArrow.color.a >= 1)
+                {
                     StartCoroutine(fadeOut());
                 }
             }
-            else if(thetaError>3){
+            else if (thetaError > 3)
+            {
 
-                
-                speedController.setMouseDelta(0);
-                if (circularArrow.color.a<=0)
+
+                speedController.setSpeed(0);
+                if (circularArrow.color.a <= 0)
                 {
                     StartCoroutine(fadeIn());
                 }

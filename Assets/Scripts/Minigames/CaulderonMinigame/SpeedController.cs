@@ -12,12 +12,12 @@ namespace CouldronMinigame
 
         [Header("Input Parameters")]
         
-        [SerializeField] private float m_maxSpeed=1000;
+        [SerializeField, Tooltip("Lower: more responsive, Higher: less responsive")] private float f_speedCoefficient=0.4f;
         [SerializeField, Tooltip("Regulates how fast the slider decreases"), Range(-1.0f, -0.1f)] private float f_mouseDeceleration = -0.8f;
         [SerializeField, Tooltip("Regulates how fast the slider increases"), Range(0.1f, 1f)] private float f_mouseAcceleration = 1f;
+        [SerializeField, Tooltip("Regulates how fast the slider increases"), Range(0.1f, 1f)] private float f_minSpeed = 0.01f; 
 
         private float m_speed;
-        private float mouseDelta;
 
         [Header("References")]
         [SerializeField]
@@ -105,14 +105,22 @@ namespace CouldronMinigame
             StartCoroutine(ChangeSpeed());
         }
 
-        private void Update()
+        private void LateUpdate()
         {
             if (CauldronGameManager.Instance.GameFinished) return;
 
-            float speedDelta = 2*((mouseDelta - m_maxSpeed/2) / m_maxSpeed);
-            speedDelta = Mathf.Clamp(speedDelta, f_mouseDeceleration, f_mouseAcceleration);
-            m_speed += speedDelta*Time.deltaTime;
-            m_speed = Mathf.Clamp(m_speed, 0, 1);
+            float currentSliderValue = m_speedIndicator.value;
+            float deltaIndicator = 0.0f;
+            if (m_speed < f_minSpeed)
+            {
+                deltaIndicator = f_mouseDeceleration;
+            } else
+            {
+                deltaIndicator = m_speed * f_mouseAcceleration;
+            }
+            Debug.Log("Speed: " + m_speed + ", " + deltaIndicator);
+            m_speedIndicator.value = currentSliderValue + deltaIndicator * Time.deltaTime;
+
 
             CheckSpeed();
 
@@ -129,14 +137,10 @@ namespace CouldronMinigame
 
            // Debug.Log(timeInError);
         }
-        public void setMouseDelta(float magnitude)
+        public void setSpeed(float magnitude)
         {
-            mouseDelta = magnitude;
-        }
-        void LateUpdate()
-        {
-
-            m_speedIndicator.value = m_speed;
+            m_speed = magnitude;
+            m_speed /= f_speedCoefficient;
         }
 
 
