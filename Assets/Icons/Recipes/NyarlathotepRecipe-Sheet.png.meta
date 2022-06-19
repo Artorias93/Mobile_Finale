@@ -1,0 +1,1080 @@
+fileFormatVersion: 2
+guid: ec85864c67b6d9842aebc6e3c19e4a2b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1584896777391010344
+    second: NyarlathotepRecipe-Sheet_0
+  - first:
+      213: 6507880271200298495
+    second: NyarlathotepRecipe-Sheet_1
+  - first:
+      213: -7774377640835757125
+    second: NyarlathotepRecipe-Sheet_2
+  - first:
+      213: 6172643858436499032
+    second: NyarlathotepRecipe-Sheet_3
+  - first:
+      213: 8930309042455886385
+    second: NyarlathotepRecipe-Sheet_4
+  - first:
+      213: -5634267913688271866
+    second: NyarlathotepRecipe-Sheet_5
+  - first:
+      213: 6238822280774480511
+    second: NyarlathotepRecipe-Sheet_6
+  - first:
+      213: -4901216265527904361
+    second: NyarlathotepRecipe-Sheet_7
+  - first:
+      213: -3367562349658136979
+    second: NyarlathotepRecipe-Sheet_8
+  - first:
+      213: 2779132362207274151
+    second: NyarlathotepRecipe-Sheet_9
+  - first:
+      213: 416511813128195535
+    second: NyarlathotepRecipe-Sheet_10
+  - first:
+      213: -6540646159374905965
+    second: NyarlathotepRecipe-Sheet_11
+  - first:
+      213: -5740970366210675562
+    second: NyarlathotepRecipe-Sheet_12
+  - first:
+      213: -3023663378850438775
+    second: NyarlathotepRecipe-Sheet_13
+  - first:
+      213: 8085928296011968189
+    second: NyarlathotepRecipe-Sheet_14
+  - first:
+      213: 2600434017369600221
+    second: NyarlathotepRecipe-Sheet_15
+  - first:
+      213: 7382802473735496327
+    second: NyarlathotepRecipe-Sheet_16
+  - first:
+      213: -6038648392589038613
+    second: NyarlathotepRecipe-Sheet_17
+  - first:
+      213: -1010488502865864018
+    second: NyarlathotepRecipe-Sheet_18
+  - first:
+      213: 5410013060028629997
+    second: NyarlathotepRecipe-Sheet_19
+  - first:
+      213: -4880179194855194524
+    second: NyarlathotepRecipe-Sheet_20
+  - first:
+      213: -805789453186273890
+    second: NyarlathotepRecipe-Sheet_21
+  - first:
+      213: -6617124501438869248
+    second: NyarlathotepRecipe-Sheet_22
+  - first:
+      213: 725979259322367312
+    second: NyarlathotepRecipe-Sheet_23
+  - first:
+      213: -7114909011848081284
+    second: NyarlathotepRecipe-Sheet_24
+  - first:
+      213: -9137581960678179978
+    second: NyarlathotepRecipe-Sheet_25
+  - first:
+      213: -5111613643485948392
+    second: NyarlathotepRecipe-Sheet_26
+  - first:
+      213: -6674056478204210649
+    second: NyarlathotepRecipe-Sheet_27
+  - first:
+      213: -8550488237274586896
+    second: NyarlathotepRecipe-Sheet_28
+  - first:
+      213: 3382021892377524504
+    second: NyarlathotepRecipe-Sheet_29
+  - first:
+      213: -1352006345305097731
+    second: NyarlathotepRecipe-Sheet_30
+  - first:
+      213: 6513682605103212814
+    second: NyarlathotepRecipe-Sheet_31
+  - first:
+      213: -8763490096498739902
+    second: NyarlathotepRecipe-Sheet_32
+  - first:
+      213: 3588961786918464887
+    second: NyarlathotepRecipe-Sheet_33
+  - first:
+      213: 1944869154067701250
+    second: NyarlathotepRecipe-Sheet_34
+  - first:
+      213: 5777602900565280835
+    second: NyarlathotepRecipe-Sheet_35
+  - first:
+      213: 7015083833952177120
+    second: NyarlathotepRecipe-Sheet_36
+  - first:
+      213: 3430390641727737432
+    second: NyarlathotepRecipe-Sheet_37
+  - first:
+      213: -2448301609233008241
+    second: NyarlathotepRecipe-Sheet_38
+  - first:
+      213: -6398632106675067022
+    second: NyarlathotepRecipe-Sheet_39
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 375
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dd82f137c0510ae0800000000000000
+      internalID: -1584896777391010344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 375
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff5aaad50a2a05a50800000000000000
+      internalID: 6507880271200298495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 375
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbbce30e9bcdb1490800000000000000
+      internalID: -7774377640835757125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 375
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 856aa1b92e2a9a550800000000000000
+      internalID: 6172643858436499032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 375
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13aba0262c4deeb70800000000000000
+      internalID: 8930309042455886385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 375
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 604ba332f2f0fc1b0800000000000000
+      internalID: -5634267913688271866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 375
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f72fa564fcfb49650800000000000000
+      internalID: 6238822280774480511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 375
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 797b7d536c16bfbb0800000000000000
+      internalID: -4901216265527904361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 375
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6e95a592e30441d0800000000000000
+      internalID: -3367562349658136979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 375
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a42821b826719620800000000000000
+      internalID: 2779132362207274151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 250
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcd824a894fb7c500800000000000000
+      internalID: 416511813128195535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 250
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39d8fecc8f4fa35a0800000000000000
+      internalID: -6540646159374905965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 250
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69ce7ff6ed9f350b0800000000000000
+      internalID: -5740970366210675562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 250
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 981234f4d2ac906d0800000000000000
+      internalID: -3023663378850438775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 250
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbea213b1fcf63070800000000000000
+      internalID: 8085928296011968189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 250
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd0382b06f8961420800000000000000
+      internalID: 2600434017369600221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 250
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78221edebbbf47660800000000000000
+      internalID: 7382802473735496327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 250
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beb2f34f749623ca0800000000000000
+      internalID: -6038648392589038613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 250
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaa50197f060af1f0800000000000000
+      internalID: -1010488502865864018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 250
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de30b31f63a341b40800000000000000
+      internalID: 5410013060028629997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 125
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 460876ae0ee164cb0800000000000000
+      internalID: -4880179194855194524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 125
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9d6317f2c241d4f0800000000000000
+      internalID: -805789453186273890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 125
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 001d33133504b24a0800000000000000
+      internalID: -6617124501438869248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 125
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05df53a3a42331a00800000000000000
+      internalID: 725979259322367312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 125
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c70d19b33f3c24d90800000000000000
+      internalID: -7114909011848081284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 125
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67b72c7ae99c03180800000000000000
+      internalID: -9137581960678179978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 125
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 816daf64976ef09b0800000000000000
+      internalID: -5111613643485948392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 125
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7225eb56efcf063a0800000000000000
+      internalID: -6674056478204210649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 125
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f0a7192040965980800000000000000
+      internalID: -8550488237274586896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 125
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 819b1cd0efa5fee20800000000000000
+      internalID: 3382021892377524504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df9f3066465bc3de0800000000000000
+      internalID: -1352006345305097731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 0
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0961d081df356a50800000000000000
+      internalID: 6513682605103212814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 0
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 245f98d2034d16680800000000000000
+      internalID: -8763490096498739902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 0
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77de9b5eabd8ec130800000000000000
+      internalID: 3588961786918464887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20ed1d6f0309dfa10800000000000000
+      internalID: 1944869154067701250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 0
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 348c57d1a3b2e2050800000000000000
+      internalID: 5777602900565280835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 0
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eb0e4854959a5160800000000000000
+      internalID: 7015083833952177120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 0
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85e81091d123b9f20800000000000000
+      internalID: 3430390641727737432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8936a678a2e50ed0800000000000000
+      internalID: -2448301609233008241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NyarlathotepRecipe-Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 0
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2772939100e7337a0800000000000000
+      internalID: -6398632106675067022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

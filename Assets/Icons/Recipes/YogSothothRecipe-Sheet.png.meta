@@ -1,0 +1,1008 @@
+fileFormatVersion: 2
+guid: 76f9672f923af774a914b1c34ce2b58f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7990462391421052121
+    second: YogSothothRecipe-Sheet_0
+  - first:
+      213: -3026686259923991701
+    second: YogSothothRecipe-Sheet_1
+  - first:
+      213: -7365194502993197801
+    second: YogSothothRecipe-Sheet_2
+  - first:
+      213: -3957423030781902063
+    second: YogSothothRecipe-Sheet_3
+  - first:
+      213: 345483897287084011
+    second: YogSothothRecipe-Sheet_4
+  - first:
+      213: 1744625197838401044
+    second: YogSothothRecipe-Sheet_5
+  - first:
+      213: 2352921222522783892
+    second: YogSothothRecipe-Sheet_6
+  - first:
+      213: -8421822145125700023
+    second: YogSothothRecipe-Sheet_7
+  - first:
+      213: 9097966010903837631
+    second: YogSothothRecipe-Sheet_8
+  - first:
+      213: 2435162069542327761
+    second: YogSothothRecipe-Sheet_9
+  - first:
+      213: 2452841106077869317
+    second: YogSothothRecipe-Sheet_10
+  - first:
+      213: -588768582240376847
+    second: YogSothothRecipe-Sheet_11
+  - first:
+      213: -376232448353678577
+    second: YogSothothRecipe-Sheet_12
+  - first:
+      213: 436290287129671519
+    second: YogSothothRecipe-Sheet_13
+  - first:
+      213: -4000994658638421522
+    second: YogSothothRecipe-Sheet_14
+  - first:
+      213: -6280748806287550257
+    second: YogSothothRecipe-Sheet_15
+  - first:
+      213: 7439033565465470130
+    second: YogSothothRecipe-Sheet_16
+  - first:
+      213: 7786531022218862613
+    second: YogSothothRecipe-Sheet_17
+  - first:
+      213: -7624974635432104042
+    second: YogSothothRecipe-Sheet_18
+  - first:
+      213: -3017438003481826750
+    second: YogSothothRecipe-Sheet_19
+  - first:
+      213: -5275316583189458127
+    second: YogSothothRecipe-Sheet_20
+  - first:
+      213: -5610359367438316485
+    second: YogSothothRecipe-Sheet_21
+  - first:
+      213: -2740060612348327660
+    second: YogSothothRecipe-Sheet_22
+  - first:
+      213: -178428688103247559
+    second: YogSothothRecipe-Sheet_23
+  - first:
+      213: 353724735410232324
+    second: YogSothothRecipe-Sheet_24
+  - first:
+      213: 6543213512397529943
+    second: YogSothothRecipe-Sheet_25
+  - first:
+      213: -1349900674894386814
+    second: YogSothothRecipe-Sheet_26
+  - first:
+      213: 9215642994710373278
+    second: YogSothothRecipe-Sheet_27
+  - first:
+      213: -5249712893352091703
+    second: YogSothothRecipe-Sheet_28
+  - first:
+      213: -1351827128882526323
+    second: YogSothothRecipe-Sheet_29
+  - first:
+      213: -1152850495598518133
+    second: YogSothothRecipe-Sheet_30
+  - first:
+      213: 3654532486437506936
+    second: YogSothothRecipe-Sheet_31
+  - first:
+      213: 821428702751360970
+    second: YogSothothRecipe-Sheet_32
+  - first:
+      213: 2180063410587809288
+    second: YogSothothRecipe-Sheet_33
+  - first:
+      213: -2026861748213225624
+    second: YogSothothRecipe-Sheet_34
+  - first:
+      213: -5410780685000874623
+    second: YogSothothRecipe-Sheet_35
+  - first:
+      213: -4978817802664242361
+    second: YogSothothRecipe-Sheet_36
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 375
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d425cfa533d3ee60800000000000000
+      internalID: 7990462391421052121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 375
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b63cca6f1ec0ff5d0800000000000000
+      internalID: -3026686259923991701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 375
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7154e6b3f9299c990800000000000000
+      internalID: -7365194502993197801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 375
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1138b4888b86419c0800000000000000
+      internalID: -3957423030781902063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 375
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be70a6d26c76bc400800000000000000
+      internalID: 345483897287084011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 375
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41e7a5fbf57263810800000000000000
+      internalID: 1744625197838401044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 375
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 498c2f4b26147a020800000000000000
+      internalID: 2352921222522783892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 375
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94ea346316daf1b80800000000000000
+      internalID: -8421822145125700023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 375
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbb308242e7724e70800000000000000
+      internalID: 9097966010903837631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 375
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d5539d000f6bc120800000000000000
+      internalID: 2435162069542327761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 250
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5056f328dfd3a0220800000000000000
+      internalID: 2452841106077869317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 250
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f7e6a8081644d7f0800000000000000
+      internalID: -588768582240376847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 250
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0b47e2e49a57caf0800000000000000
+      internalID: -376232448353678577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 250
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f57315f54b30e0600800000000000000
+      internalID: 436290287129671519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 250
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee12f9f5e8c9978c0800000000000000
+      internalID: -4000994658638421522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 250
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc895cdcc3c46d8a0800000000000000
+      internalID: -6280748806287550257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 250
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b4e6c53d91cc3760800000000000000
+      internalID: 7439033565465470130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 250
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5102aebb5b05f0c60800000000000000
+      internalID: 7786531022218862613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 250
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69fa4b9c7f5ae2690800000000000000
+      internalID: -7624974635432104042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 250
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24aa3b67f18ef16d0800000000000000
+      internalID: -3017438003481826750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 125
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 133d345748f4ac6b0800000000000000
+      internalID: -5275316583189458127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 125
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3ccd8951eff322b0800000000000000
+      internalID: -5610359367438316485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 125
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41940f9f36959f9d0800000000000000
+      internalID: -2740060612348327660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 125
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 931fdd3bd08168df0800000000000000
+      internalID: -178428688103247559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 125
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40c5562d5cea8e400800000000000000
+      internalID: 353724735410232324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 125
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 753adf7a50a2eca50800000000000000
+      internalID: 6543213512397529943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 125
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2892cdefc70344de0800000000000000
+      internalID: -1349900674894386814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 125
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9367842a7a84ef70800000000000000
+      internalID: 9215642994710373278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 125
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cfd5fa00f54527b0800000000000000
+      internalID: -5249712893352091703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 125
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d87883973685d3de0800000000000000
+      internalID: -1351827128882526323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b80a7b215904000f0800000000000000
+      internalID: -1152850495598518133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 0
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87f8b321fe187b230800000000000000
+      internalID: 3654532486437506936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 0
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac70ec39d0d466b00800000000000000
+      internalID: 821428702751360970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 0
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 806b9e71f14214e10800000000000000
+      internalID: 2180063410587809288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8676ce09af32fd3e0800000000000000
+      internalID: -2026861748213225624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 0
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1856af072ab09e4b0800000000000000
+      internalID: -5410780685000874623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YogSothothRecipe-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 0
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7439ece569fa7eab0800000000000000
+      internalID: -4978817802664242361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,1056 @@
+fileFormatVersion: 2
+guid: 639095602bf1ab848a98c581230bb5a0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -950363992753189413
+    second: ShoggothRecipe-Sheet_0
+  - first:
+      213: -1253837159679456727
+    second: ShoggothRecipe-Sheet_1
+  - first:
+      213: 6199875779624530068
+    second: ShoggothRecipe-Sheet_2
+  - first:
+      213: -7457744315081637950
+    second: ShoggothRecipe-Sheet_3
+  - first:
+      213: 5832344384108836401
+    second: ShoggothRecipe-Sheet_4
+  - first:
+      213: 3933747093263563921
+    second: ShoggothRecipe-Sheet_5
+  - first:
+      213: 902720186115053176
+    second: ShoggothRecipe-Sheet_6
+  - first:
+      213: -5082642730719522909
+    second: ShoggothRecipe-Sheet_7
+  - first:
+      213: 5134583988890790076
+    second: ShoggothRecipe-Sheet_8
+  - first:
+      213: -705611737093618899
+    second: ShoggothRecipe-Sheet_9
+  - first:
+      213: -6189149868401739851
+    second: ShoggothRecipe-Sheet_10
+  - first:
+      213: -2388708459892950081
+    second: ShoggothRecipe-Sheet_11
+  - first:
+      213: 1589217087409296556
+    second: ShoggothRecipe-Sheet_12
+  - first:
+      213: -5031402738839328658
+    second: ShoggothRecipe-Sheet_13
+  - first:
+      213: -2082615748887000835
+    second: ShoggothRecipe-Sheet_14
+  - first:
+      213: -8469068934125435664
+    second: ShoggothRecipe-Sheet_15
+  - first:
+      213: 8881473974882630338
+    second: ShoggothRecipe-Sheet_16
+  - first:
+      213: 1683079197400287561
+    second: ShoggothRecipe-Sheet_17
+  - first:
+      213: -7943779854044943864
+    second: ShoggothRecipe-Sheet_18
+  - first:
+      213: -5694912148201820007
+    second: ShoggothRecipe-Sheet_19
+  - first:
+      213: 5811808502801436623
+    second: ShoggothRecipe-Sheet_20
+  - first:
+      213: -6328565943579180733
+    second: ShoggothRecipe-Sheet_21
+  - first:
+      213: 7752960195423932556
+    second: ShoggothRecipe-Sheet_22
+  - first:
+      213: 1968862149561257550
+    second: ShoggothRecipe-Sheet_23
+  - first:
+      213: -3251043406423013706
+    second: ShoggothRecipe-Sheet_24
+  - first:
+      213: 7152341839235057061
+    second: ShoggothRecipe-Sheet_25
+  - first:
+      213: -4684069402494524287
+    second: ShoggothRecipe-Sheet_26
+  - first:
+      213: 4396600288847964228
+    second: ShoggothRecipe-Sheet_27
+  - first:
+      213: 2569420225358461453
+    second: ShoggothRecipe-Sheet_28
+  - first:
+      213: 4734195582419070329
+    second: ShoggothRecipe-Sheet_29
+  - first:
+      213: 2166104546664423908
+    second: ShoggothRecipe-Sheet_30
+  - first:
+      213: 4976744248248150910
+    second: ShoggothRecipe-Sheet_31
+  - first:
+      213: -357619473301531996
+    second: ShoggothRecipe-Sheet_32
+  - first:
+      213: -3915962435082052061
+    second: ShoggothRecipe-Sheet_33
+  - first:
+      213: 8624158701355319007
+    second: ShoggothRecipe-Sheet_34
+  - first:
+      213: 1321233503190975532
+    second: ShoggothRecipe-Sheet_35
+  - first:
+      213: 2317884504259613022
+    second: ShoggothRecipe-Sheet_36
+  - first:
+      213: 2793412252637712684
+    second: ShoggothRecipe-Sheet_37
+  - first:
+      213: 4118738392383534844
+    second: ShoggothRecipe-Sheet_38
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 375
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bddcf9cdbf0afc2f0800000000000000
+      internalID: -950363992753189413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 375
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92a0f131fb9799ee0800000000000000
+      internalID: -1253837159679456727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 375
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49071185c226a0650800000000000000
+      internalID: 6199875779624530068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 375
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cfbed9ee05c08890800000000000000
+      internalID: -7457744315081637950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 375
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1363d86f056a0f050800000000000000
+      internalID: 5832344384108836401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 375
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19c3332b32a779630800000000000000
+      internalID: 3933747093263563921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 375
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87656f8f93b178c00800000000000000
+      internalID: 902720186115053176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 375
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3afcd3b8d53d679b0800000000000000
+      internalID: -5082642730719522909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 375
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb86e370fe4b14740800000000000000
+      internalID: 5134583988890790076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 375
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2340351dd92536f0800000000000000
+      internalID: -705611737093618899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 250
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b732487cf8bb1aa0800000000000000
+      internalID: -6189149868401739851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 250
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbb3c18cf4a99ded0800000000000000
+      internalID: -2388708459892950081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 250
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca4130e55880e0610800000000000000
+      internalID: 1589217087409296556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 250
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e68ed85dddddc2ab0800000000000000
+      internalID: -5031402738839328658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 250
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df8c4f3b2001913e0800000000000000
+      internalID: -2082615748887000835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 250
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f4482beca2d77a80800000000000000
+      internalID: -8469068934125435664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 250
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ca71ca2685514b70800000000000000
+      internalID: 8881473974882630338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 250
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 949c4e9dc9f7b5710800000000000000
+      internalID: 1683079197400287561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 250
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80a2fb98f4602c190800000000000000
+      internalID: -7943779854044943864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 250
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 990bf5bf29b97f0b0800000000000000
+      internalID: -5694912148201820007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 125
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcf03108a01b7a050800000000000000
+      internalID: 5811808502801436623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 125
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3410453fdca6c28a0800000000000000
+      internalID: -6328565943579180733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 125
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c809cf5883c089b60800000000000000
+      internalID: 7752960195423932556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 125
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4e8f4c81bdc25b10800000000000000
+      internalID: 1968862149561257550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 125
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b6c7c22f39f1e2d0800000000000000
+      internalID: -3251043406423013706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 125
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a505cf0209324360800000000000000
+      internalID: 7152341839235057061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 125
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 184a90912b7defeb0800000000000000
+      internalID: -4684069402494524287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 125
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 448a9242bacd30d30800000000000000
+      internalID: 4396600288847964228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 125
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0af133e41a68a320800000000000000
+      internalID: 2569420225358461453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 125
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97def43accd33b140800000000000000
+      internalID: 4734195582419070329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e1aa42db9c8f0e10800000000000000
+      internalID: 2166104546664423908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 0
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7bacce9682f01540800000000000000
+      internalID: 4976744248248150910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 0
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a29919dbfa790bf0800000000000000
+      internalID: -357619473301531996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 0
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32e1927b9e4b7a9c0800000000000000
+      internalID: -3915962435082052061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdeb0e865aa2fa770800000000000000
+      internalID: 8624158701355319007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 0
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c240b07fed6f55210800000000000000
+      internalID: 1321233503190975532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 0
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e51d6ca0da7ca2020800000000000000
+      internalID: 2317884504259613022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 0
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c21d1b5c4a134c620800000000000000
+      internalID: 2793412252637712684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShoggothRecipe-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 90
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf6b8c0feb2b82930800000000000000
+      internalID: 4118738392383534844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,936 @@
+fileFormatVersion: 2
+guid: 1d95cd4da2249da49abcc5e37c2fe69c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3484040524488690903
+    second: ShubNiggurathRecipe-Sheet_0
+  - first:
+      213: -1855902515106703937
+    second: ShubNiggurathRecipe-Sheet_1
+  - first:
+      213: 8813031999304163386
+    second: ShubNiggurathRecipe-Sheet_2
+  - first:
+      213: -7172717922850783133
+    second: ShubNiggurathRecipe-Sheet_3
+  - first:
+      213: 619764618369671246
+    second: ShubNiggurathRecipe-Sheet_4
+  - first:
+      213: -4820891245117401473
+    second: ShubNiggurathRecipe-Sheet_5
+  - first:
+      213: 4221911158297494201
+    second: ShubNiggurathRecipe-Sheet_6
+  - first:
+      213: -8543945585553841023
+    second: ShubNiggurathRecipe-Sheet_7
+  - first:
+      213: 42546149898579289
+    second: ShubNiggurathRecipe-Sheet_8
+  - first:
+      213: -4146454669087969250
+    second: ShubNiggurathRecipe-Sheet_9
+  - first:
+      213: -4270456671645885674
+    second: ShubNiggurathRecipe-Sheet_10
+  - first:
+      213: 6897057460457662463
+    second: ShubNiggurathRecipe-Sheet_11
+  - first:
+      213: -7311555296666661044
+    second: ShubNiggurathRecipe-Sheet_12
+  - first:
+      213: 4544511495468377180
+    second: ShubNiggurathRecipe-Sheet_13
+  - first:
+      213: -8472623025949617252
+    second: ShubNiggurathRecipe-Sheet_14
+  - first:
+      213: 631498517093671346
+    second: ShubNiggurathRecipe-Sheet_15
+  - first:
+      213: -7234376271899662255
+    second: ShubNiggurathRecipe-Sheet_16
+  - first:
+      213: 8615305791099672708
+    second: ShubNiggurathRecipe-Sheet_17
+  - first:
+      213: 3414721688384318955
+    second: ShubNiggurathRecipe-Sheet_18
+  - first:
+      213: -7449239230276596362
+    second: ShubNiggurathRecipe-Sheet_19
+  - first:
+      213: 5052953213828471072
+    second: ShubNiggurathRecipe-Sheet_20
+  - first:
+      213: -2069812774502374663
+    second: ShubNiggurathRecipe-Sheet_21
+  - first:
+      213: -2863761907372381256
+    second: ShubNiggurathRecipe-Sheet_22
+  - first:
+      213: 6989580115561364731
+    second: ShubNiggurathRecipe-Sheet_23
+  - first:
+      213: 5610667261163362117
+    second: ShubNiggurathRecipe-Sheet_24
+  - first:
+      213: -8428656524517088143
+    second: ShubNiggurathRecipe-Sheet_25
+  - first:
+      213: -6091438214263926567
+    second: ShubNiggurathRecipe-Sheet_26
+  - first:
+      213: 4504389281569473249
+    second: ShubNiggurathRecipe-Sheet_27
+  - first:
+      213: 3523853034430552121
+    second: ShubNiggurathRecipe-Sheet_28
+  - first:
+      213: 409552486525259302
+    second: ShubNiggurathRecipe-Sheet_29
+  - first:
+      213: 65863834225292431
+    second: ShubNiggurathRecipe-Sheet_30
+  - first:
+      213: 4142572311268600038
+    second: ShubNiggurathRecipe-Sheet_31
+  - first:
+      213: 3568306126603201645
+    second: ShubNiggurathRecipe-Sheet_32
+  - first:
+      213: -3523450057279852340
+    second: ShubNiggurathRecipe-Sheet_33
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 447
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dcc635d56cc95030800000000000000
+      internalID: 3484040524488690903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 447
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb59f49de728e36e0800000000000000
+      internalID: -1855902515106703937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 447
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a30eca0f8ed2e4a70800000000000000
+      internalID: 8813031999304163386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 447
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 360c6664d03657c90800000000000000
+      internalID: -7172717922850783133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 447
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e40a74203a8d99800800000000000000
+      internalID: 619764618369671246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 447
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f769cf964f0c81db0800000000000000
+      internalID: -4820891245117401473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 447
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b2849f64dd379a30800000000000000
+      internalID: 4221911158297494201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 447
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 184ebc8f1cecd6980800000000000000
+      internalID: -8543945585553841023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 447
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95de3477f77279000800000000000000
+      internalID: 42546149898579289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 447
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1070c38275d476c0800000000000000
+      internalID: -4146454669087969250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 298
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61b99d1784a4cb4c0800000000000000
+      internalID: -4270456671645885674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 298
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff76906d73547bf50800000000000000
+      internalID: 6897057460457662463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 298
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4fce8a2233288a90800000000000000
+      internalID: -7311555296666661044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 298
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5462159029511f30800000000000000
+      internalID: 4544511495468377180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 298
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c935a7e6f323b6a80800000000000000
+      internalID: -8472623025949617252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 298
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b1ed833e8883c800800000000000000
+      internalID: 631498517093671346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 298
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 158e7ed2c155a9b90800000000000000
+      internalID: -7234376271899662255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 298
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4889cdd98f6bf8770800000000000000
+      internalID: 8615305791099672708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 298
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bed28fa9847836f20800000000000000
+      internalID: 3414721688384318955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 298
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67d8578436cfe9890800000000000000
+      internalID: -7449239230276596362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 149
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0291ae02d22bf1640800000000000000
+      internalID: 5052953213828471072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 149
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f268387f3c8643e0800000000000000
+      internalID: -2069812774502374663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 149
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bb26c5d7bfd148d0800000000000000
+      internalID: -2863761907372381256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 149
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfc3b2d251afff060800000000000000
+      internalID: 6989580115561364731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 149
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5475e8eb5281ddd40800000000000000
+      internalID: 5610667261163362117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 149
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17461624c85670b80800000000000000
+      internalID: -8428656524517088143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 149
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d01f8bc73dd67ba0800000000000000
+      internalID: -6091438214263926567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 149
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e28602bf2ec28e30800000000000000
+      internalID: 4504389281569473249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 149
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9385ae52aad37e030800000000000000
+      internalID: 3523853034430552121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 149
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62e473c01d50fa500800000000000000
+      internalID: 409552486525259302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f843b8aeecef9e000800000000000000
+      internalID: 65863834225292431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 0
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e8a88d919f5d7930800000000000000
+      internalID: 4142572311268600038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 0
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6ca806348b258130800000000000000
+      internalID: 3568306126603201645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShubNiggurathRecipe-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 0
+        width: 106
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc0310847d03a1fc0800000000000000
+      internalID: -3523450057279852340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
