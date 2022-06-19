@@ -261,7 +261,7 @@ MonoBehaviour:
     spawnTimeSeconds: 1
   ingredientController: {fileID: 619144664}
   speedController: {fileID: 472681087}
-  b_enableDebug: 1
+  b_enableDebug: 0
   diff: 0
 --- !u!4 &8122636
 Transform:
