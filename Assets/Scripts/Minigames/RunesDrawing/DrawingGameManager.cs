@@ -216,7 +216,6 @@ namespace DrawingRunes
 
                 for(int i = 0; i< selectedVertices.Length - 1; i++)
                 {
-
                     Gizmos.DrawSphere(selectedVertices[i], f_debugGizmosSize);
                     Gizmos.DrawLine(selectedVertices[i], selectedVertices[i + 1]);
                 }

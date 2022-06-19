@@ -9,8 +9,10 @@ namespace MonstersInvaders
             {
                 float normalizedTime = (float) gm.RemainingTime / gm.GameParameters.i_playTime;
                 UpdateSlider(normalizedTime);
-                 
-                scoreText.text = gm.ErrorCount + "/" + gm.GameParameters.i_maxError;
+                
+                if (gm.ErrorCount >= gm.GameParameters.i_maxError) scoreText.text = gm.GameParameters.i_maxError + "/" + gm.GameParameters.i_maxError;
+                else scoreText.text = gm.ErrorCount + "/" + gm.GameParameters.i_maxError;
+                
 
                 if (gm.GameFinished)
                 {

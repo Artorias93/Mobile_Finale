@@ -13,6 +13,12 @@ public class EndGameScreenController : MonoBehaviour
     [SerializeField, Range(0.0f, 1.0f)] protected float i_hiddenAlpha = 0.2f;
     [SerializeField] private Text retryTxt;
     [SerializeField] private Text returnTxt;
+    
+    [Header("Score options")]
+    [SerializeField] private Color c_color0;
+    [SerializeField] private Color c_color1;
+    [SerializeField] private Color c_color2;
+    [SerializeField] private Color c_color3;
 
     private void Awake()
     {      
@@ -49,14 +55,26 @@ public class EndGameScreenController : MonoBehaviour
             child.gameObject.SetActive(true);
         for(int i = 0; i<score; i++)
         {
-            showStar(i);
+            showStar(i, score);
         }
     }
 
-    protected void showStar(int index)
+    protected void showStar(int index, int score)
     {
         if (index >= 0 && index < GO_stars.Length)
-            GO_stars[index].color = Color.white;
+            
+            switch (score)
+            {
+                case 1:
+                    GO_stars[index].color = c_color1;
+                    break;
+                case 2:
+                    GO_stars[index].color = c_color2;
+                    break;
+                case 3:
+                    GO_stars[index].color = c_color3;
+                    break;
+            }
         else
             Debug.Log("Invalid Index");
     }
@@ -64,7 +82,7 @@ public class EndGameScreenController : MonoBehaviour
     protected void hideStar(int index)
     {
         if (index >= 0 && index < GO_stars.Length)
-            GO_stars[index].color = new Color(1f, 1f, 1f, i_hiddenAlpha);
+            GO_stars[index].color = c_color0;
         else
             Debug.Log("Invalid Index");
     }

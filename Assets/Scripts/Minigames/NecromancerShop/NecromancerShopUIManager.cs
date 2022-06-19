@@ -45,7 +45,7 @@ namespace NecromancerShop
         }
 
         public void showIngredientsList() {
-            if (necromancerShopGM.m_gameParameters.i_remainingOpenListCount > 0) {
+            if (necromancerShopGM.m_gameParameters.i_remainingOpenListCount > 0 && !m_IngredientsListPanel.active) {
                 necromancerShopGM.m_gameParameters.i_remainingOpenListCount--;
                 setRemainingOpenListCount(necromancerShopGM.m_gameParameters.i_remainingOpenListCount);
                 m_IngredientsListPanel.SetActive(true);
@@ -58,6 +58,7 @@ namespace NecromancerShop
                 GameObject go=Instantiate(m_ingredients[i], m_IngredientsList.transform);
                 go.transform.localScale = new Vector3(0.9f, 0.9f, 0);
                 DraggableItem draggable = go.GetComponent<DraggableItem>();
+                draggable.b_isDraggable = false;
                 go.name = m_ingredients[i].name + "L";
                 m_ingredients[i].GetComponent<DraggableItem>().listElement = draggable;
             }

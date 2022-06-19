@@ -38,7 +38,13 @@ namespace MonstersInvaders
         // Update is called once per frame
         void FixedUpdate()
         {
-            transform.position += Vector3.right * (f_enemySpeed * Time.deltaTime * f_speedMultiplier);
+            if (MonsInvGameManager.Instance.GameFinished)
+            {
+                Destroy(anim);
+                return;
+            }
+
+             transform.position += Vector3.right * (f_enemySpeed * Time.deltaTime * f_speedMultiplier);
 
             if (transform.position.x < -6 || transform.position.x > 6)
             {
@@ -59,6 +65,7 @@ namespace MonstersInvaders
             while(true)
             {
                 yield return new WaitForSeconds(Random.Range(1,5));
+                if (MonsInvGameManager.Instance.GameFinished) yield break;
                 if (Random.value < f_fireRate * f_fireRateMultiplier) anim.SetTrigger("Attack");
             }
         }

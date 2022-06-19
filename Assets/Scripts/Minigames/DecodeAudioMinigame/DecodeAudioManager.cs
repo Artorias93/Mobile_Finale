@@ -120,7 +120,7 @@ namespace DecodeAudioMinigame
         {
             b_gameFinished = true;
             m_bookManager.DisableAll();
-            m_decodeUIManager.DisableAll();
+            //m_decodeUIManager.DisableAll();
 
             i_score = (int)(3 * (float) i_score / m_gameParameters.m_turnNumber);
         }

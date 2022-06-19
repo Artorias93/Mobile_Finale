@@ -129,6 +129,7 @@ namespace MonstersInvaders
                 int i_monsterID = Random.Range(0, rg_monsters.Length);
                 GameObject obj_monster = Instantiate(rg_monsters[i_monsterID]);
                 obj_monster.transform.SetParent(obj_spawnGrid.transform);
+                obj_monster.transform.position += Vector3.forward;
                 EnemyParams(obj_monster);
             }
 
@@ -164,7 +165,6 @@ namespace MonstersInvaders
         {
             m_gameTimer?.StopTimer();
             b_gameFinished = true;
-
             if (b_floorColl) i_score = 0;
             else i_score = Mathf.FloorToInt((Mathf.Abs(((float)i_numError / (float)m_gameParameters.i_maxError * 100) - 100) / 100 * 4));
             if (i_score > 3) i_score = 3;

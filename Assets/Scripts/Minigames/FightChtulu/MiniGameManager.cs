@@ -116,6 +116,7 @@ namespace FightCthulhu
         protected override void EndMinigame()
         {
             b_gameFinished = true;
+            m_gameTimer?.PauseTimer();
             int errorDifference = m_gameParameters.i_maxErrorCount - cthulhu.i_ErrorCount;
             errorDifference = errorDifference > 3 ? 3 : errorDifference;
             i_score = errorDifference;

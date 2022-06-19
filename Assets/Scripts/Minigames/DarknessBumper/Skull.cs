@@ -22,6 +22,7 @@ namespace DarknessBumper
         float f_width;
         float f_height;
         Vector3 startPos;
+        Coroutine switchDirCoroutine;
 
         Animator anim;
         [SerializeField] Sprite explosionSprite;
@@ -34,6 +35,9 @@ namespace DarknessBumper
         [SerializeField] float f_maxWidth;
         [SerializeField] float f_minHeight;
         [SerializeField] float f_maxHeight;
+        [SerializeField] float f_boundHeight = 3.5f;
+        [SerializeField] float f_boundWidth = 8.2f;
+
 
         private void Start()
         {
@@ -44,8 +48,7 @@ namespace DarknessBumper
             startPos = transform.position;
             f_startTime = Time.time;
             anim = GetComponent<Animator>();
-
-            StartCoroutine(SwitchDir());
+            switchDirCoroutine = StartCoroutine(SwitchDir());
         }
 
         void FixedUpdate()
@@ -71,32 +74,25 @@ namespace DarknessBumper
             switch (i_moveType)
             {
                 case 0:
-                    if (!b_skullDir) transform.position = new Vector2(f_xDeltaPos, f_yDeltaPos);
-                    else transform.position = new Vector2(-f_xDeltaPos, f_yDeltaPos);
+                    Direction(f_xDeltaPos, f_yDeltaPos, -f_xDeltaPos, f_yDeltaPos);
                     break;
                 case 1:
-                    if (!b_skullDir) transform.position = new Vector2(f_timeCounter, f_yDeltaPos);
-                    else transform.position = new Vector2(-f_timeCounter, f_yDeltaPos);
+                    Direction(f_timeCounter, f_yDeltaPos, -f_timeCounter, f_yDeltaPos);
                     break;
                 case 2:
-                    if (!b_skullDir) transform.position = new Vector2(f_xDeltaPos, f_timeCounter);
-                    else transform.position = new Vector2(f_xDeltaPos, -f_timeCounter);
+                    Direction(f_xDeltaPos, f_timeCounter, f_xDeltaPos, -f_timeCounter);
                     break;
                 case 3:
-                    if (!b_skullDir) transform.position = new Vector2(f_timeCounter, transform.position.y);
-                    else transform.position = new Vector2(-f_timeCounter, transform.position.y);
+                    Direction(f_timeCounter, transform.position.y, -f_timeCounter, transform.position.y);
                     break;
                 case 4:
-                    if (!b_skullDir) transform.position = new Vector2(transform.position.x, f_timeCounter);
-                    else transform.position = new Vector2(transform.position.x, -f_timeCounter);
+                    Direction(transform.position.x, f_timeCounter, transform.position.x, -f_timeCounter);
                     break;
                 case 5:
-                    if (!b_skullDir) transform.position = new Vector2(f_timeCounter, f_timeCounter);
-                    else transform.position = new Vector2(-f_timeCounter, -f_timeCounter);
+                    Direction(f_timeCounter, f_timeCounter, -f_timeCounter, -f_timeCounter);
                     break;
                 case 6:
-                    if (!b_skullDir) transform.position = new Vector2(-f_timeCounter, f_timeCounter);
-                    else transform.position = new Vector2(f_timeCounter, -f_timeCounter);
+                    Direction(-f_timeCounter, f_timeCounter, f_timeCounter, -f_timeCounter);
                     break;
                 default:
                     break;
@@ -104,6 +100,19 @@ namespace DarknessBumper
 
             if (Mathf.Abs(f_timeCounter) == Mathf.Abs(f_finalSpeed)) GetComponent<Renderer>().enabled = true;       //To Get Component once at the first frame
 
+        }
+
+        private void Direction(float f_pos1, float f_pos2, float f_pos3, float f_pos4)
+        {
+            if (f_pos1 <= -f_boundWidth || f_pos1 >= f_boundWidth || f_pos3 <= -f_boundWidth || f_pos3 >= f_boundWidth || f_pos2 <= -f_boundHeight || f_pos2 >= f_boundHeight || f_pos4 <= -f_boundHeight || f_pos4 >= f_boundHeight)
+            {
+                StopCoroutine(switchDirCoroutine);
+                b_canChangeDir = !b_canChangeDir;
+                switchDirCoroutine = StartCoroutine(SwitchDir());
+            }
+
+            if (!b_skullDir) transform.position = new Vector3(f_pos1, f_pos2, 1);
+            else transform.position = new Vector3(f_pos3, f_pos4, 1);
         }
 
         private IEnumerator SwitchDir()
@@ -129,7 +138,6 @@ namespace DarknessBumper
             anim.SetBool("Exploded", true);
             GetComponent<Collider2D>().enabled = false;
             StartCoroutine(WaitToDestroy());
-
         }
 
         private IEnumerator WaitToDestroy()

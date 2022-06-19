@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour
     {
         //Used for single minigames
         diff = difficulty;
+        Time.timeScale = 0;
         StartCoroutine(_loadMinigame(minigameName, difficulty));
     }
 
@@ -184,10 +185,14 @@ public class GameManager : MonoBehaviour
         yield return new WaitUntil(() => loading.isDone);
         Debug.Log("Loading Complete, start detransitioning");
 
+        transform.GetComponentInChildren<Canvas>().worldCamera = Camera.main;
+
         m_TransitionManager.StartReadyTransition();
         //yield return new WaitUntil(() => m_TransitionManager.AnimationCompleted);
         Debug.Log("Detransition complete");
-    }    
+
+        Time.timeScale = 1;
+    }
     private IEnumerator _asyncSceneLoadMainMenuStopping()
     {
         m_TransitionManager.StartLoadingTransition();
@@ -199,6 +204,8 @@ public class GameManager : MonoBehaviour
         AsyncOperation loading = SceneManager.LoadSceneAsync("MainMenu", LoadSceneMode.Single);
         yield return new WaitUntil(() => loading.isDone);
         Debug.Log("Loading Complete, start detransitioning");
+
+        transform.GetComponentInChildren<Canvas>().worldCamera = Camera.main;
 
         m_TransitionManager.StartReadyTransition();
         Debug.Log("Detransition complete");

@@ -134,7 +134,7 @@ namespace NecromancerShop
                 b_winCondition = false;
                 
             }
-            m_GeneralUI.DisableAll();
+            //m_GeneralUI.DisableAll();
 
             for (int i = 0; i < m_totalIngredients.Count; i++)
             {
