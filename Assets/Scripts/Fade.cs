@@ -5,31 +5,26 @@ using UnityEngine.UI;
 
 public class Fade : MonoBehaviour
 {
+    [SerializeField] private float f_fadeSpeed = 2;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
     }
 
-    public void StartFade()
+    public void StartInTransition()
     {
-        var spriteRenderes = this.GetComponentsInChildren<SpriteRenderer>();
-        foreach (SpriteRenderer sr in spriteRenderes)
-        {
-            sr.color -= new Color(0, 0, 0, 0.5f);
-        }
-
-        var images = this.GetComponentsInChildren<Image>();
-        foreach (Image img in images)
-        {
-            img.color -= new Color(0, 0, 0, 0.5f);
-        }
+        GetComponent<Animator>().SetTrigger("In");
+    }
+    public void StartOutTransition()
+    {
+        GetComponent<Animator>().SetTrigger("Out");
     }
 
 }
