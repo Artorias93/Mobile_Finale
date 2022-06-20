@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 3b72895e73085594daf05eedc1ad178b
+guid: c7c8d0b8c73d32043ae76b8230536988
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2093660167562672778
-    second: knightAttack-Sheet-export_0
+      213: -7437512275125761883
+    second: mageAttackFinal_0
   - first:
-      213: 7739894098316274836
-    second: knightAttack-Sheet-export_1
+      213: 1207120947450748580
+    second: mageAttackFinal_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -52,7 +52,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 15
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -73,7 +73,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -85,7 +85,7 @@ TextureImporter:
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -97,7 +97,7 @@ TextureImporter:
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -109,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: knightAttack-Sheet-export_0
+      name: mageAttackFinal_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 57
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -123,20 +123,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8a35f764dc2e0d10800000000000000
-      internalID: 2093660167562672778
+      spriteID: 5a8858ccdf5a8c890800000000000000
+      internalID: -7437512275125761883
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: knightAttack-Sheet-export_1
+      name: mageAttackFinal_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 57
         y: 0
-        width: 32
-        height: 32
+        width: 57
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,8 +144,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49ca849bca0a96b60800000000000000
-      internalID: 7739894098316274836
+      spriteID: 4ae1cb92b1e80c010800000000000000
+      internalID: 1207120947450748580
       vertices: []
       indices: 
       edges: []

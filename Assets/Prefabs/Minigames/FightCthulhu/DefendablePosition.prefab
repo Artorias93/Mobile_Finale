@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 3811061bca772a548a4faac077285094, type: 3}
+  m_Sprite: {fileID: -7870811976869573122, guid: 7bd1a2be0f71bf24f995513c27a2f37c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,7 +101,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.1333334, y: 2.1333334}
+    oldSize: {x: 2.2857144, y: 2.2857144}
     newSize: {x: 2.1333334, y: 2.1333334}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -123,11 +123,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idleSprites:
-  - {fileID: 21300000, guid: 3811061bca772a548a4faac077285094, type: 3}
-  - {fileID: 21300000, guid: 389ce977120a175439fec6c91c30cd06, type: 3}
+  - {fileID: -7870811976869573122, guid: 7bd1a2be0f71bf24f995513c27a2f37c, type: 3}
+  - {fileID: 6980492460803294362, guid: 7bd1a2be0f71bf24f995513c27a2f37c, type: 3}
   grabbedSprites:
-  - {fileID: 21300000, guid: 561743d92c047034b9856861fcb515e4, type: 3}
-  - {fileID: 21300000, guid: 7c75d2314a94a7a41afe9aa5214363f3, type: 3}
+  - {fileID: -3147576779952341380, guid: 7bd1a2be0f71bf24f995513c27a2f37c, type: 3}
+  - {fileID: -2094839464494935075, guid: 7bd1a2be0f71bf24f995513c27a2f37c, type: 3}
   b_isGrabbed: 0
 --- !u!1 &8363548371988867643
 GameObject:

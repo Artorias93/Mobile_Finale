@@ -220,13 +220,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2d7a4636d593d94989027cafaf68ef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  s_emptySpace: {fileID: 21300000, guid: ada119ab72a218e40bcf18a6b3ad48b2, type: 3}
+  s_emptySpace: {fileID: 21300000, guid: 87acf98540bce3c4ab1fb14b83588d48, type: 3}
   playerMovementSprites:
-  - {fileID: 4495478712733764576, guid: 68c75ed835d18f64184d15db8c3a96ec, type: 3}
-  - {fileID: -2735361975599426438, guid: 68c75ed835d18f64184d15db8c3a96ec, type: 3}
+  - {fileID: -2463486076678623013, guid: 42d4ff0814b7bfd44a4745ff624144b1, type: 3}
+  - {fileID: -5409980186115617899, guid: 42d4ff0814b7bfd44a4745ff624144b1, type: 3}
   attackSprite:
-  - {fileID: 21300000, guid: 50b806bf7a55e4d43b4f08bd3b9464fa, type: 3}
-  - {fileID: 21300000, guid: 2ea736d0c146cb147a61c40ed03bd8a2, type: 3}
+  - {fileID: -7437512275125761883, guid: c7c8d0b8c73d32043ae76b8230536988, type: 3}
+  - {fileID: 1207120947450748580, guid: c7c8d0b8c73d32043ae76b8230536988, type: 3}
 --- !u!4 &332222874
 Transform:
   m_ObjectHideFlags: 0
@@ -1092,7 +1092,7 @@ MonoBehaviour:
   player: {fileID: 332222873}
   cthulhu: {fileID: 834141451}
   b_enableDebug: 0
-  diff: 2
+  diff: 1
 --- !u!1 &1439663911
 GameObject:
   m_ObjectHideFlags: 0
