@@ -15,16 +15,6 @@ namespace TheMadCthulhuMinigame
 		float moveSpeed = 5f, jumpForce = 600f;
 
 
-		void Start()
-		{
-
-
-		}
-
-		void Update()
-		{
-			
-		}
 
 		void FixedUpdate()
 		{

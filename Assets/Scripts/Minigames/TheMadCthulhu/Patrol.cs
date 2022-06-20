@@ -2,71 +2,58 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 namespace TheMadCthulhuMinigame
 {
     public class Patrol : MonoBehaviour
     {
         [SerializeField]
-        private float speed, distance;
+        private float speed;
 
+        private bool b_goingToB=true;
+        
+        //[SerializeField]
+        //private Transform groundDetector;
         [SerializeField]
-        private bool isMovingVertically;
+        private GameObject m_pointA, m_pointB;
 
-        private bool movingRight = true;
-        [SerializeField]
-        private Transform groundDetector;
-
+        private void Start()
+        {
+            transform.position = m_pointA.transform.position;
+        }
         void Update()
         {
            
-            Move();
+        }
+        private void FixedUpdate()
+        {
+            if (b_goingToB) 
+            {
+                MoveToB();
+                if(transform.position==m_pointB.transform.position)
+                b_goingToB = false;
+            }
+            if (!b_goingToB)
+            {
+                MoveToA();
+                if (transform.position == m_pointA.transform.position)
+                    b_goingToB = true;
+            }
+          
+            
         }
 
-        private void Move()
+        private void MoveToA()
         {
-            RaycastHit2D groundInfo;
-            if (isMovingVertically)
-            {
-                groundInfo = Physics2D.Raycast(groundDetector.position, Vector2.left, distance);
-                
-                transform.Translate(Vector2.down * speed * Time.deltaTime);
-                
-            }
-            else
-            {
-                groundInfo = Physics2D.Raycast(groundDetector.position, Vector2.down, distance);
-                //if (groundInfo.collider.tag == "PatrolZone")
-
-                    transform.Translate(Vector2.right * speed * Time.deltaTime);
-               
-            }
-
-            
-            if (groundInfo.collider == false /*groundInfo.collider.tag != "PatrolZone"*/)
-            {
-                if (movingRight == true)
-                {
-                    if (!isMovingVertically)
-                    {
-
-                        transform.eulerAngles = new Vector3(0, -180, 0);
-                        movingRight = false;
-                    }
-                    else
-                    {
-                        transform.eulerAngles = new Vector3(-180, 0, 0);
-                        movingRight = false;
-                    }
-
-
-                }
-                else
-                {
-                    transform.eulerAngles = new Vector3(0, 0, 0);
-                    movingRight = true;
-                }
            
-            }
+                transform.position = Vector3.MoveTowards(transform.position, m_pointA.transform.position, speed);
+         
+         
+        }
+        private void MoveToB()
+        {
+                transform.position = Vector3.MoveTowards(transform.position, m_pointB.transform.position, speed);
+
         }
 
         
