@@ -6,32 +6,36 @@ namespace TheMadCthulhuMinigame
     public class LadderMovement : MonoBehaviour
     {
 
-        private float dirY;
-        private float speed = 8f;
-        private bool isLadder;
-        private bool isClimbing;
+        private float f_dirY;
+        [SerializeField]
+        private float f_speed = 100f;
+        [SerializeField]
+        private float f_gravityScale = 10f;
+        private bool b_isLadder;
+        private bool b_isClimbing;
 
         [SerializeField] private Rigidbody2D rb;
 
         void Update()
         {
-
-            if (isLadder && Mathf.Abs(dirY) > 0f)
+            
+            if (b_isLadder && Mathf.Abs(f_dirY) != 0f)
             {
-                isClimbing = true;
+                b_isClimbing = true;
             }
         }
 
         private void FixedUpdate()
         {
-            if (isClimbing)
+            if (b_isClimbing)
             {
                 rb.gravityScale = 0f;
-                rb.velocity = new Vector2(rb.velocity.x, dirY * speed);
+                rb.velocity = new Vector2(rb.velocity.x, f_dirY * f_speed);
+                
             }
             else
             {
-                rb.gravityScale = 4f;
+                rb.gravityScale = f_gravityScale;
             }
         }
 
@@ -39,7 +43,7 @@ namespace TheMadCthulhuMinigame
         {
             if (collision.CompareTag("Ladder"))
             {
-                isLadder = true;
+                b_isLadder = true;
             }
         }
 
@@ -47,23 +51,23 @@ namespace TheMadCthulhuMinigame
         {
             if (collision.CompareTag("Ladder"))
             {
-                isLadder = false;
-                isClimbing = false;
+                b_isLadder = false;
+                b_isClimbing = false;
             }
         }
         public void MoveUp()
         {
 
-            dirY = 1;
+            f_dirY = 1;
         }
         public void MoveDown()
         {
 
-            dirY = -1;
+            f_dirY = -1;
         }
         public void StopMoving()
         {
-            dirY = 0;
+            f_dirY = 0;
             rb.velocity = Vector2.zero;
         }
     }

@@ -37,6 +37,7 @@ namespace TheMadCthulhuMinigame
             {
                 GameObject newBullet = Instantiate(bullet, firepoint.position, firepoint.rotation);
                 newBullet.transform.parent = this.transform;
+                
 
                 newBullet.GetComponent<Bullet>().Direction = direction();
                 

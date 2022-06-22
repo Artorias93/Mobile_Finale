@@ -9,6 +9,10 @@ namespace TheMadCthulhuMinigame
         private int lives;
         [SerializeField]
         private TheMadGameManager gameManager;
+        [SerializeField]
+        private Rigidbody2D rigidbody;
+        [SerializeField]
+        private float f_repellingForce=10000;
         public float Lives
         {
             get { return lives; }
@@ -36,10 +40,12 @@ namespace TheMadCthulhuMinigame
             if (collision.gameObject.tag == "Finish")
                 gameManager.WinMinigame();
            
-                if (collision.gameObject.tag == "Enemy")
-                {
-                    lives--;
-                }
+            if (collision.gameObject.tag == "Enemy")
+            {
+                lives--;
+                rigidbody.AddForce((Vector3.up - collision.transform.position) * f_repellingForce);
+            }
+
             
         }
     }
