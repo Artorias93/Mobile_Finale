@@ -468,8 +468,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -45}
-  m_SizeDelta: {x: -300, y: -90.00005}
+  m_AnchoredPosition: {x: 0, y: 27.73999}
+  m_SizeDelta: {x: -300, y: -235.49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1476905113
 GameObject:
@@ -992,25 +992,165 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 974060161}
     - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
       propertyPath: m_runeDictionary.Array.data[0].m_sprite
       value: 
-      objectReference: {fileID: -8790319007586567892, guid: 7d1eea80eb81eb34c963a6bf77a35dbb, type: 3}
+      objectReference: {fileID: -4379579156132179717, guid: 7d1eea80eb81eb34c963a6bf77a35dbb, type: 3}
     - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
       propertyPath: m_runeDictionary.Array.data[1].m_sprite
       value: 
-      objectReference: {fileID: -1502972803651985057, guid: 7d1eea80eb81eb34c963a6bf77a35dbb, type: 3}
+      objectReference: {fileID: -5447233517892204522, guid: 7d1eea80eb81eb34c963a6bf77a35dbb, type: 3}
     - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
       propertyPath: m_runeDictionary.Array.data[2].m_sprite
       value: 
-      objectReference: {fileID: -1196169550335143571, guid: 7d1eea80eb81eb34c963a6bf77a35dbb, type: 3}
+      objectReference: {fileID: 4631235684313111012, guid: 7d1eea80eb81eb34c963a6bf77a35dbb, type: 3}
     - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
       propertyPath: m_runeDictionary.Array.data[3].m_sprite
       value: 
-      objectReference: {fileID: 1647187818702623233, guid: 7d1eea80eb81eb34c963a6bf77a35dbb, type: 3}
+      objectReference: {fileID: -7153237468517531963, guid: 7d1eea80eb81eb34c963a6bf77a35dbb, type: 3}
     - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
       propertyPath: m_runeDictionary.Array.data[4].m_sprite
       value: 
-      objectReference: {fileID: 5214643984277276500, guid: 7d1eea80eb81eb34c963a6bf77a35dbb, type: 3}
+      objectReference: {fileID: 304334863325100338, guid: 7d1eea80eb81eb34c963a6bf77a35dbb, type: 3}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[5].m_sprite
+      value: 
+      objectReference: {fileID: -6072647406737386784, guid: 7d1eea80eb81eb34c963a6bf77a35dbb, type: 3}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[6].m_sprite
+      value: 
+      objectReference: {fileID: -3933777966286596031, guid: 7d1eea80eb81eb34c963a6bf77a35dbb, type: 3}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[7].m_sprite
+      value: 
+      objectReference: {fileID: -2681793855587880821, guid: 7d1eea80eb81eb34c963a6bf77a35dbb, type: 3}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[8].m_sprite
+      value: 
+      objectReference: {fileID: -6094098005360472568, guid: 7d1eea80eb81eb34c963a6bf77a35dbb, type: 3}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[9].m_sprite
+      value: 
+      objectReference: {fileID: 1647187818702623233, guid: 7d1eea80eb81eb34c963a6bf77a35dbb, type: 3}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[10].m_sprite
+      value: 
+      objectReference: {fileID: -8855056840675280816, guid: 7d1eea80eb81eb34c963a6bf77a35dbb, type: 3}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[11].m_sprite
+      value: 
+      objectReference: {fileID: -961032850552321521, guid: 7d1eea80eb81eb34c963a6bf77a35dbb, type: 3}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[12].m_sprite
+      value: 
+      objectReference: {fileID: 7436760131401412462, guid: 7d1eea80eb81eb34c963a6bf77a35dbb, type: 3}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[0].m_runeText
+      value: Come Forth
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[1].m_runeText
+      value: Creature
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[2].m_runeText
+      value: Cthulhu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[3].m_runeText
+      value: Demon
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[4].m_runeText
+      value: Evocation
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[5].m_runeText
+      value: Magic
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[6].m_runeText
+      value: My Soul
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[7].m_runeText
+      value: Necromancer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[8].m_runeText
+      value: Ritual
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[9].m_runeText
+      value: Sacrifice
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[0].m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 08fd9269abf52a24395085a2501a69ce, type: 3}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[10].m_runeText
+      value: Star
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[11].m_runeText
+      value: The World
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[12].m_runeText
+      value: Thy Power
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[1].m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 357f31fac79736044b75b824fa0fe11d, type: 3}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[2].m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: cb7f429a81fd1484ba26826347823a57, type: 3}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[3].m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: cf648e7d2ec0db6438afbf4317dfaf96, type: 3}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[4].m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f865dd8226f02f745bb8e45961026a6f, type: 3}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[5].m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0aa5de5e416417144970c37659349376, type: 3}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[6].m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 020af45849c92d540b7ed0da40fd1ed3, type: 3}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[7].m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c48b21041c4eb274297f9929ddc7c059, type: 3}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[8].m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b6c42d296f047c748af0e7ab43edeeaa, type: 3}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[9].m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5b3b86eec50ba15488a28182eaa87618, type: 3}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[10].m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c2cfd696a62e1154999242b061ba4727, type: 3}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[11].m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: fcb61ac96360eb64c9063e00ff80f89f, type: 3}
+    - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
+      propertyPath: m_runeDictionary.Array.data[12].m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 149438b91f652874790e62d408f2c20c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
 --- !u!1001 &4910900450443723299
@@ -1306,11 +1446,11 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 4
+  m_ChildAlignment: 3
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 300, y: 180}
-  m_Spacing: {x: 80, y: 0}
+  m_CellSize: {x: 300, y: 100}
+  m_Spacing: {x: 100, y: 50}
   m_Constraint: 1
   m_ConstraintCount: 2
 --- !u!114 &7367757251996520162
