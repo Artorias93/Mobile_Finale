@@ -10,17 +10,23 @@ namespace CouldronMinigame
 
         [SerializeField]
         private CauldronGameManager gameManager;
-
-
+        [SerializeField] private GameObject ingredientContainer;
+        [SerializeField] private GameObject ingredientBackground;
+        [SerializeField] private GameObject ingredient;
         [SerializeField]
-        private GameObject ingredient;
-
+        private List<Sprite> listSpriteIngredients;
+        [SerializeField] private float m_scaleFactor = 0.2f;
+        [SerializeField] private float f_timeToLerpScale = 1.0f;
 
         private float lives;
         private float spawnTimeSeconds;
+        private float f_timeElapsed = 0;
+        private Vector3 maxScale;
+        private Vector3 minScale;
+        private Vector3 startingScale;
+        private Vector3 targetScale;
 
-        [SerializeField]
-        public List<Sprite> listSpriteIngredients;
+        private RectTransform ContainerRectTransform;
 
         public float Lives 
         {
@@ -35,26 +41,61 @@ namespace CouldronMinigame
             set { spawnTimeSeconds = value; }
         }
 
-
-        void Start()
+        private void Start()
         {
+            ContainerRectTransform = ingredientBackground.GetComponent<RectTransform>();
 
+            Vector3 scale = ContainerRectTransform.localScale;
+            
+            maxScale = scale * (1 + m_scaleFactor);
+            minScale = scale * (1 - m_scaleFactor);
+
+            startingScale = scale;
+            targetScale = maxScale;
         }
-
         private void Update()
         {
-            if (gameManager.GameFinished)
+            if (gameManager.GameFinished) {
                 StopAllCoroutines();
+                return;
+            }
+
+            if (ingredientContainer.gameObject.activeInHierarchy)
+            {
+                bool lerpCompleted = f_timeElapsed > f_timeToLerpScale;
+
+                if (lerpCompleted)
+                {
+                    if (targetScale == maxScale)
+                    {
+                        startingScale = maxScale;
+                        targetScale = minScale;
+                    }
+                        
+                    else if (targetScale == minScale)
+                    {
+                        startingScale = minScale;
+                        targetScale = maxScale;
+                    }
+                    f_timeElapsed = 0;
+                }
+
+                ContainerRectTransform.localScale= Vector3.Lerp(startingScale, targetScale, f_timeElapsed / f_timeToLerpScale);
+                f_timeElapsed += Time.deltaTime;
+
+            }
+
+            
         }
 
 
         private IEnumerator ButtonTimer()
         {
-            while (!ingredient.activeSelf && lives!=0)
+            while (!ingredientContainer.activeSelf && lives!=0)
             {
                 yield return new WaitForSeconds(spawnTimeSeconds);
 
-                ingredient.SetActive(true);
+                ingredientContainer.SetActive(true);
                 SetImage();
 
                 yield return new WaitForSeconds(spawnTimeSeconds);
@@ -70,9 +111,9 @@ namespace CouldronMinigame
         {
             
                
-            if (ingredient.activeSelf) //se è true non hai premuto in tempo e disattiva
+            if (ingredientContainer.activeSelf) //se è true non hai premuto in tempo e disattiva
             {
-                ingredient.SetActive(false);
+                ingredientContainer.SetActive(false);
                 lives--;
                 if (lives <= 0)
                 {

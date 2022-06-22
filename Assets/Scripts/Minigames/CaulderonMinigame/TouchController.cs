@@ -11,6 +11,12 @@ namespace CouldronMinigame
         [Header("References")]
         [SerializeField]
         private Image img_cauldron;
+
+        [SerializeField] private RectTransform m_xTarget;
+        [SerializeField] private RectTransform m_yTarget;
+
+        [SerializeField] private CameraResolution m_cameraResolution;
+
         [SerializeField]
         private Image img_ladle;
         [SerializeField]
@@ -34,14 +40,15 @@ namespace CouldronMinigame
         private Vector2 v2_cauldronCenter;
         private int thetaError=0;
         private int thetaRight = 0;
+        private Vector3 m_oldPos;
+
         private void Start()
         {
-            f_xLimit = (img_cauldron.rectTransform.sizeDelta.x * img_cauldron.canvas.scaleFactor) / 2;
-            f_yLimit = (img_cauldron.rectTransform.sizeDelta.y * img_cauldron.canvas.scaleFactor) / 2;
-            f_xLimit *= paddingPercentage;
-            f_yLimit *= paddingPercentage;
+            Debug.Log("Scaling: " + img_cauldron.canvas.scaleFactor);
+            m_oldPos = this.transform.position;
 
-            v2_cauldronCenter = img_cauldron.rectTransform.position;
+            CalculateLimits();
+
             StartCoroutine(fadeIn());
         }
 
@@ -72,12 +79,13 @@ namespace CouldronMinigame
 
         public void OnEndDrag(PointerEventData eventData)
         {
-            speedController.setMouseDelta(0);
+            speedController.setSpeed(0);
         }
 
         public void OnDrag(PointerEventData eventData)
         {
-            Vector2 distanceFromCenter = eventData.position - v2_cauldronCenter;
+            Vector2 TouchPosition = Camera.main.ScreenToWorldPoint(eventData.position);
+            Vector2 distanceFromCenter = TouchPosition - v2_cauldronCenter;
             oldTheta = theta;
             theta = Mathf.Atan2(distanceFromCenter.y, distanceFromCenter.x);
             //Debug.LogWarning("THETA: " + theta);
@@ -87,24 +95,38 @@ namespace CouldronMinigame
 
             Vector2 distanceVector = new Vector2(f_xLimit * y, f_yLimit * x);
             float k = (f_xLimit * f_yLimit) / distanceVector.magnitude;
-
+            
 
             v2_ladleNewPosition = k * (new Vector2(x, y));
-            v2_ladleNewPosition += v2_cauldronCenter;
-            this.transform.position = v2_ladleNewPosition;
-            if (isClockwiseMovement(oldTheta, theta) && thetaRight>3)
-            {
 
-                speedController.setMouseDelta(eventData.delta.magnitude);
-                if (circularArrow.color.a>=1) {
+            Vector3 oldPos = this.transform.position;
+
+            this.transform.position = v2_cauldronCenter + v2_ladleNewPosition;
+            Debug.DrawRay(v2_cauldronCenter, v2_cauldronCenter + v2_ladleNewPosition, Color.red);
+
+            
+        }
+
+        private void Update()
+        {
+            if (isClockwiseMovement(oldTheta, theta) && thetaRight > 3)
+            {
+                float deltaMovement = (this.transform.position - m_oldPos).magnitude;
+
+                m_oldPos = this.transform.position;
+
+                speedController.setSpeed(deltaMovement);
+                if (circularArrow.color.a >= 1)
+                {
                     StartCoroutine(fadeOut());
                 }
             }
-            else if(thetaError>3){
+            else if (thetaError > 3)
+            {
 
-                
-                speedController.setMouseDelta(0);
-                if (circularArrow.color.a<=0)
+
+                speedController.setSpeed(0);
+                if (circularArrow.color.a <= 0)
                 {
                     StartCoroutine(fadeIn());
                 }
@@ -132,6 +154,27 @@ namespace CouldronMinigame
             thetaRight++;
             return true;
         }
+
+        private void CalculateLimits()
+        {
+            v2_cauldronCenter = img_cauldron.transform.position;
+
+            f_xLimit = Vector2.Distance(v2_cauldronCenter, m_xTarget.transform.position);
+            f_yLimit = Vector2.Distance(v2_cauldronCenter, m_yTarget.transform.position);
+
+            f_xLimit *= paddingPercentage;
+            f_yLimit *= paddingPercentage;
+        }
+
+#if UNITY_EDITOR
+        private void LateUpdate()
+        {
+            if (b_shouldUpdateDynamically)
+            {
+                CalculateLimits();
+            }
+        }
+#endif
     }
 }
 
