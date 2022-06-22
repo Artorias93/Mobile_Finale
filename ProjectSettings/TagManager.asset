@@ -19,8 +19,13 @@ TagManager:
   - Skull
   - Boss
   - BossAttack
+<<<<<<< HEAD
   - Tentacle
   - MainMenu
+=======
+  - Ladder
+  - PatrolZone
+>>>>>>> feature/TheMadCthulhu
   layers:
   - Default
   - TransparentFX
