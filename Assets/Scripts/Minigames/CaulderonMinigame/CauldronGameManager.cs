@@ -112,11 +112,11 @@ namespace CouldronMinigame
         public void WinMinigame()
         {
 
-            float percentageTime = (float)speedController.TimeinError / m_gameParameters.maxTimeInError;
+            //float percentageTime = (float)speedController.TimeinError / m_gameParameters.maxTimeInError;
             float percentageLives = (float)ingredientController.Lives / m_gameParameters.max_lives;
 
-            float percentage = (float)(percentageLives + percentageTime)/2;
-            i_score = (int)(3f * Mathf.Clamp(percentage, 0f, 1f));
+            //float percentage = (float)(percentageLives + percentageTime)/2;
+            i_score = (int)(3f * Mathf.Clamp(percentageLives, 0f, 1f));
             EndMinigame();
         
             
