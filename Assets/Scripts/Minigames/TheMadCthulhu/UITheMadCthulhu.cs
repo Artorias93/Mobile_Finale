@@ -9,7 +9,7 @@ namespace TheMadCthulhuMinigame
     {
   
         [SerializeField] private PlayerController m_playerController;
-
+        [SerializeField]
         private TheMadGameManager gameManager;
 
         protected override void LateUpdate()
@@ -19,6 +19,7 @@ namespace TheMadCthulhuMinigame
             {
                 float normalizedTime = gameManager.remainingTime / gameManager.SelectedParameters.i_Time;
                 UpdateSlider(normalizedTime);
+                
                 scoreText.text = m_playerController.Lives + "/" + gameManager.SelectedParameters.i_Lives;
 
             }

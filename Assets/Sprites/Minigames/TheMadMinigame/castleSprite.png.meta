@@ -11,6 +11,15 @@ TextureImporter:
   - first:
       213: 816083671937672017
     second: castleSprite_2
+  - first:
+      213: 3622368522464164263
+    second: castleSprite_3
+  - first:
+      213: 1882644092546002464
+    second: castleSprite_4
+  - first:
+      213: 4736673623628604053
+    second: castleSprite_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -120,7 +129,7 @@ TextureImporter:
         width: 47
         height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -141,7 +150,7 @@ TextureImporter:
         width: 33
         height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -162,7 +171,7 @@ TextureImporter:
         width: 14
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -170,6 +179,69 @@ TextureImporter:
       bones: []
       spriteID: 15367dc96cf435b00800000000000000
       internalID: 816083671937672017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: castleSprite_3
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 143
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a97803aafc354230800000000000000
+      internalID: 3622368522464164263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: castleSprite_4
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 101
+        width: 30
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02e21b6d3de702a10800000000000000
+      internalID: 1882644092546002464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: castleSprite_5
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 83
+        width: 29
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5926851909b0cb140800000000000000
+      internalID: 4736673623628604053
       vertices: []
       indices: 
       edges: []

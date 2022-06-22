@@ -12,7 +12,7 @@ namespace TheMadCthulhuMinigame
         [SerializeField]
         private Rigidbody2D rigidbody;
         [SerializeField]
-        private float f_repellingForce=10000;
+        private float f_repellingForce=2;
         public float Lives
         {
             get { return lives; }
@@ -42,11 +42,17 @@ namespace TheMadCthulhuMinigame
            
             if (collision.gameObject.tag == "Enemy")
             {
+                
                 lives--;
-                rigidbody.AddForce((Vector3.up - collision.transform.position) * f_repellingForce);
+                //rigidbody.AddForceAtPosition((Vector3.zero - collision.transform.position) * f_repellingForce, collision.transform.position);
+                Vector3 forceDirection = (collision.transform.position-this.transform.position).normalized;
+                Debug.DrawRay(this.transform.position, this.transform.position + forceDirection, Color.red);
+                
+                
+                rigidbody.AddForce(forceDirection * f_repellingForce, ForceMode2D.Impulse);
             }
 
-            
+
         }
     }
 }

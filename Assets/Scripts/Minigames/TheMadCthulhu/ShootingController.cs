@@ -36,7 +36,7 @@ namespace TheMadCthulhuMinigame
             if (timebetween <= 0)
             {
                 GameObject newBullet = Instantiate(bullet, firepoint.position, firepoint.rotation);
-                newBullet.transform.parent = this.transform;
+                //newBullet.GetComponent<RectTransform>().SetParent(this.transform,false);
                 
 
                 newBullet.GetComponent<Bullet>().Direction = direction();

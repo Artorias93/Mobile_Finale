@@ -7,19 +7,25 @@ namespace TheMadCthulhuMinigame
     {
 
         private float f_dirY;
+        
+        private float f_speed;
         [SerializeField]
-        private float f_speed = 100f;
-        [SerializeField]
-        private float f_gravityScale = 10f;
+        private PgMovement pg;
         private bool b_isLadder;
         private bool b_isClimbing;
 
         [SerializeField] private Rigidbody2D rb;
+        private float startGravityScale;
 
+        private void Start()
+        {
+            startGravityScale=rb.gravityScale;
+            f_speed = pg.Speed;
+        }
         void Update()
         {
             
-            if (b_isLadder && Mathf.Abs(f_dirY) != 0f)
+            if (b_isLadder && Mathf.Abs(f_dirY) > 0f)
             {
                 b_isClimbing = true;
             }
@@ -35,7 +41,7 @@ namespace TheMadCthulhuMinigame
             }
             else
             {
-                rb.gravityScale = f_gravityScale;
+                rb.gravityScale = startGravityScale;
             }
         }
 
@@ -67,8 +73,11 @@ namespace TheMadCthulhuMinigame
         }
         public void StopMoving()
         {
-            f_dirY = 0;
-            rb.velocity = Vector2.zero;
+            if (b_isClimbing) 
+            { 
+                f_dirY = 0;
+                rb.velocity = Vector2.zero;
+            }
         }
     }
 

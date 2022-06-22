@@ -52,7 +52,7 @@ namespace TheMadCthulhuMinigame
         }
         private void Start()
         {
-            BeginMinigame(Difficulty.MEDIUM);
+            BeginMinigame(Difficulty.HARD);
         }
         public override void BeginMinigame(Difficulty difficulty)
         {
