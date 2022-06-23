@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class TransitionMenu : MonoBehaviour
 {
-    [SerializeField] private float f_animSpeed = 1;
+    [SerializeField] private float f_animSpeed = 1.5f;
     private float f_exitSpeed;
     private Animator anim;
     private GameObject objToActive;
@@ -58,10 +58,13 @@ public class TransitionMenu : MonoBehaviour
 
         if (!gameObject.CompareTag("MainMenu"))
         {
-            if (anim.GetBool("ToMenu"))
+            if (anim != null)
             {
-                childObjToDeactive.SetActive(false);
-                childObjToActive.SetActive(true);
+                if (anim.GetBool("ToMenu"))
+                {
+                    childObjToDeactive.SetActive(false);
+                    childObjToActive.SetActive(true);
+                }
             }
         }
 
@@ -70,7 +73,7 @@ public class TransitionMenu : MonoBehaviour
     private void StartInTransition()
     {
         objToDeactive.SetActive(false);
-        objToActive.SetActive(true);
+        if (objToActive != null)objToActive.SetActive(true);
     }
 
 }
