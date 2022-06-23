@@ -354,18 +354,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8770700115017892554, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8770700115017892554, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8770700115017892554, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8770700115017892554, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 879889299}
     - target: {fileID: 8770700115017892554, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 806521241}
+    - target: {fileID: 8770700115017892554, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8770700115017892554, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8770700115017892554, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
@@ -373,11 +385,27 @@ PrefabInstance:
       value: PauseGame
       objectReference: {fileID: 0}
     - target: {fileID: 8770700115017892554, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetPause
+      objectReference: {fileID: 0}
+    - target: {fileID: 8770700115017892554, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: AMinigameManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8770700115017892554, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: PauseGameScreenController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8770700115017892554, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8770700115017892554, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8770700115017892554, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8770700115017892555, guid: 63230ada0775f644ca10cf8836509ff5, type: 3}
@@ -547,7 +575,7 @@ MonoBehaviour:
     f_timePersistence: 5
     i_maxError: 3
   gp_medium:
-    i_playTime: 15
+    i_playTime: 45
     f_skullSpeedMultiplier: 1.5
     f_minSpawnDelay: 1.5
     f_maxSpawDelay: 2.5
@@ -559,7 +587,7 @@ MonoBehaviour:
     f_minSpawnDelay: 1
     f_maxSpawDelay: 2
     f_timePersistence: 3
-    i_maxError: 70
+    i_maxError: 7
   b_enableDebug: 0
   diff: 2
 --- !u!4 &879889300

@@ -18070,7 +18070,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4528962255796796485, guid: e7d399aace01ca44a96052cc14dd2218, type: 3}
       propertyPath: m_minigameScene
-      value: TheMadWizard
+      value: TheMadCthulhuMinigame
       objectReference: {fileID: 0}
     - target: {fileID: 4528962255796796487, guid: e7d399aace01ca44a96052cc14dd2218, type: 3}
       propertyPath: m_Type

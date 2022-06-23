@@ -200,6 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3123778344251956751}
   - component: {fileID: 7444515248781771738}
+  - component: {fileID: 3981207572721063767}
   m_Layer: 5
   m_Name: PauseGameScreen
   m_TagString: Untagged
@@ -240,10 +241,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76cdc262c0151cd488359f7c9a6e770e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  f_animSpeed: 1.5
   panel: {fileID: 3123778344779436654}
   blockPanel: {fileID: 7779552362197184759}
   retryTxt: {fileID: 1941910603125779469}
   returnTxt: {fileID: 3670663024247522619}
+--- !u!95 &3981207572721063767
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3123778344251956746}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 324606c44c8703b42ad335c727fe4122, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3123778344779436654
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +302,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -850}
   m_SizeDelta: {x: 950, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3123778344779436653
@@ -578,8 +599,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7444515248781771738}
         m_TargetAssemblyTypeName: PauseGameScreenController, Assembly-CSharp
-        m_MethodName: hidePausePanel
-        m_Mode: 1
+        m_MethodName: SetPause
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -874,7 +895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

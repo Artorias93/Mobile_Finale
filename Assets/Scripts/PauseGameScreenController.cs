@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class PauseGameScreenController : MonoBehaviour
 {
+    [SerializeField] private float f_animSpeed = 1.5f;
+    private Animator anim;
+
     [Header("UI References")]
     [SerializeField] private GameObject panel;
     [SerializeField] private GameObject blockPanel;
@@ -15,6 +18,8 @@ public class PauseGameScreenController : MonoBehaviour
 
     private void Start()
     {
+        anim = GetComponent<Animator>();
+        anim.SetFloat("AnimSpeed", f_animSpeed);
         GameObject go = GameObject.FindGameObjectWithTag(AMinigameManager.s_minigameTag);
         m_MinigameManager = go.GetComponent<AMinigameManager>();
         if(m_MinigameManager == null)
@@ -84,5 +89,10 @@ public class PauseGameScreenController : MonoBehaviour
     public void RequestMainMenu()
     {
         GameManager.m_instance.ReturnToMainMenu();
+    }
+
+    public void SetPause(bool b_pause)
+    {
+        anim.SetBool("Pause", b_pause);
     }
 }
