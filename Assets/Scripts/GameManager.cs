@@ -358,6 +358,10 @@ public class GameManager : MonoBehaviour
 
                 break;
             }
+            else
+            {
+                i_scores.Add(m_minigameManager.Score);
+            }
         }
     }
 
