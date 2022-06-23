@@ -13,7 +13,8 @@ public class EndGameScreenController : MonoBehaviour
     [SerializeField, Range(0.0f, 1.0f)] protected float i_hiddenAlpha = 0.2f;
     [SerializeField] private Text retryTxt;
     [SerializeField] private Text returnTxt;
-    
+    [SerializeField] private float f_animSpeed = 1.5f;
+
     [Header("Score options")]
     [SerializeField] private Color c_color0;
     [SerializeField] private Color c_color1;
@@ -21,7 +22,8 @@ public class EndGameScreenController : MonoBehaviour
     [SerializeField] private Color c_color3;
 
     private void Awake()
-    {      
+    {
+        transform.GetChild(0).GetComponent<Animator>().SetFloat("AnimSpeed", f_animSpeed);
         m_currentManager = GameObject.FindGameObjectWithTag(AMinigameManager.s_minigameTag).GetComponent<AMinigameManager>();
         Assert.AreEqual<int>(GO_stars.Length, 3, "Stars missing");
 
