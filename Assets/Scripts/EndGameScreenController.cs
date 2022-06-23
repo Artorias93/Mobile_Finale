@@ -48,7 +48,7 @@ public class EndGameScreenController : MonoBehaviour
         }
     }
 
-    public void showEndGamePanel(int score)
+    virtual public void showEndGamePanel(int score)
     {
         panel.SetActive(true);
         foreach(Transform child in panel.transform)
