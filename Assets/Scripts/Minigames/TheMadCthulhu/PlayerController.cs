@@ -12,7 +12,7 @@ namespace TheMadCthulhuMinigame
         [SerializeField]
         private Rigidbody2D m_rigidbody;
         [SerializeField]
-        private float f_repellingForce=2;
+        private float f_repellingForce=10;
         public float Lives
         {
             get { return lives; }
@@ -44,12 +44,10 @@ namespace TheMadCthulhuMinigame
             {
                 
                 lives--;
-                //rigidbody.AddForceAtPosition((Vector3.zero - collision.transform.position) * f_repellingForce, collision.transform.position);
+
                 Vector3 forceDirection = (collision.transform.position-this.transform.position).normalized;
                 Debug.DrawRay(this.transform.position, this.transform.position + forceDirection, Color.red);
-                
-                
-                m_rigidbody.AddForce(forceDirection * f_repellingForce, ForceMode2D.Impulse);
+                m_rigidbody.AddForce(Vector2.up * forceDirection * f_repellingForce, ForceMode2D.Impulse);
             }
 
 

@@ -12,8 +12,9 @@ namespace TheMadCthulhuMinigame
 
         private bool b_goingToB=true;
         
-        //[SerializeField]
-        //private Transform groundDetector;
+        [SerializeField]
+        private Animator animator;
+
         [SerializeField]
         private GameObject m_pointA, m_pointB;
 
