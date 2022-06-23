@@ -46,17 +46,16 @@ namespace TheMadCthulhuMinigame
 
         private void MoveToA()
         {
-           
-                transform.position = Vector3.MoveTowards(transform.position, m_pointA.transform.position, speed);
-         
-         
+            transform.position = Vector3.MoveTowards(transform.position, m_pointA.transform.position, speed);
+            animator.SetBool("WalkToA", true);
+            
         }
         private void MoveToB()
         {
-                transform.position = Vector3.MoveTowards(transform.position, m_pointB.transform.position, speed);
-
+            transform.position = Vector3.MoveTowards(transform.position, m_pointB.transform.position, speed);
+            animator.SetBool("WalkToA", false);
         }
 
-        
+
     }
 }
