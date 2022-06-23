@@ -6,17 +6,18 @@ using UnityEngine.UI;
 public class TransitionMenu : MonoBehaviour
 {
     [SerializeField] private float f_animSpeed = 1;
+    private float f_exitSpeed;
     private Animator anim;
     private GameObject objToActive;
+    private GameObject objToDeactive;
     private GameObject childObjToDeactive;
     private GameObject childObjToActive;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
         anim = GetComponent<Animator>();
         anim.SetFloat("AnimSpeed", f_animSpeed);
+        f_exitSpeed = anim.GetCurrentAnimatorStateInfo(0).length;
     }
 
     public void SetNext(bool b_isNext)
@@ -44,15 +45,16 @@ public class TransitionMenu : MonoBehaviour
         anim.SetBool("ToMenu", true);
     }
 
-    public void StartOutTransition(GameObject objToDeactive)
+    public void StartOutTransition(GameObject objSetter0)
     {
+        objToDeactive = objSetter0;
         anim.SetTrigger("Out");
-        StartCoroutine(WaitToDeactive(objToDeactive));
+        StartCoroutine(WaitToDeactive());
     }
 
-    private IEnumerator WaitToDeactive(GameObject objToDeactive)
+    private IEnumerator WaitToDeactive()
     {
-        yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
+        yield return new WaitForSeconds(f_exitSpeed);
 
         if (!gameObject.CompareTag("MainMenu"))
         {
@@ -63,11 +65,11 @@ public class TransitionMenu : MonoBehaviour
             }
         }
 
-        objToDeactive.SetActive(false);
         StartInTransition();
     }
     private void StartInTransition()
     {
+        objToDeactive.SetActive(false);
         objToActive.SetActive(true);
     }
 
