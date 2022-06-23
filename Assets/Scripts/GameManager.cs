@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Endless mode")]
     [SerializeField] List<string> m_ScenesName;
+    [SerializeField] string EndlessSaveString = "EndlessScore";
 
     public static GameManager m_instance;
     private AMinigameManager m_minigameManager;
@@ -290,6 +291,8 @@ public class GameManager : MonoBehaviour
         bool[] bPlayedArray = new bool[m_ScenesName.Count];
         for (int i = 0; i < bPlayedArray.Length; i++) bPlayedArray[i] = false;
 
+        i_scores = new List<int>();
+
         while (true)
         {
             //Check if I played all games, if true cleanup
@@ -322,7 +325,39 @@ public class GameManager : MonoBehaviour
             yield return StartCoroutine(_loadEntry(entryToLoad));
 
             yield return new WaitUntil(() => { return m_minigameManager.CanCloseGame; });
+            if (m_minigameManager.Score == 0)
+            {
+                //Stop endless as I lost the minigame
+                ReturnToMainMenuNonStopping();
+                yield return new WaitUntil(() => SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Mainmenu"));
+                int FinalScore = 0;
+                i_scores.ForEach((int i) => { FinalScore += i; });
 
+                bool isHighScore = false;
+                if (PlayerPrefs.HasKey(EndlessSaveString))
+                {
+                    isHighScore = PlayerPrefs.GetInt(EndlessSaveString) < FinalScore;
+                    if (isHighScore)
+                        PlayerPrefs.SetInt(EndlessSaveString, FinalScore);
+                }
+                else
+                {
+                    isHighScore = true;
+                    PlayerPrefs.SetInt(EndlessSaveString, FinalScore);
+                }
+
+                UIMainMenu MainMenu = GameObject.FindGameObjectWithTag(UIMainMenu.Tag)?.GetComponent<UIMainMenu>();
+                if (MainMenu)
+                {
+                    MainMenu.ShowEndEndless(FinalScore, isHighScore);
+                }
+                else
+                {
+                    Debug.Log("Can't find Main Menu Script");
+                }
+
+                break;
+            }
         }
     }
 

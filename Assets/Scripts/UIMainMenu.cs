@@ -14,11 +14,13 @@ public class UIMainMenu : MonoBehaviour
     [Header("References")]
     [SerializeField] private GameObject m_MainMenu;
     [SerializeField] private GameObject m_EndRecipe;
+    [SerializeField] private GameObject m_EndEndlessScreen;
     [SerializeField] private GameObject m_RecipeScreen;
     [SerializeField] private GameObject[] m_RecipePages;
     [SerializeField] private GameObject m_TrainingScreen;
     [SerializeField] private GameObject[] m_TrainingPages;
     [SerializeField] private EndRecipeScreenController m_EndRecipeScreenController;
+    [SerializeField] private EndEndlessScreenController m_EndEndlessScreenController;
 
     public static string Tag = "MainMenu";
 
@@ -28,6 +30,14 @@ public class UIMainMenu : MonoBehaviour
 
         m_EndRecipe.SetActive(true);
         m_EndRecipeScreenController.showEndGamePanel(finalScore);
+    }
+    
+    public void ShowEndEndless(int finalScore, bool isHighScore)
+    {
+        m_MainMenu.SetActive(false); //The scene gets loaded with The main menu active, so we must deactivate it
+
+        m_EndEndlessScreen.SetActive(true);
+        m_EndEndlessScreenController.showEndGamePanel(finalScore, isHighScore);
     }
 
     public void ReturnToPage(PageToReturn page)
