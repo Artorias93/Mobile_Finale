@@ -48,20 +48,33 @@ namespace TheMadCthulhuMinigame
 			{
 				animator.SetBool("ToR", false);
 				animator.SetBool("ToL", false);
+				animator.SetBool("Jumping", false);
+
 
 			}
 			if (dirX > 0) 
 			{ 
 				animator.SetBool("ToR", true);
 				animator.SetBool("ToL", false);
+				animator.SetBool("Jumping", false);
+
 
 			}
 			if (dirX < 0) 
 			{ 
 				animator.SetBool("ToL", true);
 				animator.SetBool("ToR", false);
+				animator.SetBool("Jumping", false);
 
 			}
+			if (rb.velocity.y > 0)
+			{
+				animator.SetBool("ToL", false);
+				animator.SetBool("ToR", false);
+				animator.SetBool("Jumping", true);
+
+			}
+			
 
 		}
 		public void MoveRight()
@@ -78,11 +91,13 @@ namespace TheMadCthulhuMinigame
 		}
 		public void Jump()
 		{
-			if (rb.velocity.y == 0)
+			
+			if (rb.velocity.y == 0) 
+			{ 
 				rb.AddForce(Vector2.up *jumpForce, ForceMode2D.Impulse);
-
-			//rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-			//rb.AddForce(Vector2.up * jumpForce);
+				
+			}
+			
 		}
 
 		public void StopMoving()
