@@ -10,7 +10,7 @@ namespace TheMadCthulhuMinigame
         [SerializeField]
         private TheMadGameManager gameManager;
         [SerializeField]
-        private Rigidbody2D rigidbody;
+        private Rigidbody2D m_rigidbody;
         [SerializeField]
         private float f_repellingForce=2;
         public float Lives
@@ -49,7 +49,7 @@ namespace TheMadCthulhuMinigame
                 Debug.DrawRay(this.transform.position, this.transform.position + forceDirection, Color.red);
                 
                 
-                rigidbody.AddForce(forceDirection * f_repellingForce, ForceMode2D.Impulse);
+                m_rigidbody.AddForce(forceDirection * f_repellingForce, ForceMode2D.Impulse);
             }
 
 

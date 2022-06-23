@@ -51,6 +51,12 @@ namespace OuijaBoardMinigame
         {
             get { return m_gameTimer ? m_gameTimer.RemainingTime : -1; }
         }
+
+        public bool GameWon
+        {
+            get { return b_win; }
+        }
+
 #endregion
         private void Awake()
         {
