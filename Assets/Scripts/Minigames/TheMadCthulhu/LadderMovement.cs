@@ -6,7 +6,7 @@ namespace TheMadCthulhuMinigame
     public class LadderMovement : MonoBehaviour
     {
 
-        private float f_dirY;
+        private float f_dirY=0;
         
         private float f_speed;
         [SerializeField]
@@ -73,11 +73,9 @@ namespace TheMadCthulhuMinigame
         }
         public void StopMoving()
         {
-            if (b_isClimbing) 
-            { 
                 f_dirY = 0;
                 rb.velocity = Vector2.zero;
-            }
+            
         }
     }
 

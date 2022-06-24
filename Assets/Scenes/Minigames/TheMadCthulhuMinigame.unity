@@ -573,7 +573,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &326801773
 RectTransform:
   m_ObjectHideFlags: 0
@@ -970,7 +970,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &590623473
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1169,7 +1169,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &712554096
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1767,8 +1767,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -700.13995, y: -384.61}
-  m_SizeDelta: {x: 30, y: 30}
+  m_AnchoredPosition: {x: -521, y: -384.61}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1128900972
 MonoBehaviour:
@@ -1834,7 +1834,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4873784008142557916, guid: 1053bf81a43085a4480937b3a69ad8fd, type: 3}
+  m_Sprite: {fileID: 7785459205694133241, guid: 1053bf81a43085a4480937b3a69ad8fd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2729,8 +2729,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -834, y: -384.61}
-  m_SizeDelta: {x: 30, y: 30}
+  m_AnchoredPosition: {x: -827, y: -380}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1608211316
 MonoBehaviour:
@@ -2796,7 +2796,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3727626351315695882, guid: 1053bf81a43085a4480937b3a69ad8fd, type: 3}
+  m_Sprite: {fileID: 2679647429728843966, guid: 1053bf81a43085a4480937b3a69ad8fd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2981,8 +2981,8 @@ MonoBehaviour:
     - {fileID: 1935486662}
     - {fileID: 1697627883}
   gp_hard:
-    i_Lives: 2
-    i_Time: 12
+    i_Lives: 20000
+    i_Time: 12000
     arrgo_Enemy:
     - {fileID: 1697627883}
     - {fileID: 2118069665}
@@ -4003,8 +4003,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 752, y: -385}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 823, y: -367}
+  m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1987406916
 MonoBehaviour:
@@ -4108,6 +4108,34 @@ MonoBehaviour:
         - m_Target: {fileID: 2056065000}
           m_TargetAssemblyTypeName: PgMovement, Assembly-CSharp
           m_MethodName: Jump
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2056065004}
+          m_TargetAssemblyTypeName: TheMadCthulhuMinigame.LadderMovement, Assembly-CSharp
+          m_MethodName: MoveUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2056065004}
+          m_TargetAssemblyTypeName: TheMadCthulhuMinigame.LadderMovement, Assembly-CSharp
+          m_MethodName: StopMoving
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
