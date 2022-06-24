@@ -325,7 +325,7 @@ public class GameManager : MonoBehaviour
             yield return StartCoroutine(_loadEntry(entryToLoad));
 
             yield return new WaitUntil(() => { return m_minigameManager.CanCloseGame; });
-            if (m_minigameManager.Score == 0)
+            if (m_minigameManager.Score <= 0)
             {
                 //Stop endless as I lost the minigame
                 ReturnToMainMenuNonStopping();
