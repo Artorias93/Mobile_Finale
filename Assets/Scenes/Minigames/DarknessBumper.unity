@@ -572,24 +572,24 @@ MonoBehaviour:
     f_skullSpeedMultiplier: 1
     f_minSpawnDelay: 2
     f_maxSpawDelay: 3
-    f_timePersistence: 5
+    f_timePersistence: 6
     i_maxError: 3
   gp_medium:
     i_playTime: 45
-    f_skullSpeedMultiplier: 1.5
-    f_minSpawnDelay: 1.5
-    f_maxSpawDelay: 2.5
-    f_timePersistence: 7
+    f_skullSpeedMultiplier: 1.6
+    f_minSpawnDelay: 0.4
+    f_maxSpawDelay: 1.8
+    f_timePersistence: 6
     i_maxError: 5
   gp_hard:
     i_playTime: 60
-    f_skullSpeedMultiplier: 2
-    f_minSpawnDelay: 1
-    f_maxSpawDelay: 2
-    f_timePersistence: 3
-    i_maxError: 7
+    f_skullSpeedMultiplier: 2.5
+    f_minSpawnDelay: 0.1
+    f_maxSpawDelay: 1.5
+    f_timePersistence: 4
+    i_maxError: 6
   b_enableDebug: 0
-  diff: 2
+  diff: 1
 --- !u!4 &879889300
 Transform:
   m_ObjectHideFlags: 0
