@@ -130,7 +130,7 @@ namespace DecodeAudioMinigame
             m_selectedRunes = new List<RuneEntry>();
             while (m_selectedRunes.Count < m_gameParameters.m_runeCount)
             {
-                int index = Random.Range(0, m_gameParameters.m_runeCount);
+                int index = Random.Range(0, m_runeDictionary.Length);
                 RuneEntry entry = m_runeDictionary[index];
                 if (!m_selectedRunes.Contains(entry))
                 {
