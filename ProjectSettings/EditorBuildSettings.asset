@@ -53,4 +53,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minigames/FightCthulhu.unity
     guid: 4158507279e580e43a2b3d0c550c5f25
+  - enabled: 1
+    path: Assets/Scenes/Minigames/TheMadCthulhuMinigame.unity
+    guid: a57f9c2cf53fe924d9ccbb81f6302ef8
   m_configObjects: {}
