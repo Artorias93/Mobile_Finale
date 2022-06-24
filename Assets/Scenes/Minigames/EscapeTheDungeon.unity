@@ -674,21 +674,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frameTime: 1
-  i_minimumDistance: 6
+  i_minimumDistance: 5
   m_EnemyPrefab: {fileID: 4193592139450738849, guid: 77180f9493dddd7429feecc04f18a243, type: 3}
   m_MazeManager: {fileID: 339509718}
   m_PlayerController: {fileID: 1439097354}
   gp_easy:
-    f_PlayTime: 50
-    i_numEnemies: 0
-  gp_medium:
-    f_PlayTime: 40
+    f_PlayTime: 35
     i_numEnemies: 1
-  gp_hard:
-    f_PlayTime: 40
+  gp_medium:
+    f_PlayTime: 50
     i_numEnemies: 2
+  gp_hard:
+    f_PlayTime: 55
+    i_numEnemies: 3
   b_debug: 0
-  m_TestDifficulty: 0
+  m_TestDifficulty: 2
 --- !u!4 &1933511677
 Transform:
   m_ObjectHideFlags: 0
