@@ -156,20 +156,20 @@ MonoBehaviour:
   obj_blade: {fileID: 1291228534}
   endGameUI: {fileID: 0}
   gp_easy:
-    i_playTime: 20
+    i_playTime: 25
     i_maxError: 3
-    f_minDelay: 1
-    f_maxDelay: 2.5
+    f_minDelay: 0.9
+    f_maxDelay: 2
   gp_medium:
     i_playTime: 40
-    i_maxError: 4
-    f_minDelay: 1
-    f_maxDelay: 1.5
+    i_maxError: 3
+    f_minDelay: 0.6
+    f_maxDelay: 1.1
   gp_hard:
     i_playTime: 60
-    i_maxError: 5
-    f_minDelay: 0.5
-    f_maxDelay: 1.2
+    i_maxError: 3
+    f_minDelay: 0.2
+    f_maxDelay: 0.9
   b_enableDebug: 0
   diff: 0
 --- !u!114 &163589292
