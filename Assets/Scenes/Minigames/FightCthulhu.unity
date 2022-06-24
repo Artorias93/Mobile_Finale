@@ -1091,7 +1091,7 @@ MonoBehaviour:
     i_maxErrorCount: 5
   player: {fileID: 332222873}
   cthulhu: {fileID: 834141451}
-  b_enableDebug: 1
+  b_enableDebug: 0
   diff: 2
 --- !u!1 &1439663911
 GameObject:
