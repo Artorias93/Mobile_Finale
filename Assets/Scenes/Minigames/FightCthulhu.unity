@@ -1075,24 +1075,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frameTime: 0.7
   gp_easy:
-    f_gameTime: 18
+    f_gameTime: 20
+    i_activeTentacles: 1
+    i_grabbingTentacles: 1
+    i_maxErrorCount: 3
+  gp_medium:
+    f_gameTime: 35
     i_activeTentacles: 2
     i_grabbingTentacles: 1
-    i_maxErrorCount: 5
-  gp_medium:
-    f_gameTime: 25
-    i_activeTentacles: 3
-    i_grabbingTentacles: 1
-    i_maxErrorCount: 4
+    i_maxErrorCount: 3
   gp_hard:
-    f_gameTime: 30
-    i_activeTentacles: 4
-    i_grabbingTentacles: 3
-    i_maxErrorCount: 2
+    f_gameTime: 50
+    i_activeTentacles: 3
+    i_grabbingTentacles: 2
+    i_maxErrorCount: 5
   player: {fileID: 332222873}
   cthulhu: {fileID: 834141451}
-  b_enableDebug: 0
-  diff: 1
+  b_enableDebug: 1
+  diff: 2
 --- !u!1 &1439663911
 GameObject:
   m_ObjectHideFlags: 0
