@@ -487,7 +487,7 @@ MonoBehaviour:
     i_requestedHits: 400
     i_PlayTime: 50
   m_hitController: {fileID: 1534638099}
-  b_enableDebug: 1
+  b_enableDebug: 0
   diff: 2
 --- !u!1 &699525904
 GameObject:
