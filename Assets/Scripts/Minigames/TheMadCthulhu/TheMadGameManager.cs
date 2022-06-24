@@ -96,7 +96,8 @@ namespace TheMadCthulhuMinigame
 
         protected override void EndMinigame()
         {
-                
+          
+            m_gameTimer?.PauseTimer();
             b_gameFinished = true;
 
         }
