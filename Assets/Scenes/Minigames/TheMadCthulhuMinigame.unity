@@ -2981,8 +2981,8 @@ MonoBehaviour:
     - {fileID: 1935486662}
     - {fileID: 1697627883}
   gp_hard:
-    i_Lives: 20000
-    i_Time: 12000
+    i_Lives: 2
+    i_Time: 12
     arrgo_Enemy:
     - {fileID: 1697627883}
     - {fileID: 2118069665}
@@ -2993,6 +2993,8 @@ MonoBehaviour:
     - {fileID: 342834063}
     - {fileID: 1935486662}
   PlayerController: {fileID: 2056065005}
+  b_enableDebug: 0
+  diff: 2
 --- !u!4 &1693348733
 Transform:
   m_ObjectHideFlags: 0

@@ -12,6 +12,12 @@ namespace TheMadCthulhuMinigame
         public GameObject[] arrgo_Enemy;
         
     }
+    public enum Diff
+    {
+        easy,
+        medium,
+        hard
+    }
 
     public class TheMadGameManager : AMinigameManager
     {
@@ -23,13 +29,17 @@ namespace TheMadCthulhuMinigame
 
         [Header("References")]
         [SerializeField] private PlayerController PlayerController;
-            
-        
+
+        [Header("Debug")]
+        [SerializeField] private bool b_enableDebug;
+        [SerializeField] private Diff diff;
+
         private Timer m_gameTimer;
         public static TheMadGameManager Instance;
-        
+        private GameParameters m_gameParameters;
 
-    #region PROPERTIES
+
+        #region PROPERTIES
         public float remainingTime
         {
             get { return m_gameTimer ? m_gameTimer.RemainingTime : -1; }
@@ -52,7 +62,12 @@ namespace TheMadCthulhuMinigame
         }
         private void Start()
         {
-            BeginMinigame(Difficulty.HARD);
+            if (b_enableDebug)
+            {
+                if (diff == Diff.easy) BeginMinigame(Difficulty.EASY);
+                else if (diff == Diff.medium) BeginMinigame(Difficulty.MEDIUM);
+                else if (diff == Diff.hard) BeginMinigame(Difficulty.HARD);
+            }
         }
         public override void BeginMinigame(Difficulty difficulty)
         {
