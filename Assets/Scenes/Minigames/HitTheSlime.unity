@@ -478,17 +478,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gp_easy:
-    i_requestedHits: 40
-    i_PlayTime: 10
-  gp_medium:
-    i_requestedHits: 85
-    i_PlayTime: 15
-  gp_hard:
-    i_requestedHits: 125
+    i_requestedHits: 60
     i_PlayTime: 20
+  gp_medium:
+    i_requestedHits: 200
+    i_PlayTime: 35
+  gp_hard:
+    i_requestedHits: 400
+    i_PlayTime: 50
   m_hitController: {fileID: 1534638099}
-  b_enableDebug: 0
-  diff: 0
+  b_enableDebug: 1
+  diff: 2
 --- !u!1 &699525904
 GameObject:
   m_ObjectHideFlags: 0
