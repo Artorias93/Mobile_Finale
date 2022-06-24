@@ -52,6 +52,7 @@ namespace BalanceGame
         private GameWeight m_gameWeight;
         [SerializeField]
         private Rigidbody2D m_balanceRigidBody;
+        [SerializeField, Range(0.0f, 1.0f)] private float f_Tollerance = 0.14f;
 
         [SerializeField]
         private GameParameters gp_easy, gp_medium, gp_hard;
@@ -123,7 +124,7 @@ namespace BalanceGame
             if (b_gameWon)
             {
                 float decimalTime = f_currentLosetime / m_gameParameters.f_loseTImeSeconds;
-                decimalTime = 1 - decimalTime + 0.14f;
+                decimalTime = 1 - decimalTime + f_Tollerance;
                 i_score = (int)(3 *decimalTime);
             }
         }

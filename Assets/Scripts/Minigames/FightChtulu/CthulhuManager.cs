@@ -106,7 +106,7 @@ namespace FightCthulhu
             MiniGameManager miniGameManager = MiniGameManager.Instance;
             if (miniGameManager != null && !miniGameManager.GameFinished)
             {
-                int skipIdx = Random.Range(0, 5);
+                int skipIdx = Random.Range(0, 4);
                 changeSpriteIndex();
                 if (skipIdx > 0)
                 {

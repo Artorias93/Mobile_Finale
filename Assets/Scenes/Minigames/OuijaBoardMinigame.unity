@@ -216,18 +216,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gp_easy:
-    m_playTime: 60
-    m_wordsNum: 3
+    m_playTime: 50
+    m_wordsNum: 2
   gp_medium:
-    m_playTime: 80
-    m_wordsNum: 5
+    m_playTime: 55
+    m_wordsNum: 3
   gp_hard:
-    m_playTime: 100
-    m_wordsNum: 7
+    m_playTime: 68
+    m_wordsNum: 5
   m_ouijaManager: {fileID: 1895374559}
   m_ouijaBoardUIManager: {fileID: 1025244260}
   b_enableDebug: 0
-  diff: 0
+  diff: 2
 --- !u!114 &163589292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1169,8 +1169,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   f_moveSpeed: 15
-  f_tollerance: 0.9
-  f_startingTimeToStay: 0.5
+  f_tollerance: 1.2
+  f_startingTimeToStay: 0.3
   b_resetTime: 0
   m_ouijaManager: {fileID: 1895374559}
   letters: []

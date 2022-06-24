@@ -809,7 +809,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
       propertyPath: diff
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
       propertyPath: b_enableDebug
@@ -825,11 +825,11 @@ PrefabInstance:
       objectReference: {fileID: 1542177270}
     - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
       propertyPath: gp_easy.m_playTime
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
       propertyPath: gp_hard.m_playTime
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
       propertyPath: gp_easy.m_runeCount
@@ -837,19 +837,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
       propertyPath: gp_hard.m_runeCount
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
       propertyPath: gp_easy.m_turnNumber
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
       propertyPath: gp_hard.m_turnNumber
-      value: 3
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
       propertyPath: gp_medium.m_playTime
-      value: 40
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
       propertyPath: gp_medium.m_runeCount
@@ -857,7 +857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
       propertyPath: gp_medium.m_turnNumber
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2582421926551959255, guid: 80f3d3c13f0a4c849bda39313bb99891, type: 3}
       propertyPath: m_endGameScreenController

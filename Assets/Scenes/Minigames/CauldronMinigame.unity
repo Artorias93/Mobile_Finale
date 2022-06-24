@@ -242,27 +242,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gp_easy:
-    f_gameTime: 25
-    changeSecondsSpeedController: 7
+    f_gameTime: 30
+    changeSecondsSpeedController: 9
     maxTimeInError: 20
     max_lives: 4
-    spawnTimeSeconds: 2
+    spawnTimeSeconds: 7
   gp_medium:
-    f_gameTime: 8
-    changeSecondsSpeedController: 5
-    maxTimeInError: 20
-    max_lives: 3
-    spawnTimeSeconds: 1
+    f_gameTime: 40
+    changeSecondsSpeedController: 7
+    maxTimeInError: 27
+    max_lives: 4
+    spawnTimeSeconds: 7
   gp_hard:
-    f_gameTime: 6
-    changeSecondsSpeedController: 3
-    maxTimeInError: 20
-    max_lives: 2
-    spawnTimeSeconds: 1
+    f_gameTime: 60
+    changeSecondsSpeedController: 6
+    maxTimeInError: 30
+    max_lives: 3
+    spawnTimeSeconds: 5
   ingredientController: {fileID: 619144664}
   speedController: {fileID: 472681087}
   b_enableDebug: 0
-  diff: 0
+  diff: 2
 --- !u!4 &8122636
 Transform:
   m_ObjectHideFlags: 0
@@ -683,9 +683,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d295118a2bec940a7576a7cf1f5630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  f_speedCoefficient: 0.6
-  f_mouseDeceleration: -0.6
-  f_mouseAcceleration: 0.5
+  f_speedCoefficient: 0.8
+  f_mouseDeceleration: -0.4
+  f_mouseAcceleration: 0.3
   f_minSpeed: 0.1
   m_imgSlow: {fileID: 874656073}
   m_imgFast: {fileID: 1920836462}
@@ -1528,7 +1528,7 @@ RectTransform:
   m_GameObject: {fileID: 1173383006}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children: []
   m_Father: {fileID: 82875384}
   m_RootOrder: 0
@@ -1551,7 +1551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3135903, g: 0.6342032, b: 0.764151, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

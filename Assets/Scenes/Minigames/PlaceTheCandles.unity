@@ -525,16 +525,16 @@ MonoBehaviour:
   obj_spawnCandles: {fileID: 548436808}
   obj_candles: {fileID: 4522161315103966883, guid: 4375f705f0f35ce47a12baa6d8beecac, type: 3}
   gp_easy:
-    i_playTime: 20
-    i_runeToComplete: 3
-  gp_medium:
-    i_playTime: 40
+    i_playTime: 30
     i_runeToComplete: 4
-  gp_hard:
-    i_playTime: 60
+  gp_medium:
+    i_playTime: 53
     i_runeToComplete: 5
+  gp_hard:
+    i_playTime: 65
+    i_runeToComplete: 6
   b_enableDebug: 0
-  diff: 0
+  diff: 2
 --- !u!4 &745970310
 Transform:
   m_ObjectHideFlags: 0

@@ -9,24 +9,32 @@ namespace MonstersInvaders
         [SerializeField] private float f_minBound;
         [SerializeField] private float f_maxBound;
 
+        [SerializeField] private float f_ShootCooldown = 0.5f;
+
         [Header("References")]
         [SerializeField] private GameObject obj_spell;
 
         private Animator anim;
         float f_dirX;
+        private float f_cooldownTimer;
 
         // Start is called before the first frame update
         void Start()
         {
             anim = GetComponent<Animator>();
+            f_cooldownTimer = 0;
         }
 
         // Update is called once per frame
         void Update()
         {
+            f_cooldownTimer -= Time.deltaTime;
+
             if (MonsInvGameManager.Instance.GameFinished) return;
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && f_cooldownTimer <= 0)
             {
+                f_cooldownTimer = f_ShootCooldown;
+
                 anim.SetTrigger("Shot");
                 Instantiate(obj_spell, transform.position + new Vector3(0, 0.2f, 0), Quaternion.Euler(transform.eulerAngles + new Vector3(0, 0, -180)));
             }
