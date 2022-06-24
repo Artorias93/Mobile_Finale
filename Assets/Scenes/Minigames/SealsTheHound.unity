@@ -248,19 +248,19 @@ MonoBehaviour:
   i_gridWidth: 6
   gp_easy:
     i_playTime: 60
-    i_unwalkableNodes: 10
-    i_errorChance: 0.75
+    i_unwalkableNodes: 15
+    i_errorChance: 0.65
   gp_medium:
-    i_playTime: 50
-    i_unwalkableNodes: 7
-    i_errorChance: 0.5
-  gp_hard:
     i_playTime: 40
-    i_unwalkableNodes: 5
-    i_errorChance: 0.25
+    i_unwalkableNodes: 10
+    i_errorChance: 0.4
+  gp_hard:
+    i_playTime: 37
+    i_unwalkableNodes: 8
+    i_errorChance: 0.27
   b_enableDebug: 0
   gridPos: {x: 0, y: 0, z: 0}
-  diff: 2
+  diff: 1
 --- !u!4 &745970310
 Transform:
   m_ObjectHideFlags: 0
