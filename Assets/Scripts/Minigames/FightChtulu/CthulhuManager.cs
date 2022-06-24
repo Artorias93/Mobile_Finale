@@ -13,6 +13,7 @@ namespace FightCthulhu
         public int i_ErrorCount
         {
             get { return i_errorCount; }
+            set { i_errorCount = value; }
         }
         public static CthulhuManager Instance;
 

@@ -91,6 +91,7 @@ namespace FightCthulhu
                     if (OnUpdate != null)
                         OnUpdate();
                     if (cthulhu.i_ErrorCount >= m_gameParameters.i_maxErrorCount) {
+                        cthulhu.i_ErrorCount = cthulhu.i_ErrorCount > m_gameParameters.i_maxErrorCount ? m_gameParameters.i_maxErrorCount : cthulhu.i_ErrorCount;
                         EndMinigame();
                     }
                 }
