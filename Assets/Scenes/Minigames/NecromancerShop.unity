@@ -495,25 +495,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_uiManager: {fileID: 1042951632}
   gp_easy:
-    f_gameTime: 15
+    f_gameTime: 20
     i_maxIngredientsCount: 5
-    i_correctIngredientsCount: 2
+    i_correctIngredientsCount: 4
     i_maxErrorsCount: 3
     i_remainingOpenListCount: 3
     i_minSecondsStopObstacle: 1
     i_maxSecondsStopObstacle: 2
-    i_activeSpawnersCounter: 1
+    i_activeSpawnersCounter: 0
   gp_medium:
-    f_gameTime: 25
+    f_gameTime: 30
     i_maxIngredientsCount: 10
-    i_correctIngredientsCount: 5
+    i_correctIngredientsCount: 6
     i_maxErrorsCount: 2
     i_remainingOpenListCount: 4
     i_minSecondsStopObstacle: 2
     i_maxSecondsStopObstacle: 3
-    i_activeSpawnersCounter: 2
+    i_activeSpawnersCounter: 1
   gp_hard:
-    f_gameTime: 30
+    f_gameTime: 50
     i_maxIngredientsCount: 15
     i_correctIngredientsCount: 10
     i_maxErrorsCount: 2
