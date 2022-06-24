@@ -17,6 +17,7 @@ public class TransitionMenu : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         anim.SetFloat("AnimSpeed", f_animSpeed);
+        anim.SetBool("Ready", true);
         f_exitSpeed = anim.GetCurrentAnimatorStateInfo(0).length;
     }
 

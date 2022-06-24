@@ -72,8 +72,11 @@ public class UIMainMenu : MonoBehaviour
 
     private void OpenRecipes(int page)
     {
+        Animator recipesAnimator = m_RecipeScreen.GetComponent<Animator>();
         m_MainMenu.SetActive(false);
         m_RecipeScreen.SetActive(true);
+        recipesAnimator.SetBool("Ready", true);
+        recipesAnimator.SetInteger("Page", page);
         foreach (GameObject PageGO in m_RecipePages)
             PageGO.SetActive(false);
         if (page >= 0 && page < m_RecipePages.Length)
@@ -81,7 +84,10 @@ public class UIMainMenu : MonoBehaviour
     }
     private void OpenTraining(int page)
     {
+        Animator trainingAnimator = m_TrainingScreen.GetComponent<Animator>();
         m_TrainingScreen.SetActive(true);
+        trainingAnimator.SetBool("Ready", true);
+        trainingAnimator.SetInteger("Page", page);
         m_MainMenu.SetActive(false);
         foreach (GameObject PageGO in m_TrainingPages)
             PageGO.SetActive(false);
