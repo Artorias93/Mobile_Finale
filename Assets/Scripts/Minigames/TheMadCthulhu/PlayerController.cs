@@ -19,19 +19,14 @@ namespace TheMadCthulhuMinigame
             set { lives = (int)value; }
         }
 
-        // Start is called before the first frame update
-        void Start()
-        {
-          
-                lives = gameManager.SelectedParameters.i_Lives;
-
+        public void InitializePlayerLives(int playerLives) {
+            lives = playerLives;
         }
-       
         // Update is called once per frame
         void Update()
         {
 
-            if (lives <= 0)
+            if (lives <= 0 && gameManager.b_GameStarted)
                 gameManager.LoseMinigame();
             
         }

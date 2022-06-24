@@ -21,8 +21,8 @@ namespace TheMadCthulhuMinigame
 
     public class TheMadGameManager : AMinigameManager
     {
-       
-        
+
+
         [Header("Difficulty Settings")]
         [SerializeField] private GameParameters gp_easy, gp_medium, gp_hard;
         private GameParameters gp_selectedParameters;
@@ -33,10 +33,13 @@ namespace TheMadCthulhuMinigame
         [Header("Debug")]
         [SerializeField] private bool b_enableDebug;
         [SerializeField] private Diff diff;
-
+        public bool b_GameStarted{
+            get { return b_gameStarted; }
+        }
         private Timer m_gameTimer;
         public static TheMadGameManager Instance;
         private GameParameters m_gameParameters;
+        private bool b_gameStarted = false;
 
 
         #region PROPERTIES
@@ -83,6 +86,8 @@ namespace TheMadCthulhuMinigame
             m_gameTimer.StartTimer();
 
             SetUpTheEnemy(gp_selectedParameters);
+            PlayerController.InitializePlayerLives(gp_selectedParameters.i_Lives);
+            b_gameStarted = true;
         }
 
         private void SetUpTheEnemy(GameParameters gp_selectedParameters)
