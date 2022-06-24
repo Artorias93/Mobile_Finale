@@ -23,7 +23,6 @@ public class EndGameScreenController : MonoBehaviour
 
     private void Awake()
     {
-        transform.GetChild(0).GetComponent<Animator>().SetFloat("AnimSpeed", f_animSpeed);
         m_currentManager = GameObject.FindGameObjectWithTag(AMinigameManager.s_minigameTag).GetComponent<AMinigameManager>();
         Assert.AreEqual<int>(GO_stars.Length, 3, "Stars missing");
 
@@ -53,7 +52,8 @@ public class EndGameScreenController : MonoBehaviour
     virtual public void showEndGamePanel(int score)
     {
         panel.SetActive(true);
-        foreach(Transform child in panel.transform)
+        transform.GetChild(0).GetComponent<Animator>().SetFloat("AnimSpeed", f_animSpeed);
+        foreach (Transform child in panel.transform)
             child.gameObject.SetActive(true);
         for(int i = 0; i<score; i++)
         {
