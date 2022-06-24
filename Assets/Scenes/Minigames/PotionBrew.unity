@@ -410,7 +410,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &258500657
 RectTransform:
   m_ObjectHideFlags: 0
@@ -551,22 +551,22 @@ MonoBehaviour:
     i_maxStepsCount: 5
     i_maxOverflowSeconds: 10
   gp_medium:
-    f_gameTime: 35
+    f_gameTime: 40
     i_selectablePotions: 4
     i_secondsToTilt: 5
     i_totalShakes: 7
-    i_maxStepsCount: 7
-    i_maxOverflowSeconds: 7
+    i_maxStepsCount: 12
+    i_maxOverflowSeconds: 4
   gp_hard:
     f_gameTime: 60
     i_selectablePotions: 5
-    i_secondsToTilt: 8
+    i_secondsToTilt: 6
     i_totalShakes: 11
-    i_maxStepsCount: 9
-    i_maxOverflowSeconds: 3
+    i_maxStepsCount: 20
+    i_maxOverflowSeconds: 2
   generalUIManager: {fileID: 635542237}
   b_enableDebug: 0
-  diff: 0
+  diff: 2
 --- !u!4 &508258256
 Transform:
   m_ObjectHideFlags: 0
