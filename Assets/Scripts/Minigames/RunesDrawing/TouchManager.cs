@@ -179,8 +179,8 @@ namespace DrawingRunes
 
                 f_distance = distance;
                 m_status = DrawingStatus.FINISHED;
-                m_lineRenderer.positionCount = 0;
             }
+            m_lineRenderer.positionCount = 0;
         }
 
         private Vector3 screenToWorldPos(Vector3 screenPos)
