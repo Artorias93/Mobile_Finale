@@ -9505,7 +9505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4528962256270432712, guid: e7d399aace01ca44a96052cc14dd2218, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 247.5
+      value: 247.50006
       objectReference: {fileID: 0}
     - target: {fileID: 4528962256270432712, guid: e7d399aace01ca44a96052cc14dd2218, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -11135,7 +11135,7 @@ Animator:
   m_GameObject: {fileID: 1064073307}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3b8820bfd02b18f4d9acd272c1b12ad5, type: 2}
+  m_Controller: {fileID: 9100000, guid: 136ac7e5e23b3de46ba53ebaee660707, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -11184,12 +11184,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 2e0ea3c8bbfba744f9852441de5855a7, type: 3}
+  m_Sprite: {fileID: 1012188541264668013, guid: 0d24a8db1dcd66c4b8b61f692adee404, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_DrawMode: 1
+  m_Size: {x: 2.6, y: 3.1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -18079,7 +18079,7 @@ PrefabInstance:
     - target: {fileID: 4528962255796796487, guid: e7d399aace01ca44a96052cc14dd2218, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -6982630928702203071, guid: 9d0fbda36d120d449aafd2475116edcd, type: 3}
+      objectReference: {fileID: 21300000, guid: d0c37d541de6c584ba981b2893d42a23, type: 3}
     - target: {fileID: 4528962255796796489, guid: e7d399aace01ca44a96052cc14dd2218, type: 3}
       propertyPath: m_SizeDelta.x
       value: 250
@@ -27323,7 +27323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4528962256270432712, guid: e7d399aace01ca44a96052cc14dd2218, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 247.5
+      value: 247.50006
       objectReference: {fileID: 0}
     - target: {fileID: 4528962256270432712, guid: e7d399aace01ca44a96052cc14dd2218, type: 3}
       propertyPath: m_AnchoredPosition.y
