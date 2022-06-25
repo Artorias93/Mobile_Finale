@@ -83,28 +83,28 @@ namespace CouldronMinigame
         }
 
         public void OnDrag(PointerEventData eventData)
-        {
-            Vector2 TouchPosition = Camera.main.ScreenToWorldPoint(eventData.position);
-            Vector2 distanceFromCenter = TouchPosition - v2_cauldronCenter;
-            oldTheta = theta;
-            theta = Mathf.Atan2(distanceFromCenter.y, distanceFromCenter.x);
-            //Debug.LogWarning("THETA: " + theta);
-            
-            float x = Mathf.Cos(theta);
-            float y = Mathf.Sin(theta);
+        { CauldronGameManager gameManager = CauldronGameManager.Instance;
+            if (gameManager != null && !gameManager.GameFinished) {
+                Vector2 TouchPosition = Camera.main.ScreenToWorldPoint(eventData.position);
+                Vector2 distanceFromCenter = TouchPosition - v2_cauldronCenter;
+                oldTheta = theta;
+                theta = Mathf.Atan2(distanceFromCenter.y, distanceFromCenter.x);
+                //Debug.LogWarning("THETA: " + theta);
 
-            Vector2 distanceVector = new Vector2(f_xLimit * y, f_yLimit * x);
-            float k = (f_xLimit * f_yLimit) / distanceVector.magnitude;
-            
+                float x = Mathf.Cos(theta);
+                float y = Mathf.Sin(theta);
 
-            v2_ladleNewPosition = k * (new Vector2(x, y));
+                Vector2 distanceVector = new Vector2(f_xLimit * y, f_yLimit * x);
+                float k = (f_xLimit * f_yLimit) / distanceVector.magnitude;
 
-            Vector3 oldPos = this.transform.position;
 
-            this.transform.position = v2_cauldronCenter + v2_ladleNewPosition;
-            Debug.DrawRay(v2_cauldronCenter, v2_cauldronCenter + v2_ladleNewPosition, Color.red);
+                v2_ladleNewPosition = k * (new Vector2(x, y));
 
-            
+                Vector3 oldPos = this.transform.position;
+
+                this.transform.position = v2_cauldronCenter + v2_ladleNewPosition;
+                Debug.DrawRay(v2_cauldronCenter, v2_cauldronCenter + v2_ladleNewPosition, Color.red);
+            }
         }
 
         private void Update()
