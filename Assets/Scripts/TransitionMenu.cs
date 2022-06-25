@@ -55,7 +55,6 @@ public class TransitionMenu : MonoBehaviour
 
     private IEnumerator WaitToDeactive()
     {
-        print(f_exitSpeed);
         yield return new WaitForSeconds(f_exitSpeed);
 
         if (!gameObject.CompareTag("MainMenu"))
