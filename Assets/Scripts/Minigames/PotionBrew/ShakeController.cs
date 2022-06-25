@@ -42,12 +42,15 @@ namespace PotionBrewMinigame
         {
             f_magnitude = Input.acceleration.magnitude;
             m_acceleration = Input.acceleration;
+            Vector2 actualPosition = transform.position;
             if (b_startShake && f_magnitude >= f_ShakeTreshOld)
             {
                 i_shakesCount++;
-                shake();
+                if (actualPosition.Equals(startingPosition)) {
+                    shake();
+                }
             }
-            else if (!transform.position.Equals(startingPosition)) {
+            else if (!actualPosition.Equals(startingPosition)) {
                 transform.position = startingPosition;
             }
         }
