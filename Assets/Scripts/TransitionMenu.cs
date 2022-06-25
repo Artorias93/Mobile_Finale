@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TransitionMenu : MonoBehaviour
 {
     [SerializeField] private float f_animSpeed = 1.5f;
+    [HideInInspector] public int i_difficulty;
     private float f_exitSpeed;
     private Animator anim;
     private GameObject objToActive;
