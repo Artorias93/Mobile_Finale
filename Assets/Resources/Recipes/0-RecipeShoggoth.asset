@@ -10,18 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5854a08f85d73774c891d60edc02eb02, type: 3}
-  m_Name: RecipeShubNiggurath
+  m_Name: 0-RecipeShoggoth
   m_EditorClassIdentifier: 
   m_entry:
-  - m_minigameScene: EscapeTheDungeon
-    m_difficulty: 1
-  - m_minigameScene: MonstersInvaders
-    m_difficulty: 1
   - m_minigameScene: DecodeAudioMinigame
-    m_difficulty: 1
-  - m_minigameScene: RunesDrawing
     m_difficulty: 0
-  - m_minigameScene: PlaceTheCandles
-    m_difficulty: 2
+  - m_minigameScene: FruitNinjaMinigame
+    m_difficulty: 0
   - m_minigameScene: PotionBrew
     m_difficulty: 0

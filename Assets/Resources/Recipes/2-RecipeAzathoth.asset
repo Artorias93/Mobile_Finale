@@ -10,14 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5854a08f85d73774c891d60edc02eb02, type: 3}
-  m_Name: RecipeCthulhu
+  m_Name: 2-RecipeAzathoth
   m_EditorClassIdentifier: 
   m_entry:
-  - m_minigameScene: EscapeTheDungeon
+  - m_minigameScene: NecromancerShop
     m_difficulty: 0
-  - m_minigameScene: MonstersInvaders
+  - m_minigameScene: CauldronMinigame
+    m_difficulty: 0
+  - m_minigameScene: PotionBrew
     m_difficulty: 1
-  - m_minigameScene: OuijaBoardMinigame
-    m_difficulty: 0
-  - m_minigameScene: FightCthulhu
-    m_difficulty: 0
+  - m_minigameScene: BalanceGame
+    m_difficulty: 1
+  - m_minigameScene: HitTheSlime
+    m_difficulty: 1

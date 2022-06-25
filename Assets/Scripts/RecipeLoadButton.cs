@@ -53,6 +53,7 @@ public class RecipeLoadButton : MonoBehaviour
 
     private void buttonCallback()
     {
+        if (m_recipe == null) return;
         GameManager.m_instance.SetReturnPage(m_OwnerPage);
         GameManager.m_instance.StartRecipe(m_recipe);
     }
