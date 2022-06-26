@@ -18,7 +18,8 @@ public class GameManager : MonoBehaviour
     [Header("Endless mode")]
     [SerializeField] List<string> m_ScenesName;
     public static string EndlessSaveString = "EndlessScore";
-
+    [Header("Recipe mode")]
+    [SerializeField] private bool b_IsLastEntry = false;
     public static GameManager m_instance;
     private AMinigameManager m_minigameManager;
 
@@ -37,6 +38,8 @@ public class GameManager : MonoBehaviour
     {
         get { return b_endless; }
     }
+
+    public bool IsLastEntry { get { return b_IsLastEntry; }  }
 
     private void Awake()
     {
@@ -237,9 +240,11 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
         i_scores = new List<int>();
+        b_IsLastEntry = false;
         
         for (int i = 0; i<recipe.getLength(); i++)
         {
+            b_IsLastEntry = i == recipe.getLength() - 1;
             RecipeEntry nextLevel = recipe.getEntry(i);
 
             yield return StartCoroutine(_loadEntry(nextLevel));

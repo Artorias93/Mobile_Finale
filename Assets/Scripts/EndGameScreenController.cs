@@ -42,7 +42,12 @@ public class EndGameScreenController : MonoBehaviour
                 returnTxt.text = "Return To Selection";
             }
         }
-        else
+        else if(GameManager.m_instance.IsLastEntry)
+        {
+            retryTxt.text = "Retry Recipe";
+            returnTxt.text = "Show Results";
+        }
+        else 
         {
             retryTxt.text = "Retry Recipe";
             returnTxt.text = "Next Minigame";
@@ -59,6 +64,14 @@ public class EndGameScreenController : MonoBehaviour
         {
             showStar(i, score);
         }
+
+
+        //Show Correct text if I lost endless
+        if(GameManager.m_instance.IsEndless && score == 0)
+        {
+            returnTxt.text = "Show Results";
+        }
+
     }
 
     protected void showStar(int index, int score)
