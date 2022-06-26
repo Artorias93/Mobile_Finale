@@ -43,12 +43,15 @@ public class RecipeLoadButton : MonoBehaviour
     private void OnEnable()
     {
         //Load score if present, done on enable to manage when changes happen in the main menu (for example player deleting saves)
-        if (PlayerPrefs.HasKey(m_recipe.name))
-            i_savedScore = PlayerPrefs.GetInt(m_recipe.name);
-        else
-            i_savedScore = 0;
+        if(m_recipe != null)
+        {
+            if (PlayerPrefs.HasKey(m_recipe.name))
+                i_savedScore = PlayerPrefs.GetInt(m_recipe.name);
+            else
+                i_savedScore = 0;
 
-        ShowStars(i_savedScore);
+            ShowStars(i_savedScore);
+        }
     }
 
     private void buttonCallback()
