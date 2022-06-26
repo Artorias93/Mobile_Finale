@@ -12,8 +12,7 @@ public class SceneLoadButton : MonoBehaviour
 
     [Header("Next Scene Options")]
     [SerializeField] private string m_minigameScene;
-    [SerializeField] private Difficulty m_difficulty = Difficulty.EASY;
-    [SerializeField] private difficultyUI m_dUI;
+    [SerializeField] private DifficultyButton m_difficultyButton;
     [SerializeField] private PageToReturn m_OwnerPage = PageToReturn.Training1;
 
     private void Awake()
@@ -25,18 +24,9 @@ public class SceneLoadButton : MonoBehaviour
         m_btn.onClick.AddListener(buttonCallback);
     }
 
-    public void cycleSelectedDifficulty()
-    {
-        int currentDifficultyValue = (int)m_difficulty;
-        int nextDifficultyValue = (currentDifficultyValue + 1) % 3; //Cycle through easy medium hard, starting over
-
-        m_difficulty = (Difficulty) nextDifficultyValue;
-        m_dUI.UpdateShownDifficulty(m_difficulty);
-    }
-
     private void buttonCallback()
     {
         GameManager.m_instance.SetReturnPage(m_OwnerPage);
-        GameManager.m_instance.StartLoadingCoroutine(m_minigameScene, m_difficulty);
+        GameManager.m_instance.StartLoadingCoroutine(m_minigameScene, m_difficultyButton.getSelectedDifficulty());
     }
 }
