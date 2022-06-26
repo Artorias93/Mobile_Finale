@@ -3129,6 +3129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firepoint: {fileID: 1209735712}
   bullet: {fileID: 5852079657147405886, guid: 6375c0b93c84deb48b5b1bb821577d52, type: 3}
+  animator: {fileID: 1697627890}
   starttimebetween: 2
 --- !u!114 &1697627886
 MonoBehaviour:
@@ -5049,6 +5050,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firepoint: {fileID: 1551064937}
   bullet: {fileID: 5852079657147405886, guid: 6375c0b93c84deb48b5b1bb821577d52, type: 3}
+  animator: {fileID: 2118069672}
   starttimebetween: 2
 --- !u!222 &2118069670
 CanvasRenderer:

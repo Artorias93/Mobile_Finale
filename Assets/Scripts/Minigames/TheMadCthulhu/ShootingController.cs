@@ -10,6 +10,8 @@ namespace TheMadCthulhuMinigame
         private Transform firepoint;
         [SerializeField]
         private GameObject bullet;
+        [SerializeField]
+        private Animator animator;
         
         float timebetween;
         [SerializeField]
@@ -33,6 +35,11 @@ namespace TheMadCthulhuMinigame
         }
         void Update()
         {
+            if (TheMadGameManager.Instance.GameFinished)
+            {
+                animator.enabled = false;
+                return;
+            }
             if (timebetween <= 0)
             {
                 GameObject newBullet = Instantiate(bullet, firepoint.position, firepoint.rotation);
