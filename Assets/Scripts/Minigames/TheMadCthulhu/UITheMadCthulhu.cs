@@ -17,10 +17,13 @@ namespace TheMadCthulhuMinigame
             gameManager = TheMadGameManager.Instance;
             if (gameManager != null)
             {
+
                 float normalizedTime = gameManager.remainingTime / gameManager.SelectedParameters.i_Time;
                 UpdateSlider(normalizedTime);
-                
-                scoreText.text = m_playerController.Lives + "/" + gameManager.SelectedParameters.i_Lives;
+
+                float LivesToShow = Mathf.Max(m_playerController.Lives, 0);
+
+                scoreText.text = LivesToShow + "/" + gameManager.SelectedParameters.i_Lives;
 
             }
 

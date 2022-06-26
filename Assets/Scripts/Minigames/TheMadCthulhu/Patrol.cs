@@ -28,6 +28,13 @@ namespace TheMadCthulhuMinigame
         }
         private void FixedUpdate()
         {
+            if (TheMadGameManager.Instance.GameFinished)
+            {
+                animator.enabled = false;
+                return;
+            }
+                
+
             if (b_goingToB) 
             {
                 MoveToB();
@@ -55,7 +62,6 @@ namespace TheMadCthulhuMinigame
             transform.position = Vector3.MoveTowards(transform.position, m_pointB.transform.position, speed);
             animator.SetBool("WalkToA", false);
         }
-
 
     }
 }

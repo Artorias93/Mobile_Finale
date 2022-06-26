@@ -25,12 +25,10 @@ namespace TheMadCthulhuMinigame
             }
         }
 
-
-        void Start()
+        private void Update()
         {
-
+            if(TheMadGameManager.Instance.GameFinished) rb.velocity = Vector2.zero;
         }
-
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
