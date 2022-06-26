@@ -37,12 +37,7 @@ namespace TheMadCthulhuMinigame
            
             if (collision.gameObject.tag == "Enemy")
             {
-                
                 lives--;
-
-                Vector3 forceDirection = (collision.transform.position-this.transform.position).normalized;
-                Debug.DrawRay(this.transform.position, this.transform.position + forceDirection, Color.red);
-                m_rigidbody.AddForce(Vector2.up * forceDirection * f_repellingForce, ForceMode2D.Impulse);
             }
 
 

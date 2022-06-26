@@ -3051,7 +3051,7 @@ MonoBehaviour:
     - {fileID: 342834063}
     - {fileID: 1935486662}
   PlayerController: {fileID: 2056065005}
-  b_enableDebug: 0
+  b_enableDebug: 1
   diff: 0
 --- !u!4 &1693348733
 Transform:
@@ -4573,7 +4573,9 @@ MonoBehaviour:
   moveSpeed: 5
   jumpForce: 5
   fallGravityMultiplier: 1
+  repellingForce: 200
   gravityScale: 1
+  DamageCooldownTime: 0.2
   animator: {fileID: 2056065007}
 --- !u!61 &2056065001
 BoxCollider2D:
@@ -4599,7 +4601,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.26, y: 0.31}
+  m_Size: {x: 80, y: 100}
   m_EdgeRadius: 0
 --- !u!114 &2056065002
 MonoBehaviour:
@@ -4623,7 +4625,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 1012188541264668013, guid: 0d24a8db1dcd66c4b8b61f692adee404, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -4640,15 +4642,15 @@ RectTransform:
   m_GameObject: {fileID: 2056064998}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 273.02927, y: 274.1158, z: 345.72205}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 889798755}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -127, y: 267}
-  m_SizeDelta: {x: 0.26000977, y: 0.30999756}
+  m_AnchoredPosition: {x: -146.00012, y: 276}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2056065004
 MonoBehaviour:
