@@ -17,7 +17,7 @@ MonoBehaviour:
     m_difficulty: 1
   - m_minigameScene: TheMadCthulhuMinigame
     m_difficulty: 0
-  - m_minigameScene: FruitNinja
+  - m_minigameScene: FruitNinjaMinigame
     m_difficulty: 1
   - m_minigameScene: OuijaBoardMinigame
     m_difficulty: 0
