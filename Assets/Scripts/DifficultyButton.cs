@@ -19,8 +19,7 @@ public class DifficultyButton : MonoBehaviour
 
     private void OnEnable()
     {
-
-        transition.i_difficulty = i_currentState;
+        i_currentState= transition.i_difficulty;
         anim.SetInteger("Difficulty", transition.i_difficulty);
 
         SetColorAndText();
