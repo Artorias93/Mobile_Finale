@@ -533,8 +533,8 @@ MonoBehaviour:
   gp_hard:
     i_playTime: 65
     i_runeToComplete: 6
-  b_enableDebug: 0
-  diff: 2
+  b_enableDebug: 1
+  diff: 1
 --- !u!4 &745970310
 Transform:
   m_ObjectHideFlags: 0

@@ -8,11 +8,11 @@ PlayerSettings:
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
-  defaultScreenOrientation: 2
+  defaultScreenOrientation: 4
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: FanDiCthulhu
+  companyName: Cthulhu's Friends
   productName: My Friend Cthulhu
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -154,7 +154,7 @@ PlayerSettings:
   androidMaxAspectRatio: 17.26
   applicationIdentifier:
     Android: com.FanDiCthulhu.MyFriendCthulhu
-    Standalone: com.DefaultCompany.MobileFinale
+    Standalone: com.FanDiCthulhu.MyFriendCthulhu
   buildNumber:
     Standalone: 0
     iPhone: 0
