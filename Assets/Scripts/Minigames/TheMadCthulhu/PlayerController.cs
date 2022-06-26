@@ -11,8 +11,6 @@ namespace TheMadCthulhuMinigame
         private TheMadGameManager gameManager;
         [SerializeField]
         private Rigidbody2D m_rigidbody;
-        [SerializeField]
-        private float f_repellingForce=10;
         public float Lives
         {
             get { return lives; }
