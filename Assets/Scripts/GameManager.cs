@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Endless mode")]
     [SerializeField] List<string> m_ScenesName;
-    [SerializeField] string EndlessSaveString = "EndlessScore";
+    public static string EndlessSaveString = "EndlessScore";
 
     public static GameManager m_instance;
     private AMinigameManager m_minigameManager;
