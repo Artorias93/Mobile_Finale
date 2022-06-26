@@ -15,20 +15,19 @@ public class DifficultyButton : MonoBehaviour
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        //if (anim.GetInteger("Difficulty") == -1) anim.SetInteger("Difficulty", 0);
     }
 
     private void OnEnable()
     {
+
+        transition.i_difficulty = i_currentState;
         anim.SetInteger("Difficulty", transition.i_difficulty);
+
         SetColorAndText();
-        print(transition.i_difficulty);
-        //anim.SetInteger("Difficulty", i_currentState);
     }
     public void ChangeDifficulty()
     {
         anim.SetInteger("Difficulty", (anim.GetInteger("Difficulty") + 1) % 3);
-        //int i_savedStare = i_currentState;
         i_currentState = anim.GetInteger("Difficulty");
 
         SetColorAndText();
@@ -58,6 +57,10 @@ public class DifficultyButton : MonoBehaviour
     public void Clicked()
     {
         anim.SetBool("Clicked", !anim.GetBool("Clicked"));
+    }
+
+    public Difficulty getSelectedDifficulty() {
+        return (Difficulty)i_currentState;
     }
 
 }
