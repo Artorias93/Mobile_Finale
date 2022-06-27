@@ -261,6 +261,7 @@ MonoBehaviour:
     spawnTimeSeconds: 5
   ingredientController: {fileID: 619144664}
   speedController: {fileID: 472681087}
+  touchController: {fileID: 2631642}
   b_enableDebug: 0
   diff: 2
 --- !u!4 &8122636
@@ -493,7 +494,7 @@ GameObject:
   - component: {fileID: 273715973}
   - component: {fileID: 273715972}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Medium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -516,7 +517,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 28, y: 0}
+  m_SizeDelta: {x: 108.159996, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &273715972
 MonoBehaviour:
@@ -659,7 +660,7 @@ RectTransform:
   m_GameObject: {fileID: 472681085}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.976, y: 2.976, z: 2.976}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1317104606}
   - {fileID: 82875384}
@@ -668,8 +669,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -270.00024, y: 69}
-  m_SizeDelta: {x: 160, y: 20}
+  m_AnchoredPosition: {x: -264, y: 80}
+  m_SizeDelta: {x: 416, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &472681087
 MonoBehaviour:
@@ -683,15 +684,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d295118a2bec940a7576a7cf1f5630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  f_speedCoefficient: 0.9
-  f_mouseAcceleration: 1
-  f_maxSpeed: 0.2
+  f_speedCoefficient: 1.7
+  f_mouseAcceleration: 0.69
+  f_maxSpeed: 0.3
   m_imgSlow: {fileID: 874656073}
   m_imgFast: {fileID: 1920836462}
   m_imgRegular: {fileID: 273715972}
+  m_imgTooSlow: {fileID: 2134116972}
+  m_imgTooFast: {fileID: 1008744127}
   m_insideCauldron: {fileID: 307936747}
   m_speedIndicator: {fileID: 472681088}
   m_trasparentAlpha: 0.2
+  m_slowMinimumMovementSpeed: 0.1
+  m_regularMinimumMovementSpeed: 0.37
+  m_fastMinimumMovementSpeed: 0.63
+  m_tooFastMinimumMovementSpeed: 0.9
   gameManager: {fileID: 8122635}
 --- !u!114 &472681088
 MonoBehaviour:
@@ -1156,7 +1163,7 @@ GameObject:
   - component: {fileID: 874656074}
   - component: {fileID: 874656073}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Slow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1179,7 +1186,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 28, y: 0}
+  m_SizeDelta: {x: 112.32, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &874656073
 MonoBehaviour:
@@ -1333,7 +1340,7 @@ GameObject:
   - component: {fileID: 1008744128}
   - component: {fileID: 1008744127}
   m_Layer: 5
-  m_Name: Image (3)
+  m_Name: TooFast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1356,7 +1363,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 15, y: 0}
+  m_SizeDelta: {x: 41.60001, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1008744127
 MonoBehaviour:
@@ -1527,7 +1534,7 @@ RectTransform:
   m_GameObject: {fileID: 1173383006}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 82875384}
   m_RootOrder: 0
@@ -1535,7 +1542,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 0}
+  m_SizeDelta: {x: 40, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1173383008
 MonoBehaviour:
@@ -1614,7 +1621,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -10, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1317104607
 MonoBehaviour:
@@ -1634,7 +1641,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 0
+  m_Spacing: 2
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -2186,7 +2193,7 @@ GameObject:
   - component: {fileID: 1920836463}
   - component: {fileID: 1920836462}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: Fast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2209,7 +2216,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 28, y: 0}
+  m_SizeDelta: {x: 112.31999, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1920836462
 MonoBehaviour:
@@ -2389,7 +2396,7 @@ GameObject:
   - component: {fileID: 2134116973}
   - component: {fileID: 2134116972}
   m_Layer: 5
-  m_Name: Image (4)
+  m_Name: tooSlow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2412,7 +2419,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 0}
+  m_SizeDelta: {x: 41.600002, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2134116972
 MonoBehaviour:
@@ -2427,7 +2434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
