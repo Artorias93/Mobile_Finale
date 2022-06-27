@@ -1,0 +1,49 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace FruitNinjaMinigame
+{
+    public class Item : MonoBehaviour
+    {
+        [SerializeField] private GameObject obj_fruitSlicedPrefab;
+        public Sprite spriteSx;
+        public Sprite spriteDx;
+        public int i_status = 0;
+
+        private void Update()
+        {
+            if (GameManager.Instance.GameFinished) Destroy(gameObject);
+        }
+
+        void OnTriggerEnter2D(Collider2D col)
+        {
+            if (col.CompareTag("Blade"))
+            {
+                //Splitting Sliced Objects
+                GameObject obj_slicedFruit = Instantiate(obj_fruitSlicedPrefab, transform.position, transform.rotation);
+                obj_slicedFruit.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = spriteSx;
+                obj_slicedFruit.transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = spriteDx;
+                obj_slicedFruit.transform.GetChild(0).GetComponent<Rigidbody2D>().AddForce(new Vector2(-1,5),ForceMode2D.Impulse);
+                obj_slicedFruit.transform.GetChild(1).GetComponent<Rigidbody2D>().AddForce(new Vector2(1, 5), ForceMode2D.Impulse);
+                obj_slicedFruit.transform.GetChild(2).GetComponent<Animator>().SetInteger("Color", Random.Range(1, 6));
+
+                Destroy(obj_slicedFruit, 3f);
+                Destroy(gameObject);
+            }
+
+            //Add 1 to Not-Sliced Objects
+            if (i_status == 1 && col.CompareTag("OutDown"))
+            {
+                GameManager.Instance.increaseErrorCount();
+                Destroy(gameObject);
+            }
+        }
+
+        void OnTriggerExit2D(Collider2D col)
+        {
+            //Set New Object "Coming In-Screen"
+            if (col.CompareTag("OutDown")) if (i_status == 0) i_status++;
+        }
+    }
+}

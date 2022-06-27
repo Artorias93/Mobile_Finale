@@ -1,0 +1,1752 @@
+fileFormatVersion: 2
+guid: 39ce2f62838b5d242b811dbb81b643a1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4173949916186133561
+    second: GameLogo-Sheet_0
+  - first:
+      213: 3649124770489897122
+    second: GameLogo-Sheet_1
+  - first:
+      213: -7428717894341838605
+    second: GameLogo-Sheet_2
+  - first:
+      213: -612926475716925173
+    second: GameLogo-Sheet_3
+  - first:
+      213: -1265488458751148412
+    second: GameLogo-Sheet_4
+  - first:
+      213: 6556745756015756931
+    second: GameLogo-Sheet_5
+  - first:
+      213: 4077060589094640514
+    second: GameLogo-Sheet_6
+  - first:
+      213: -492707026384137769
+    second: GameLogo-Sheet_7
+  - first:
+      213: 3211321024288606828
+    second: GameLogo-Sheet_8
+  - first:
+      213: 8298249444144709858
+    second: GameLogo-Sheet_9
+  - first:
+      213: 8681638832477943824
+    second: GameLogo-Sheet_10
+  - first:
+      213: -3859772323751315435
+    second: GameLogo-Sheet_11
+  - first:
+      213: 8674813432842860464
+    second: GameLogo-Sheet_12
+  - first:
+      213: 6758017822057097758
+    second: GameLogo-Sheet_13
+  - first:
+      213: -3981099183133384254
+    second: GameLogo-Sheet_14
+  - first:
+      213: 3470694635761970547
+    second: GameLogo-Sheet_15
+  - first:
+      213: -4188293522703367041
+    second: GameLogo-Sheet_16
+  - first:
+      213: 619373729251197517
+    second: GameLogo-Sheet_17
+  - first:
+      213: 2159539032080661934
+    second: GameLogo-Sheet_18
+  - first:
+      213: -950186598137933848
+    second: GameLogo-Sheet_19
+  - first:
+      213: 2395200583372764227
+    second: GameLogo-Sheet_20
+  - first:
+      213: 8867186311519760911
+    second: GameLogo-Sheet_21
+  - first:
+      213: 4444324188596791889
+    second: GameLogo-Sheet_22
+  - first:
+      213: -7123915159487676295
+    second: GameLogo-Sheet_23
+  - first:
+      213: -5622431194951185170
+    second: GameLogo-Sheet_24
+  - first:
+      213: 2356971079665622167
+    second: GameLogo-Sheet_25
+  - first:
+      213: -6671941943695637887
+    second: GameLogo-Sheet_26
+  - first:
+      213: -4721905434556694776
+    second: GameLogo-Sheet_27
+  - first:
+      213: -8535013792478075056
+    second: GameLogo-Sheet_28
+  - first:
+      213: 3079568396770660732
+    second: GameLogo-Sheet_29
+  - first:
+      213: -2626646907777535084
+    second: GameLogo-Sheet_30
+  - first:
+      213: 8990300829291224778
+    second: GameLogo-Sheet_31
+  - first:
+      213: -7623336469611696038
+    second: GameLogo-Sheet_32
+  - first:
+      213: 4587346022061343364
+    second: GameLogo-Sheet_33
+  - first:
+      213: -9124668243333867411
+    second: GameLogo-Sheet_34
+  - first:
+      213: 9186350382948407277
+    second: GameLogo-Sheet_35
+  - first:
+      213: -1655041593695847362
+    second: GameLogo-Sheet_36
+  - first:
+      213: 2161386080267999169
+    second: GameLogo-Sheet_37
+  - first:
+      213: 4850914288110709218
+    second: GameLogo-Sheet_38
+  - first:
+      213: -3789631429169915068
+    second: GameLogo-Sheet_39
+  - first:
+      213: 8992896213121195112
+    second: GameLogo-Sheet_40
+  - first:
+      213: 3620987764878737256
+    second: GameLogo-Sheet_41
+  - first:
+      213: 7629503163518094469
+    second: GameLogo-Sheet_42
+  - first:
+      213: -7472769654324494069
+    second: GameLogo-Sheet_43
+  - first:
+      213: 6652737904752128168
+    second: GameLogo-Sheet_44
+  - first:
+      213: -8483897791697180581
+    second: GameLogo-Sheet_45
+  - first:
+      213: -7774706328732615682
+    second: GameLogo-Sheet_46
+  - first:
+      213: -5486410838016408421
+    second: GameLogo-Sheet_47
+  - first:
+      213: -521931089855132599
+    second: GameLogo-Sheet_48
+  - first:
+      213: -2913061792535782227
+    second: GameLogo-Sheet_49
+  - first:
+      213: -6733781126687956156
+    second: GameLogo-Sheet_50
+  - first:
+      213: 7524684545092997417
+    second: GameLogo-Sheet_51
+  - first:
+      213: 4281851874784532438
+    second: GameLogo-Sheet_52
+  - first:
+      213: 3815106548784617277
+    second: GameLogo-Sheet_53
+  - first:
+      213: -4925333149298563128
+    second: GameLogo-Sheet_54
+  - first:
+      213: -8963607259167089705
+    second: GameLogo-Sheet_55
+  - first:
+      213: 4873111739367124474
+    second: GameLogo-Sheet_56
+  - first:
+      213: -25950769179864957
+    second: GameLogo-Sheet_57
+  - first:
+      213: 8179491363559084854
+    second: GameLogo-Sheet_58
+  - first:
+      213: -4942099586546149189
+    second: GameLogo-Sheet_59
+  - first:
+      213: -4972455819492893127
+    second: GameLogo-Sheet_60
+  - first:
+      213: -1968722502561557836
+    second: GameLogo-Sheet_61
+  - first:
+      213: 4760665305979869175
+    second: GameLogo-Sheet_62
+  - first:
+      213: -3086123504933279996
+    second: GameLogo-Sheet_63
+  - first:
+      213: -1308594021583740833
+    second: GameLogo-Sheet_64
+  - first:
+      213: -1559462972889941451
+    second: GameLogo-Sheet_65
+  - first:
+      213: -1366555161854840291
+    second: GameLogo-Sheet_66
+  - first:
+      213: 4183615176029006551
+    second: GameLogo-Sheet_67
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GameLogo-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1680
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 934cb809559dce930800000000000000
+      internalID: 4173949916186133561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 1680
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a0112615ab44a230800000000000000
+      internalID: 3649124770489897122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 1680
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f8ba232f64e7e890800000000000000
+      internalID: -7428717894341838605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 1680
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b09e5752e927e77f0800000000000000
+      internalID: -612926475716925173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 1680
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48ef7cc93f4107ee0800000000000000
+      internalID: -1265488458751148412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 1680
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3868ed5a68d3efa50800000000000000
+      internalID: 6556745756015756931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 1680
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28b1bbc2101a49830800000000000000
+      internalID: 4077060589094640514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 1680
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d1d80ae19d8929f0800000000000000
+      internalID: -492707026384137769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 1680
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6a47701577e09c20800000000000000
+      internalID: 3211321024288606828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 1680
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e004d747ed492370800000000000000
+      internalID: 8298249444144709858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1400
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 018b51655806b7870800000000000000
+      internalID: 8681638832477943824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 1400
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5183be085855f6ac0800000000000000
+      internalID: -3859772323751315435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 1400
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b7b2652bd0236870800000000000000
+      internalID: 8674813432842860464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 1400
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1ae875576d49cd50800000000000000
+      internalID: 6758017822057097758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 1400
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c1acbdb26b40c8c0800000000000000
+      internalID: -3981099183133384254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 1400
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37d2278f1626a2030800000000000000
+      internalID: 3470694635761970547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 1400
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f74423c4b3130e5c0800000000000000
+      internalID: -4188293522703367041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 1400
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d420a3b0025789800800000000000000
+      internalID: 619373729251197517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 1400
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ead32c5de4938fd10800000000000000
+      internalID: 2159539032080661934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 1400
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8efc6a3c25240d2f0800000000000000
+      internalID: -950186598137933848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1120
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 344fdb18d367d3120800000000000000
+      internalID: 2395200583372764227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 1120
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f02775f48f29e0b70800000000000000
+      internalID: 8867186311519760911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 1120
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15aecff6d496dad30800000000000000
+      internalID: 4444324188596791889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 1120
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97087b418e4c22d90800000000000000
+      internalID: -7123915159487676295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 1120
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eec0cdafd9c19f1b0800000000000000
+      internalID: -5622431194951185170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 1120
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79c965d85b4a5b020800000000000000
+      internalID: 2356971079665622167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 1120
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1820ef3d6208863a0800000000000000
+      internalID: -6671941943695637887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 1120
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80ff246660c687eb0800000000000000
+      internalID: -4721905434556694776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 1120
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 057e84a1d2a8d8980800000000000000
+      internalID: -8535013792478075056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 1120
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c71d80ff323dcba20800000000000000
+      internalID: 3079568396770660732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 840
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 493ba8fcd864c8bd0800000000000000
+      internalID: -2626646907777535084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 840
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ace9dc9b8f6f3cc70800000000000000
+      internalID: 8990300829291224778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 840
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a50b38dfed7743690800000000000000
+      internalID: -7623336469611696038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 840
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48284caf6e689af30800000000000000
+      internalID: 4587346022061343364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 840
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d681cc6c39aae5180800000000000000
+      internalID: -9124668243333867411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 840
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de7d9ed70097c7f70800000000000000
+      internalID: 9186350382948407277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 840
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3c3347707c1809e0800000000000000
+      internalID: -1655041593695847362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 840
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c719d04039cefd10800000000000000
+      internalID: 2161386080267999169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 840
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e9a4b208d8e15340800000000000000
+      internalID: 4850914288110709218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 840
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44bdba22b46886bc0800000000000000
+      internalID: -3789631429169915068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 560
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86c5b0d957f2dcc70800000000000000
+      internalID: 8992896213121195112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 560
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86ff1a5ff25504230800000000000000
+      internalID: 3620987764878737256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 560
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58c073254b071e960800000000000000
+      internalID: 7629503163518094469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 560
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b018ba187936b4890800000000000000
+      internalID: -7472769654324494069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 560
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a0f68c60e5435c50800000000000000
+      internalID: 6652737904752128168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 560
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b582b2778e3234a80800000000000000
+      internalID: -8483897791697180581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 560
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efb39e249c1ba1490800000000000000
+      internalID: -7774706328732615682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 560
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b94cd2c396a5cd3b0800000000000000
+      internalID: -5486410838016408421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 560
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94cc3f7607ab1c8f0800000000000000
+      internalID: -521931089855132599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 560
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dac5427dbb9b297d0800000000000000
+      internalID: -2913061792535782227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 280
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 443e88c0ebdcc82a0800000000000000
+      internalID: -6733781126687956156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 280
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 921d32de9bc0d6860800000000000000
+      internalID: 7524684545092997417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 280
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d75f5908913c6b30800000000000000
+      internalID: 4281851874784532438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 280
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d37d29c513bf1f430800000000000000
+      internalID: 3815106548784617277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 280
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c76a93a893b5abb0800000000000000
+      internalID: -4925333149298563128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 280
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7db9b3360beda9380800000000000000
+      internalID: -8963607259167089705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 280
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afd63cfde45c0a340800000000000000
+      internalID: 4873111739367124474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 280
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 380d265b9edc3aff0800000000000000
+      internalID: -25950769179864957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 280
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6339050fe04638170800000000000000
+      internalID: 8179491363559084854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 280
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb8df434c922a6bb0800000000000000
+      internalID: -4942099586546149189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93e5dc107c94efab0800000000000000
+      internalID: -4972455819492893127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 0
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b2108d8051bda4e0800000000000000
+      internalID: -1968722502561557836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_62
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 0
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f7d4796fd7411240800000000000000
+      internalID: 4760665305979869175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_63
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 0
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 407e773f503eb25d0800000000000000
+      internalID: -3086123504933279996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_64
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 0
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f502d4caba0f6dde0800000000000000
+      internalID: -1308594021583740833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_65
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 0
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53a358440bcab5ae0800000000000000
+      internalID: -1559462972889941451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_66
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 0
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d127aa31255090de0800000000000000
+      internalID: -1366555161854840291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameLogo-Sheet_67
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 0
+        width: 260
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7da642c36df2f0a30800000000000000
+      internalID: 4183615176029006551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

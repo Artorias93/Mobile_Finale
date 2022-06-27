@@ -1,0 +1,129 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+
+namespace CouldronMinigame 
+{ 
+    [System.Serializable]
+    public struct GameParameters
+    {
+        public float f_gameTime;
+        public float changeSecondsSpeedController;
+        public float maxTimeInError;
+        public float max_lives;
+        public float spawnTimeSeconds;
+        public float ingredientLifetime;
+    }
+
+    public enum Diff
+    {
+        easy,
+        medium,
+        hard
+    }
+
+    public class CauldronGameManager : AMinigameManager
+    {
+        [SerializeField]
+        private GameParameters gp_easy, gp_medium, gp_hard;
+        //public GameParameters m_gameParameters;
+        private Timer m_timer;
+
+        private GameParameters m_gameParameters;
+
+        [SerializeField]
+        IngredientController ingredientController;
+        [SerializeField]
+        SpeedController speedController;
+        [SerializeField] private TouchController touchController;
+
+        [Header("Debug")]
+        [SerializeField] private bool b_enableDebug;
+        [SerializeField] private Diff diff;
+
+        public float remaningTime
+        {
+            get { return m_timer ? m_timer.RemainingTime : -1; }
+
+        }
+        public GameParameters SelectedParameters
+        {
+            get { return m_gameParameters; }
+        }
+
+        public static CauldronGameManager Instance;
+
+        private void Awake()
+        {
+            if (Instance == null)
+                Instance = this;
+            else
+                Destroy(this.gameObject);
+        }
+        
+        public override void BeginMinigame(Difficulty difficulty)
+        {
+            m_difficulty = difficulty;
+            if (m_difficulty == Difficulty.EASY)
+            {
+                m_gameParameters = gp_easy;
+            }
+            else if(m_difficulty == Difficulty.MEDIUM)
+            {
+                m_gameParameters = gp_medium;
+            }
+            else if (m_difficulty == Difficulty.HARD)
+            {
+                m_gameParameters = gp_hard;
+            }
+            m_timer = Timer.Create(m_gameParameters.f_gameTime, WinMinigame ,destroyOnFinish:true,name:"timer");
+            m_timer.StartTimer();
+
+            speedController.BeginPlay();
+            ingredientController.InitializeValue();
+
+        }
+
+      
+
+        // Start is called before the first frame update
+        void Start()
+        {
+            if (b_enableDebug)
+            {
+                if (diff == Diff.easy) BeginMinigame(Difficulty.EASY);
+                else if (diff == Diff.medium) BeginMinigame(Difficulty.MEDIUM);
+                else if (diff == Diff.hard) BeginMinigame(Difficulty.HARD);
+            }
+        }  
+
+        protected override void EndMinigame()
+        {
+            m_timer?.PauseTimer();
+            b_gameFinished = true;
+            speedController.StopAllCoroutines();
+        }
+
+        public void LoseMinigame()
+        {
+                i_score = 0;
+                EndMinigame();
+        }
+
+        public void WinMinigame()
+        {
+
+            //float percentageTime = (float)speedController.TimeinError / m_gameParameters.maxTimeInError;
+            float percentageLives = (float)ingredientController.Lives / m_gameParameters.max_lives;
+
+            //float percentage = (float)(percentageLives + percentageTime)/2;
+            i_score = (int)(3f * Mathf.Clamp(percentageLives, 0f, 1f));
+            EndMinigame();
+        
+            
+        }
+    }
+}
+        
+   

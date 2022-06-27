@@ -1,0 +1,936 @@
+fileFormatVersion: 2
+guid: 9d0fbda36d120d449aafd2475116edcd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6982630928702203071
+    second: HasturRecipe-Sheet_0
+  - first:
+      213: -658397839148062616
+    second: HasturRecipe-Sheet_1
+  - first:
+      213: -3781215351147066779
+    second: HasturRecipe-Sheet_2
+  - first:
+      213: 1443252166354786842
+    second: HasturRecipe-Sheet_3
+  - first:
+      213: -6046720769855978663
+    second: HasturRecipe-Sheet_4
+  - first:
+      213: -1952553135257576254
+    second: HasturRecipe-Sheet_5
+  - first:
+      213: 6696813798246303790
+    second: HasturRecipe-Sheet_6
+  - first:
+      213: -719712704168789530
+    second: HasturRecipe-Sheet_7
+  - first:
+      213: 2910714607566589630
+    second: HasturRecipe-Sheet_8
+  - first:
+      213: -7692670536440875134
+    second: HasturRecipe-Sheet_9
+  - first:
+      213: 3944150259267161607
+    second: HasturRecipe-Sheet_10
+  - first:
+      213: -1747402470923433905
+    second: HasturRecipe-Sheet_11
+  - first:
+      213: 4293108493392853627
+    second: HasturRecipe-Sheet_12
+  - first:
+      213: 2072142130165357404
+    second: HasturRecipe-Sheet_13
+  - first:
+      213: -6865718102152090843
+    second: HasturRecipe-Sheet_14
+  - first:
+      213: -7900300383468174533
+    second: HasturRecipe-Sheet_15
+  - first:
+      213: 3552083282115350213
+    second: HasturRecipe-Sheet_16
+  - first:
+      213: 4119168696053854481
+    second: HasturRecipe-Sheet_17
+  - first:
+      213: 1817909552569467748
+    second: HasturRecipe-Sheet_18
+  - first:
+      213: -8766062040011285183
+    second: HasturRecipe-Sheet_19
+  - first:
+      213: 8765266713286782693
+    second: HasturRecipe-Sheet_20
+  - first:
+      213: -5370784207564074864
+    second: HasturRecipe-Sheet_21
+  - first:
+      213: 1047501865371250012
+    second: HasturRecipe-Sheet_22
+  - first:
+      213: 812119474664839883
+    second: HasturRecipe-Sheet_23
+  - first:
+      213: 6829939962908987117
+    second: HasturRecipe-Sheet_24
+  - first:
+      213: 8746009095257435834
+    second: HasturRecipe-Sheet_25
+  - first:
+      213: -529761279170534621
+    second: HasturRecipe-Sheet_26
+  - first:
+      213: -7350157060979759989
+    second: HasturRecipe-Sheet_27
+  - first:
+      213: -64834334508037472
+    second: HasturRecipe-Sheet_28
+  - first:
+      213: 6596783852077939557
+    second: HasturRecipe-Sheet_29
+  - first:
+      213: -4851759074393315670
+    second: HasturRecipe-Sheet_30
+  - first:
+      213: -4657982943467284636
+    second: HasturRecipe-Sheet_31
+  - first:
+      213: -3220027738238758939
+    second: HasturRecipe-Sheet_32
+  - first:
+      213: 2545347349492249097
+    second: HasturRecipe-Sheet_33
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14b9c097a26b81f90800000000000000
+      internalID: -6982630928702203071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 384
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 868e1b457a6ecd6f0800000000000000
+      internalID: -658397839148062616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 384
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56a00affbac668bc0800000000000000
+      internalID: -3781215351147066779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 384
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1ad3e8d236770410800000000000000
+      internalID: 1443252166354786842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 384
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95302c82f7bb51ca0800000000000000
+      internalID: -6046720769855978663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 384
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cc95efb44327e4e0800000000000000
+      internalID: -1952553135257576254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 384
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e28c7631bacdfec50800000000000000
+      internalID: 6696813798246303790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 384
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e9fea7db111306f0800000000000000
+      internalID: -719712704168789530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 384
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebe0c82938fe46820800000000000000
+      internalID: 2910714607566589630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 384
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 287f35597e42e3590800000000000000
+      internalID: -7692670536440875134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70e426883cf6cb630800000000000000
+      internalID: 3944150259267161607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 256
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4808f8f5baffb7e0800000000000000
+      internalID: -1747402470923433905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 256
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7ab4eacd6f249b30800000000000000
+      internalID: 4293108493392853627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 256
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5b90a8e94ab1cc10800000000000000
+      internalID: 2072142130165357404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 256
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52b614123c118b0a0800000000000000
+      internalID: -6865718102152090843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 256
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b334f78a8ae7c5290800000000000000
+      internalID: -7900300383468174533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 256
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cec613ece88b4130800000000000000
+      internalID: 3552083282115350213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 256
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 111f232da1a3a2930800000000000000
+      internalID: 4119168696053854481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 256
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46341ba3b138a3910800000000000000
+      internalID: 1817909552569467748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 256
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14d571ae401b85680800000000000000
+      internalID: -8766062040011285183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eea307a2ab74a970800000000000000
+      internalID: 8765266713286782693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 128
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0909dd608342775b0800000000000000
+      internalID: -5370784207564074864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 128
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5d230b8569798e00800000000000000
+      internalID: 1047501865371250012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 128
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bca13920c5a354b00800000000000000
+      internalID: 812119474664839883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 128
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dee4f6ea532d8ce50800000000000000
+      internalID: 6829939962908987117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 128
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abea72d0fe0106970800000000000000
+      internalID: 8746009095257435834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 128
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 323a8436ce8e5a8f0800000000000000
+      internalID: -529761279170534621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 128
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b84e8f8881ffef990800000000000000
+      internalID: -7350157060979759989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 128
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aa466a2489a91ff0800000000000000
+      internalID: -64834334508037472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 128
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56b732356fb7c8b50800000000000000
+      internalID: 6596783852077939557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa6220bd3d61bacb0800000000000000
+      internalID: -4851759074393315670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 0
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 467ddc421358b5fb0800000000000000
+      internalID: -4657982943467284636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 0
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5efcf5f15d92053d0800000000000000
+      internalID: -3220027738238758939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HasturRecipe-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 0
+        width: 91
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 902b774bde3e25320800000000000000
+      internalID: 2545347349492249097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,1272 @@
+fileFormatVersion: 2
+guid: 5b6442cda457c5242b914115b61f7cd4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6282520797895504153
+    second: CthulhuRecipe-Sheet_0
+  - first:
+      213: -2978233172011469826
+    second: CthulhuRecipe-Sheet_1
+  - first:
+      213: 8266340259679519899
+    second: CthulhuRecipe-Sheet_2
+  - first:
+      213: -2163688233886300117
+    second: CthulhuRecipe-Sheet_3
+  - first:
+      213: -8127400129104419157
+    second: CthulhuRecipe-Sheet_4
+  - first:
+      213: -8543336603433514467
+    second: CthulhuRecipe-Sheet_5
+  - first:
+      213: 5823473268482604894
+    second: CthulhuRecipe-Sheet_6
+  - first:
+      213: 850168741401647006
+    second: CthulhuRecipe-Sheet_7
+  - first:
+      213: 1248839880452159244
+    second: CthulhuRecipe-Sheet_8
+  - first:
+      213: -8206830051432667905
+    second: CthulhuRecipe-Sheet_9
+  - first:
+      213: 4338129778854225267
+    second: CthulhuRecipe-Sheet_10
+  - first:
+      213: 4707499720421714364
+    second: CthulhuRecipe-Sheet_11
+  - first:
+      213: 9129166572778989649
+    second: CthulhuRecipe-Sheet_12
+  - first:
+      213: 2646392021578350623
+    second: CthulhuRecipe-Sheet_13
+  - first:
+      213: 7786427284354888095
+    second: CthulhuRecipe-Sheet_14
+  - first:
+      213: 164563318395275734
+    second: CthulhuRecipe-Sheet_15
+  - first:
+      213: -5311855316333309451
+    second: CthulhuRecipe-Sheet_16
+  - first:
+      213: 4407750810754419746
+    second: CthulhuRecipe-Sheet_17
+  - first:
+      213: -6138095139867869581
+    second: CthulhuRecipe-Sheet_18
+  - first:
+      213: -3276507453180244641
+    second: CthulhuRecipe-Sheet_19
+  - first:
+      213: 7444624267733355280
+    second: CthulhuRecipe-Sheet_20
+  - first:
+      213: 7410166908294164495
+    second: CthulhuRecipe-Sheet_21
+  - first:
+      213: -2786128767342302951
+    second: CthulhuRecipe-Sheet_22
+  - first:
+      213: 3352565820893814058
+    second: CthulhuRecipe-Sheet_23
+  - first:
+      213: 79978617531523385
+    second: CthulhuRecipe-Sheet_24
+  - first:
+      213: -3231969757015252838
+    second: CthulhuRecipe-Sheet_25
+  - first:
+      213: -6988929967672826705
+    second: CthulhuRecipe-Sheet_26
+  - first:
+      213: 4552918666367304526
+    second: CthulhuRecipe-Sheet_27
+  - first:
+      213: -7012879575192806489
+    second: CthulhuRecipe-Sheet_28
+  - first:
+      213: -8357554466087491663
+    second: CthulhuRecipe-Sheet_29
+  - first:
+      213: -7215165261769796438
+    second: CthulhuRecipe-Sheet_30
+  - first:
+      213: 9070080412889587807
+    second: CthulhuRecipe-Sheet_31
+  - first:
+      213: -3795998310187189655
+    second: CthulhuRecipe-Sheet_32
+  - first:
+      213: -8030306826394968626
+    second: CthulhuRecipe-Sheet_33
+  - first:
+      213: 4730354133135480946
+    second: CthulhuRecipe-Sheet_34
+  - first:
+      213: -2611903790410787946
+    second: CthulhuRecipe-Sheet_35
+  - first:
+      213: -3824208286089194033
+    second: CthulhuRecipe-Sheet_36
+  - first:
+      213: 8632872362041953921
+    second: CthulhuRecipe-Sheet_37
+  - first:
+      213: -8711323333724511780
+    second: CthulhuRecipe-Sheet_38
+  - first:
+      213: -8393579266144304554
+    second: CthulhuRecipe-Sheet_39
+  - first:
+      213: 5256907266347565562
+    second: CthulhuRecipe-Sheet_40
+  - first:
+      213: -8190825033212491824
+    second: CthulhuRecipe-Sheet_41
+  - first:
+      213: -3147899199732710749
+    second: CthulhuRecipe-Sheet_42
+  - first:
+      213: 6600737811027667087
+    second: CthulhuRecipe-Sheet_43
+  - first:
+      213: 776480510997312326
+    second: CthulhuRecipe-Sheet_44
+  - first:
+      213: 5608632694066170322
+    second: CthulhuRecipe-Sheet_45
+  - first:
+      213: -2788618109624300173
+    second: CthulhuRecipe-Sheet_46
+  - first:
+      213: 6613532958042427550
+    second: CthulhuRecipe-Sheet_47
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 532
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 911b094216fff2750800000000000000
+      internalID: 6282520797895504153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 532
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef3b8fb95b03ba6d0800000000000000
+      internalID: -2978233172011469826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 532
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9445b25ba0f7b270800000000000000
+      internalID: 8266340259679519899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 532
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b28c386d30909f1e0800000000000000
+      internalID: -2163688233886300117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 532
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba66445b4aca53f80800000000000000
+      internalID: -8127400129104419157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 532
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1ac0cbaf98ff6980800000000000000
+      internalID: -8543336603433514467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 532
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5f73e6651221d050800000000000000
+      internalID: 5823473268482604894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 532
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e97d26647f76ccb00800000000000000
+      internalID: 850168741401647006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 532
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0731bf2145c45110800000000000000
+      internalID: 1248839880452159244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 532
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff4ea54cc8b7b1e80800000000000000
+      internalID: -8206830051432667905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 399
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 375662aac02243c30800000000000000
+      internalID: 4338129778854225267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 399
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb9acf7ed06645140800000000000000
+      internalID: 4707499720421714364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 399
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 158acd921a051be70800000000000000
+      internalID: 9129166572778989649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 399
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f100b9eb58fd9b420800000000000000
+      internalID: 2646392021578350623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 399
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f91f1616c52fe0c60800000000000000
+      internalID: 7786427284354888095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 399
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d982085775a84200800000000000000
+      internalID: 164563318395275734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 399
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f1dea3bbbf7846b0800000000000000
+      internalID: -5311855316333309451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 399
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22c0575520a7b2d30800000000000000
+      internalID: 4407750810754419746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 399
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37ebf96cdfa11daa0800000000000000
+      internalID: -6138095139867869581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 399
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5d854db4d18782d0800000000000000
+      internalID: -3276507453180244641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 266
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01bcf74045e905760800000000000000
+      internalID: 7444624267733355280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 266
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f007a37da8336d660800000000000000
+      internalID: 7410166908294164495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 266
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 919a01cc5aea559d0800000000000000
+      internalID: -2786128767342302951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 266
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2ddd78f9d4b68e20800000000000000
+      internalID: 3352565820893814058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 266
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 931e79ff0242c1100800000000000000
+      internalID: 79978617531523385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 266
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a90ec4431acb523d0800000000000000
+      internalID: -3231969757015252838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 266
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa467cc2935520f90800000000000000
+      internalID: -6988929967672826705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 266
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e43811897673f2f30800000000000000
+      internalID: 4552918666367304526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 266
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ab5a04ae2f3dae90800000000000000
+      internalID: -7012879575192806489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 266
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b720e94e70040c80800000000000000
+      internalID: -8357554466087491663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 133
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa419780c659edb90800000000000000
+      internalID: -7215165261769796438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 133
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f50238684166fdd70800000000000000
+      internalID: 9070080412889587807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 133
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96a3f4126a7e15bc0800000000000000
+      internalID: -3795998310187189655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 133
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecd555fdc7e9e8090800000000000000
+      internalID: -8030306826394968626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 133
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2785757850895a140800000000000000
+      internalID: 4730354133135480946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 133
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69391115757a0cbd0800000000000000
+      internalID: -2611903790410787946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 133
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc55c8843deadeac0800000000000000
+      internalID: -3824208286089194033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 133
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18e4cc2acaf1ec770800000000000000
+      internalID: 8632872362041953921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 133
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd167c125992b1780800000000000000
+      internalID: -8711323333724511780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 133
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6528267e024048b80800000000000000
+      internalID: -8393579266144304554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af101d37e4944f840800000000000000
+      internalID: 5256907266347565562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 0
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d70ef57708545e80800000000000000
+      internalID: -8190825033212491824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 0
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a2023b2b5a6054d0800000000000000
+      internalID: -3147899199732710749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 0
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f882bc121188a9b50800000000000000
+      internalID: 6600737811027667087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 0
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 643320929ec96ca00800000000000000
+      internalID: 776480510997312326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 0
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d9c47d28bdd5dd40800000000000000
+      internalID: 5608632694066170322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 0
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37d4f91aa96dc49d0800000000000000
+      internalID: -2788618109624300173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CthulhuRecipe-Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 0
+        width: 95
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9015727f2df7cb50800000000000000
+      internalID: 6613532958042427550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

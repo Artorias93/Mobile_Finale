@@ -1,0 +1,480 @@
+fileFormatVersion: 2
+guid: 33113aaac23787f4eacbeac436b32762
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5503019232328269808
+    second: ChooseMinigame (sliced)_0
+  - first:
+      213: -5216224991062132587
+    second: ChooseMinigame (sliced)_1
+  - first:
+      213: 8596044661479618616
+    second: ChooseMinigame (sliced)_6
+  - first:
+      213: -6065719047660772649
+    second: ChooseMinigame (sliced)_7
+  - first:
+      213: 3988432932842757730
+    second: ChooseMinigame (sliced)_8
+  - first:
+      213: -3687116311614612107
+    second: ChooseMinigame (sliced)_9
+  - first:
+      213: -6244433019870232125
+    second: ChooseMinigame (sliced)_10
+  - first:
+      213: -4499788826306959525
+    second: ChooseMinigame (sliced)_12
+  - first:
+      213: -4130229144231602562
+    second: ChooseMinigame (sliced)_13
+  - first:
+      213: 5438422255600629117
+    second: ChooseMinigame (sliced)_14
+  - first:
+      213: 2747188663221405834
+    second: ChooseMinigame (sliced)_15
+  - first:
+      213: 7830616101945725042
+    second: ChooseMinigame (sliced)_16
+  - first:
+      213: -966044441244940258
+    second: ChooseMinigame (sliced)_17
+  - first:
+      213: 2149948786852668318
+    second: ChooseMinigame (sliced)_18
+  - first:
+      213: -1609246873800061191
+    second: ChooseMinigame (sliced)_19
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ChooseMinigame (sliced)_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 153
+        width: 245
+        height: 329
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ffb117e5d6ae5c40800000000000000
+      internalID: 5503019232328269808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChooseMinigame (sliced)_1
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 153
+        width: 193
+        height: 317
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 598f933e10f3c97b0800000000000000
+      internalID: -5216224991062132587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChooseMinigame (sliced)_6
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 157
+        width: 184
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 838b2e863194b4770800000000000000
+      internalID: 8596044661479618616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChooseMinigame (sliced)_7
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 157
+        width: 180
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d2ebd8e9ac32dba0800000000000000
+      internalID: -6065719047660772649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChooseMinigame (sliced)_8
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 153
+        width: 176
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26edf8cee92c95730800000000000000
+      internalID: 3988432932842757730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChooseMinigame (sliced)_9
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 157
+        width: 194
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57d99a0ff3bb4dcc0800000000000000
+      internalID: -3687116311614612107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChooseMinigame (sliced)_10
+      rect:
+        serializedVersion: 2
+        x: 1534
+        y: 151
+        width: 209
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c14aeab0415759a0800000000000000
+      internalID: -6244433019870232125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChooseMinigame (sliced)_12
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 153
+        width: 277
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b57a3b347e98d81c0800000000000000
+      internalID: -4499788826306959525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChooseMinigame (sliced)_13
+      rect:
+        serializedVersion: 2
+        x: 2226
+        y: 158
+        width: 108
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e761c19e97a7ea6c0800000000000000
+      internalID: -4130229144231602562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChooseMinigame (sliced)_14
+      rect:
+        serializedVersion: 2
+        x: 2361
+        y: 155
+        width: 223
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7577ab3a38297b40800000000000000
+      internalID: 5438422255600629117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChooseMinigame (sliced)_15
+      rect:
+        serializedVersion: 2
+        x: 2611
+        y: 160
+        width: 96
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a88ca42b889ff1620800000000000000
+      internalID: 2747188663221405834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChooseMinigame (sliced)_16
+      rect:
+        serializedVersion: 2
+        x: 2737
+        y: 0
+        width: 205
+        height: 399
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 270dde83bdfebac60800000000000000
+      internalID: 7830616101945725042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChooseMinigame (sliced)_17
+      rect:
+        serializedVersion: 2
+        x: 2965
+        y: 153
+        width: 204
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e18ca52f2bbe792f0800000000000000
+      internalID: -966044441244940258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChooseMinigame (sliced)_18
+      rect:
+        serializedVersion: 2
+        x: 3194
+        y: 153
+        width: 264
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e93a2add70726dd10800000000000000
+      internalID: 2149948786852668318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChooseMinigame (sliced)_19
+      rect:
+        serializedVersion: 2
+        x: 3482
+        y: 155
+        width: 201
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fe4d339e7ecaa9e0800000000000000
+      internalID: -1609246873800061191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
