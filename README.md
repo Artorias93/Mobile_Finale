@@ -5,9 +5,9 @@ My Friend Cthulhu è un gioco arcade a tema Lovecraftiano, ispirato da giochi co
 
 Il gioco è stato sviluppato come progetto per il corso di Mobile del Master di Verona 2021/2022
 
-Puoi scaricare l'APK ai seguenti link: 
-[Link OneDrive (Puoi richiedere accesso)](https://univr-my.sharepoint.com/:u:/g/personal/giovanni_carnovale_studenti_univr_it/ER-K78IzRspKnMVD9sPgUC0BACAAHEaC-2r6mQpYPkghpw?e=YLCIwd)
-[Link Mega](https://mega.nz/file/elZG2ZIJ#kwEPBHHg9sYg_z5HaR8h1Vh9-5DGF8oe4zy8ymaDAQ0)
+Puoi scaricare l'APK ai seguenti link:  
+* [Link OneDrive (Richiede l'accesso)](https://univr-my.sharepoint.com/:u:/g/personal/giovanni_carnovale_studenti_univr_it/ER-K78IzRspKnMVD9sPgUC0BACAAHEaC-2r6mQpYPkghpw?e=YLCIwd)  
+* [Link Mega](https://mega.nz/file/elZG2ZIJ#kwEPBHHg9sYg_z5HaR8h1Vh9-5DGF8oe4zy8ymaDAQ0)  
 
 ## Feature e Meccaniche
 
@@ -40,11 +40,4 @@ Puoi scaricare l'APK ai seguenti link:
 * Alessandro Carattoli
 * Andrea Alcaras
 * Andrea Squillante
-* Giovanni Carnovale
-
-
-
-
-
-
-
+* Giovanni Carnovale  
