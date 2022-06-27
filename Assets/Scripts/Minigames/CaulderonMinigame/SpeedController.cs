@@ -13,9 +13,8 @@ namespace CouldronMinigame
         [Header("Input Parameters")]
         
         [SerializeField, Tooltip("Lower: more responsive, Higher: less responsive")] private float f_speedCoefficient=0.4f;
-        [SerializeField, Tooltip("Regulates how fast the slider decreases"), Range(-1.0f, -0.1f)] private float f_mouseDeceleration = -0.8f;
         [SerializeField, Tooltip("Regulates how fast the slider increases"), Range(0.1f, 1f)] private float f_mouseAcceleration = 1f;
-        [SerializeField, Tooltip("Regulates how fast the slider increases"), Range(0.1f, 1f)] private float f_minSpeed = 0.01f; 
+        [SerializeField, Tooltip("Regulates how fast the slider increases"), Range(0.1f, 5f)] private float f_maxSpeed = 2f; 
 
         private float m_speed;
 
@@ -110,16 +109,10 @@ namespace CouldronMinigame
             if (CauldronGameManager.Instance.GameFinished) return;
 
             float currentSliderValue = m_speedIndicator.value;
-            float deltaIndicator = 0.0f;
-            if (m_speed < f_minSpeed)
-            {
-                deltaIndicator = f_mouseDeceleration;
-            } else
-            {
-                deltaIndicator = m_speed * f_mouseAcceleration;
-            }
-            Debug.Log("Speed: " + m_speed + ", " + deltaIndicator);
-            m_speedIndicator.value = currentSliderValue + deltaIndicator * Time.deltaTime;
+            float currentNormalizedSpeed = Mathf.Clamp(m_speed / f_maxSpeed, 0.0f, 1.0f);
+
+            float deltaIndicator = Mathf.Lerp(currentSliderValue, currentNormalizedSpeed, Time.deltaTime * f_mouseAcceleration);
+            m_speedIndicator.value = deltaIndicator;
 
 
             CheckSpeed();
