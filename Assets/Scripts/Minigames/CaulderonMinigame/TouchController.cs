@@ -109,11 +109,11 @@ namespace CouldronMinigame
 
         private void Update()
         {
+
+
             if (isClockwiseMovement(oldTheta, theta) && thetaRight > 3)
             {
                 float deltaMovement = (this.transform.position - m_oldPos).magnitude;
-
-                m_oldPos = this.transform.position;
 
                 speedController.setSpeed(deltaMovement);
                 if (circularArrow.color.a >= 1)
@@ -131,6 +131,8 @@ namespace CouldronMinigame
                     StartCoroutine(fadeIn());
                 }
             }
+
+            m_oldPos = this.transform.position;
         }
 
         private bool isClockwiseMovement(float oldTheta, float theta) {

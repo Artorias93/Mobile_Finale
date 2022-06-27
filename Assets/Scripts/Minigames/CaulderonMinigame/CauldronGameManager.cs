@@ -35,6 +35,7 @@ namespace CouldronMinigame
         IngredientController ingredientController;
         [SerializeField]
         SpeedController speedController;
+        [SerializeField] private TouchController touchController;
 
         [Header("Debug")]
         [SerializeField] private bool b_enableDebug;

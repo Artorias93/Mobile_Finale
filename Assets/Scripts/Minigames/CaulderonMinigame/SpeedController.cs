@@ -13,19 +13,17 @@ namespace CouldronMinigame
         [Header("Input Parameters")]
         
         [SerializeField, Tooltip("Lower: more responsive, Higher: less responsive")] private float f_speedCoefficient=0.4f;
-        [SerializeField, Tooltip("Regulates how fast the slider decreases"), Range(-1.0f, -0.1f)] private float f_mouseDeceleration = -0.8f;
         [SerializeField, Tooltip("Regulates how fast the slider increases"), Range(0.1f, 1f)] private float f_mouseAcceleration = 1f;
-        [SerializeField, Tooltip("Regulates how fast the slider increases"), Range(0.1f, 1f)] private float f_minSpeed = 0.01f; 
+        [SerializeField, Tooltip("Regulates how fast the slider increases"), Range(0.1f, 5f)] private float f_maxSpeed = 2f; 
 
         private float m_speed;
 
         [Header("References")]
-        [SerializeField]
-        private Image m_imgSlow;
-        [SerializeField]
-        private Image m_imgFast;
-        [SerializeField]
-        private Image m_imgRegular;
+        [SerializeField] private Image m_imgSlow;
+        [SerializeField] private Image m_imgFast;
+        [SerializeField] private Image m_imgRegular;
+        [SerializeField] private Image m_imgTooSlow;
+        [SerializeField] private Image m_imgTooFast;
         [SerializeField]
         private Image m_insideCauldron;
 
@@ -50,11 +48,11 @@ namespace CouldronMinigame
 
         //usare enum per velocità
         public enum Speed { NOT_MOVING=0,SLOW=1, REGULAR=2, FAST=3,TOO_FAST=4 };
-       
 
-        private float m_minimumRegularNormalizedSpeed = 0.25f;
-        private float m_mediumNormalizedSpeed = 0.5f;
-        private float m_maximumRegularNormalizedSpeed = 0.75f;
+        [SerializeField] private float m_slowMinimumMovementSpeed = 0.05f;
+        [SerializeField] private float m_regularMinimumMovementSpeed = 0.35f;
+        [SerializeField] private float m_fastMinimumMovementSpeed = 0.65f;
+        [SerializeField] private float m_tooFastMinimumMovementSpeed = 0.95f;
 
 
 
@@ -73,12 +71,24 @@ namespace CouldronMinigame
             get { return timeInError; }
             set { timeInError = value; }
         }
-        void Start()
+
+        private void SliderDynamicSize()
         {
-            m_colorSlow = m_imgSlow.color;
-            m_colorRegular = m_imgRegular.color;
-            m_colorFast = m_imgFast.color;
-            setGradientKeys();
+            float AvailableSize = m_speedIndicator.GetComponent<RectTransform>().rect.width;
+
+            float tooSlowWidth = AvailableSize * m_slowMinimumMovementSpeed;
+            float tooFastWidth = AvailableSize * (1 - m_tooFastMinimumMovementSpeed);
+
+            float slowWidth = AvailableSize * (m_regularMinimumMovementSpeed - m_slowMinimumMovementSpeed);
+            float mediumWidth = AvailableSize * (m_fastMinimumMovementSpeed - m_regularMinimumMovementSpeed);
+            float fastWidth = AvailableSize * (m_tooFastMinimumMovementSpeed - m_fastMinimumMovementSpeed);
+
+            m_imgTooSlow.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, tooSlowWidth);
+            m_imgTooFast.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, tooFastWidth);
+
+            m_imgSlow.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, slowWidth);
+            m_imgRegular.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, mediumWidth);
+            m_imgFast.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, fastWidth);
         }
 
         private void setGradientKeys() {
@@ -102,6 +112,14 @@ namespace CouldronMinigame
             timeSeconds = gameManager.GameParameters.changeSecondsSpeedController;
             timeInError = gameManager.GameParameters.maxTimeInError;
 
+            SliderDynamicSize();
+            m_colorSlow = m_imgSlow.color;
+            m_colorRegular = m_imgRegular.color;
+            m_colorFast = m_imgFast.color;
+            setGradientKeys();
+
+            m_speed = 0;
+
             StartCoroutine(ChangeSpeed());
         }
 
@@ -110,16 +128,11 @@ namespace CouldronMinigame
             if (CauldronGameManager.Instance.GameFinished) return;
 
             float currentSliderValue = m_speedIndicator.value;
-            float deltaIndicator = 0.0f;
-            if (m_speed < f_minSpeed)
-            {
-                deltaIndicator = f_mouseDeceleration;
-            } else
-            {
-                deltaIndicator = m_speed * f_mouseAcceleration;
-            }
-            Debug.Log("Speed: " + m_speed + ", " + deltaIndicator);
-            m_speedIndicator.value = currentSliderValue + deltaIndicator * Time.deltaTime;
+            float currentNormalizedSpeed = m_speed / f_maxSpeed;
+
+            float deltaIndicator = Mathf.Lerp(currentSliderValue, currentNormalizedSpeed, Time.deltaTime * f_mouseAcceleration);
+            deltaIndicator = Mathf.Clamp(deltaIndicator, 0.0f, 1.0f);
+            m_speedIndicator.value = deltaIndicator;
 
 
             CheckSpeed();
@@ -209,13 +222,13 @@ namespace CouldronMinigame
 
         private void CheckSpeed()
         {
-            if (m_speedIndicator.value > m_maximumRegularNormalizedSpeed) {
+            if (m_speedIndicator.value > m_tooFastMinimumMovementSpeed) {
                 currentSpeed = Speed.TOO_FAST;
-            } else if (m_speedIndicator.value <= m_maximumRegularNormalizedSpeed && m_speedIndicator.value > m_mediumNormalizedSpeed) {
+            } else if (m_speedIndicator.value <= m_tooFastMinimumMovementSpeed && m_speedIndicator.value > m_fastMinimumMovementSpeed) {
                 currentSpeed = Speed.FAST;
-            } else if (m_speedIndicator.value <= m_mediumNormalizedSpeed && m_speedIndicator.value > m_minimumRegularNormalizedSpeed) {
+            } else if (m_speedIndicator.value <= m_fastMinimumMovementSpeed && m_speedIndicator.value > m_regularMinimumMovementSpeed) {
                 currentSpeed = Speed.REGULAR;
-            } else if (m_speedIndicator.value<=m_minimumRegularNormalizedSpeed && m_speedIndicator.value>0) {
+            } else if (m_speedIndicator.value<= m_regularMinimumMovementSpeed && m_speedIndicator.value>m_slowMinimumMovementSpeed) {
                 currentSpeed = Speed.SLOW;
             } else {
                 currentSpeed = Speed.NOT_MOVING;
@@ -228,6 +241,13 @@ namespace CouldronMinigame
 
         }
 
+#if UNITY_EDITOR
+        void OnDrawGizmos()
+        {
+            SliderDynamicSize();
+        }
+
+#endif
 
     }
 }
