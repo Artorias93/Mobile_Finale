@@ -5,6 +5,8 @@ My Friend Cthulhu è un gioco arcade a tema Lovecraftiano, ispirato da giochi co
 
 Il gioco è stato sviluppato come progetto per il corso di Mobile del Master di Verona 2021/2022
 
+Puoi scaricare l'APK al seguente link: https://univr-my.sharepoint.com/:u:/g/personal/giovanni_carnovale_studenti_univr_it/ER-K78IzRspKnMVD9sPgUC0BACAAHEaC-2r6mQpYPkghpw?e=YLCIwd
+
 ## Feature e Meccaniche
 
 1. 16 Minigiochi originali, ognuno con 3 difficoltà con il loro bilanciamento, inclusi:
@@ -25,7 +27,7 @@ Il gioco è stato sviluppato come progetto per il corso di Mobile del Master di 
 9. **Balance Game**: Per creare la giusta miscela dovrai usare il giroscopio per tenere la bilancia equilibrata;
 10. **Hit The Slime**: Sfoga la tua frustrazione cliccando più volte che puoi su uno Slime (Tranquillo, non si farà male);
 11. **Escape The Dungeon**: Cerca di sfuggire dalle guardie che ti cercano in questo labirinto generato casualmente;
-12. **Seal The Hound**: Non far scappare il mastino demoniaco, cerca di predirre in che cella andrà e bloccalo prima che raggiunga l'estremità;
+12. **Seal The Hound**: Non far scappare il mastino demoniaco, cerca di predire in che cella andrà e bloccalo prima che raggiunga l'estremità;
 13. **Place The Candles**: Metti tutte le candele nei punti indicati della runa per perfezionare il tuo rito;
 14. **Monsters Invaders**: I mostri stanno venendo ad attaccarti, usa la tua bacchetta magica per combatterli. Se sarai troppo lento il loro boss ti raggiungerà;
 15. **Fight Cthulhu**: Puoi evocarli, ma non è detto che ti obbediranno. Impedisci a Cthulhu di rapire le principesse colpendo sui tentacoli rossi, gli altri servono solo a distrarti;
