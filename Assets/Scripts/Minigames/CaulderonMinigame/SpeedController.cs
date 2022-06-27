@@ -109,8 +109,8 @@ namespace CouldronMinigame
 
         public void BeginPlay()
         {
-            timeSeconds = gameManager.GameParameters.changeSecondsSpeedController;
-            timeInError = gameManager.GameParameters.maxTimeInError;
+            timeSeconds = gameManager.SelectedParameters.changeSecondsSpeedController;
+            timeInError = gameManager.SelectedParameters.maxTimeInError;
 
             SliderDynamicSize();
             m_colorSlow = m_imgSlow.color;
@@ -140,7 +140,7 @@ namespace CouldronMinigame
             if (isInError) {
                 timeInError -= Time.deltaTime;
 
-                float percentageError = timeInError / gameManager.GameParameters.maxTimeInError;
+                float percentageError = timeInError / gameManager.SelectedParameters.maxTimeInError;
                 percentageError = 1 - percentageError;
                 m_insideCauldron.color=gradient.Evaluate(percentageError);
             }

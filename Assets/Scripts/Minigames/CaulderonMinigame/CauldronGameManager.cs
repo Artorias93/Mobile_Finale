@@ -13,6 +13,7 @@ namespace CouldronMinigame
         public float maxTimeInError;
         public float max_lives;
         public float spawnTimeSeconds;
+        public float ingredientLifetime;
     }
 
     public enum Diff
@@ -46,7 +47,7 @@ namespace CouldronMinigame
             get { return m_timer ? m_timer.RemainingTime : -1; }
 
         }
-        public GameParameters GameParameters
+        public GameParameters SelectedParameters
         {
             get { return m_gameParameters; }
         }

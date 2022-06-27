@@ -98,12 +98,9 @@ namespace CouldronMinigame
                 ingredientContainer.SetActive(true);
                 SetImage();
 
-                yield return new WaitForSeconds(spawnTimeSeconds);
+                yield return new WaitForSeconds(CauldronGameManager.Instance.SelectedParameters.ingredientLifetime);
                 CheckLives();
-            
-
-                yield return new WaitForSeconds(spawnTimeSeconds);
-            
+                        
             }
         }
 
@@ -139,10 +136,9 @@ namespace CouldronMinigame
         public void InitializeValue()
         {
             CauldronGameManager gm = CauldronGameManager.Instance;
-            spawnTimeSeconds = gm.GameParameters.spawnTimeSeconds;
+            spawnTimeSeconds = gm.SelectedParameters.spawnTimeSeconds;
 
-            spawnTimeSeconds = gm.GameParameters.spawnTimeSeconds;
-            lives = gm.GameParameters.max_lives;
+            lives = gm.SelectedParameters.max_lives;
             StartCoroutine(ButtonTimer());
         }
     }
