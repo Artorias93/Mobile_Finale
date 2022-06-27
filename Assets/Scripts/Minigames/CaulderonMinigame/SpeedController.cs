@@ -173,7 +173,7 @@ namespace CouldronMinigame
         {
             Debug.Log("setting new speed...");
             
-            randomSpeedIndex = (Speed)Random.Range(1, 3);
+            randomSpeedIndex = (Speed)Random.Range((int)Speed.SLOW, (int)Speed.TOO_FAST);
 
             if (randomSpeedIndex == Speed.REGULAR)
             {
