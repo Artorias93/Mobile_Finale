@@ -1,13 +1,13 @@
 # My Friend Cthulhu
 
 ## Introduzione
-My Friend Cthulhu è un gioco arcade a tema Lovecraftiano, ispirato da giochi come Wario Ware e Cooking Mama.
+My Friend Cthulhu è un gioco arcade per Android a tema Lovecraftiano, ispirato da giochi come Wario Ware e Cooking Mama.
 
 Il gioco è stato sviluppato come progetto per il corso di Mobile del Master di Verona 2021/2022
 
 Puoi scaricare l'APK ai seguenti link:  
-* [Link OneDrive (Richiede l'accesso)](https://univr-my.sharepoint.com/:u:/g/personal/giovanni_carnovale_studenti_univr_it/ER-K78IzRspKnMVD9sPgUC0BACAAHEaC-2r6mQpYPkghpw?e=YLCIwd)  
-* [Link Mega](https://mega.nz/file/elZG2ZIJ#kwEPBHHg9sYg_z5HaR8h1Vh9-5DGF8oe4zy8ymaDAQ0)  
+* [Link OneDrive (Richiede l'accesso)](https://univr-my.sharepoint.com/:u:/g/personal/giovanni_carnovale_studenti_univr_it/ET1wrsUSDBZBtlMgcqUAUSgBqMraSi_anxO5BKrJekA-LQ?e=6K7gwb)  
+* [Link Mega](https://mega.nz/file/P5QGnBTa#RmDnawI0JIc-kO0qftV-xHZYuNAcw1FkMDU0uyvA5-w)  
 
 ## Feature e Meccaniche
 
